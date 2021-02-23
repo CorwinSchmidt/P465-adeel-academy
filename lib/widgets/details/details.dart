@@ -12,7 +12,7 @@ class Details extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Adeel Academy\nA learning platform for all subjects',
+            'Adeel Academy:\nA learning platform for all subjects',
             style: TextStyle(
               fontWeight: FontWeight.w800,
               height: 0.9,
