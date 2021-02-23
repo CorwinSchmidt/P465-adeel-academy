@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/* 
+This class is the navigation header that 
+an be placed at the top of any screen.
+*/
 class NavigationBar extends StatelessWidget {
   const NavigationBar({Key key}) : super(key: key);
   @override
