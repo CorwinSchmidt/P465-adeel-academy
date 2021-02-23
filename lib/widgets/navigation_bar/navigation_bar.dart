@@ -23,9 +23,9 @@ class NavigationBar extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               // Here we can place navigation items using _NavBarItem()s
-              // _NavBarItem('Log In'),
+              // _NavBarItem('Info'),
               // SizedBox(width: 60),
-              // _NavBarItem('Sign Up')
+              // _NavBarItem('Help')
             ],
           ),
         ],
@@ -40,6 +40,10 @@ class _NavBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title, style: TextStyle(fontSize: 18));
+    return Text(title,
+        style: TextStyle(
+          fontSize: 18,
+          color: Colors.white,
+        ));
   }
 }

@@ -11,12 +11,14 @@ class Details extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            'Adeel Academy:\nA learning platform for all subjects',
-            style: TextStyle(
-              fontWeight: FontWeight.w800,
-              height: 0.9,
-              fontSize: 60,
+          Center(
+            child: Text(
+              'Adeel Academy:\nA learning platform for all subjects',
+              style: TextStyle(
+                fontWeight: FontWeight.w800,
+                height: 0.9,
+                fontSize: 60,
+              ),
             ),
           ),
           SizedBox(

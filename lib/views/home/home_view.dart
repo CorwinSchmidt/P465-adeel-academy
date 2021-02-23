@@ -21,7 +21,7 @@ class HomeView extends StatelessWidget {
                   Details(),
                   Expanded(
                     child: Center(
-                      child: LogIn('Log In'),
+                      child: LogIn('Log In', 'Sign Up'),
                     ),
                   ),
                 ],
