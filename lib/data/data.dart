@@ -1,6 +1,6 @@
-mport 'package:flutter/material.dart';
-import 'package:nostra_dashboard/assets.dart';
-import 'package:nostra_dashboard/models/models.dart';
+import 'package:flutter/material.dart';
+import 'package:learning_management_system/assets.dart';
+import 'package:learning_management_system/objects/pages.dart';
 
 final Content heatMapContent = Content(
   name: 'Heat Map',

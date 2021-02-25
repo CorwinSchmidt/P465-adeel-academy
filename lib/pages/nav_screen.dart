@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nostra_dashboard/cubits/cubits.dart';
-import 'package:nostra_dashboard/screens/screens.dart';
-import 'package:nostra_dashboard/widgets/widgets.dart';
+import 'package:learning_management_system/cubits/cubits.dart';
+import 'package:learning_management_system/pages/screens.dart';
+import 'package:learning_management_system/widgets/dashboard/widgets.dart';
 
 class NavScreen extends StatefulWidget {
   @override

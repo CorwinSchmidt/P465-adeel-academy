@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:nostra_dashboard/cubits/cubits.dart';
-import 'package:nostra_dashboard/data/data.dart';
-import 'package:nostra_dashboard/widgets/widgets.dart';
+import 'package:learning_management_system/cubits/cubits.dart';
+import 'package:learning_management_system/data/data.dart';
+import 'package:learning_management_system/widgets/dashboard/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);

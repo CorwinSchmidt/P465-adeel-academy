@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:nostra_dashboard/models/models.dart';
+import 'package:learning_management_system/objects/pages.dart';
 
 class ContentList extends StatelessWidget {
   final String title;

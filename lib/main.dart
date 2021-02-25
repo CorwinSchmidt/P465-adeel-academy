@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nostra_dashboard/screens/screens.dart';
-import 'package:nostra_dashboard/assets.dart';
-import 'package:nostra_dashboard/screens/nav_screen.dart';
+import 'package:learning_management_system/pages/screens.dart';
+import 'package:learning_management_system/assets.dart';
+import 'package:learning_management_system/pages/nav_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -64,7 +64,6 @@ class LoginPageState extends State<LoginPage>
                 labelStyle:
                     new TextStyle(color: Colors.tealAccent, fontSize: 20.0),
               )),
-          isMaterialAppTheme: true,
           child: SingleChildScrollView(
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:nostra_dashboard/assets.dart';
-import 'package:nostra_dashboard/widgets/widgets.dart';
+import 'package:learning_management_system/assets.dart';
+import 'package:learning_management_system/widgets/dashboard/widgets.dart';
 
 class CustomAppBar extends StatelessWidget {
   final double scrollOffset;

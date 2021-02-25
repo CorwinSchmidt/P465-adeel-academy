@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nostra_dashboard/models/models.dart';
-import 'package:nostra_dashboard/widgets/widgets.dart';
+import 'package:learning_management_system/objects/pages.dart';
+import 'package:learning_management_system/widgets/dashboard/widgets.dart';
 import 'package:video_player/video_player.dart';
 
 class ContentHeader extends StatelessWidget {
