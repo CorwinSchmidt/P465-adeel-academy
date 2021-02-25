@@ -3,6 +3,7 @@ P465 Software Engineering | Group 2 | Dean Allen, Dustin Groh, Corwin Schmidt, H
 
 Edit: Testing Visual Studio Code source control -Corwin
 Edit: Testing push again -Dustin
+Edit: Testing push -Dean
 
 Here are a few resources to help anyone if they are stuck:
 
