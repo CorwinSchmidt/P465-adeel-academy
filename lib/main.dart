@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learning_management_system/pages/screens.dart';
 import 'package:learning_management_system/assets.dart';
 import 'package:learning_management_system/pages/nav_screen.dart';
+import 'package:learning_management_system/views/home/home_view.dart';
 
 void main() => runApp(new MyApp());
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: LoginPage(),
+      home: HomeView(),
     );
   }
 }
