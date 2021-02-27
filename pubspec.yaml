@@ -1,5 +1,5 @@
 name: learning_management_system
-description: A new Flutter project.
+description: A learning management system.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -26,6 +26,7 @@ dependencies:
   fl_chart: ^0.12.2
   charts_flutter: ^0.6.0
   font_awesome_flutter: ^8.8.1
+  mongo_dart: ^0.4.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
