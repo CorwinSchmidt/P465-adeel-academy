@@ -19,15 +19,15 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "9Wpi2Zn6Xh+RoBhtinUJog==";
+    window.$dartAppId = "aj/JD8rYGHhL5NB9QOz0gA==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "7.1.1";
-window.$dwdsDevHandlerPath = "http://localhost:50666/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:59803/$dwdsSseHandler";
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "ws://127.0.0.1:50668/$debug";
+window.$dartExtensionUri = "ws://127.0.0.1:59805/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -450,22 +450,21 @@ let modulePaths = {
  "packages/video_player_web/src/shims/dart_ui.dart": "packages/video_player_web/src/shims/dart_ui.dart.lib",
  "packages/video_player_web/src/shims/dart_ui_real.dart": "packages/video_player_web/src/shims/dart_ui_real.dart.lib",
  "packages/learning_management_system/main.dart": "packages/learning_management_system/main.dart.lib",
- "packages/learning_management_system/views/home/home_view.dart": "packages/learning_management_system/views/home/home_view.dart.lib",
+ "packages/learning_management_system/views/login/login_view.dart": "packages/learning_management_system/views/login/login_view.dart.lib",
  "packages/learning_management_system/widgets/navigation_bar/navigation_bar.dart": "packages/learning_management_system/widgets/navigation_bar/navigation_bar.dart.lib",
- "packages/learning_management_system/widgets/log_in/log_in.dart": "packages/learning_management_system/widgets/log_in/log_in.dart.lib",
+ "packages/learning_management_system/assets.dart": "packages/learning_management_system/assets.dart.lib",
  "packages/learning_management_system/widgets/details/details.dart": "packages/learning_management_system/widgets/details/details.dart.lib",
  "packages/learning_management_system/widgets/centered_view/centered_view.dart": "packages/learning_management_system/widgets/centered_view/centered_view.dart.lib",
  "packages/learning_management_system/pages/nav_screen.dart": "packages/learning_management_system/pages/nav_screen.dart.lib",
  "packages/learning_management_system/widgets/dashboard/content_header.dart": "packages/learning_management_system/widgets/dashboard/content_header.dart.lib",
  "packages/learning_management_system/widgets/dashboard/responsive.dart": "packages/learning_management_system/widgets/dashboard/responsive.dart.lib",
  "packages/learning_management_system/widgets/dashboard/content_list.dart": "packages/learning_management_system/widgets/dashboard/content_list.dart.lib",
- "packages/learning_management_system/objects/pages.dart": "packages/learning_management_system/objects/pages.dart.lib",
- "packages/learning_management_system/objects/content_model.dart": "packages/learning_management_system/objects/content_model.dart.lib",
+ "packages/learning_management_system/Objects/pages.dart": "packages/learning_management_system/Objects/pages.dart.lib",
+ "packages/learning_management_system/Objects/content_model.dart": "packages/learning_management_system/Objects/content_model.dart.lib",
  "packages/learning_management_system/widgets/dashboard/previews.dart": "packages/learning_management_system/widgets/dashboard/previews.dart.lib",
  "packages/learning_management_system/widgets/dashboard/vertical_icon_button.dart": "packages/learning_management_system/widgets/dashboard/vertical_icon_button.dart.lib",
  "packages/video_player/video_player.dart": "packages/video_player/video_player.dart.lib",
  "packages/video_player/src/sub_rip.dart": "packages/video_player/src/sub_rip.dart.lib",
- "packages/learning_management_system/assets.dart": "packages/learning_management_system/assets.dart.lib",
  "packages/learning_management_system/pages/home_screen.dart": "packages/learning_management_system/pages/home_screen.dart.lib",
  "packages/learning_management_system/data/data.dart": "packages/learning_management_system/data/data.dart.lib",
  "packages/learning_management_system/cubits/cubits.dart": "packages/learning_management_system/cubits/cubits.dart.lib",
@@ -865,22 +864,21 @@ let moduleNames = {
  "packages/video_player_web/src/shims/dart_ui.dart.lib": "packages/video_player_web/src/shims/dart_ui.dart",
  "packages/video_player_web/src/shims/dart_ui_real.dart.lib": "packages/video_player_web/src/shims/dart_ui_real.dart",
  "packages/learning_management_system/main.dart.lib": "packages/learning_management_system/main.dart",
- "packages/learning_management_system/views/home/home_view.dart.lib": "packages/learning_management_system/views/home/home_view.dart",
+ "packages/learning_management_system/views/login/login_view.dart.lib": "packages/learning_management_system/views/login/login_view.dart",
  "packages/learning_management_system/widgets/navigation_bar/navigation_bar.dart.lib": "packages/learning_management_system/widgets/navigation_bar/navigation_bar.dart",
- "packages/learning_management_system/widgets/log_in/log_in.dart.lib": "packages/learning_management_system/widgets/log_in/log_in.dart",
+ "packages/learning_management_system/assets.dart.lib": "packages/learning_management_system/assets.dart",
  "packages/learning_management_system/widgets/details/details.dart.lib": "packages/learning_management_system/widgets/details/details.dart",
  "packages/learning_management_system/widgets/centered_view/centered_view.dart.lib": "packages/learning_management_system/widgets/centered_view/centered_view.dart",
  "packages/learning_management_system/pages/nav_screen.dart.lib": "packages/learning_management_system/pages/nav_screen.dart",
  "packages/learning_management_system/widgets/dashboard/content_header.dart.lib": "packages/learning_management_system/widgets/dashboard/content_header.dart",
  "packages/learning_management_system/widgets/dashboard/responsive.dart.lib": "packages/learning_management_system/widgets/dashboard/responsive.dart",
  "packages/learning_management_system/widgets/dashboard/content_list.dart.lib": "packages/learning_management_system/widgets/dashboard/content_list.dart",
- "packages/learning_management_system/objects/pages.dart.lib": "packages/learning_management_system/objects/pages.dart",
- "packages/learning_management_system/objects/content_model.dart.lib": "packages/learning_management_system/objects/content_model.dart",
+ "packages/learning_management_system/Objects/pages.dart.lib": "packages/learning_management_system/Objects/pages.dart",
+ "packages/learning_management_system/Objects/content_model.dart.lib": "packages/learning_management_system/Objects/content_model.dart",
  "packages/learning_management_system/widgets/dashboard/previews.dart.lib": "packages/learning_management_system/widgets/dashboard/previews.dart",
  "packages/learning_management_system/widgets/dashboard/vertical_icon_button.dart.lib": "packages/learning_management_system/widgets/dashboard/vertical_icon_button.dart",
  "packages/video_player/video_player.dart.lib": "packages/video_player/video_player.dart",
  "packages/video_player/src/sub_rip.dart.lib": "packages/video_player/src/sub_rip.dart",
- "packages/learning_management_system/assets.dart.lib": "packages/learning_management_system/assets.dart",
  "packages/learning_management_system/pages/home_screen.dart.lib": "packages/learning_management_system/pages/home_screen.dart",
  "packages/learning_management_system/data/data.dart.lib": "packages/learning_management_system/data/data.dart",
  "packages/learning_management_system/cubits/cubits.dart.lib": "packages/learning_management_system/cubits/cubits.dart",

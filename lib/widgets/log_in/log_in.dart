@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_management_system/views/login/login_view.dart';
 
 class LogIn extends StatelessWidget {
   final String text1;
@@ -16,13 +17,22 @@ class LogIn extends StatelessWidget {
             horizontal: 60,
             vertical: 15,
           ),
-          child: Text(
-            text1,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
-            ),
+          child: TextButton(
+            child: Text(
+              text1,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w800,
+                color: Colors.white,
+              ),
+          ),
+          onPressed: () {
+            // take user to LogIn view when this button is pressed
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginView()),
+            );
+          }
           ),
           decoration: BoxDecoration(
             color: Colors.red[900],
