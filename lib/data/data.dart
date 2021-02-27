@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learning_management_system/assets.dart';
-import 'package:learning_management_system/objects/pages.dart';
+import 'package:learning_management_system/Objects/pages.dart';
 
 final Content heatMapContent = Content(
   name: 'Heat Map',
