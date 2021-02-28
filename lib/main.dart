@@ -3,8 +3,13 @@ import 'package:learning_management_system/pages/screens.dart';
 import 'package:learning_management_system/assets.dart';
 import 'package:learning_management_system/pages/nav_screen.dart';
 import 'package:learning_management_system/views/home/home_view.dart';
+import 'package:learning_management_system/server/server.dart' as server;
 
-void main() => runApp(new MyApp());
+void main() {
+  print("started");
+  server.start();
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
