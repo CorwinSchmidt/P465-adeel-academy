@@ -1,0 +1,323 @@
+define(['dart_sdk', 'packages/basic_utils/src/model/HttpRequestReturnType.dart', 'packages/logging/src/logger.dart', 'packages/http/src/browser_client.dart', 'packages/http/http.dart', 'packages/basic_utils/src/model/exception/HttpResponseException.dart'], (function load__packages__basic_utils__src__HttpUtils_dart(dart_sdk, packages__basic_utils__src__model__HttpRequestReturnType$46dart, packages__logging__src__logger$46dart, packages__http__src__browser_client$46dart, packages__http__http$46dart, packages__basic_utils__src__model__exception__HttpResponseException$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const convert = dart_sdk.convert;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const HttpRequestReturnType = packages__basic_utils__src__model__HttpRequestReturnType$46dart.src__model__HttpRequestReturnType;
+  const logger = packages__logging__src__logger$46dart.src__logger;
+  const response = packages__http__src__browser_client$46dart.src__response;
+  const client = packages__http__src__browser_client$46dart.src__client;
+  const http = packages__http__http$46dart.http;
+  const HttpResponseException = packages__basic_utils__src__model__exception__HttpResponseException$46dart.src__model__exception__HttpResponseException;
+  var HttpUtils = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var $isEmpty = dartx.isEmpty;
+  var $split = dartx.split;
+  var $length = dartx.length;
+  var $elementAt = dartx.elementAt;
+  var $_get = dartx._get;
+  var $contains = dartx.contains;
+  var $containsKey = dartx.containsKey;
+  var $add = dartx.add;
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $update = dartx.update;
+  var $forEach = dartx.forEach;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    ResponseL: () => (T.ResponseL = dart.constFn(dart.legacy(response.Response)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    MapOfStringL$dynamic: () => (T.MapOfStringL$dynamic = dart.constFn(core.Map$(T.StringL(), dart.dynamic)))(),
+    MapLOfStringL$dynamic: () => (T.MapLOfStringL$dynamic = dart.constFn(dart.legacy(T.MapOfStringL$dynamic())))(),
+    FutureOfResponseL: () => (T.FutureOfResponseL = dart.constFn(async.Future$(T.ResponseL())))(),
+    FutureLOfResponseL: () => (T.FutureLOfResponseL = dart.constFn(dart.legacy(T.FutureOfResponseL())))(),
+    EncodingL: () => (T.EncodingL = dart.constFn(dart.legacy(convert.Encoding)))(),
+    MapOfStringL$StringL: () => (T.MapOfStringL$StringL = dart.constFn(core.Map$(T.StringL(), T.StringL())))(),
+    MapLOfStringL$StringL: () => (T.MapLOfStringL$StringL = dart.constFn(dart.legacy(T.MapOfStringL$StringL())))(),
+    dynamic__ToFutureLOfResponseL: () => (T.dynamic__ToFutureLOfResponseL = dart.constFn(dart.fnType(T.FutureLOfResponseL(), [dart.dynamic], {body: dart.dynamic, encoding: T.EncodingL(), headers: T.MapLOfStringL$StringL()}, {})))(),
+    IdentityMapOfStringL$dynamic: () => (T.IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), dart.dynamic)))(),
+    ListL: () => (T.ListL = dart.constFn(dart.legacy(core.List)))(),
+    VoidToListL: () => (T.VoidToListL = dart.constFn(dart.fnType(T.ListL(), [])))(),
+    dynamicTodynamic: () => (T.dynamicTodynamic = dart.constFn(dart.fnType(dart.dynamic, [dart.dynamic])))(),
+    VoidToStringL: () => (T.VoidToStringL = dart.constFn(dart.fnType(T.StringL(), [])))(),
+    StringLToNull: () => (T.StringLToNull = dart.constFn(dart.fnType(core.Null, [T.StringL()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: HttpRequestReturnType.HttpRequestReturnType.prototype,
+        [_name]: "HttpRequestReturnType.JSON",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.fn(http.post, T.dynamic__ToFutureLOfResponseL());
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: HttpRequestReturnType.HttpRequestReturnType.prototype,
+        [_name]: "HttpRequestReturnType.STRING",
+        index: 1
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: HttpRequestReturnType.HttpRequestReturnType.prototype,
+        [_name]: "HttpRequestReturnType.FULLRESPONSE",
+        index: 2
+      });
+    }
+  }, false);
+  var C = Array(4).fill(void 0);
+  var I = ["package:basic_utils/src/HttpUtils.dart"];
+  var _name = dart.privateName(HttpRequestReturnType, "_name");
+  HttpUtils.HttpUtils = class HttpUtils$ extends core.Object {
+    static _get(url, opts) {
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      let returnType = opts && 'returnType' in opts ? opts.returnType : C[0] || CT.C0;
+      return async.async(dart.dynamic, function* _get() {
+        let finalUrl = HttpUtils.HttpUtils.addQueryParameterToUrl(url, queryParameters);
+        logger.Logger.new("HttpUtils").info("GET " + dart.str(finalUrl));
+        let response = (yield HttpUtils.HttpUtils.client.get(finalUrl, {headers: headers}));
+        logger.Logger.new("HttpUtils").finest("Got response: " + dart.notNull(response.body));
+        return HttpUtils.HttpUtils._handleResponse(response, returnType);
+      });
+    }
+    static getForFullResponse(url, opts) {
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.ResponseL(), function* getForFullResponse() {
+        return T.ResponseL().as(yield HttpUtils.HttpUtils._get(url, {queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.FULLRESPONSE}));
+      });
+    }
+    static getForJson(url, opts) {
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.MapLOfStringL$dynamic(), function* getForJson() {
+        return T.MapLOfStringL$dynamic().as(yield HttpUtils.HttpUtils._get(url, {queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.JSON}));
+      });
+    }
+    static getForString(url, opts) {
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.StringL(), function* getForString() {
+        return T.StringL().as(yield HttpUtils.HttpUtils._get(url, {queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.STRING}));
+      });
+    }
+    static _post(url, opts) {
+      let body = opts && 'body' in opts ? opts.body : null;
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      let returnType = opts && 'returnType' in opts ? opts.returnType : C[0] || CT.C0;
+      return async.async(dart.dynamic, function* _post() {
+        let finalUrl = HttpUtils.HttpUtils.addQueryParameterToUrl(url, queryParameters);
+        logger.Logger.new("HttpUtils").info("POST " + dart.str(finalUrl));
+        if ((C[1] || CT.C1) !== null) {
+          logger.Logger.new("HttpUtils").finest("Request body: " + dart.notNull(body));
+        }
+        let response = (yield HttpUtils.HttpUtils.client.post(finalUrl, {body: body, headers: headers}));
+        logger.Logger.new("HttpUtils").finest("Response body: " + dart.notNull(response.body));
+        return HttpUtils.HttpUtils._handleResponse(response, returnType);
+      });
+    }
+    static postForFullResponse(url, opts) {
+      let body = opts && 'body' in opts ? opts.body : null;
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.ResponseL(), function* postForFullResponse() {
+        return T.ResponseL().as(yield HttpUtils.HttpUtils._post(url, {body: body, queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.FULLRESPONSE}));
+      });
+    }
+    static postForJson(url, opts) {
+      let body = opts && 'body' in opts ? opts.body : null;
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.MapLOfStringL$dynamic(), function* postForJson() {
+        return T.MapLOfStringL$dynamic().as(yield HttpUtils.HttpUtils._post(url, {body: body, queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.JSON}));
+      });
+    }
+    static postForString(url, opts) {
+      let body = opts && 'body' in opts ? opts.body : null;
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.StringL(), function* postForString() {
+        return T.StringL().as(yield HttpUtils.HttpUtils._post(url, {body: body, queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.STRING}));
+      });
+    }
+    static _put(url, opts) {
+      let body = opts && 'body' in opts ? opts.body : null;
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      let returnType = opts && 'returnType' in opts ? opts.returnType : C[0] || CT.C0;
+      return async.async(dart.dynamic, function* _put() {
+        let finalUrl = HttpUtils.HttpUtils.addQueryParameterToUrl(url, queryParameters);
+        logger.Logger.new("HttpUtils").info("PUT " + dart.str(finalUrl));
+        if (body != null) {
+          logger.Logger.new("HttpUtils").finest("Request body: " + dart.notNull(body));
+        }
+        let response = (yield HttpUtils.HttpUtils.client.put(finalUrl, {body: body, headers: headers}));
+        logger.Logger.new("HttpUtils").finest("Response body: " + dart.notNull(response.body));
+        return HttpUtils.HttpUtils._handleResponse(response, returnType);
+      });
+    }
+    static putForFullResponse(url, opts) {
+      let body = opts && 'body' in opts ? opts.body : null;
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.ResponseL(), function* putForFullResponse() {
+        return T.ResponseL().as(yield HttpUtils.HttpUtils._put(url, {body: body, queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.FULLRESPONSE}));
+      });
+    }
+    static putForJson(url, opts) {
+      let body = opts && 'body' in opts ? opts.body : null;
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.MapLOfStringL$dynamic(), function* putForJson() {
+        return T.MapLOfStringL$dynamic().as(yield HttpUtils.HttpUtils._put(url, {body: body, queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.JSON}));
+      });
+    }
+    static putForString(url, opts) {
+      let body = opts && 'body' in opts ? opts.body : null;
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.StringL(), function* putForString() {
+        return T.StringL().as(yield HttpUtils.HttpUtils._put(url, {body: body, queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.STRING}));
+      });
+    }
+    static _delete(url, opts) {
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      let returnType = opts && 'returnType' in opts ? opts.returnType : C[0] || CT.C0;
+      return async.async(dart.dynamic, function* _delete() {
+        let finalUrl = HttpUtils.HttpUtils.addQueryParameterToUrl(url, queryParameters);
+        logger.Logger.new("HttpUtils").info("DELETE " + dart.str(finalUrl));
+        let response = (yield HttpUtils.HttpUtils.client.delete(finalUrl, {headers: headers}));
+        logger.Logger.new("HttpUtils").finest("Response body: " + dart.notNull(response.body));
+        return HttpUtils.HttpUtils._handleResponse(response, returnType);
+      });
+    }
+    static deleteForFullResponse(url, opts) {
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.ResponseL(), function* deleteForFullResponse() {
+        return T.ResponseL().as(yield HttpUtils.HttpUtils._delete(url, {queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.FULLRESPONSE}));
+      });
+    }
+    static deleteForJson(url, opts) {
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.MapLOfStringL$dynamic(), function* deleteForJson() {
+        return T.MapLOfStringL$dynamic().as(yield HttpUtils.HttpUtils._delete(url, {queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.JSON}));
+      });
+    }
+    static deleteForString(url, opts) {
+      let queryParameters = opts && 'queryParameters' in opts ? opts.queryParameters : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(T.StringL(), function* deleteForString() {
+        return T.StringL().as(yield HttpUtils.HttpUtils._delete(url, {queryParameters: queryParameters, headers: headers, returnType: HttpRequestReturnType.HttpRequestReturnType.STRING}));
+      });
+    }
+    static _handleResponse(response, returnType) {
+      if (dart.notNull(response.statusCode) >= 200 && dart.notNull(response.statusCode) <= 299) {
+        switch (returnType) {
+          case C[0] || CT.C0:
+          {
+            return convert.json.decode(response.body);
+          }
+          case C[2] || CT.C2:
+          {
+            return response.body;
+          }
+          case C[3] || CT.C3:
+          {
+            return response;
+          }
+        }
+      } else {
+        dart.throw(new HttpResponseException.HttpResponseException.new("Error: Received status code " + dart.toString(response.statusCode), dart.toString(response.statusCode), {body: response.body, headers: response.headers}));
+      }
+    }
+    static addQueryParameterToUrl(url, queryParameters) {
+      if (queryParameters == null || dart.test(queryParameters[$isEmpty])) return url;
+      return dart.toString(core.Uri.parse(url).replace({queryParameters: queryParameters}));
+    }
+    static getQueryParameterFromUrl(url) {
+      let queryParameters = new (T.IdentityMapOfStringL$dynamic()).new();
+      let splitted = url[$split]("?");
+      if (splitted[$length] !== 2) {
+        return null;
+      }
+      let query = splitted[$elementAt](1);
+      let splittedQuery = query[$split]("&");
+      splittedQuery[$forEach](dart.fn(q => {
+        let pair = q[$split]("=");
+        let key = core.Uri.decodeFull(pair[$_get](0));
+        let value = "";
+        if (dart.notNull(pair[$length]) > 1) {
+          value = core.Uri.decodeFull(pair[$_get](1));
+        }
+        if (key[$contains]("[]")) {
+          if (dart.test(queryParameters[$containsKey](key))) {
+            let values = T.ListL().as(queryParameters[$_get](key));
+            values[$add](value);
+          } else {
+            let values = [];
+            values[$add](value);
+            queryParameters[$putIfAbsent](key, dart.fn(() => values, T.VoidToListL()));
+          }
+        } else {
+          if (dart.test(queryParameters[$containsKey](key))) {
+            queryParameters[$update](key, dart.fn(value => value, T.dynamicTodynamic()));
+          } else {
+            queryParameters[$putIfAbsent](key, dart.fn(() => value, T.VoidToStringL()));
+          }
+        }
+      }, T.StringLToNull()));
+      if (dart.test(queryParameters[$isEmpty])) {
+        return null;
+      } else {
+        return queryParameters;
+      }
+    }
+  };
+  (HttpUtils.HttpUtils.new = function() {
+    ;
+  }).prototype = HttpUtils.HttpUtils.prototype;
+  dart.addTypeTests(HttpUtils.HttpUtils);
+  dart.addTypeCaches(HttpUtils.HttpUtils);
+  dart.setLibraryUri(HttpUtils.HttpUtils, I[0]);
+  dart.defineLazy(HttpUtils.HttpUtils, {
+    /*HttpUtils.HttpUtils.client*/get client() {
+      return client.Client.new();
+    },
+    set client(_) {},
+    /*HttpUtils.HttpUtils.TAG*/get TAG() {
+      return "HttpUtils";
+    }
+  }, true);
+  dart.trackLibraries("packages/basic_utils/src/HttpUtils.dart", {
+    "package:basic_utils/src/HttpUtils.dart": HttpUtils
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["HttpUtils.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/basic_utils/src/HttpUtils.dart.lib.js"}');
+  // Exports:
+  return {
+    src__HttpUtils: HttpUtils
+  };
+}));
+
+//# sourceMappingURL=HttpUtils.dart.lib.js.map

@@ -1,0 +1,516 @@
+define(['dart_sdk', 'packages/sevr/src/mime/mime_src/mime_shared.dart'], (function load__packages__sevr__src__mime__mime_src__bound_multipart_stream_dart(dart_sdk, packages__sevr__src__mime__mime_src__mime_shared$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
+  const convert = dart_sdk.convert;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const mime_shared = packages__sevr__src__mime__mime_src__mime_shared$46dart.src__mime__mime_src__mime_shared;
+  var bound_multipart_stream = Object.create(dart.library);
+  var $sublist = dartx.sublist;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $add = dartx.add;
+  var $toLowerCase = dartx.toLowerCase;
+  var $_set = dartx._set;
+  var $clear = dartx.clear;
+  var $contains = dartx.contains;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    JSArrayOfintL: () => (T.JSArrayOfintL = dart.constFn(_interceptors.JSArray$(T.intL())))(),
+    MimeMultipartL: () => (T.MimeMultipartL = dart.constFn(dart.legacy(mime_shared.MimeMultipart)))(),
+    StreamControllerOfMimeMultipartL: () => (T.StreamControllerOfMimeMultipartL = dart.constFn(async.StreamController$(T.MimeMultipartL())))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    ListOfintL: () => (T.ListOfintL = dart.constFn(core.List$(T.intL())))(),
+    ListLOfintL: () => (T.ListLOfintL = dart.constFn(dart.legacy(T.ListOfintL())))(),
+    ListLOfintLToNull: () => (T.ListLOfintLToNull = dart.constFn(dart.fnType(core.Null, [T.ListLOfintL()])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    IdentityMapOfStringL$StringL: () => (T.IdentityMapOfStringL$StringL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.StringL())))(),
+    StreamControllerOfListLOfintL: () => (T.StreamControllerOfListLOfintL = dart.constFn(async.StreamController$(T.ListLOfintL())))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.constList([40, 41, 60, 62, 64, 44, 59, 58, 92, 34, 47, 91, 93, 63, 61, 123, 125, 32, 9], T.intL());
+    }
+  }, false);
+  var C = [void 0];
+  var I = [
+    "package:sevr/src/mime/mime_src/bound_multipart_stream.dart",
+    "file:///C:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/sevr-1.0.4/lib/src/mime/mime_src/bound_multipart_stream.dart"
+  ];
+  var headers$ = dart.privateName(bound_multipart_stream, "_MimeMultipart.headers");
+  var _stream$ = dart.privateName(bound_multipart_stream, "_stream");
+  bound_multipart_stream._MimeMultipart = class _MimeMultipart extends mime_shared.MimeMultipart {
+    get headers() {
+      return this[headers$];
+    }
+    set headers(value) {
+      super.headers = value;
+    }
+    listen(onData, opts) {
+      let onDone = opts && 'onDone' in opts ? opts.onDone : null;
+      let onError = opts && 'onError' in opts ? opts.onError : null;
+      let cancelOnError = opts && 'cancelOnError' in opts ? opts.cancelOnError : null;
+      return this[_stream$].listen(onData, {onDone: onDone, onError: onError, cancelOnError: cancelOnError});
+    }
+  };
+  (bound_multipart_stream._MimeMultipart.new = function(headers, _stream) {
+    this[headers$] = headers;
+    this[_stream$] = _stream;
+    bound_multipart_stream._MimeMultipart.__proto__.new.call(this);
+    ;
+  }).prototype = bound_multipart_stream._MimeMultipart.prototype;
+  dart.addTypeTests(bound_multipart_stream._MimeMultipart);
+  dart.addTypeCaches(bound_multipart_stream._MimeMultipart);
+  dart.setMethodSignature(bound_multipart_stream._MimeMultipart, () => ({
+    __proto__: dart.getMethods(bound_multipart_stream._MimeMultipart.__proto__),
+    listen: dart.fnType(dart.legacy(async.StreamSubscription$(dart.legacy(core.List$(dart.legacy(core.int))))), [dart.legacy(dart.fnType(dart.void, [dart.legacy(core.List$(dart.legacy(core.int)))]))], {cancelOnError: dart.legacy(core.bool), onDone: dart.legacy(dart.fnType(dart.void, [])), onError: dart.legacy(core.Function)}, {})
+  }));
+  dart.setLibraryUri(bound_multipart_stream._MimeMultipart, I[0]);
+  dart.setFieldSignature(bound_multipart_stream._MimeMultipart, () => ({
+    __proto__: dart.getFields(bound_multipart_stream._MimeMultipart.__proto__),
+    headers: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.String)))),
+    [_stream$]: dart.finalFieldType(dart.legacy(async.Stream$(dart.legacy(core.List$(dart.legacy(core.int))))))
+  }));
+  var _headerField = dart.privateName(bound_multipart_stream, "_headerField");
+  var _headerValue = dart.privateName(bound_multipart_stream, "_headerValue");
+  var _controllerState = dart.privateName(bound_multipart_stream, "_controllerState");
+  var _controller = dart.privateName(bound_multipart_stream, "_controller");
+  var _subscription = dart.privateName(bound_multipart_stream, "_subscription");
+  var _multipartController = dart.privateName(bound_multipart_stream, "_multipartController");
+  var _headers = dart.privateName(bound_multipart_stream, "_headers");
+  var _state = dart.privateName(bound_multipart_stream, "_state");
+  var _boundaryIndex = dart.privateName(bound_multipart_stream, "_boundaryIndex");
+  var _index = dart.privateName(bound_multipart_stream, "_index");
+  var _buffer = dart.privateName(bound_multipart_stream, "_buffer");
+  var _boundary$ = dart.privateName(bound_multipart_stream, "_boundary");
+  var _pauseStream = dart.privateName(bound_multipart_stream, "_pauseStream");
+  var _resumeStream = dart.privateName(bound_multipart_stream, "_resumeStream");
+  var _tryPropagateControllerState = dart.privateName(bound_multipart_stream, "_tryPropagateControllerState");
+  var _parse = dart.privateName(bound_multipart_stream, "_parse");
+  bound_multipart_stream.BoundMultipartStream = class BoundMultipartStream extends core.Object {
+    get stream() {
+      return this[_controller].stream;
+    }
+    [_resumeStream]() {
+      if (!(this[_controllerState] === 2)) dart.assertFailed(null, I[1], 148, 12, "_controllerState == _CONTROLLER_STATE_PAUSED");
+      this[_controllerState] = 1;
+      this[_tryPropagateControllerState]();
+    }
+    [_pauseStream]() {
+      this[_controllerState] = 2;
+      this[_tryPropagateControllerState]();
+    }
+    [_tryPropagateControllerState]() {
+      if (this[_multipartController] == null) {
+        switch (this[_controllerState]) {
+          case 1:
+          {
+            if (dart.test(this[_subscription].isPaused)) this[_subscription].resume();
+            break;
+          }
+          case 2:
+          {
+            if (!dart.test(this[_subscription].isPaused)) this[_subscription].pause();
+            break;
+          }
+          case 3:
+          {
+            this[_subscription].cancel();
+            break;
+          }
+          default:
+          {
+            dart.throw(new core.StateError.new("This code should never be reached."));
+          }
+        }
+      }
+    }
+    [_parse]() {
+      let boundaryPrefix = null;
+      boundaryPrefix = 0;
+      let contentStartIndex = null;
+      const reportData = () => {
+        if (dart.notNull(contentStartIndex) < 0) {
+          let contentLength = dart.notNull(boundaryPrefix) + dart.notNull(this[_index]) - dart.notNull(this[_boundaryIndex]);
+          if (contentLength <= dart.notNull(boundaryPrefix)) {
+            this[_multipartController].add(this[_boundary$][$sublist](0, contentLength));
+          } else {
+            this[_multipartController].add(this[_boundary$][$sublist](0, boundaryPrefix));
+            this[_multipartController].add(this[_buffer][$sublist](0, contentLength - dart.notNull(boundaryPrefix)));
+          }
+        } else {
+          let contentEndIndex = dart.notNull(this[_index]) - dart.notNull(this[_boundaryIndex]);
+          this[_multipartController].add(this[_buffer][$sublist](contentStartIndex, contentEndIndex));
+        }
+      };
+      dart.fn(reportData, T.VoidTovoid());
+      if (this[_state] === 10 && this[_boundaryIndex] === 0) {
+        contentStartIndex = 0;
+      } else {
+        contentStartIndex = null;
+      }
+      boundaryPrefix = this[_boundaryIndex];
+      while (dart.notNull(this[_index]) < dart.notNull(this[_buffer][$length]) && this[_state] !== 15 && this[_state] !== 14) {
+        let byte = null;
+        if (dart.notNull(this[_index]) < 0) {
+          byte = this[_boundary$][$_get](dart.notNull(boundaryPrefix) + dart.notNull(this[_index]));
+        } else {
+          byte = this[_buffer][$_get](this[_index]);
+        }
+        switch (this[_state]) {
+          case 0:
+          {
+            if (byte == this[_boundary$][$_get](this[_boundaryIndex])) {
+              this[_boundaryIndex] = dart.notNull(this[_boundaryIndex]) + 1;
+              if (this[_boundaryIndex] == this[_boundary$][$length]) {
+                this[_state] = 1;
+                this[_boundaryIndex] = 0;
+              }
+            } else {
+              this[_index] = dart.notNull(this[_index]) - dart.notNull(this[_boundaryIndex]);
+              this[_boundaryIndex] = 0;
+            }
+            break;
+          }
+          case 1:
+          {
+            if (byte === 13) {
+              this[_state] = 2;
+            } else if (byte === 45) {
+              this[_state] = 11;
+            } else {
+              bound_multipart_stream._expectWhitespace(byte);
+            }
+            break;
+          }
+          case 2:
+          {
+            bound_multipart_stream._expectByteValue(byte, 10);
+            if (this[_multipartController] != null) {
+              this[_multipartController].close();
+              this[_multipartController] = null;
+              this[_tryPropagateControllerState]();
+            }
+            this[_state] = 3;
+            break;
+          }
+          case 3:
+          {
+            this[_headers] = new (T.IdentityMapOfStringL$StringL()).new();
+            if (byte === 13) {
+              this[_state] = 9;
+            } else {
+              this[_headerField][$add](bound_multipart_stream._toLowerCase(byte));
+              this[_state] = 4;
+            }
+            break;
+          }
+          case 4:
+          {
+            if (byte === 58) {
+              this[_state] = 5;
+            } else {
+              if (!dart.test(bound_multipart_stream._isTokenChar(byte))) {
+                dart.throw(new mime_shared.MimeMultipartException.new("Invalid header field name"));
+              }
+              this[_headerField][$add](bound_multipart_stream._toLowerCase(byte));
+            }
+            break;
+          }
+          case 5:
+          {
+            if (byte === 13) {
+              this[_state] = 7;
+            } else if (byte !== 32 && byte !== 9) {
+              this[_headerValue][$add](byte);
+              this[_state] = 6;
+            }
+            break;
+          }
+          case 6:
+          {
+            if (byte === 13) {
+              this[_state] = 7;
+            } else {
+              this[_headerValue][$add](byte);
+            }
+            break;
+          }
+          case 7:
+          {
+            bound_multipart_stream._expectByteValue(byte, 10);
+            this[_state] = 8;
+            break;
+          }
+          case 8:
+          {
+            if (byte === 32 || byte === 9) {
+              this[_state] = 5;
+            } else {
+              let headerField = null;
+              headerField = convert.utf8.decode(this[_headerField]);
+              let headerValue = null;
+              headerValue = convert.utf8.decode(this[_headerValue]);
+              this[_headers][$_set](headerField[$toLowerCase](), headerValue);
+              this[_headerField][$clear]();
+              this[_headerValue][$clear]();
+              if (byte === 13) {
+                this[_state] = 9;
+              } else {
+                this[_headerField][$add](bound_multipart_stream._toLowerCase(byte));
+                this[_state] = 4;
+              }
+            }
+            break;
+          }
+          case 9:
+          {
+            bound_multipart_stream._expectByteValue(byte, 10);
+            this[_multipartController] = T.StreamControllerOfListLOfintL().new({sync: true, onListen: dart.fn(() => {
+                if (dart.test(this[_subscription].isPaused)) this[_subscription].resume();
+              }, T.VoidToNull()), onPause: dart.bind(this[_subscription], 'pause'), onResume: dart.bind(this[_subscription], 'resume')});
+            this[_controller].add(new bound_multipart_stream._MimeMultipart.new(this[_headers], this[_multipartController].stream));
+            this[_headers] = null;
+            this[_state] = 10;
+            contentStartIndex = dart.notNull(this[_index]) + 1;
+            break;
+          }
+          case 10:
+          {
+            if (byte == this[_boundary$][$_get](this[_boundaryIndex])) {
+              this[_boundaryIndex] = dart.notNull(this[_boundaryIndex]) + 1;
+              if (this[_boundaryIndex] == this[_boundary$][$length]) {
+                if (contentStartIndex != null) {
+                  this[_index] = dart.notNull(this[_index]) + 1;
+                  reportData();
+                  this[_index] = dart.notNull(this[_index]) - 1;
+                }
+                this[_multipartController].close();
+                this[_multipartController] = null;
+                this[_tryPropagateControllerState]();
+                this[_boundaryIndex] = 0;
+                this[_state] = 1;
+              }
+            } else {
+              this[_index] = dart.notNull(this[_index]) - dart.notNull(this[_boundaryIndex]);
+              contentStartIndex == null ? contentStartIndex = this[_index] : null;
+              this[_boundaryIndex] = 0;
+            }
+            break;
+          }
+          case 11:
+          {
+            bound_multipart_stream._expectByteValue(byte, 45);
+            this[_state] = 12;
+            break;
+          }
+          case 12:
+          {
+            if (byte === 13) {
+              this[_state] = 13;
+            } else {
+              bound_multipart_stream._expectWhitespace(byte);
+            }
+            break;
+          }
+          case 13:
+          {
+            bound_multipart_stream._expectByteValue(byte, 10);
+            if (this[_multipartController] != null) {
+              this[_multipartController].close();
+              this[_multipartController] = null;
+              this[_tryPropagateControllerState]();
+            }
+            this[_state] = 14;
+            break;
+          }
+          default:
+          {
+            if (!false) dart.assertFailed(null, I[1], 389, 18, "false");
+            break;
+          }
+        }
+        this[_index] = dart.notNull(this[_index]) + 1;
+      }
+      if (this[_state] === 10 && contentStartIndex != null) {
+        reportData();
+      }
+      if (this[_index] == this[_buffer][$length]) {
+        this[_buffer] = null;
+        this[_index] = null;
+        this[_subscription].resume();
+      }
+    }
+  };
+  (bound_multipart_stream.BoundMultipartStream.new = function(_boundary, stream) {
+    this[_headerField] = T.JSArrayOfintL().of([]);
+    this[_headerValue] = T.JSArrayOfintL().of([]);
+    this[_controllerState] = 0;
+    this[_controller] = null;
+    this[_subscription] = null;
+    this[_multipartController] = null;
+    this[_headers] = null;
+    this[_state] = 0;
+    this[_boundaryIndex] = 2;
+    this[_index] = null;
+    this[_buffer] = null;
+    this[_boundary$] = _boundary;
+    this[_controller] = T.StreamControllerOfMimeMultipartL().new({sync: true, onPause: dart.bind(this, _pauseStream), onResume: dart.bind(this, _resumeStream), onCancel: dart.fn(() => {
+        this[_controllerState] = 3;
+        this[_tryPropagateControllerState]();
+      }, T.VoidToNull()), onListen: dart.fn(() => {
+        this[_controllerState] = 1;
+        this[_subscription] = stream.listen(dart.fn(data => {
+          if (!(this[_buffer] == null)) dart.assertFailed(null, I[1], 132, 20, "_buffer == null");
+          this[_subscription].pause();
+          this[_buffer] = data;
+          this[_index] = 0;
+          this[_parse]();
+        }, T.ListLOfintLToNull()), {onDone: dart.fn(() => {
+            if (this[_state] !== 14) {
+              this[_controller].addError(new mime_shared.MimeMultipartException.new("Bad multipart ending"));
+            }
+            this[_controller].close();
+          }, T.VoidToNull()), onError: dart.bind(this[_controller], 'addError')});
+      }, T.VoidToNull())});
+  }).prototype = bound_multipart_stream.BoundMultipartStream.prototype;
+  dart.addTypeTests(bound_multipart_stream.BoundMultipartStream);
+  dart.addTypeCaches(bound_multipart_stream.BoundMultipartStream);
+  dart.setMethodSignature(bound_multipart_stream.BoundMultipartStream, () => ({
+    __proto__: dart.getMethods(bound_multipart_stream.BoundMultipartStream.__proto__),
+    [_resumeStream]: dart.fnType(dart.void, []),
+    [_pauseStream]: dart.fnType(dart.void, []),
+    [_tryPropagateControllerState]: dart.fnType(dart.void, []),
+    [_parse]: dart.fnType(dart.void, [])
+  }));
+  dart.setGetterSignature(bound_multipart_stream.BoundMultipartStream, () => ({
+    __proto__: dart.getGetters(bound_multipart_stream.BoundMultipartStream.__proto__),
+    stream: dart.legacy(async.Stream$(dart.legacy(mime_shared.MimeMultipart)))
+  }));
+  dart.setLibraryUri(bound_multipart_stream.BoundMultipartStream, I[0]);
+  dart.setFieldSignature(bound_multipart_stream.BoundMultipartStream, () => ({
+    __proto__: dart.getFields(bound_multipart_stream.BoundMultipartStream.__proto__),
+    [_boundary$]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.int)))),
+    [_headerField]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.int)))),
+    [_headerValue]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.int)))),
+    [_controllerState]: dart.fieldType(dart.legacy(core.int)),
+    [_controller]: dart.fieldType(dart.legacy(async.StreamController$(dart.legacy(mime_shared.MimeMultipart)))),
+    [_subscription]: dart.fieldType(dart.legacy(async.StreamSubscription)),
+    [_multipartController]: dart.fieldType(dart.legacy(async.StreamController$(dart.legacy(core.List$(dart.legacy(core.int)))))),
+    [_headers]: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.String)))),
+    [_state]: dart.fieldType(dart.legacy(core.int)),
+    [_boundaryIndex]: dart.fieldType(dart.legacy(core.int)),
+    [_index]: dart.fieldType(dart.legacy(core.int)),
+    [_buffer]: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.int))))
+  }));
+  dart.defineLazy(bound_multipart_stream.BoundMultipartStream, {
+    /*bound_multipart_stream.BoundMultipartStream._START*/get _START() {
+      return 0;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._BOUNDARY_ENDING*/get _BOUNDARY_ENDING() {
+      return 1;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._BOUNDARY_END*/get _BOUNDARY_END() {
+      return 2;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._HEADER_START*/get _HEADER_START() {
+      return 3;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._HEADER_FIELD*/get _HEADER_FIELD() {
+      return 4;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._HEADER_VALUE_START*/get _HEADER_VALUE_START() {
+      return 5;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._HEADER_VALUE*/get _HEADER_VALUE() {
+      return 6;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._HEADER_VALUE_FOLDING_OR_ENDING*/get _HEADER_VALUE_FOLDING_OR_ENDING() {
+      return 7;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._HEADER_VALUE_FOLD_OR_END*/get _HEADER_VALUE_FOLD_OR_END() {
+      return 8;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._HEADER_ENDING*/get _HEADER_ENDING() {
+      return 9;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._CONTENT*/get _CONTENT() {
+      return 10;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._LAST_BOUNDARY_DASH2*/get _LAST_BOUNDARY_DASH2() {
+      return 11;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._LAST_BOUNDARY_ENDING*/get _LAST_BOUNDARY_ENDING() {
+      return 12;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._LAST_BOUNDARY_END*/get _LAST_BOUNDARY_END() {
+      return 13;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._DONE*/get _DONE() {
+      return 14;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._FAIL*/get _FAIL() {
+      return 15;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._CONTROLLER_STATE_IDLE*/get _CONTROLLER_STATE_IDLE() {
+      return 0;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._CONTROLLER_STATE_ACTIVE*/get _CONTROLLER_STATE_ACTIVE() {
+      return 1;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._CONTROLLER_STATE_PAUSED*/get _CONTROLLER_STATE_PAUSED() {
+      return 2;
+    },
+    /*bound_multipart_stream.BoundMultipartStream._CONTROLLER_STATE_CANCELED*/get _CONTROLLER_STATE_CANCELED() {
+      return 3;
+    }
+  }, true);
+  bound_multipart_stream._isTokenChar = function _isTokenChar(byte) {
+    return dart.notNull(byte) > 31 && dart.notNull(byte) < 128 && !dart.test(bound_multipart_stream._SEPARATORS[$contains](byte));
+  };
+  bound_multipart_stream._toLowerCase = function _toLowerCase(byte) {
+    return 65 <= dart.notNull(byte) && dart.notNull(byte) <= 90 ? dart.notNull(byte) + 32 : byte;
+  };
+  bound_multipart_stream._expectByteValue = function _expectByteValue(val1, val2) {
+    if (val1 != val2) {
+      dart.throw(new mime_shared.MimeMultipartException.new("Failed to parse multipart mime 1"));
+    }
+  };
+  bound_multipart_stream._expectWhitespace = function _expectWhitespace(byte) {
+    if (byte !== 32 && byte !== 9) {
+      dart.throw(new mime_shared.MimeMultipartException.new("Failed to parse multipart mime 2"));
+    }
+  };
+  dart.defineLazy(bound_multipart_stream, {
+    /*bound_multipart_stream._SEPARATORS*/get _SEPARATORS() {
+      return C[0] || CT.C0;
+    }
+  }, true);
+  dart.trackLibraries("packages/sevr/src/mime/mime_src/bound_multipart_stream.dart", {
+    "package:sevr/src/mime/mime_src/bound_multipart_stream.dart": bound_multipart_stream
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["bound_multipart_stream.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/sevr/src/mime/mime_src/bound_multipart_stream.dart.lib.js"}');
+  // Exports:
+  return {
+    src__mime__mime_src__bound_multipart_stream: bound_multipart_stream
+  };
+}));
+
+//# sourceMappingURL=bound_multipart_stream.dart.lib.js.map

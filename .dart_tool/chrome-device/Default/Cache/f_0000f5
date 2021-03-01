@@ -1,0 +1,636 @@
+define(['dart_sdk', 'packages/sevr/src/serv_router/serv_router.dart', 'packages/sevr/src/serv_request_response_wrapper/serv_request_wrapper.dart', 'packages/sevr/src/serv_content_types/serv_content_types.dart', 'packages/sevr/src/mime/mime_src/mime_shared.dart', 'packages/sevr/src/mime/mime_src/mime_multipart_transformer.dart', 'packages/sevr/src/http_server/src/http_multipart_form_data_impl.dart', 'packages/pedantic/pedantic.dart', 'packages/sevr/src/build_data.dart'], (function load__packages__sevr__src__sevr_base_dart(dart_sdk, packages__sevr__src__serv_router__serv_router$46dart, packages__sevr__src__serv_request_response_wrapper__serv_request_wrapper$46dart, packages__sevr__src__serv_content_types__serv_content_types$46dart, packages__sevr__src__mime__mime_src__mime_shared$46dart, packages__sevr__src__mime__mime_src__mime_multipart_transformer$46dart, packages__sevr__src__http_server__src__http_multipart_form_data_impl$46dart, packages__pedantic__pedantic$46dart, packages__sevr__src__build_data$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
+  const _http = dart_sdk._http;
+  const io = dart_sdk.io;
+  const _js_helper = dart_sdk._js_helper;
+  const typed_data = dart_sdk.typed_data;
+  const convert = dart_sdk.convert;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const serv_router = packages__sevr__src__serv_router__serv_router$46dart.src__serv_router__serv_router;
+  const serv_request_wrapper = packages__sevr__src__serv_request_response_wrapper__serv_request_wrapper$46dart.src__serv_request_response_wrapper__serv_request_wrapper;
+  const serv_content_types = packages__sevr__src__serv_content_types__serv_content_types$46dart.src__serv_content_types__serv_content_types;
+  const mime_shared = packages__sevr__src__mime__mime_src__mime_shared$46dart.src__mime__mime_src__mime_shared;
+  const mime_multipart_transformer = packages__sevr__src__mime__mime_src__mime_multipart_transformer$46dart.src__mime__mime_src__mime_multipart_transformer;
+  const http_multipart_form_data = packages__sevr__src__http_server__src__http_multipart_form_data_impl$46dart.src__http_server__src__http_multipart_form_data;
+  const pedantic = packages__pedantic__pedantic$46dart.pedantic;
+  const build_data = packages__sevr__src__build_data$46dart.src__build_data;
+  var sevr_base = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var $join = dartx.join;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $addAll = dartx.addAll;
+  var $cast = dartx.cast;
+  var $_get = dartx._get;
+  var $containsKey = dartx.containsKey;
+  var $contains = dartx.contains;
+  var $add = dartx.add;
+  var $_set = dartx._set;
+  var $endsWith = dartx.endsWith;
+  var $replaceRange = dartx.replaceRange;
+  var $keys = dartx.keys;
+  var $split = dartx.split;
+  var $length = dartx.length;
+  var $toLowerCase = dartx.toLowerCase;
+  var $startsWith = dartx.startsWith;
+  var $replaceFirst = dartx.replaceFirst;
+  var $firstWhere = dartx.firstWhere;
+  var $toList = dartx.toList;
+  var $map = dartx.map;
+  var $runtimeType = dartx.runtimeType;
+  var $toUpperCase = dartx.toUpperCase;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    SevrDirL: () => (T.SevrDirL = dart.constFn(dart.legacy(sevr_base.SevrDir)))(),
+    JSArrayOfSevrDirL: () => (T.JSArrayOfSevrDirL = dart.constFn(_interceptors.JSArray$(T.SevrDirL())))(),
+    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
+    FutureLOfNull: () => (T.FutureLOfNull = dart.constFn(dart.legacy(T.FutureOfNull())))(),
+    VoidToFutureLOfNull: () => (T.VoidToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [])))(),
+    ObjectL: () => (T.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
+    StackTraceL: () => (T.StackTraceL = dart.constFn(dart.legacy(core.StackTrace)))(),
+    ObjectLAndStackTraceLToNull: () => (T.ObjectLAndStackTraceLToNull = dart.constFn(dart.fnType(core.Null, [T.ObjectL(), T.StackTraceL()])))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    JSArrayOfintL: () => (T.JSArrayOfintL = dart.constFn(_interceptors.JSArray$(T.intL())))(),
+    Uint8ListL: () => (T.Uint8ListL = dart.constFn(dart.legacy(typed_data.Uint8List)))(),
+    Uint8ListLToNull: () => (T.Uint8ListLToNull = dart.constFn(dart.fnType(core.Null, [T.Uint8ListL()])))(),
+    IterableOfint: () => (T.IterableOfint = dart.constFn(core.Iterable$(core.int)))(),
+    MapL: () => (T.MapL = dart.constFn(dart.legacy(core.Map)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    MimeMultipartL: () => (T.MimeMultipartL = dart.constFn(dart.legacy(mime_shared.MimeMultipart)))(),
+    FutureL: () => (T.FutureL = dart.constFn(dart.legacy(async.Future)))(),
+    dynamicToFutureL: () => (T.dynamicToFutureL = dart.constFn(dart.fnType(T.FutureL(), [dart.dynamic])))(),
+    MimeMultipartLToFutureLOfNull: () => (T.MimeMultipartLToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [T.MimeMultipartL()])))(),
+    IdentityMapOfStringL$dynamic: () => (T.IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), dart.dynamic)))(),
+    ListL: () => (T.ListL = dart.constFn(dart.legacy(core.List)))(),
+    MapOfStringL$ListL: () => (T.MapOfStringL$ListL = dart.constFn(core.Map$(T.StringL(), T.ListL())))(),
+    MapLOfStringL$ListL: () => (T.MapLOfStringL$ListL = dart.constFn(dart.legacy(T.MapOfStringL$ListL())))(),
+    IdentityMapOfStringL$StringL: () => (T.IdentityMapOfStringL$StringL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.StringL())))(),
+    ServRequestL: () => (T.ServRequestL = dart.constFn(dart.legacy(serv_request_wrapper.ServRequest)))(),
+    ServResponseL: () => (T.ServResponseL = dart.constFn(dart.legacy(serv_request_wrapper.ServResponse)))(),
+    ServRequestLAndServResponseLTodynamic: () => (T.ServRequestLAndServResponseLTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.ServRequestL(), T.ServResponseL()])))(),
+    ServRequestLAndServResponseLToLdynamic: () => (T.ServRequestLAndServResponseLToLdynamic = dart.constFn(dart.legacy(T.ServRequestLAndServResponseLTodynamic())))(),
+    ListOfServRequestLAndServResponseLToLdynamic: () => (T.ListOfServRequestLAndServResponseLToLdynamic = dart.constFn(core.List$(T.ServRequestLAndServResponseLToLdynamic())))(),
+    ListLOfServRequestLAndServResponseLToLdynamic: () => (T.ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(dart.legacy(T.ListOfServRequestLAndServResponseLToLdynamic())))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    StringLToboolL: () => (T.StringLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.StringL()])))(),
+    RouterL: () => (T.RouterL = dart.constFn(dart.legacy(serv_router.Router)))(),
+    CORSL: () => (T.CORSL = dart.constFn(dart.legacy(sevr_base.CORS)))(),
+    MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic: () => (T.MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(core.MapEntry$(T.StringL(), T.ListLOfServRequestLAndServResponseLToLdynamic())))(),
+    ServRequestLAndServResponseLToServResponseL: () => (T.ServRequestLAndServResponseLToServResponseL = dart.constFn(dart.fnType(T.ServResponseL(), [T.ServRequestL(), T.ServResponseL()])))(),
+    JSArrayOfServRequestLAndServResponseLToLdynamic: () => (T.JSArrayOfServRequestLAndServResponseLToLdynamic = dart.constFn(_interceptors.JSArray$(T.ServRequestLAndServResponseLToLdynamic())))(),
+    MapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic: () => (T.MapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(dart.legacy(T.MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic())))(),
+    StringLAndListLOfServRequestLAndServResponseLToLdynamicToMapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic: () => (T.StringLAndListLOfServRequestLAndServResponseLToLdynamicToMapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(dart.fnType(T.MapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic(), [T.StringL(), T.ListLOfServRequestLAndServResponseLToLdynamic()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: serv_content_types.ServContentTypeEnum.prototype,
+        [_name]: "ServContentTypeEnum.ApplicationJson",
+        index: 5
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: serv_content_types.ServContentTypeEnum.prototype,
+        [_name]: "ServContentTypeEnum.MultipartFormData",
+        index: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: serv_content_types.ServContentTypeEnum.prototype,
+        [_name]: "ServContentTypeEnum.ApplicationFormUrlEncoded",
+        index: 1
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: serv_content_types.ServContentTypeEnum.prototype,
+        [_name]: "ServContentTypeEnum.TextHtml",
+        index: 3
+      });
+    }
+  }, false);
+  var C = Array(4).fill(void 0);
+  var I = ["package:sevr/src/sevr_base.dart"];
+  var messageReturn = dart.privateName(sevr_base, "Sevr.messageReturn");
+  var router = dart.privateName(sevr_base, "Sevr.router");
+  var port = dart.privateName(sevr_base, "Sevr.port");
+  var host = dart.privateName(sevr_base, "Sevr.host");
+  var servDirs = dart.privateName(sevr_base, "Sevr.servDirs");
+  var server = dart.privateName(sevr_base, "Sevr.server");
+  var cors = dart.privateName(sevr_base, "Sevr.cors");
+  var _handleRequests = dart.privateName(sevr_base, "_handleRequests");
+  var _name = dart.privateName(serv_content_types, "_name");
+  var _consumeOpenFileStreams = dart.privateName(sevr_base, "_consumeOpenFileStreams");
+  sevr_base.Sevr = class Sevr extends core.Object {
+    get messageReturn() {
+      return this[messageReturn];
+    }
+    set messageReturn(value) {
+      this[messageReturn] = value;
+    }
+    get router() {
+      return this[router];
+    }
+    set router(value) {
+      super.router = value;
+    }
+    get port() {
+      return this[port];
+    }
+    set port(value) {
+      this[port] = value;
+    }
+    get host() {
+      return this[host];
+    }
+    set host(value) {
+      this[host] = value;
+    }
+    get servDirs() {
+      return this[servDirs];
+    }
+    set servDirs(value) {
+      this[servDirs] = value;
+    }
+    get server() {
+      return this[server];
+    }
+    set server(value) {
+      this[server] = value;
+    }
+    get cors() {
+      return this[cors];
+    }
+    set cors(value) {
+      this[cors] = value;
+    }
+    static static(dir) {
+      return new sevr_base.SevrDir.new(dir);
+    }
+    static new() {
+      return sevr_base.Sevr._serv;
+    }
+    close() {
+      return async.async(dart.void, (function* close() {
+        if (this.server != null) {
+          yield this.server.close({force: true});
+        }
+      }).bind(this));
+    }
+    restart() {
+      return async.async(dart.void, (function* restart() {
+        core.print("Restarting server");
+        yield this.close();
+        this.listen(this.port);
+        core.print("Succesfully restarted Sevr");
+      }).bind(this));
+    }
+    listen(port, opts) {
+      let callback = opts && 'callback' in opts ? opts.callback : null;
+      let context = opts && 'context' in opts ? opts.context : null;
+      let messageReturn = opts && 'messageReturn' in opts ? opts.messageReturn : null;
+      let address = opts && 'address' in opts ? opts.address : null;
+      let errorHandler = opts && 'errorHandler' in opts ? opts.errorHandler : null;
+      return async.async(dart.dynamic, (function* listen() {
+        let t0;
+        yield async.runZoned(T.FutureLOfNull(), dart.fn(() => async.async(core.Null, (function*() {
+          let t0;
+          this.messageReturn = messageReturn;
+          if (callback != null) {
+            dart.dcall(callback, []);
+          }
+          if (context == null) {
+            this.server = (yield _http.HttpServer.bind((t0 = address, t0 == null ? io.InternetAddress.loopbackIPv4 : t0), port));
+          } else {
+            this.server = (yield _http.HttpServer.bindSecure(io.InternetAddress.loopbackIPv4, port, context));
+          }
+          this.port = port;
+          this.host = io.InternetAddress.loopbackIPv4;
+          let iter = async.StreamIterator.new(this.server);
+          try {
+            while (yield iter.moveNext()) {
+              let request = iter.current;
+              {
+                sevr_base.Sevr._serv.call(request);
+              }
+            }
+          } finally {
+            yield iter.cancel();
+          }
+        }).bind(this)), T.VoidToFutureLOfNull()), {onError: (t0 = errorHandler, t0 == null ? dart.fn((e, s) => {
+            core.print(e);
+            core.print(s);
+            dart.throw(e);
+          }, T.ObjectLAndStackTraceLToNull()) : t0)});
+      }).bind(this));
+    }
+    call(request) {
+      return async.async(dart.dynamic, (function* call() {
+        let req = new serv_request_wrapper.ServRequest.new(request);
+        let res = new serv_request_wrapper.ServResponse.new(request);
+        let contentType = dart.toString(req.headers.contentType);
+        let jsonData = new _js_helper.LinkedMap.new();
+        let downloadData = T.JSArrayOfintL().of([]);
+        if (this.cors != null) {
+          res.set("Access-Control-Allow-Origin", this.cors.allowed_origins[$join](" | "));
+          res.set("Access-Control-Allow-Headers", "Content-Type");
+        }
+        switch (serv_content_types.ServContentType(contentType)) {
+          case C[0] || CT.C0:
+          {
+            let _sub = null;
+            _sub = request.listen(dart.fn(onData => {
+              dart.dsend(downloadData, 'addAll', [onData]);
+            }, T.Uint8ListLToNull()), {onDone: dart.fn(() => {
+                try {
+                  let s = core.String.fromCharCodes(T.IterableOfint().as(downloadData));
+                  if (s[$isNotEmpty]) {
+                    jsonData[$addAll](T.MapL().as(convert.json.decode(s)));
+                    req.tempBody = jsonData[$cast](T.StringL(), dart.dynamic);
+                  }
+                  _sub.cancel();
+                } catch (e$) {
+                  let e = dart.getThrown(e$);
+                  let stacktrace = dart.stackTrace(e$);
+                  req.currentExceptionList = [e, stacktrace];
+                  dart.rethrow(e$);
+                }
+                this[_handleRequests](req, res, request.method);
+              }, T.VoidToNull())});
+            break;
+          }
+          case C[1] || CT.C1:
+          {
+            let boundary = request.headers.contentType.parameters[$_get]("boundary");
+            let fileKeys = [];
+            request.transform(T.MimeMultipartL(), new mime_multipart_transformer.MimeMultipartTransformer.new(boundary)).listen(dart.fn(onData => async.async(core.Null, function*() {
+              let formDataObject = http_multipart_form_data.HttpMultipartFormData.parse(onData);
+              if (dart.test(formDataObject.isBinary) || dart.test(formDataObject.contentDisposition.parameters[$containsKey]("filename"))) {
+                core.print("isBinary");
+                core.print(dart.str(formDataObject.contentDisposition.parameters));
+                if (!dart.test(fileKeys[$contains](formDataObject.contentDisposition.parameters[$_get]("name")))) {
+                  fileKeys[$add](formDataObject.contentDisposition.parameters[$_get]("name"));
+                  let _fileStreamController = async.StreamController.new();
+                  let requestFileObject = new serv_request_wrapper.SevrFile.new(formDataObject.contentDisposition.parameters[$_get]("name"), formDataObject.contentDisposition.parameters[$_get]("filename"), _fileStreamController);
+                  req.files[$_set](formDataObject.contentDisposition.parameters[$_get]("name"), requestFileObject);
+                }
+                let _fcont = null;
+                _fcont = req.files[$_get](formDataObject.contentDisposition.parameters[$_get]("name")).streamController;
+                pedantic.unawaited(_fcont.sink.addStream(formDataObject).then(dart.void, dart.fn(c => async.async(dart.dynamic, function*() {
+                  return _fcont.close();
+                }), T.dynamicToFutureL())));
+              } else {
+                jsonData[$addAll](new _js_helper.LinkedMap.from([formDataObject.contentDisposition.parameters[$_get]("name"), (yield formDataObject.join())]));
+                req.tempBody = jsonData;
+              }
+            }), T.MimeMultipartLToFutureLOfNull()), {onDone: dart.fn(() => {
+              }, T.VoidToNull())});
+            T.FutureOfNull().delayed(core.Duration.zero, dart.fn(() => {
+              this[_handleRequests](req, res, request.method);
+            }, T.VoidToNull()));
+            break;
+          }
+          case C[2] || CT.C2:
+          {
+            let body = (yield request.transform(dart.dynamic, convert.utf8.decoder.cast(T.Uint8ListL(), dart.dynamic)).join());
+            let result = null;
+            result = new (T.IdentityMapOfStringL$dynamic()).new();
+            build_data.buildMapFromUri(result, body);
+            req.tempBody = result;
+            T.FutureOfNull().delayed(core.Duration.zero, dart.fn(() => {
+              this[_handleRequests](req, res, request.method);
+            }, T.VoidToNull()));
+            break;
+          }
+          case C[3] || CT.C3:
+          {
+            request.listen(dart.fn(onData => {
+              core.print(core.String.fromCharCodes(onData));
+            }, T.Uint8ListLToNull()));
+            T.FutureOfNull().delayed(core.Duration.zero, dart.fn(() => {
+              this[_handleRequests](req, res, request.method);
+            }, T.VoidToNull()));
+            break;
+          }
+          default:
+          {
+            T.FutureOfNull().delayed(core.Duration.zero, dart.fn(() => {
+              this[_handleRequests](req, res, request.method);
+            }, T.VoidToNull()));
+            break;
+          }
+        }
+      }).bind(this));
+    }
+    get getAllRoutes() {
+      return new _js_helper.LinkedMap.from(["GET", this.router.gets, "POST", this.router.posts, "PATCH", this.router.patchs, "PUT", this.router.puts, "DELETE", this.router.deletes, "COPY", this.router.copys, "HEAD", this.router.heads, "OPTIONS", this.router.optionss, "LINK", this.router.links, "UNLINK", this.router.unlinks, "PURGE", this.router.purges, "LOCK", this.router.locks, "UNLOCK", this.router.unlocks, "PROPFIND", this.router.propfinds, "VIEW", this.router.views]);
+    }
+    get(route, callbacks) {
+      this.router.gets[$_set](route, callbacks);
+    }
+    post(route, callbacks) {
+      this.router.posts[$_set](route, callbacks);
+    }
+    patch(route, callbacks) {
+      this.router.patchs[$_set](route, callbacks);
+    }
+    put(route, callbacks) {
+      this.router.puts[$_set](route, callbacks);
+    }
+    delete(route, callbacks) {
+      this.router.deletes[$_set](route, callbacks);
+    }
+    copy(route, callbacks) {
+      this.router.copys[$_set](route, callbacks);
+    }
+    head(route, callbacks) {
+      this.router.heads[$_set](route, callbacks);
+    }
+    options(route, callbacks) {
+      this.router.optionss[$_set](route, callbacks);
+    }
+    link(route, callbacks) {
+      this.router.links[$_set](route, callbacks);
+    }
+    unlink(route, callbacks) {
+      this.router.unlinks[$_set](route, callbacks);
+    }
+    purge(route, callbacks) {
+      this.router.purges[$_set](route, callbacks);
+    }
+    lock(route, callbacks) {
+      this.router.locks[$_set](route, callbacks);
+    }
+    unlock(route, callbacks) {
+      this.router.unlocks[$_set](route, callbacks);
+    }
+    propfind(route, callbacks) {
+      this.router.propfinds[$_set](route, callbacks);
+    }
+    view(route, callbacks) {
+      this.router.views[$_set](route, callbacks);
+    }
+    [_handleRequests](req, res, reqType) {
+      return async.async(dart.void, (function* _handleRequests() {
+        let t1;
+        let reqTypeMap = T.MapL().as(this.getAllRoutes[$_get](reqType));
+        let path = req.path[$endsWith]("/") ? req.path[$replaceRange](req.path.length - 1, req.path.length, "") : req.path;
+        let mapRes = this.getRouteParams(path, T.MapLOfStringL$ListL().as(reqTypeMap));
+        let params = T.MapL().as(dart.test(mapRes[$containsKey]("params")) ? mapRes[$_get]("params") : null);
+        req.params = (t1 = params[$cast](T.StringL(), T.StringL()), t1 == null ? new (T.IdentityMapOfStringL$StringL()).new() : t1);
+        let matched = T.StringL().as(mapRes[$_get]("route"));
+        let selectedCallbacks = null;
+        if (dart.test(reqTypeMap[$containsKey](path))) {
+          selectedCallbacks = T.ListLOfServRequestLAndServResponseLToLdynamic().as(reqTypeMap[$_get](path));
+        } else if (dart.test(reqTypeMap[$containsKey](dart.notNull(path) + "/"))) {
+          selectedCallbacks = T.ListLOfServRequestLAndServResponseLToLdynamic().as(reqTypeMap[$_get](dart.notNull(path) + "/"));
+        } else if (matched != null) {
+          selectedCallbacks = T.ListLOfServRequestLAndServResponseLToLdynamic().as(reqTypeMap[$_get](matched));
+        } else {
+          selectedCallbacks = null;
+        }
+        if (selectedCallbacks != null && dart.test(selectedCallbacks[$isNotEmpty])) {
+          for (let func of selectedCallbacks) {
+            let result = (yield func(req, res));
+            if (T.ServResponseL().is(result)) {
+              yield this[_consumeOpenFileStreams](req);
+              yield res.close();
+              break;
+            }
+          }
+        } else {
+          yield this[_consumeOpenFileStreams](req);
+          for (let directory of this.servDirs) {
+            let filePath = dart.str(directory.dir.path) + dart.str(req.path);
+            if (dart.test(yield io.File.new(filePath).exists())) {
+              (yield res.status(200).sendFile(filePath)).close();
+              return;
+            }
+          }
+          res.status(404).json(new _js_helper.LinkedMap.from(["error", "method not found"])).close();
+        }
+      }).bind(this));
+    }
+    getQuery(route) {
+      let uri = core.Uri.tryParse(route);
+      uri.queryParameters;
+    }
+    getRouteParams(route, query) {
+      let compareMap = null;
+      compareMap = new (T.IdentityMapOfStringL$dynamic()).from(["params", new _js_helper.LinkedMap.new(), "route", null]);
+      let matched = null;
+      matched = query[$keys][$firstWhere](dart.fn(key => {
+        let routeArr = null;
+        routeArr = route[$split]("/");
+        let keyArr = null;
+        keyArr = key[$split]("/");
+        if (routeArr[$length] != keyArr[$length]) return false;
+        for (let i = 0; i < dart.notNull(routeArr[$length]); i = i + 1) {
+          if (routeArr[$_get](i)[$toLowerCase]() === keyArr[$_get](i)[$toLowerCase]() || keyArr[$_get](i)[$toLowerCase]()[$startsWith](":")) {
+            if (keyArr[$_get](i)[$toLowerCase]()[$startsWith](":")) {
+              dart.dsend(compareMap[$_get]("params"), '_set', [keyArr[$_get](i)[$replaceFirst](":", ""), routeArr[$_get](i)]);
+            }
+          } else {
+            return false;
+          }
+        }
+        return true;
+      }, T.StringLToboolL()), {orElse: dart.fn(() => null, T.VoidToNull())});
+      compareMap[$_set]("route", matched);
+      return compareMap;
+    }
+    [_consumeOpenFileStreams](req) {
+      return async.async(dart.void, function* _consumeOpenFileStreams() {
+        if (dart.test(req.files[$isNotEmpty])) {
+          for (let i = 0; i < dart.notNull(req.files[$keys][$length]); i = i + 1) {
+            let fileC = null;
+            fileC = req.files[$_get](req.files[$keys][$toList]()[$_get](i));
+            if (!dart.test(fileC.streamController.isClosed)) {
+              let iter = async.StreamIterator.new(fileC.streamController.stream);
+              try {
+                while (yield iter.moveNext()) {
+                  let data = iter.current;
+                  {
+                  }
+                }
+              } finally {
+                yield iter.cancel();
+              }
+            }
+          }
+        }
+        return;
+      });
+    }
+    use(obj) {
+      switch (dart.runtimeType(obj)) {
+        case dart.wrapType(sevr_base.SevrDir):
+        {
+          this.servDirs[$add](T.SevrDirL().as(obj));
+          break;
+        }
+        case dart.wrapType(serv_router.Router):
+        {
+          this.router.join(T.RouterL().as(obj));
+          break;
+        }
+        case dart.wrapType(sevr_base.CORS):
+        {
+          this.cors = T.CORSL().as(obj);
+          this.router.optionss[$addAll](this.router.gets[$map](T.StringL(), T.ListLOfServRequestLAndServResponseLToLdynamic(), dart.fn((key, value) => new (T.MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).__(key, T.JSArrayOfServRequestLAndServResponseLToLdynamic().of([dart.fn((req, res) => res.status(200), T.ServRequestLAndServResponseLToServResponseL())])), T.StringLAndListLOfServRequestLAndServResponseLToLdynamicToMapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic())));
+          this.router.optionss[$addAll](this.router.posts[$map](T.StringL(), T.ListLOfServRequestLAndServResponseLToLdynamic(), dart.fn((key, value) => new (T.MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).__(key, T.JSArrayOfServRequestLAndServResponseLToLdynamic().of([dart.fn((req, res) => {
+              res.response.headers.removeAll("Content-Type");
+              res.response.headers.removeAll("x-content-type-options");
+              return res.status(200);
+            }, T.ServRequestLAndServResponseLToServResponseL())])), T.StringLAndListLOfServRequestLAndServResponseLToLdynamicToMapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic())));
+          break;
+        }
+        default:
+      }
+    }
+  };
+  (sevr_base.Sevr._internal = function() {
+    this[messageReturn] = "";
+    this[router] = new serv_router.Router.new();
+    this[port] = null;
+    this[host] = null;
+    this[servDirs] = T.JSArrayOfSevrDirL().of([]);
+    this[server] = null;
+    this[cors] = null;
+    ;
+  }).prototype = sevr_base.Sevr.prototype;
+  dart.addTypeTests(sevr_base.Sevr);
+  dart.addTypeCaches(sevr_base.Sevr);
+  dart.setMethodSignature(sevr_base.Sevr, () => ({
+    __proto__: dart.getMethods(sevr_base.Sevr.__proto__),
+    close: dart.fnType(dart.void, []),
+    restart: dart.fnType(dart.void, []),
+    listen: dart.fnType(dart.dynamic, [dart.legacy(core.int)], {address: dart.legacy(core.String), callback: dart.legacy(core.Function), context: dart.legacy(io.SecurityContext), errorHandler: dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.Object), dart.legacy(core.StackTrace)])), messageReturn: dart.legacy(core.String)}, {}),
+    call: dart.fnType(dart.dynamic, [dart.legacy(_http.HttpRequest)]),
+    get: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    post: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    patch: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    put: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    delete: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    copy: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    head: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    options: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    link: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    unlink: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    purge: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    lock: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    unlock: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    propfind: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    view: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    [_handleRequests]: dart.fnType(dart.void, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse), dart.legacy(core.String)]),
+    getQuery: dart.fnType(dart.dynamic, [dart.legacy(core.String)]),
+    getRouteParams: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [dart.legacy(core.String), dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List)))]),
+    [_consumeOpenFileStreams]: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(serv_request_wrapper.ServRequest)]),
+    use: dart.fnType(dart.dynamic, [dart.dynamic])
+  }));
+  dart.setGetterSignature(sevr_base.Sevr, () => ({
+    __proto__: dart.getGetters(sevr_base.Sevr.__proto__),
+    getAllRoutes: dart.legacy(core.Map)
+  }));
+  dart.setLibraryUri(sevr_base.Sevr, I[0]);
+  dart.setFieldSignature(sevr_base.Sevr, () => ({
+    __proto__: dart.getFields(sevr_base.Sevr.__proto__),
+    messageReturn: dart.fieldType(dart.legacy(core.String)),
+    router: dart.finalFieldType(dart.legacy(serv_router.Router)),
+    port: dart.fieldType(dart.legacy(core.int)),
+    host: dart.fieldType(dart.dynamic),
+    servDirs: dart.fieldType(dart.legacy(core.List$(dart.legacy(sevr_base.SevrDir)))),
+    server: dart.fieldType(dart.legacy(_http.HttpServer)),
+    cors: dart.fieldType(dart.legacy(sevr_base.CORS))
+  }));
+  dart.defineLazy(sevr_base.Sevr, {
+    /*sevr_base.Sevr._serv*/get _serv() {
+      return new sevr_base.Sevr._internal();
+    }
+  }, true);
+  var dir = dart.privateName(sevr_base, "SevrDir.dir");
+  sevr_base.SevrDir = class SevrDir extends core.Object {
+    get dir() {
+      return this[dir];
+    }
+    set dir(value) {
+      this[dir] = value;
+    }
+  };
+  (sevr_base.SevrDir.new = function(dirString) {
+    this[dir] = null;
+    this.dir = io.Directory.new(dirString);
+  }).prototype = sevr_base.SevrDir.prototype;
+  dart.addTypeTests(sevr_base.SevrDir);
+  dart.addTypeCaches(sevr_base.SevrDir);
+  dart.setLibraryUri(sevr_base.SevrDir, I[0]);
+  dart.setFieldSignature(sevr_base.SevrDir, () => ({
+    __proto__: dart.getFields(sevr_base.SevrDir.__proto__),
+    dir: dart.fieldType(dart.legacy(io.Directory))
+  }));
+  sevr_base.UpperCase = class UpperCase extends convert.Converter$(dart.legacy(core.String), dart.legacy(core.String)) {
+    convert(input) {
+      T.StringL().as(input);
+      return input[$toUpperCase]();
+    }
+  };
+  (sevr_base.UpperCase.new = function() {
+    sevr_base.UpperCase.__proto__.new.call(this);
+    ;
+  }).prototype = sevr_base.UpperCase.prototype;
+  dart.addTypeTests(sevr_base.UpperCase);
+  dart.addTypeCaches(sevr_base.UpperCase);
+  dart.setMethodSignature(sevr_base.UpperCase, () => ({
+    __proto__: dart.getMethods(sevr_base.UpperCase.__proto__),
+    convert: dart.fnType(dart.legacy(core.String), [dart.legacy(core.Object)])
+  }));
+  dart.setLibraryUri(sevr_base.UpperCase, I[0]);
+  var allowed_origins$ = dart.privateName(sevr_base, "CORS.allowed_origins");
+  sevr_base.CORS = class CORS extends core.Object {
+    get allowed_origins() {
+      return this[allowed_origins$];
+    }
+    set allowed_origins(value) {
+      super.allowed_origins = value;
+    }
+  };
+  (sevr_base.CORS.new = function(allowed_origins) {
+    this[allowed_origins$] = allowed_origins;
+    ;
+  }).prototype = sevr_base.CORS.prototype;
+  dart.addTypeTests(sevr_base.CORS);
+  dart.addTypeCaches(sevr_base.CORS);
+  dart.setLibraryUri(sevr_base.CORS, I[0]);
+  dart.setFieldSignature(sevr_base.CORS, () => ({
+    __proto__: dart.getFields(sevr_base.CORS.__proto__),
+    allowed_origins: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String))))
+  }));
+  dart.trackLibraries("packages/sevr/src/sevr_base.dart", {
+    "package:sevr/src/sevr_base.dart": sevr_base
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["sevr_base.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/sevr/src/sevr_base.dart.lib.js"}');
+  // Exports:
+  return {
+    src__sevr_base: sevr_base
+  };
+}));
+
+//# sourceMappingURL=sevr_base.dart.lib.js.map

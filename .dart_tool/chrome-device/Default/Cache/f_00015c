@@ -1,0 +1,496 @@
+define(['dart_sdk', 'packages/pointycastle/src/utils.dart', 'packages/crypto/src/sha1.dart', 'packages/crypto/src/sha256.dart', 'packages/crypto/src/md5.dart', 'packages/pointycastle/stream/chacha20.dart', 'packages/pointycastle/asn1/primitives/asn1_utf8_string.dart', 'packages/basic_utils/src/StringUtils.dart', 'packages/pointycastle/asn1/object_identifiers.dart'], (function load__packages__basic_utils__src__CryptoUtils_dart(dart_sdk, packages__pointycastle__src__utils$46dart, packages__crypto__src__sha1$46dart, packages__crypto__src__sha256$46dart, packages__crypto__src__md5$46dart, packages__pointycastle__stream__chacha20$46dart, packages__pointycastle__asn1__primitives__asn1_utf8_string$46dart, packages__basic_utils__src__StringUtils$46dart, packages__pointycastle__asn1__object_identifiers$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const math = dart_sdk.math;
+  const _interceptors = dart_sdk._interceptors;
+  const _native_typed_data = dart_sdk._native_typed_data;
+  const convert = dart_sdk.convert;
+  const typed_data = dart_sdk.typed_data;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const utils = packages__pointycastle__src__utils$46dart.src__utils;
+  const sha1 = packages__crypto__src__sha1$46dart.src__sha1;
+  const sha256 = packages__crypto__src__sha256$46dart.src__sha256;
+  const md5 = packages__crypto__src__md5$46dart.src__md5;
+  const api = packages__pointycastle__stream__chacha20$46dart.key_generators__api;
+  const api$ = packages__pointycastle__stream__chacha20$46dart.api;
+  const rsa_key_generator = packages__pointycastle__stream__chacha20$46dart.key_generators__rsa_key_generator;
+  const api$0 = packages__pointycastle__stream__chacha20$46dart.ecc__api;
+  const ec_key_generator = packages__pointycastle__stream__chacha20$46dart.key_generators__ec_key_generator;
+  const fortuna_random = packages__pointycastle__stream__chacha20$46dart.random__fortuna_random;
+  const api$1 = packages__pointycastle__stream__chacha20$46dart.asymmetric__api;
+  const ecc_fp = packages__pointycastle__stream__chacha20$46dart.ecc__ecc_fp;
+  const rsa = packages__pointycastle__stream__chacha20$46dart.asymmetric__rsa;
+  const asn1_sequence = packages__pointycastle__asn1__primitives__asn1_utf8_string$46dart.asn1__primitives__asn1_sequence;
+  const asn1_object = packages__pointycastle__asn1__primitives__asn1_utf8_string$46dart.asn1__asn1_object;
+  const asn1_object_identifier = packages__pointycastle__asn1__primitives__asn1_utf8_string$46dart.asn1__primitives__asn1_object_identifier;
+  const asn1_integer = packages__pointycastle__asn1__primitives__asn1_utf8_string$46dart.asn1__primitives__asn1_integer;
+  const asn1_bit_string = packages__pointycastle__asn1__primitives__asn1_utf8_string$46dart.asn1__primitives__asn1_bit_string;
+  const asn1_octet_string = packages__pointycastle__asn1__primitives__asn1_utf8_string$46dart.asn1__primitives__asn1_octet_string;
+  const asn1_parser = packages__pointycastle__asn1__primitives__asn1_utf8_string$46dart.asn1__asn1_parser;
+  const StringUtils = packages__basic_utils__src__StringUtils$46dart.src__StringUtils;
+  const object_identifiers = packages__pointycastle__asn1__object_identifiers$46dart.asn1__object_identifiers;
+  var CryptoUtils = Object.create(dart.library);
+  var $toUpperCase = dartx.toUpperCase;
+  var $add = dartx.add;
+  var $join = dartx.join;
+  var $_get = dartx._get;
+  var $trim = dartx.trim;
+  var $map = dartx.map;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $where = dartx.where;
+  var $toList = dartx.toList;
+  var $length = dartx.length;
+  var $first = dartx.first;
+  var $startsWith = dartx.startsWith;
+  var $last = dartx.last;
+  var $sublist = dartx.sublist;
+  var $elementAt = dartx.elementAt;
+  var $round = dartx.round;
+  var $codeUnits = dartx.codeUnits;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    RSAKeyGeneratorParametersL: () => (T.RSAKeyGeneratorParametersL = dart.constFn(dart.legacy(api.RSAKeyGeneratorParameters)))(),
+    ParametersWithRandomOfRSAKeyGeneratorParametersL: () => (T.ParametersWithRandomOfRSAKeyGeneratorParametersL = dart.constFn(api$.ParametersWithRandom$(T.RSAKeyGeneratorParametersL())))(),
+    ECKeyGeneratorParametersL: () => (T.ECKeyGeneratorParametersL = dart.constFn(dart.legacy(api.ECKeyGeneratorParameters)))(),
+    ParametersWithRandomOfECKeyGeneratorParametersL: () => (T.ParametersWithRandomOfECKeyGeneratorParametersL = dart.constFn(api$.ParametersWithRandom$(T.ECKeyGeneratorParametersL())))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    JSArrayOfintL: () => (T.JSArrayOfintL = dart.constFn(_interceptors.JSArray$(T.intL())))(),
+    ASN1SequenceL: () => (T.ASN1SequenceL = dart.constFn(dart.legacy(asn1_sequence.ASN1Sequence)))(),
+    ASN1IntegerL: () => (T.ASN1IntegerL = dart.constFn(dart.legacy(asn1_integer.ASN1Integer)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    StringLToStringL: () => (T.StringLToStringL = dart.constFn(dart.fnType(T.StringL(), [T.StringL()])))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    StringLToboolL: () => (T.StringLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.StringL()])))(),
+    ASN1BitStringL: () => (T.ASN1BitStringL = dart.constFn(dart.legacy(asn1_bit_string.ASN1BitString)))(),
+    Uint8ListL: () => (T.Uint8ListL = dart.constFn(dart.legacy(typed_data.Uint8List)))(),
+    ASN1OctetStringL: () => (T.ASN1OctetStringL = dart.constFn(dart.legacy(asn1_octet_string.ASN1OctetString)))(),
+    ASN1ObjectIdentifierL: () => (T.ASN1ObjectIdentifierL = dart.constFn(dart.legacy(asn1_object_identifier.ASN1ObjectIdentifier)))(),
+    ECCurveL: () => (T.ECCurveL = dart.constFn(dart.legacy(ecc_fp.ECCurve)))(),
+    ECFieldElementL: () => (T.ECFieldElementL = dart.constFn(dart.legacy(ecc_fp.ECFieldElement)))(),
+    RSAPublicKeyL: () => (T.RSAPublicKeyL = dart.constFn(dart.legacy(api$1.RSAPublicKey)))(),
+    PublicKeyParameterOfRSAPublicKeyL: () => (T.PublicKeyParameterOfRSAPublicKeyL = dart.constFn(api$.PublicKeyParameter$(T.RSAPublicKeyL())))(),
+    RSAPrivateKeyL: () => (T.RSAPrivateKeyL = dart.constFn(dart.legacy(api$1.RSAPrivateKey)))(),
+    PrivateKeyParameterOfRSAPrivateKeyL: () => (T.PrivateKeyParameterOfRSAPrivateKeyL = dart.constFn(api$.PrivateKeyParameter$(T.RSAPrivateKeyL())))(),
+    RSASignatureL: () => (T.RSASignatureL = dart.constFn(dart.legacy(api$1.RSASignature)))(),
+    ArgumentErrorL: () => (T.ArgumentErrorL = dart.constFn(dart.legacy(core.ArgumentError)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var C = [];
+  var I = ["package:basic_utils/src/CryptoUtils.dart"];
+  CryptoUtils.CryptoUtils = class CryptoUtils$ extends core.Object {
+    static rsaPublicKeyModulusToBytes(publicKey) {
+      return utils.encodeBigInt(publicKey.modulus);
+    }
+    static rsaPublicKeyExponentToBytes(publicKey) {
+      return utils.encodeBigInt(publicKey.exponent);
+    }
+    static rsaPrivateKeyModulusToBytes(privateKey) {
+      return utils.encodeBigInt(privateKey.modulus);
+    }
+    static getSha1ThumbprintFromBytes(bytes) {
+      let digest = sha1.sha1.convert(bytes);
+      return dart.toString(digest)[$toUpperCase]();
+    }
+    static getSha256ThumbprintFromBytes(bytes) {
+      let digest = sha256.sha256.convert(bytes);
+      return dart.toString(digest)[$toUpperCase]();
+    }
+    static getMd5ThumbprintFromBytes(bytes) {
+      let digest = md5.md5.convert(bytes);
+      return dart.toString(digest)[$toUpperCase]();
+    }
+    static generateRSAKeyPair(opts) {
+      let keySize = opts && 'keySize' in opts ? opts.keySize : 2048;
+      let keyParams = new api.RSAKeyGeneratorParameters.new(core.BigInt.parse("65537"), keySize, 12);
+      let secureRandom = CryptoUtils.CryptoUtils._getSecureRandom();
+      let rngParams = new (T.ParametersWithRandomOfRSAKeyGeneratorParametersL()).new(keyParams, secureRandom);
+      let generator = new rsa_key_generator.RSAKeyGenerator.new();
+      generator.init(rngParams);
+      return generator.generateKeyPair();
+    }
+    static generateEcKeyPair(opts) {
+      let curve = opts && 'curve' in opts ? opts.curve : "prime256v1";
+      let ecDomainParameters = api$0.ECDomainParameters.new(curve);
+      let keyParams = new api.ECKeyGeneratorParameters.new(ecDomainParameters);
+      let secureRandom = CryptoUtils.CryptoUtils._getSecureRandom();
+      let rngParams = new (T.ParametersWithRandomOfECKeyGeneratorParametersL()).new(keyParams, secureRandom);
+      let generator = new ec_key_generator.ECKeyGenerator.new();
+      generator.init(rngParams);
+      return generator.generateKeyPair();
+    }
+    static _getSecureRandom() {
+      let secureRandom = new fortuna_random.FortunaRandom.new();
+      let random = math.Random.secure();
+      let seeds = T.JSArrayOfintL().of([]);
+      for (let i = 0; i < 32; i = i + 1) {
+        seeds[$add](random.nextInt(255));
+      }
+      secureRandom.seed(new api$.KeyParameter.new(_native_typed_data.NativeUint8List.fromList(seeds)));
+      return secureRandom;
+    }
+    static encodeRSAPublicKeyToPem(publicKey) {
+      let algorithmSeq = new asn1_sequence.ASN1Sequence.new();
+      let paramsAsn1Obj = new asn1_object.ASN1Object.fromBytes(_native_typed_data.NativeUint8List.fromList(T.JSArrayOfintL().of([5, 0])));
+      algorithmSeq.add(new asn1_object_identifier.ASN1ObjectIdentifier.fromName("rsaEncryption"));
+      algorithmSeq.add(paramsAsn1Obj);
+      let publicKeySeq = new asn1_sequence.ASN1Sequence.new();
+      publicKeySeq.add(new asn1_integer.ASN1Integer.new(publicKey.modulus));
+      publicKeySeq.add(new asn1_integer.ASN1Integer.new(publicKey.exponent));
+      let publicKeySeqBitString = new asn1_bit_string.ASN1BitString.new({stringValues: _native_typed_data.NativeUint8List.fromList(publicKeySeq.encode())});
+      let topLevelSeq = new asn1_sequence.ASN1Sequence.new();
+      topLevelSeq.add(algorithmSeq);
+      topLevelSeq.add(publicKeySeqBitString);
+      let dataBase64 = convert.base64.encode(topLevelSeq.encode());
+      let chunks = StringUtils.StringUtils.chunk(dataBase64, 64);
+      return "-----BEGIN PUBLIC KEY-----" + "\n" + dart.str(chunks[$join]("\n")) + "\n" + "-----END PUBLIC KEY-----";
+    }
+    static encodeRSAPublicKeyToPemPkcs1(rsaPublicKey) {
+      let topLevelSeq = new asn1_sequence.ASN1Sequence.new();
+      topLevelSeq.add(new asn1_integer.ASN1Integer.new(rsaPublicKey.modulus));
+      topLevelSeq.add(new asn1_integer.ASN1Integer.new(rsaPublicKey.exponent));
+      let dataBase64 = convert.base64.encode(topLevelSeq.encode());
+      let chunks = StringUtils.StringUtils.chunk(dataBase64, 64);
+      return "-----BEGIN RSA PUBLIC KEY-----" + "\n" + dart.str(chunks[$join]("\n")) + "\n" + "-----END RSA PUBLIC KEY-----";
+    }
+    static encodeRSAPrivateKeyToPemPkcs1(rsaPrivateKey) {
+      let version = new asn1_integer.ASN1Integer.new(core._BigIntImpl.from(0));
+      let modulus = new asn1_integer.ASN1Integer.new(rsaPrivateKey.n);
+      let publicExponent = new asn1_integer.ASN1Integer.new(core.BigInt.parse("65537"));
+      let privateExponent = new asn1_integer.ASN1Integer.new(rsaPrivateKey.privateExponent);
+      let p = new asn1_integer.ASN1Integer.new(rsaPrivateKey.p);
+      let q = new asn1_integer.ASN1Integer.new(rsaPrivateKey.q);
+      let dP = rsaPrivateKey.privateExponent['%'](rsaPrivateKey.p['-'](core._BigIntImpl.from(1)));
+      let exp1 = new asn1_integer.ASN1Integer.new(dP);
+      let dQ = rsaPrivateKey.privateExponent['%'](rsaPrivateKey.q['-'](core._BigIntImpl.from(1)));
+      let exp2 = new asn1_integer.ASN1Integer.new(dQ);
+      let iQ = rsaPrivateKey.q.modInverse(rsaPrivateKey.p);
+      let co = new asn1_integer.ASN1Integer.new(iQ);
+      let topLevelSeq = new asn1_sequence.ASN1Sequence.new();
+      topLevelSeq.add(version);
+      topLevelSeq.add(modulus);
+      topLevelSeq.add(publicExponent);
+      topLevelSeq.add(privateExponent);
+      topLevelSeq.add(p);
+      topLevelSeq.add(q);
+      topLevelSeq.add(exp1);
+      topLevelSeq.add(exp2);
+      topLevelSeq.add(co);
+      let dataBase64 = convert.base64.encode(topLevelSeq.encode());
+      let chunks = StringUtils.StringUtils.chunk(dataBase64, 64);
+      return "-----BEGIN RSA PRIVATE KEY-----" + "\n" + dart.str(chunks[$join]("\n")) + "\n" + "-----END RSA PRIVATE KEY-----";
+    }
+    static encodeRSAPrivateKeyToPem(rsaPrivateKey) {
+      let version = new asn1_integer.ASN1Integer.new(core._BigIntImpl.from(0));
+      let algorithmSeq = new asn1_sequence.ASN1Sequence.new();
+      let algorithmAsn1Obj = new asn1_object.ASN1Object.fromBytes(_native_typed_data.NativeUint8List.fromList(T.JSArrayOfintL().of([6, 9, 42, 134, 72, 134, 247, 13, 1, 1, 1])));
+      let paramsAsn1Obj = new asn1_object.ASN1Object.fromBytes(_native_typed_data.NativeUint8List.fromList(T.JSArrayOfintL().of([5, 0])));
+      algorithmSeq.add(algorithmAsn1Obj);
+      algorithmSeq.add(paramsAsn1Obj);
+      let privateKeySeq = new asn1_sequence.ASN1Sequence.new();
+      let modulus = new asn1_integer.ASN1Integer.new(rsaPrivateKey.n);
+      let publicExponent = new asn1_integer.ASN1Integer.new(core.BigInt.parse("65537"));
+      let privateExponent = new asn1_integer.ASN1Integer.new(rsaPrivateKey.privateExponent);
+      let p = new asn1_integer.ASN1Integer.new(rsaPrivateKey.p);
+      let q = new asn1_integer.ASN1Integer.new(rsaPrivateKey.q);
+      let dP = rsaPrivateKey.privateExponent['%'](rsaPrivateKey.p['-'](core._BigIntImpl.from(1)));
+      let exp1 = new asn1_integer.ASN1Integer.new(dP);
+      let dQ = rsaPrivateKey.privateExponent['%'](rsaPrivateKey.q['-'](core._BigIntImpl.from(1)));
+      let exp2 = new asn1_integer.ASN1Integer.new(dQ);
+      let iQ = rsaPrivateKey.q.modInverse(rsaPrivateKey.p);
+      let co = new asn1_integer.ASN1Integer.new(iQ);
+      privateKeySeq.add(version);
+      privateKeySeq.add(modulus);
+      privateKeySeq.add(publicExponent);
+      privateKeySeq.add(privateExponent);
+      privateKeySeq.add(p);
+      privateKeySeq.add(q);
+      privateKeySeq.add(exp1);
+      privateKeySeq.add(exp2);
+      privateKeySeq.add(co);
+      let publicKeySeqOctetString = new asn1_octet_string.ASN1OctetString.new({octets: _native_typed_data.NativeUint8List.fromList(privateKeySeq.encode())});
+      let topLevelSeq = new asn1_sequence.ASN1Sequence.new();
+      topLevelSeq.add(version);
+      topLevelSeq.add(algorithmSeq);
+      topLevelSeq.add(publicKeySeqOctetString);
+      let dataBase64 = convert.base64.encode(topLevelSeq.encode());
+      let chunks = StringUtils.StringUtils.chunk(dataBase64, 64);
+      return "-----BEGIN PRIVATE KEY-----" + "\n" + dart.str(chunks[$join]("\n")) + "\n" + "-----END PRIVATE KEY-----";
+    }
+    static rsaPrivateKeyFromPem(pem) {
+      if (pem == null) {
+        dart.throw(new core.ArgumentError.new("Argument must not be null."));
+      }
+      let bytes = CryptoUtils.CryptoUtils.getBytesFromPEMString(pem);
+      return CryptoUtils.CryptoUtils.rsaPrivateKeyFromDERBytes(bytes);
+    }
+    static rsaPrivateKeyFromDERBytes(bytes) {
+      let asn1Parser = new asn1_parser.ASN1Parser.new(bytes);
+      let topLevelSeq = T.ASN1SequenceL().as(asn1Parser.nextObject());
+      let privateKey = topLevelSeq.elements[$_get](2);
+      asn1Parser = new asn1_parser.ASN1Parser.new(privateKey.valueBytes);
+      let pkSeq = T.ASN1SequenceL().as(asn1Parser.nextObject());
+      let modulus = T.ASN1IntegerL().as(pkSeq.elements[$_get](1));
+      let privateExponent = T.ASN1IntegerL().as(pkSeq.elements[$_get](3));
+      let p = T.ASN1IntegerL().as(pkSeq.elements[$_get](4));
+      let q = T.ASN1IntegerL().as(pkSeq.elements[$_get](5));
+      let rsaPrivateKey = new api$1.RSAPrivateKey.new(modulus.integer, privateExponent.integer, p.integer, q.integer);
+      return rsaPrivateKey;
+    }
+    static rsaPrivateKeyFromPemPkcs1(pem) {
+      if (pem == null) {
+        dart.throw(new core.ArgumentError.new("Argument must not be null."));
+      }
+      let bytes = CryptoUtils.CryptoUtils.getBytesFromPEMString(pem);
+      return CryptoUtils.CryptoUtils.rsaPrivateKeyFromDERBytesPkcs1(bytes);
+    }
+    static rsaPrivateKeyFromDERBytesPkcs1(bytes) {
+      let asn1Parser = new asn1_parser.ASN1Parser.new(bytes);
+      let pkSeq = T.ASN1SequenceL().as(asn1Parser.nextObject());
+      let modulus = T.ASN1IntegerL().as(pkSeq.elements[$_get](1));
+      let privateExponent = T.ASN1IntegerL().as(pkSeq.elements[$_get](3));
+      let p = T.ASN1IntegerL().as(pkSeq.elements[$_get](4));
+      let q = T.ASN1IntegerL().as(pkSeq.elements[$_get](5));
+      let rsaPrivateKey = new api$1.RSAPrivateKey.new(modulus.integer, privateExponent.integer, p.integer, q.integer);
+      return rsaPrivateKey;
+    }
+    static getBytesFromPEMString(pem) {
+      let lines = convert.LineSplitter.split(pem)[$map](T.StringL(), dart.fn(line => line[$trim](), T.StringLToStringL()))[$where](dart.fn(line => line[$isNotEmpty], T.StringLToboolL()))[$toList]();
+      if (dart.notNull(lines[$length]) < 2 || !lines[$first][$startsWith]("-----BEGIN") || !lines[$last][$startsWith]("-----END")) {
+        dart.throw(new core.ArgumentError.new("The given string does not have the correct " + "begin/end markers expected in a PEM file."));
+      }
+      let base64 = lines[$sublist](1, dart.notNull(lines[$length]) - 1)[$join]("");
+      return _native_typed_data.NativeUint8List.fromList(convert.base64Decode(base64));
+    }
+    static rsaPublicKeyFromPem(pem) {
+      if (pem == null) {
+        dart.throw(new core.ArgumentError.new("Argument must not be null."));
+      }
+      let bytes = CryptoUtils.CryptoUtils.getBytesFromPEMString(pem);
+      return CryptoUtils.CryptoUtils.rsaPublicKeyFromDERBytes(bytes);
+    }
+    static rsaPublicKeyFromDERBytes(bytes) {
+      let asn1Parser = new asn1_parser.ASN1Parser.new(bytes);
+      let topLevelSeq = T.ASN1SequenceL().as(asn1Parser.nextObject());
+      let publicKeyBitString = T.ASN1BitStringL().as(topLevelSeq.elements[$_get](1));
+      let publicKeyAsn = new asn1_parser.ASN1Parser.new(T.Uint8ListL().as(publicKeyBitString.stringValues));
+      let publicKeySeq = T.ASN1SequenceL().as(publicKeyAsn.nextObject());
+      let modulus = T.ASN1IntegerL().as(publicKeySeq.elements[$_get](0));
+      let exponent = T.ASN1IntegerL().as(publicKeySeq.elements[$_get](1));
+      let rsaPublicKey = new api$1.RSAPublicKey.new(modulus.integer, exponent.integer);
+      return rsaPublicKey;
+    }
+    static rsaPublicKeyFromPemPkcs1(pem) {
+      if (pem == null) {
+        dart.throw(new core.ArgumentError.new("Argument must not be null."));
+      }
+      let bytes = CryptoUtils.CryptoUtils.getBytesFromPEMString(pem);
+      return CryptoUtils.CryptoUtils.rsaPublicKeyFromDERBytesPkcs1(bytes);
+    }
+    static rsaPublicKeyFromDERBytesPkcs1(bytes) {
+      let publicKeyAsn = new asn1_parser.ASN1Parser.new(bytes);
+      let publicKeySeq = T.ASN1SequenceL().as(publicKeyAsn.nextObject());
+      let modulus = T.ASN1IntegerL().as(publicKeySeq.elements[$_get](0));
+      let exponent = T.ASN1IntegerL().as(publicKeySeq.elements[$_get](1));
+      let rsaPublicKey = new api$1.RSAPublicKey.new(modulus.integer, exponent.integer);
+      return rsaPublicKey;
+    }
+    static encodeEcPrivateKeyToPem(ecPrivateKey) {
+      let outer = new asn1_sequence.ASN1Sequence.new();
+      let version = new asn1_integer.ASN1Integer.new(core._BigIntImpl.from(1));
+      let privateKeyAsBytes = utils.encodeBigInt(ecPrivateKey.d);
+      let privateKey = new asn1_octet_string.ASN1OctetString.new({octets: privateKeyAsBytes});
+      let choice = new asn1_sequence.ASN1Sequence.new({tag: 160});
+      choice.add(new asn1_object_identifier.ASN1ObjectIdentifier.fromName(ecPrivateKey.parameters.domainName));
+      let publicKey = new asn1_sequence.ASN1Sequence.new({tag: 161});
+      let subjectPublicKey = new asn1_bit_string.ASN1BitString.new({stringValues: ecPrivateKey.parameters.G.getEncoded(false)});
+      publicKey.add(subjectPublicKey);
+      outer.add(version);
+      outer.add(privateKey);
+      outer.add(choice);
+      outer.add(publicKey);
+      let dataBase64 = convert.base64.encode(outer.encode());
+      let chunks = StringUtils.StringUtils.chunk(dataBase64, 64);
+      return "-----BEGIN EC PRIVATE KEY-----" + "\n" + dart.str(chunks[$join]("\n")) + "\n" + "-----END EC PRIVATE KEY-----";
+    }
+    static encodeEcPublicKeyToPem(publicKey) {
+      let outer = new asn1_sequence.ASN1Sequence.new();
+      let algorithm = new asn1_sequence.ASN1Sequence.new();
+      algorithm.add(new asn1_object_identifier.ASN1ObjectIdentifier.fromName("ecPublicKey"));
+      algorithm.add(new asn1_object_identifier.ASN1ObjectIdentifier.fromName("prime256v1"));
+      let encodedBytes = publicKey.Q.getEncoded(false);
+      let subjectPublicKey = new asn1_bit_string.ASN1BitString.new({stringValues: encodedBytes});
+      outer.add(algorithm);
+      outer.add(subjectPublicKey);
+      let dataBase64 = convert.base64.encode(outer.encode());
+      let chunks = StringUtils.StringUtils.chunk(dataBase64, 64);
+      return "-----BEGIN EC PUBLIC KEY-----" + "\n" + dart.str(chunks[$join]("\n")) + "\n" + "-----END EC PUBLIC KEY-----";
+    }
+    static ecPublicKeyFromPem(pem) {
+      if (dart.test(StringUtils.StringUtils.isNullOrEmpty(pem))) {
+        dart.throw(new core.ArgumentError.new("Argument must not be null."));
+      }
+      let bytes = CryptoUtils.CryptoUtils.getBytesFromPEMString(pem);
+      return CryptoUtils.CryptoUtils.ecPublicKeyFromDerBytes(bytes);
+    }
+    static ecPrivateKeyFromPem(pem) {
+      if (dart.test(StringUtils.StringUtils.isNullOrEmpty(pem))) {
+        dart.throw(new core.ArgumentError.new("Argument must not be null."));
+      }
+      let bytes = CryptoUtils.CryptoUtils.getBytesFromPEMString(pem);
+      return CryptoUtils.CryptoUtils.ecPrivateKeyFromDerBytes(bytes);
+    }
+    static ecPrivateKeyFromDerBytes(bytes) {
+      let asn1Parser = new asn1_parser.ASN1Parser.new(bytes);
+      let topLevelSeq = T.ASN1SequenceL().as(asn1Parser.nextObject());
+      let privateKeyAsOctetString = T.ASN1OctetStringL().as(topLevelSeq.elements[$elementAt](1));
+      let choice = topLevelSeq.elements[$elementAt](2);
+      let s = new asn1_sequence.ASN1Sequence.new();
+      let parser = new asn1_parser.ASN1Parser.new(choice.valueBytes);
+      while (dart.test(parser.hasNext())) {
+        s.add(parser.nextObject());
+      }
+      let curveNameOi = T.ASN1ObjectIdentifierL().as(s.elements[$elementAt](0));
+      let curveName = null;
+      let data = object_identifiers.ObjectIdentifiers.getIdentifierByIdentifier(curveNameOi.objectIdentifierAsString);
+      if (data != null) {
+        curveName = data[$_get]("readableName");
+      }
+      let x = privateKeyAsOctetString.valueBytes;
+      return new api$0.ECPrivateKey.new(utils.decodeBigInt(x), api$0.ECDomainParameters.new(T.StringL().as(curveName)));
+    }
+    static ecPublicKeyFromDerBytes(bytes) {
+      let asn1Parser = new asn1_parser.ASN1Parser.new(bytes);
+      let topLevelSeq = T.ASN1SequenceL().as(asn1Parser.nextObject());
+      let algorithmIdentifierSequence = T.ASN1SequenceL().as(topLevelSeq.elements[$_get](0));
+      let curveNameOi = T.ASN1ObjectIdentifierL().as(algorithmIdentifierSequence.elements[$elementAt](1));
+      let curveName = null;
+      let data = object_identifiers.ObjectIdentifiers.getIdentifierByIdentifier(curveNameOi.objectIdentifierAsString);
+      if (data != null) {
+        curveName = data[$_get]("readableName");
+      }
+      let subjectPublicKey = T.ASN1BitStringL().as(topLevelSeq.elements[$_get](1));
+      let compressed = false;
+      let pubBytes = subjectPublicKey.valueBytes;
+      if (pubBytes[$elementAt](0) === 0) {
+        pubBytes = pubBytes[$sublist](1);
+      }
+      let firstByte = pubBytes[$elementAt](0);
+      if (firstByte !== 4) {
+        compressed = true;
+      }
+      let x = pubBytes[$sublist](1, (dart.notNull(pubBytes[$length]) / 2)[$round]());
+      let y = pubBytes[$sublist](1 + dart.notNull(x[$length]), pubBytes[$length]);
+      let params = api$0.ECDomainParameters.new(T.StringL().as(curveName));
+      let bigX = utils.decodeBigIntWithSign(1, x);
+      let bigY = utils.decodeBigIntWithSign(1, y);
+      let pubKey = new api$0.ECPublicKey.new(new ecc_fp.ECPoint.new(T.ECCurveL().as(params.curve), T.ECFieldElementL().as(params.curve.fromBigInteger(bigX)), T.ECFieldElementL().as(params.curve.fromBigInteger(bigY)), compressed), params);
+      return pubKey;
+    }
+    static rsaEncrypt(message, publicKey) {
+      let t0;
+      let cipher = (t0 = new rsa.RSAEngine.new(), (() => {
+        t0.init(true, new (T.PublicKeyParameterOfRSAPublicKeyL()).new(publicKey));
+        return t0;
+      })());
+      let cipherText = cipher.process(_native_typed_data.NativeUint8List.fromList(message[$codeUnits]));
+      return core.String.fromCharCodes(cipherText);
+    }
+    static rsaDecrypt(cipherMessage, privateKey) {
+      let t0;
+      let cipher = (t0 = new rsa.RSAEngine.new(), (() => {
+        t0.init(false, new (T.PrivateKeyParameterOfRSAPrivateKeyL()).new(privateKey));
+        return t0;
+      })());
+      let decrypted = cipher.process(_native_typed_data.NativeUint8List.fromList(cipherMessage[$codeUnits]));
+      return core.String.fromCharCodes(decrypted);
+    }
+    static rsaSign(privateKey, dataToSign, opts) {
+      let algorithmName = opts && 'algorithmName' in opts ? opts.algorithmName : "SHA-256/RSA";
+      let signer = api$.Signer.new(algorithmName);
+      signer.init(true, new (T.PrivateKeyParameterOfRSAPrivateKeyL()).new(privateKey));
+      let sig = T.RSASignatureL().as(signer.generateSignature(dataToSign));
+      return sig.bytes;
+    }
+    static rsaVerify(publicKey, signedData, signature, opts) {
+      let algorithm = opts && 'algorithm' in opts ? opts.algorithm : "SHA-256/RSA";
+      let sig = new api$1.RSASignature.new(signature);
+      let verifier = api$.Signer.new(algorithm);
+      verifier.init(false, new (T.PublicKeyParameterOfRSAPublicKeyL()).new(publicKey));
+      try {
+        return verifier.verifySignature(signedData, sig);
+      } catch (e) {
+        let ex = dart.getThrown(e);
+        if (T.ArgumentErrorL().is(ex)) {
+          return false;
+        } else
+          throw e;
+      }
+    }
+  };
+  (CryptoUtils.CryptoUtils.new = function() {
+    ;
+  }).prototype = CryptoUtils.CryptoUtils.prototype;
+  dart.addTypeTests(CryptoUtils.CryptoUtils);
+  dart.addTypeCaches(CryptoUtils.CryptoUtils);
+  dart.setLibraryUri(CryptoUtils.CryptoUtils, I[0]);
+  dart.defineLazy(CryptoUtils.CryptoUtils, {
+    /*CryptoUtils.CryptoUtils.BEGIN_PRIVATE_KEY*/get BEGIN_PRIVATE_KEY() {
+      return "-----BEGIN PRIVATE KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.END_PRIVATE_KEY*/get END_PRIVATE_KEY() {
+      return "-----END PRIVATE KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.BEGIN_PUBLIC_KEY*/get BEGIN_PUBLIC_KEY() {
+      return "-----BEGIN PUBLIC KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.END_PUBLIC_KEY*/get END_PUBLIC_KEY() {
+      return "-----END PUBLIC KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.BEGIN_EC_PRIVATE_KEY*/get BEGIN_EC_PRIVATE_KEY() {
+      return "-----BEGIN EC PRIVATE KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.END_EC_PRIVATE_KEY*/get END_EC_PRIVATE_KEY() {
+      return "-----END EC PRIVATE KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.BEGIN_EC_PUBLIC_KEY*/get BEGIN_EC_PUBLIC_KEY() {
+      return "-----BEGIN EC PUBLIC KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.END_EC_PUBLIC_KEY*/get END_EC_PUBLIC_KEY() {
+      return "-----END EC PUBLIC KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.BEGIN_RSA_PRIVATE_KEY*/get BEGIN_RSA_PRIVATE_KEY() {
+      return "-----BEGIN RSA PRIVATE KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.END_RSA_PRIVATE_KEY*/get END_RSA_PRIVATE_KEY() {
+      return "-----END RSA PRIVATE KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.BEGIN_RSA_PUBLIC_KEY*/get BEGIN_RSA_PUBLIC_KEY() {
+      return "-----BEGIN RSA PUBLIC KEY-----";
+    },
+    /*CryptoUtils.CryptoUtils.END_RSA_PUBLIC_KEY*/get END_RSA_PUBLIC_KEY() {
+      return "-----END RSA PUBLIC KEY-----";
+    }
+  }, true);
+  dart.trackLibraries("packages/basic_utils/src/CryptoUtils.dart", {
+    "package:basic_utils/src/CryptoUtils.dart": CryptoUtils
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["CryptoUtils.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/basic_utils/src/CryptoUtils.dart.lib.js"}');
+  // Exports:
+  return {
+    src__CryptoUtils: CryptoUtils
+  };
+}));
+
+//# sourceMappingURL=CryptoUtils.dart.lib.js.map

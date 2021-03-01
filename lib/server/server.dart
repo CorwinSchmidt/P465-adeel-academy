@@ -3,9 +3,12 @@ import 'package:sevr/sevr.dart';
 
 void start() async {
   // log into database
+  print("Trying to create database...");
   var db = await Db.create(
-      'mongodb+srv://adeelacademy:AdeelAcademy@cluster0.jegun.mongodb.net/AdeelAcademy?retryWrites=true&w=majority');
+      'mongodb+srv://adeelacademy:adeelacademy@cluster0.jegun.mongodb.net/AdeelAcademy?retryWrites=true&w=majority');
 
+  print("Opening...");
+  
   await db.open();
 
   print("opened");
@@ -35,6 +38,6 @@ void start() async {
 
   // listen for connections on server
   serv.listen(port, callback: () {
-    print('servre listeining on port: $port');
+    print('server listeining on port: $port');
   });
 }

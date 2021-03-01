@@ -1,0 +1,273 @@
+define(['dart_sdk', 'packages/sevr/src/serv_request_response_wrapper/serv_request_wrapper.dart'], (function load__packages__sevr__src__serv_router__serv_router_dart(dart_sdk, packages__sevr__src__serv_request_response_wrapper__serv_request_wrapper$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const serv_request_wrapper = packages__sevr__src__serv_request_response_wrapper__serv_request_wrapper$46dart.src__serv_request_response_wrapper__serv_request_wrapper;
+  var serv_router = Object.create(dart.library);
+  var $_set = dartx._set;
+  var $addAll = dartx.addAll;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    ServRequestL: () => (T.ServRequestL = dart.constFn(dart.legacy(serv_request_wrapper.ServRequest)))(),
+    ServResponseL: () => (T.ServResponseL = dart.constFn(dart.legacy(serv_request_wrapper.ServResponse)))(),
+    ServRequestLAndServResponseLTodynamic: () => (T.ServRequestLAndServResponseLTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.ServRequestL(), T.ServResponseL()])))(),
+    ServRequestLAndServResponseLToLdynamic: () => (T.ServRequestLAndServResponseLToLdynamic = dart.constFn(dart.legacy(T.ServRequestLAndServResponseLTodynamic())))(),
+    ListOfServRequestLAndServResponseLToLdynamic: () => (T.ListOfServRequestLAndServResponseLToLdynamic = dart.constFn(core.List$(T.ServRequestLAndServResponseLToLdynamic())))(),
+    ListLOfServRequestLAndServResponseLToLdynamic: () => (T.ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(dart.legacy(T.ListOfServRequestLAndServResponseLToLdynamic())))(),
+    IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic: () => (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.ListLOfServRequestLAndServResponseLToLdynamic())))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var C = [];
+  var I = ["package:sevr/src/serv_router/serv_router.dart"];
+  var gets = dart.privateName(serv_router, "Router.gets");
+  var posts = dart.privateName(serv_router, "Router.posts");
+  var patchs = dart.privateName(serv_router, "Router.patchs");
+  var puts = dart.privateName(serv_router, "Router.puts");
+  var deletes = dart.privateName(serv_router, "Router.deletes");
+  var copys = dart.privateName(serv_router, "Router.copys");
+  var heads = dart.privateName(serv_router, "Router.heads");
+  var optionss = dart.privateName(serv_router, "Router.optionss");
+  var links = dart.privateName(serv_router, "Router.links");
+  var unlinks = dart.privateName(serv_router, "Router.unlinks");
+  var purges = dart.privateName(serv_router, "Router.purges");
+  var locks = dart.privateName(serv_router, "Router.locks");
+  var unlocks = dart.privateName(serv_router, "Router.unlocks");
+  var propfinds = dart.privateName(serv_router, "Router.propfinds");
+  var views = dart.privateName(serv_router, "Router.views");
+  serv_router.Router = class Router extends core.Object {
+    get gets() {
+      return this[gets];
+    }
+    set gets(value) {
+      this[gets] = value;
+    }
+    get posts() {
+      return this[posts];
+    }
+    set posts(value) {
+      this[posts] = value;
+    }
+    get patchs() {
+      return this[patchs];
+    }
+    set patchs(value) {
+      this[patchs] = value;
+    }
+    get puts() {
+      return this[puts];
+    }
+    set puts(value) {
+      this[puts] = value;
+    }
+    get deletes() {
+      return this[deletes];
+    }
+    set deletes(value) {
+      this[deletes] = value;
+    }
+    get copys() {
+      return this[copys];
+    }
+    set copys(value) {
+      this[copys] = value;
+    }
+    get heads() {
+      return this[heads];
+    }
+    set heads(value) {
+      this[heads] = value;
+    }
+    get optionss() {
+      return this[optionss];
+    }
+    set optionss(value) {
+      this[optionss] = value;
+    }
+    get links() {
+      return this[links];
+    }
+    set links(value) {
+      this[links] = value;
+    }
+    get unlinks() {
+      return this[unlinks];
+    }
+    set unlinks(value) {
+      this[unlinks] = value;
+    }
+    get purges() {
+      return this[purges];
+    }
+    set purges(value) {
+      this[purges] = value;
+    }
+    get locks() {
+      return this[locks];
+    }
+    set locks(value) {
+      this[locks] = value;
+    }
+    get unlocks() {
+      return this[unlocks];
+    }
+    set unlocks(value) {
+      this[unlocks] = value;
+    }
+    get propfinds() {
+      return this[propfinds];
+    }
+    set propfinds(value) {
+      this[propfinds] = value;
+    }
+    get views() {
+      return this[views];
+    }
+    set views(value) {
+      this[views] = value;
+    }
+    get(route, callbacks) {
+      this.gets[$_set](route, callbacks);
+    }
+    post(route, callbacks) {
+      this.posts[$_set](route, callbacks);
+    }
+    patch(route, callbacks) {
+      this.patchs[$_set](route, callbacks);
+    }
+    put(route, callbacks) {
+      this.puts[$_set](route, callbacks);
+    }
+    delete(route, callbacks) {
+      this.deletes[$_set](route, callbacks);
+    }
+    copy(route, callbacks) {
+      this.copys[$_set](route, callbacks);
+    }
+    head(route, callbacks) {
+      this.heads[$_set](route, callbacks);
+    }
+    options(route, callbacks) {
+      this.optionss[$_set](route, callbacks);
+    }
+    link(route, callbacks) {
+      this.links[$_set](route, callbacks);
+    }
+    unlink(route, callbacks) {
+      this.unlinks[$_set](route, callbacks);
+    }
+    purge(route, callbacks) {
+      this.purges[$_set](route, callbacks);
+    }
+    lock(route, callbacks) {
+      this.locks[$_set](route, callbacks);
+    }
+    unlock(route, callbacks) {
+      this.unlocks[$_set](route, callbacks);
+    }
+    propfind(route, callbacks) {
+      this.propfinds[$_set](route, callbacks);
+    }
+    view(route, callbacks) {
+      this.views[$_set](route, callbacks);
+    }
+    join(rter) {
+      this.gets[$addAll](rter.gets);
+      this.posts[$addAll](rter.posts);
+      this.patchs[$addAll](rter.patchs);
+      this.puts[$addAll](rter.puts);
+      this.deletes[$addAll](rter.deletes);
+      this.copys[$addAll](rter.copys);
+      this.heads[$addAll](rter.heads);
+      this.optionss[$addAll](rter.optionss);
+      this.links[$addAll](rter.links);
+      this.unlinks[$addAll](rter.unlinks);
+      this.purges[$addAll](rter.purges);
+      this.locks[$addAll](rter.locks);
+      this.unlocks[$addAll](rter.unlocks);
+      this.propfinds[$addAll](rter.propfinds);
+      this.views[$addAll](rter.views);
+    }
+  };
+  (serv_router.Router.new = function() {
+    this[gets] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[posts] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[patchs] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[puts] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[deletes] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[copys] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[heads] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[optionss] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[links] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[unlinks] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[purges] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[locks] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[unlocks] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[propfinds] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    this[views] = new (T.IdentityMapOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).new();
+    ;
+  }).prototype = serv_router.Router.prototype;
+  dart.addTypeTests(serv_router.Router);
+  dart.addTypeCaches(serv_router.Router);
+  dart.setMethodSignature(serv_router.Router, () => ({
+    __proto__: dart.getMethods(serv_router.Router.__proto__),
+    get: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    post: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    patch: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    put: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    delete: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    copy: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    head: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    options: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    link: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    unlink: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    purge: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    lock: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    unlock: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    propfind: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    view: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
+    join: dart.fnType(dart.void, [dart.legacy(serv_router.Router)])
+  }));
+  dart.setLibraryUri(serv_router.Router, I[0]);
+  dart.setFieldSignature(serv_router.Router, () => ({
+    __proto__: dart.getFields(serv_router.Router.__proto__),
+    gets: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    posts: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    patchs: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    puts: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    deletes: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    copys: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    heads: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    optionss: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    links: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    unlinks: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    purges: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    locks: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    unlocks: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    propfinds: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))))),
+    views: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)])))))))
+  }));
+  dart.trackLibraries("packages/sevr/src/serv_router/serv_router.dart", {
+    "package:sevr/src/serv_router/serv_router.dart": serv_router
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["serv_router.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAGiE;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;IAEA;;;;;;QAG5C,OACmC;AAC7B,MAAvB,AAAI,iBAAC,KAAK,EAAI,SAAS;IACzB;SAEoB,OACkC;AAC5B,MAAxB,AAAK,kBAAC,KAAK,EAAI,SAAS;IAC1B;UAEqB,OACiC;AAC3B,MAAzB,AAAM,mBAAC,KAAK,EAAI,SAAS;IAC3B;QAEmB,OACmC;AAC7B,MAAvB,AAAI,iBAAC,KAAK,EAAI,SAAS;IACzB;WAEsB,OACgC;AAC1B,MAA1B,AAAO,oBAAC,KAAK,EAAI,SAAS;IAC5B;SAEoB,OACkC;AAC5B,MAAxB,AAAK,kBAAC,KAAK,EAAI,SAAS;IAC1B;SAEoB,OACkC;AAC5B,MAAxB,AAAK,kBAAC,KAAK,EAAI,SAAS;IAC1B;YAEuB,OAC+B;AACzB,MAA3B,AAAQ,qBAAC,KAAK,EAAI,SAAS;IAC7B;SAEoB,OACkC;AAC5B,MAAxB,AAAK,kBAAC,KAAK,EAAI,SAAS;IAC1B;WAEsB,OACgC;AAC1B,MAA1B,AAAO,oBAAC,KAAK,EAAI,SAAS;IAC5B;UAEqB,OACiC;AAC3B,MAAzB,AAAM,mBAAC,KAAK,EAAI,SAAS;IAC3B;SAEoB,OACkC;AAC5B,MAAxB,AAAK,kBAAC,KAAK,EAAI,SAAS;IAC1B;WAEsB,OACgC;AAC1B,MAA1B,AAAO,oBAAC,KAAK,EAAI,SAAS;IAC5B;aAEwB,OAC8B;AACxB,MAA5B,AAAS,sBAAC,KAAK,EAAI,SAAS;IAC9B;SAEoB,OACkC;AAC5B,MAAxB,AAAK,kBAAC,KAAK,EAAI,SAAS;IAC1B;SAEiB;AACO,MAAtB,AAAK,mBAAO,AAAK,IAAD;AACQ,MAAxB,AAAM,oBAAO,AAAK,IAAD;AACS,MAA1B,AAAO,qBAAO,AAAK,IAAD;AACI,MAAtB,AAAK,mBAAO,AAAK,IAAD;AACY,MAA5B,AAAQ,sBAAO,AAAK,IAAD;AACK,MAAxB,AAAM,oBAAO,AAAK,IAAD;AACO,MAAxB,AAAM,oBAAO,AAAK,IAAD;AACa,MAA9B,AAAS,uBAAO,AAAK,IAAD;AACI,MAAxB,AAAM,oBAAO,AAAK,IAAD;AACW,MAA5B,AAAQ,sBAAO,AAAK,IAAD;AACO,MAA1B,AAAO,qBAAO,AAAK,IAAD;AACM,MAAxB,AAAM,oBAAO,AAAK,IAAD;AACW,MAA5B,AAAQ,sBAAO,AAAK,IAAD;AACa,MAAhC,AAAU,wBAAO,AAAK,IAAD;AACG,MAAxB,AAAM,oBAAO,AAAK,IAAD;IACnB;;;IA1H+D,aAAO;IAEP,cAAQ;IAER,eAAS;IAET,aAAO;IAEP,gBAAU;IAEV,cAAQ;IAER,cAAQ;IAER,iBAAW;IAEX,cAAQ;IAER,gBAAU;IAEV,eAAS;IAET,cAAQ;IAER,gBAAU;IAEV,kBAAY;IAEZ,cAAQ;;EA+FzE","file":"../../../../../../../../../packages/sevr/src/serv_router/serv_router.dart.lib.js"}');
+  // Exports:
+  return {
+    src__serv_router__serv_router: serv_router
+  };
+}));
+
+//# sourceMappingURL=serv_router.dart.lib.js.map

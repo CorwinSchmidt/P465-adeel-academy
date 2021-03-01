@@ -1,0 +1,614 @@
+define(['dart_sdk', 'packages/basic_utils/src/model/LengthUnits.dart'], (function load__packages__basic_utils__src__MathUtils_dart(dart_sdk, packages__basic_utils__src__model__LengthUnits$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const LengthUnits = packages__basic_utils__src__model__LengthUnits$46dart.src__model__LengthUnits;
+  var MathUtils = Object.create(dart.library);
+  var $reduce = dartx.reduce;
+  var $length = dartx.length;
+  var $round = dartx.round;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    numL: () => (T.numL = dart.constFn(dart.legacy(core.num)))(),
+    numLAndnumLTonumL: () => (T.numLAndnumLTonumL = dart.constFn(dart.fnType(T.numL(), [T.numL(), T.numL()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.attometer",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.femtometer",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.picometer",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.nanometer",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.micrometers",
+        index: 4
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.millimeter",
+        index: 5
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.centimeter",
+        index: 6
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.decimeter",
+        index: 7
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.meter",
+        index: 8
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: LengthUnits.LengthUnits.prototype,
+        [_name]: "LengthUnits.kilometer",
+        index: 9
+      });
+    }
+  }, false);
+  var C = Array(10).fill(void 0);
+  var I = ["package:basic_utils/src/MathUtils.dart"];
+  var _name = dart.privateName(LengthUnits, "_name");
+  MathUtils.MathUtils = class MathUtils extends core.Object {
+    static calculateCircumference(radius) {
+      return 2 * 3.141592653589793 * dart.notNull(radius);
+    }
+    static calculateCircularArea(radius) {
+      return 3.141592653589793 * (dart.notNull(radius) * dart.notNull(radius));
+    }
+    static calculateCircleDiameter(radius) {
+      return 2 * dart.notNull(radius);
+    }
+    static calculateSquareArea(a, opts) {
+      let b = opts && 'b' in opts ? opts.b : null;
+      return b == null ? dart.notNull(a) * dart.notNull(a) : dart.notNull(a) * dart.notNull(b);
+    }
+    static convertUnit(value, sourceUnit, targetUnit) {
+      switch (sourceUnit) {
+        case C[0] || CT.C0:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return value;
+            }
+            case C[1] || CT.C1:
+            {
+              return dart.notNull(value) / math.pow(10.0, 3);
+            }
+            case C[2] || CT.C2:
+            {
+              return dart.notNull(value) / math.pow(10.0, 6);
+            }
+            case C[3] || CT.C3:
+            {
+              return dart.notNull(value) / math.pow(10.0, 9);
+            }
+            case C[4] || CT.C4:
+            {
+              return dart.notNull(value) / math.pow(10.0, 12);
+            }
+            case C[5] || CT.C5:
+            {
+              return dart.notNull(value) / math.pow(10.0, 15);
+            }
+            case C[6] || CT.C6:
+            {
+              return dart.notNull(value) / math.pow(10.0, 16);
+            }
+            case C[7] || CT.C7:
+            {
+              return dart.notNull(value) / math.pow(10.0, 17);
+            }
+            case C[8] || CT.C8:
+            {
+              return dart.notNull(value) / math.pow(10.0, 18);
+            }
+            case C[9] || CT.C9:
+            {
+              return dart.notNull(value) / math.pow(10.0, 21.0);
+            }
+          }
+          break;
+        }
+        case C[1] || CT.C1:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return dart.notNull(value) * math.pow(10.0, 3);
+            }
+            case C[1] || CT.C1:
+            {
+              return value;
+            }
+            case C[2] || CT.C2:
+            {
+              return dart.notNull(value) / math.pow(10.0, 3);
+            }
+            case C[3] || CT.C3:
+            {
+              return dart.notNull(value) / math.pow(10.0, 6);
+            }
+            case C[4] || CT.C4:
+            {
+              return dart.notNull(value) / math.pow(10.0, 9);
+            }
+            case C[5] || CT.C5:
+            {
+              return dart.notNull(value) / math.pow(10.0, 12);
+            }
+            case C[6] || CT.C6:
+            {
+              return dart.notNull(value) / math.pow(10.0, 13);
+            }
+            case C[7] || CT.C7:
+            {
+              return dart.notNull(value) / math.pow(10.0, 14);
+            }
+            case C[8] || CT.C8:
+            {
+              return dart.notNull(value) / math.pow(10.0, 15);
+            }
+            case C[9] || CT.C9:
+            {
+              return dart.notNull(value) / math.pow(10.0, 18);
+            }
+          }
+          break;
+        }
+        case C[2] || CT.C2:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return dart.notNull(value) * math.pow(10.0, 6);
+            }
+            case C[1] || CT.C1:
+            {
+              return dart.notNull(value) * math.pow(10.0, 3);
+            }
+            case C[2] || CT.C2:
+            {
+              return value;
+            }
+            case C[3] || CT.C3:
+            {
+              return dart.notNull(value) / math.pow(10.0, 3);
+            }
+            case C[4] || CT.C4:
+            {
+              return dart.notNull(value) / math.pow(10.0, 6);
+            }
+            case C[5] || CT.C5:
+            {
+              return dart.notNull(value) / math.pow(10.0, 9);
+            }
+            case C[6] || CT.C6:
+            {
+              return dart.notNull(value) / math.pow(10.0, 10);
+            }
+            case C[7] || CT.C7:
+            {
+              return dart.notNull(value) / math.pow(10.0, 11);
+            }
+            case C[8] || CT.C8:
+            {
+              return dart.notNull(value) / math.pow(10.0, 12);
+            }
+            case C[9] || CT.C9:
+            {
+              return dart.notNull(value) / math.pow(10.0, 15);
+            }
+          }
+          break;
+        }
+        case C[3] || CT.C3:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return dart.notNull(value) * math.pow(10.0, 9);
+            }
+            case C[1] || CT.C1:
+            {
+              return dart.notNull(value) * math.pow(10.0, 6);
+            }
+            case C[2] || CT.C2:
+            {
+              return dart.notNull(value) * math.pow(10.0, 3);
+            }
+            case C[3] || CT.C3:
+            {
+              return value;
+            }
+            case C[4] || CT.C4:
+            {
+              return dart.notNull(value) / math.pow(10.0, 3);
+            }
+            case C[5] || CT.C5:
+            {
+              return dart.notNull(value) / math.pow(10.0, 6);
+            }
+            case C[6] || CT.C6:
+            {
+              return dart.notNull(value) / math.pow(10.0, 7);
+            }
+            case C[7] || CT.C7:
+            {
+              return dart.notNull(value) / math.pow(10.0, 8);
+            }
+            case C[8] || CT.C8:
+            {
+              return dart.notNull(value) / math.pow(10.0, 9);
+            }
+            case C[9] || CT.C9:
+            {
+              return dart.notNull(value) / math.pow(10.0, 12);
+            }
+          }
+          break;
+        }
+        case C[4] || CT.C4:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return dart.notNull(value) * math.pow(10.0, 12);
+            }
+            case C[1] || CT.C1:
+            {
+              return dart.notNull(value) * math.pow(10.0, 9);
+            }
+            case C[2] || CT.C2:
+            {
+              return dart.notNull(value) * math.pow(10.0, 6);
+            }
+            case C[3] || CT.C3:
+            {
+              return dart.notNull(value) * math.pow(10.0, 3);
+            }
+            case C[4] || CT.C4:
+            {
+              return value;
+            }
+            case C[5] || CT.C5:
+            {
+              return dart.notNull(value) / math.pow(10.0, 3);
+            }
+            case C[6] || CT.C6:
+            {
+              return dart.notNull(value) / math.pow(10.0, 4);
+            }
+            case C[7] || CT.C7:
+            {
+              return dart.notNull(value) / math.pow(10.0, 5);
+            }
+            case C[8] || CT.C8:
+            {
+              return dart.notNull(value) / math.pow(10.0, 6);
+            }
+            case C[9] || CT.C9:
+            {
+              return dart.notNull(value) / math.pow(10.0, 9);
+            }
+          }
+          break;
+        }
+        case C[5] || CT.C5:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return dart.notNull(value) * math.pow(10.0, 15);
+            }
+            case C[1] || CT.C1:
+            {
+              return dart.notNull(value) * math.pow(10.0, 12);
+            }
+            case C[2] || CT.C2:
+            {
+              return dart.notNull(value) * math.pow(10.0, 9);
+            }
+            case C[3] || CT.C3:
+            {
+              return dart.notNull(value) * math.pow(10.0, 6);
+            }
+            case C[4] || CT.C4:
+            {
+              return dart.notNull(value) * math.pow(10.0, 3);
+            }
+            case C[5] || CT.C5:
+            {
+              return value;
+            }
+            case C[6] || CT.C6:
+            {
+              return dart.notNull(value) / math.pow(10.0, 1);
+            }
+            case C[7] || CT.C7:
+            {
+              return dart.notNull(value) / math.pow(10.0, 2);
+            }
+            case C[8] || CT.C8:
+            {
+              return dart.notNull(value) / math.pow(10.0, 3);
+            }
+            case C[9] || CT.C9:
+            {
+              return dart.notNull(value) / math.pow(10.0, 6);
+            }
+          }
+          break;
+        }
+        case C[6] || CT.C6:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return dart.notNull(value) * math.pow(10.0, 16);
+            }
+            case C[1] || CT.C1:
+            {
+              return dart.notNull(value) * math.pow(10.0, 13);
+            }
+            case C[2] || CT.C2:
+            {
+              return dart.notNull(value) * math.pow(10.0, 10);
+            }
+            case C[3] || CT.C3:
+            {
+              return dart.notNull(value) * math.pow(10.0, 7);
+            }
+            case C[4] || CT.C4:
+            {
+              return dart.notNull(value) * math.pow(10.0, 4);
+            }
+            case C[5] || CT.C5:
+            {
+              return dart.notNull(value) * math.pow(10.0, 1);
+            }
+            case C[6] || CT.C6:
+            {
+              return value;
+            }
+            case C[7] || CT.C7:
+            {
+              return dart.notNull(value) / math.pow(10.0, 1);
+            }
+            case C[8] || CT.C8:
+            {
+              return dart.notNull(value) / math.pow(10.0, 2);
+            }
+            case C[9] || CT.C9:
+            {
+              return dart.notNull(value) / math.pow(10.0, 5);
+            }
+          }
+          break;
+        }
+        case C[7] || CT.C7:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return dart.notNull(value) * math.pow(10.0, 17);
+            }
+            case C[1] || CT.C1:
+            {
+              return dart.notNull(value) * math.pow(10.0, 14);
+            }
+            case C[2] || CT.C2:
+            {
+              return dart.notNull(value) * math.pow(10.0, 11);
+            }
+            case C[3] || CT.C3:
+            {
+              return dart.notNull(value) * math.pow(10.0, 8);
+            }
+            case C[4] || CT.C4:
+            {
+              return dart.notNull(value) * math.pow(10.0, 5);
+            }
+            case C[5] || CT.C5:
+            {
+              return dart.notNull(value) * math.pow(10.0, 2);
+            }
+            case C[6] || CT.C6:
+            {
+              return dart.notNull(value) * math.pow(10.0, 1);
+            }
+            case C[7] || CT.C7:
+            {
+              return value;
+            }
+            case C[8] || CT.C8:
+            {
+              return dart.notNull(value) / math.pow(10.0, 1);
+            }
+            case C[9] || CT.C9:
+            {
+              return dart.notNull(value) / math.pow(10.0, 4);
+            }
+          }
+          break;
+        }
+        case C[8] || CT.C8:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return dart.notNull(value) * math.pow(10.0, 18);
+            }
+            case C[1] || CT.C1:
+            {
+              return dart.notNull(value) * math.pow(10.0, 15);
+            }
+            case C[2] || CT.C2:
+            {
+              return dart.notNull(value) * math.pow(10.0, 12);
+            }
+            case C[3] || CT.C3:
+            {
+              return dart.notNull(value) * math.pow(10.0, 9);
+            }
+            case C[4] || CT.C4:
+            {
+              return dart.notNull(value) * math.pow(10.0, 6);
+            }
+            case C[5] || CT.C5:
+            {
+              return dart.notNull(value) * math.pow(10.0, 3);
+            }
+            case C[6] || CT.C6:
+            {
+              return dart.notNull(value) * math.pow(10.0, 2);
+            }
+            case C[7] || CT.C7:
+            {
+              return dart.notNull(value) * math.pow(10.0, 1);
+            }
+            case C[8] || CT.C8:
+            {
+              return value;
+            }
+            case C[9] || CT.C9:
+            {
+              return dart.notNull(value) / math.pow(10.0, 3);
+            }
+          }
+          break;
+        }
+        case C[9] || CT.C9:
+        {
+          switch (targetUnit) {
+            case C[0] || CT.C0:
+            {
+              return dart.notNull(value) * math.pow(10.0, 21);
+            }
+            case C[1] || CT.C1:
+            {
+              return dart.notNull(value) * math.pow(10.0, 18);
+            }
+            case C[2] || CT.C2:
+            {
+              return dart.notNull(value) * math.pow(10.0, 15);
+            }
+            case C[3] || CT.C3:
+            {
+              return dart.notNull(value) * math.pow(10.0, 12);
+            }
+            case C[4] || CT.C4:
+            {
+              return dart.notNull(value) * math.pow(10.0, 9);
+            }
+            case C[5] || CT.C5:
+            {
+              return dart.notNull(value) * math.pow(10.0, 6);
+            }
+            case C[6] || CT.C6:
+            {
+              return dart.notNull(value) * math.pow(10.0, 5);
+            }
+            case C[7] || CT.C7:
+            {
+              return dart.notNull(value) * math.pow(10.0, 4);
+            }
+            case C[8] || CT.C8:
+            {
+              return dart.notNull(value) * math.pow(10.0, 3);
+            }
+            case C[9] || CT.C9:
+            {
+              return value;
+            }
+          }
+          break;
+        }
+      }
+      return null;
+    }
+    static calculateMixingTemperature(mA, tA, mB, tB, opts) {
+      let cA = opts && 'cA' in opts ? opts.cA : null;
+      let cB = opts && 'cB' in opts ? opts.cB : null;
+      if (cA == null || cB == null) {
+        return (dart.notNull(mA) * dart.notNull(tA) + dart.notNull(mB) * dart.notNull(tB)) / (dart.notNull(mA) + dart.notNull(mB));
+      }
+      return (dart.notNull(mA) * dart.notNull(cA) * dart.notNull(tA) + dart.notNull(mB) * dart.notNull(cB) * dart.notNull(tB)) / (dart.notNull(mA) * dart.notNull(cA) + dart.notNull(mB) * dart.notNull(cB));
+    }
+    static mean(l) {
+      return dart.notNull(l[$reduce](dart.fn((p, n) => dart.notNull(p) + dart.notNull(n), T.numLAndnumLTonumL()))) / dart.notNull(l[$length]);
+    }
+    static round(value, decimals) {
+      return (dart.notNull(value) * math.pow(10, decimals))[$round]() / math.pow(10, decimals);
+    }
+  };
+  (MathUtils.MathUtils.new = function() {
+    ;
+  }).prototype = MathUtils.MathUtils.prototype;
+  dart.addTypeTests(MathUtils.MathUtils);
+  dart.addTypeCaches(MathUtils.MathUtils);
+  dart.setLibraryUri(MathUtils.MathUtils, I[0]);
+  dart.trackLibraries("packages/basic_utils/src/MathUtils.dart", {
+    "package:basic_utils/src/MathUtils.dart": MathUtils
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["MathUtils.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/basic_utils/src/MathUtils.dart.lib.js"}');
+  // Exports:
+  return {
+    src__MathUtils: MathUtils
+  };
+}));
+
+//# sourceMappingURL=MathUtils.dart.lib.js.map

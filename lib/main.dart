@@ -7,7 +7,7 @@ import 'package:learning_management_system/server/server.dart' as server;
 
 void main() {
   print("started");
-  server.start();
+  //server.start();
   runApp(new MyApp());
 }
 

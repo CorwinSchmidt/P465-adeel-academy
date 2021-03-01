@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_management_system/views/dashboard/starting_dash_view.dart';
 import 'package:learning_management_system/views/home/home_view.dart';
 import 'package:learning_management_system/assets.dart';
 import 'package:learning_management_system/widgets/centered_view/centered_view.dart';
@@ -57,20 +58,24 @@ class LoginView extends StatelessWidget {
                       textColor: Colors.white,
                       child: Text("Login"),
                       onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => StartingDashView()),
+                        );
                         // temporary onPressed method...
                         // just shows what was entered
-                        return showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              // can use our controllers to get text entered in our two fields
-                              content: Text("Email entered: " +
-                                  emailController.text +
-                                  "\nPassword entered: " +
-                                  passwordController.text),
-                            );
-                          },
-                        );
+                        // return showDialog(
+                        //   context: context,
+                        //   builder: (context) {
+                        //     return AlertDialog(
+                        //       // can use our controllers to get text entered in our two fields
+                        //       content: Text("Email entered: " +
+                        //           emailController.text +
+                        //           "\nPassword entered: " +
+                        //           passwordController.text),
+                        //     );
+                        //   },
+                        // );
                         // Navigator.push(
                         //   context,
                         //   MaterialPageRoute(builder: (context) => HomeView()),
