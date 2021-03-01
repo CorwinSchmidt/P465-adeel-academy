@@ -3,10 +3,12 @@ import 'package:learning_management_system/widgets/centered_view/centered_view.d
 import 'package:learning_management_system/widgets/details/details.dart';
 import 'package:learning_management_system/widgets/log_in/log_in.dart';
 import 'package:learning_management_system/widgets/navigation/nav_drawer.dart';
+import 'package:learning_management_system/utils/authentication.dart';
 
 // This is the home view for our web page.
 class StartingDashView extends StatelessWidget {
   const StartingDashView({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,8 @@ class StartingDashView extends StatelessWidget {
       ),
       drawer: NavDrawer(),
       body: CenteredView(
-        child: Text("This is our dashboard. I am having so much fun. This is so fun."),
+        child: Text(
+            userEmail + " has been authenticated, welcome to the dashboard"),
         // child: Column(
         //   children: <Widget>[
         //     //NavigationBar(),

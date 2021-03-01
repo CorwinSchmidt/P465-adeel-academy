@@ -13,6 +13,10 @@
   -->
   <base href="/">
 
+
+  <meta name="google-signin-client_id" content="857735228112-8qv1n3c49vo8fnj2vnt0ufhdsba1s7jo.apps.googleusercontent.com.apps.googleusercontent.com">
+
+
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
@@ -27,6 +31,34 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCoq4wg8hlH8q3GmEQwDabyp8qn1TpRUsU",
+        authDomain: "adeel-academy-3cbf3.firebaseapp.com",
+        projectId: "adeel-academy-3cbf3",
+        storageBucket: "adeel-academy-3cbf3.appspot.com",
+        messagingSenderId: "532038826288",
+        appId: "1:532038826288:web:5e9ccc0e1a74dfbe4bb0f5",
+        measurementId: "G-TRN5DJ909X"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+
+
+
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->

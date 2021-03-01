@@ -5,10 +5,10 @@ void start() async {
   // log into database
   print("Trying to create database...");
   var db = await Db.create(
-      'mongodb+srv://adeelacademy:adeelacademy@cluster0.jegun.mongodb.net/AdeelAcademy?retryWrites=true&w=majority');
+      'mongodb+srv://cluster0.jegun.mongodb.net/AdeelAcademy?retryWrites=true&w=majority');
 
   print("Opening...");
-  
+
   await db.open();
 
   print("opened");

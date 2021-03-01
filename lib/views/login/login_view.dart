@@ -3,13 +3,22 @@ import 'package:learning_management_system/views/dashboard/starting_dash_view.da
 import 'package:learning_management_system/views/home/home_view.dart';
 import 'package:learning_management_system/assets.dart';
 import 'package:learning_management_system/widgets/centered_view/centered_view.dart';
+import 'package:learning_management_system/utils/authentication.dart';
+
+class LoginView extends StatefulWidget {
+  @override
+  _LoginViewState createState() => _LoginViewState();
+}
 
 // This will be the page that opens whenever user presses the LogIn button
-class LoginView extends StatelessWidget {
+class _LoginViewState extends State<LoginView> {
   // controller for email textfield
   final emailController = TextEditingController();
   // controller for password textfield
   final passwordController = TextEditingController();
+
+  bool validLogin = false;
+  String loginMessage = "";
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +59,15 @@ class LoginView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 30.0),
                     ),
+                    if (loginMessage != "") ...[
+                      Text(
+                        loginMessage,
+                        style: TextStyle(color: Colors.red),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30.0),
+                      ),
+                    ],
                     MaterialButton(
                       height: 40.0,
                       minWidth: 100.0,
@@ -57,29 +75,25 @@ class LoginView extends StatelessWidget {
                       splashColor: Colors.teal,
                       textColor: Colors.white,
                       child: Text("Login"),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => StartingDashView()),
-                        );
-                        // temporary onPressed method...
-                        // just shows what was entered
-                        // return showDialog(
-                        //   context: context,
-                        //   builder: (context) {
-                        //     return AlertDialog(
-                        //       // can use our controllers to get text entered in our two fields
-                        //       content: Text("Email entered: " +
-                        //           emailController.text +
-                        //           "\nPassword entered: " +
-                        //           passwordController.text),
-                        //     );
-                        //   },
-                        // );
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => HomeView()),
-                        // );
+                      onPressed: () async {
+                        await signInWithEmailPassword(
+                                emailController.text, passwordController.text)
+                            .then((result) {
+                          setState(() {
+                            validLogin = true;
+                          });
+                          print(result);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => StartingDashView()),
+                          );
+                        }).catchError((error) {
+                          setState(() {
+                            loginMessage = "Error logging in";
+                          });
+                          print('Registration Error: $error');
+                        });
                       },
                     )
                   ],

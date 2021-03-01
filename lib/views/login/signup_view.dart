@@ -3,13 +3,48 @@ import 'package:learning_management_system/views/dashboard/starting_dash_view.da
 import 'package:learning_management_system/views/home/home_view.dart';
 import 'package:learning_management_system/assets.dart';
 import 'package:learning_management_system/widgets/centered_view/centered_view.dart';
+import 'package:learning_management_system/utils/authentication.dart';
+
+class SignupView extends StatefulWidget {
+  @override
+  _SignupViewState createState() => _SignupViewState();
+}
 
 // This will be the page that opens whenever user presses the LogIn button
-class SignupView extends StatelessWidget {
+class _SignupViewState extends State<SignupView> {
   // controller for email textfield
   final emailController = TextEditingController();
   // controller for password textfield
   final passwordController = TextEditingController();
+
+  String signupErrorMessage = "";
+
+  // email validator
+  String _validateEmail(String value) {
+    value = value.trim();
+
+    if (emailController.text != null) {
+      if (value.isEmpty) {
+        return 'Email can\'t be empty';
+      } else if (!value.contains(RegExp(
+          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"))) {
+        return 'Enter a correct email address';
+      }
+    }
+    return null;
+  }
+
+  // password validator
+  String _validatePassword(String value) {
+    value = value.trim();
+
+    if (passwordController.text != null) {
+      if (value.isEmpty) {
+        return 'Password cannot be empty';
+      }
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,22 +85,57 @@ class SignupView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 30.0),
                     ),
+                    if (signupErrorMessage != "") ...[
+                      Text(
+                        signupErrorMessage,
+                        style: TextStyle(color: Colors.red),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30.0),
+                      ),
+                    ],
+                    Text(
+                        "Must be a valid email and password must be at least 6 characters."),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30.0),
+                    ),
                     MaterialButton(
-                      height: 40.0,
-                      minWidth: 100.0,
-                      color: Colors.orange,
-                      splashColor: Colors.teal,
-                      textColor: Colors.white,
-                      child: Text("Sign up"),
-                      onPressed: () {
-                        
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => StartingDashView()),
-                        );
-                        
-                      },
-                    )
+                        height: 40.0,
+                        minWidth: 100.0,
+                        color: Colors.orange,
+                        splashColor: Colors.teal,
+                        textColor: Colors.white,
+                        child: Text("Sign up"),
+                        onPressed: () async {
+                          print("sign up pressed");
+                          // validate email and password and then register
+                          if (_validateEmail(emailController.text) == null &&
+                              _validatePassword(passwordController.text) ==
+                                  null) {
+                            await registerWithEmailPassword(
+                                    emailController.text,
+                                    passwordController.text)
+                                .then((result) {
+                              print(result);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => StartingDashView()),
+                              );
+                            }).catchError((error) {
+                              setState(() {
+                                signupErrorMessage =
+                                    "Error creating you account.";
+                              });
+                              print('Registration Error: $error');
+                            });
+                          } else {
+                            setState(() {
+                              signupErrorMessage =
+                                  "Error validating your information.";
+                            });
+                          }
+                        })
                   ],
                 ),
               ),

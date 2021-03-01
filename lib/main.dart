@@ -7,6 +7,7 @@ import 'package:learning_management_system/server/server.dart' as server;
 
 void main() {
   print("started");
+
   //server.start();
   runApp(new MyApp());
 }
@@ -46,6 +47,8 @@ class LoginPageState extends State<LoginPage>
       parent: _iconAnimationController,
       curve: Curves.bounceOut,
     );
+    print("asdf");
+
     _iconAnimation.addListener(() => this.setState(() {}));
     _iconAnimationController.forward();
   }
