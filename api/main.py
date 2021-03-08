@@ -36,13 +36,6 @@ api = Api(app)
             String: name
             String: email
                     
-        ******** COURSE ********
-            String: courseID
-            String: name
-            String: description
-            String[]: userIDs (teachers)
-            String[]: userIDs (students)
-            Module[]: modules
 
         ******** StudentCourses ********
             Int: unique takes id
@@ -87,12 +80,20 @@ api = Api(app)
             boolean: turnedIn
             float: grade
     Complete:
-        ********* STUDENT *********
+        ********* STUDENT ********* Dean
             String: userID (firebase)
             String: name
             String: email
             String[]: courseID
             boolean: connected (on/offline)
+
+        ******** COURSE ******** Dean
+            String: courseID 
+            String: name
+            String: description
+            String[]: userIDs (teachers)
+            String[]: userIDs (students)
+            Module[]: modules
 '''
 
 # done objects (delete from todo and add here when done, lets try do all of them this week)
