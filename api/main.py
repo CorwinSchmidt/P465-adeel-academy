@@ -96,11 +96,7 @@ api = Api(app)
             Module[]: modules
 '''
 
-# done objects (delete from todo and add here when done, lets try do all of them this week)
-
-
 # STUDENT
-# The Post is just an example fromt the website using a blog post
 # 1. example model for a user            
 class Student(db.Model):
     __tablename__ = 'student'
