@@ -37,11 +37,6 @@ api = Api(app)
             String: email
                     
 
-        ******** StudentCourses ********
-            Int: unique takes id
-            Int: StudentId (ref student id)
-            Int: CourseId (ref teacher id)
-
         ****** MODULE *****
             String: moduleID
             String: name
@@ -94,6 +89,11 @@ api = Api(app)
             String[]: userIDs (teachers)
             String[]: userIDs (students)
             Module[]: modules
+            
+         ******** StudentCourses ********
+            Int: unique takes id
+            Int: StudentId (ref student id)
+            Int: CourseId (ref teacher id)
 '''
 
 # STUDENT
@@ -260,6 +260,86 @@ curl http://localhost:5000/courses \
     -X POST \
     -H "Content-Type: application/json" \
     -d '{"courseId":"1", "name":"cs OOP", "description":"GOD I LOVE OOP"}'
+'''
+
+# Int: unique takes id
+# Int: StudentId (ref student id)
+# Int: CourseId (ref teacher id)
+
+
+
+# StudentCourses
+# The Post is just an example fromt the website using a blog post
+# 1. example model for a user            
+class StudentCourses(db.Model):
+    __tablename__ = 'studentcourse'
+    studentCourseId = db.Column(db.Integer, primary_key=True)
+    courseId = db.Column(db.Integer, db.ForeignKey('course.courseId'))
+    studentId= db.relationship(db.Integer, db.ForeignKey('student.studentId'))
+
+    def __repr__(self):
+        return "studentCourseId: {}, courseId: {}, studentId: {}".format(self.studentCourseId, self.courseId, self.studentId)
+
+# 2. a schema used by Marshmallow
+class StudentCoursesSchema(ma.Schema):
+    class Meta:
+        fields = ("studentCourseId", "courseId", "studentId")
+
+# 3a multiple users schema
+studentCourses_schema = StudentCoursesSchema(many=True)
+# 3b single user schema
+studentCourse_schema = StudentCoursesSchema()
+
+# 4. the actual endpoint that is called when a user goes to a certain route eg /users
+    # for returning a list of items
+class StudentCourseListResource(Resource):
+    def get(self):
+        student_courses = StudentCourses.query.all()
+        return studentCourses_schema.dump(student_courses)
+
+    def post(self):
+        new_student_course = StudentCourses(
+            courseId=request.json['courseId'],
+            studentId=request.json['studentId'],
+        )
+        db.session.add(new_student_course)
+        db.session.commit()
+        return studentCourse_schema.dump(new_student_course)
+
+# 4. the actual endpoint that is called when a user goes to a certain route eg /users
+    # for a single data item given an ID
+class StudentCourseResource(Resource):
+    def get(self, studentCourseId):
+        student_course = StudentCourses.query.get_or_404(studentCourseId)
+        return studentCourse_schema.dump(student_course)
+
+    def patch(self, studentCourseId):
+        course = Course.query.get_or_404(studentCourseId)
+        if 'studentCourseId' in request.json:
+            course.studentCourseId = request.json['studentCourseId']
+        if 'studentId' in request.json:
+            course.studentId = request.json['studentId']
+        if 'courseId' in request.json:
+            course.courseId = request.json['courseId']
+        db.session.commit()
+        return studentCourse_schema.dump(course)
+
+    def delete(self, studentCourseId):
+        student_course = Course.query.get_or_404(studentCourseId)
+        db.session.delete(student_course)
+        db.session.commit()
+        return '', 204
+
+
+# 5. register the endpoints so flask knows where to go when called
+api.add_resource(StudentCourseListResource, '/studentcourses') # example call to get all courses "curl http://localhost:5000/studentcourses"
+api.add_resource(StudentCourseResource, '/studentcourses/<int:studentCourseId>') # eg curl http://localhost:5000/studentcourses/1
+# example to insert a course
+'''
+curl http://localhost:5000/studentcourses \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"studentCourseId":"1", "studentId":"1", "courseId":"2"}'
 '''
 
 
