@@ -23,52 +23,52 @@ api = Api(app)
 
 # TODO object items
 '''
-    Incomplete:
-        ********* TEACHER *********
+    Completed: 
+        ********* TEACHER *********HAYDEN
             String: userID (firebase)
             String: name
             String: email
             String[]: courseID
             boolean: connected (on/offline)
                     
-        ******** ADMIN ********
+        ******** ADMIN ********HAYDEN
             String: userID (firebase)
             String: name
             String: email
                     
 
-        ****** MODULE *****
+        ****** MODULE *****HAYDEN
             String: moduleID
             String: name
             String: description
             Document[]: documents
             Course_Assignment[]: assignments
                     
-        ****** DOCUMENT ******
+        ****** DOCUMENT ******HAYDEN
             String: documentID
             Enum type: (file, text, URL, media)
                     
-        ********* CHAT *********
+        ********* CHAT *********HAYDEN
             Message[]: messages
             String[]: userIDs (chat partners)
                     
-        ******* MESSAGE *******
+        ******* MESSAGE *******HAYDEN
             String: userID (sender)
             String: content
             int: timestamp
                     
-        ***** ANNOUNCEMENT *****
+        ***** ANNOUNCEMENT *****HAYDEN
             String: name
             String: description
             String: courseID
                     
-        ** COURSE_ASSIGNMENT **
+        ** COURSE_ASSIGNMENT **HAYDEN
             String: name
             String: description
             int: dueTime
             String: courseID
                     
-        ** STUDENT_ASSIGNMENT **
+        ** STUDENT_ASSIGNMENT **HAYDEN
             String: name
             String: description
             int: dueTime
@@ -90,7 +90,7 @@ api = Api(app)
             String[]: userIDs (students)
             Module[]: modules
             
-         ******** StudentCourses ********
+         ******** StudentCourses ********HAYDEN
             Int: unique takes id
             Int: StudentId (ref student id)
             Int: CourseId (ref teacher id)
