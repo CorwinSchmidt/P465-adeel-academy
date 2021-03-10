@@ -98,7 +98,7 @@ class Student(db.Model):
     connected = db.Column(db.Boolean)
 
     def __repr__(self):
-        return "<Student Id : {}, Name: {}, Email: {}, Courses: {}, Connected: {}>".format(self.studentId, self.name, self.email, self.courses, self.connected)
+        return "Student Id : {}, Name: {}, Email: {}, Courses: {}, Connected: {}".format(self.studentId, self.name, self.email, self.courses, self.connected)
 
 # Marshmellow Schema
 class StudentSchema(ma.Schema):
