@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_restful import Api, Resource
+from marshmallow_sqlalchemy import SQLAlchemySchema, auto_field
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -88,93 +89,90 @@ api = Api(app)
             Int: CourseId (ref teacher id)
 '''
 
+# STUDENT         
 class Student(db.Model):
     __tablename__ = 'student'
-
-    studentId = db.Column(db.Integer, primary_key = True)
+    studentId = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
-    email = db.Column(db.String(50))
+    email = db.Column(db.String(50))  
     courses = db.relationship("StudentCourses")
     connected = db.Column(db.Boolean)
 
     def __repr__(self):
-        return "<Student Id : {}, Name: {}, Email: {}, Courses: {}, Connected: {}>".format(self.studentId, self.name, self.email, self.courses, self.connected)
+        return "<studentId: {}, Name: {}, Email: {}, Courses: {}, Connected: {}>".format(self.studentId, self.name, self.email, self.courses, self.connected)
 
-# Marshmellow Schema
-class StudentSchema(ma.Schema):
+class StudentSchema(SQLAlchemySchema):
     class Meta:
-        fields = ("studentId", "name", "email", "courses", "connected")
+        model = Student
+        include_fk = True
+        # fields = ("studentId", "name", "email", "courses", "connected")
 
-# Schema for Multiple Students
-students_schema = StudentSchema(many = True)
+    studentId = auto_field()
+    name = auto_field()
+    email = auto_field()
+    courses = auto_field()
+    conntected = auto_field()
+    
 
-# Schema for Individual Students
+
+students_schema = StudentSchema(many=True)
+
 student_schema = StudentSchema()
 
 class StudentListResource(Resource):
     def get(self):
         posts = Student.query.all()
-        # this is what im talking about here!!!!! it prints the whole row, meaning its stored in the database, it just wont return the whole item for some reason. 
-        for i in posts:
-            print(i)
+        print("getting students")
+        print(posts)
+        print(students_schema.dump(posts))
         return students_schema.dump(posts)
 
     def post(self):
+
         connection = False
 
-        if request.json['connected'] == "True" or request.json['connected'] == 'true':
+        if request.json['connected']=='True' or request.json['connected'] == 'true':
             connection = True
-        
-        newStudent = Student(
-            name = request.json['name'],
-            email = request.json['email'],
-            connected = connection
-        )
 
-        db.session.add(newStudent)
+        new_student = Student(
+            name=request.json['name'],
+            email=request.json['email'],
+            connected=connection, 
+        )
+        db.session.add(new_student)
         db.session.commit()
-        return student_schema.dump(newStudent)
+        return student_schema.dump(new_student)
+
 
 
 class StudentResource(Resource):
-
-    def get(self, studentId):
-
-        student = Student.query.get_or_404(studentId)
+    def get(self, student_id):
+        student = Student.query.get_or_404(student_id)
         return student_schema.dump(student)
 
-    def patch(self, studentId):
-
-        student = Student.query.get_or_404(studentId)
-
+    def patch(self, student_id):
+        student = Student.query.get_or_404(student_id)
         if 'studentId' in request.json:
             student.studentId = request.json['studentId']
-
         if 'name' in request.json:
             student.name = request.json['name']
-
         if 'email' in request.json:
             student.email = request.json['email']
-
-        if 'connected' in request.json and (request.json['connected'] == 'True' or request.json['connected'] == 'true'):
+        if 'connected' in request.json and (request.json['connected']=='True' or request.json['connected'] == 'true'):
             student.connected = True
-
         db.session.commit()
         return student_schema.dump(student)
 
-    
-    def delete(self, studentId):
-
-        student = studentId.query.get_or_404(studentId)
+    def delete(self, student_id):
+        student = Student.query.get_or_404(student_id)
         db.session.delete(student)
         db.session.commit()
         return '', 204
-    
-# Registering the Endpoints 
+
+
+
 api.add_resource(StudentListResource, '/students')
-api.add_resource(StudentResource, '/students/<int:studentId>')
-
-
+api.add_resource(StudentResource, '/students/<int:student_id>')
 # example to insert a student
 '''
 curl http://localhost:5000/students \
@@ -194,11 +192,11 @@ class Course(db.Model):
     modules = db.relationship("Module")
 
     def __repr__(self):
-        return "courseId: {}, Name: {}, description: {}, students: {}, teachers: {}, modules: {}".format(self.courseId, self.name, self.description, self.students, self.teachers, self.modules)
+        return "<courseId: {}, Name: {}, description: {}, students: {}, teachers: {}, modules: {}>".format(self.courseId, self.name, self.description, self.students, self.teachers, self.modules)
 
 class CourseSchema(ma.Schema):
     class Meta:
-        fields = ("id", "name", "description", "students", "teachers", "modules")
+        fields = ("courseId", "name", "description", "students", "teachers", "modules")
 
 courses_schema = CourseSchema(many=True)
 
@@ -248,7 +246,7 @@ api.add_resource(CourseResource, '/courses/<int:course_id>')
 curl http://localhost:5000/courses \
     -X POST \
     -H "Content-Type: application/json" \
-    -d '{"courseId":"1", "name":"cs OOP", "description":"GOD I LOVE OOP"}'
+    -d '{"name":"geo", "description":"GOD I LOVE GEO"}'
 '''
 
 
