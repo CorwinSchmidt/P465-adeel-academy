@@ -11,9 +11,7 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 api = Api(app)
 
-# https://rahmanfadhil.com/flask-rest-api/
 
-# TODO object items
 '''
     Completed: 
         ********* TEACHER *********HAYDEN
@@ -28,7 +26,6 @@ api = Api(app)
             String: name
             String: email
                     
-
         ****** MODULE *****HAYDEN
             String: moduleId
             String: name
@@ -73,7 +70,6 @@ api = Api(app)
             String: email
             String[]: courseId
             boolean: connected (on/offline)
-
         ******** COURSE ******** Dean
             String: courseId 
             String: name
@@ -86,102 +82,78 @@ api = Api(app)
             Int: unique takes id
             Int: StudentId (ref student id)
             Int: CourseId (ref teacher id)
+
+        ******** TeacherCourses ********HAYDEN
+            Int: teacherCourseId
+            Int: courseId
+            Int: teacherId
 '''
 
 class Student(db.Model):
-    __tablename__ = 'student'
-
-    studentId = db.Column(db.Integer, primary_key = True)
+    studentId = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
-    email = db.Column(db.String(50))
-    courses = db.relationship("StudentCourses")
-    connected = db.Column(db.Boolean)
+    email = db.Column(db.String(255))
+    connected = db.Column(db.Integer)
 
     def __repr__(self):
-        return "Student Id : {}, Name: {}, Email: {}, Courses: {}, Connected: {}".format(self.studentId, self.name, self.email, self.courses, self.connected)
+        return "studentId: {}, Name: {}, email: {}, connected: {}".format(self.courseId, self.name, self.email, self.connected)
 
-# Marshmellow Schema
+
 class StudentSchema(ma.Schema):
     class Meta:
-        fields = ("studentId", "name", "email", "courses", "connected")
+        fields = ("studentId", "name", "email", "connected")
 
-# Schema for Multiple Students
-students_schema = StudentSchema(many = True)
 
-# Schema for Individual Students
 student_schema = StudentSchema()
+students_schema = StudentSchema(many=True)
+
 
 class StudentListResource(Resource):
     def get(self):
-        posts = Student.query.all()
-        # this is what im talking about here!!!!! it prints the whole row, meaning its stored in the database, it just wont return the whole item for some reason. 
-        for i in posts:
-            print(i)
-        return students_schema.dump(posts)
+        students = Student.query.all()
+        return students_schema.dump(students)
 
     def post(self):
-        connection = False
-
-        if request.json['connected'] == "True" or request.json['connected'] == 'true':
-            connection = True
-        
-        newStudent = Student(
-            name = request.json['name'],
-            email = request.json['email'],
-            connected = connection
+        new_student = Student(
+            name=request.json['name'],
+            email=request.json['email'],
+            connected=request.json['connected']
         )
-
-        db.session.add(newStudent)
+        db.session.add(new_student)
         db.session.commit()
-        return student_schema.dump(newStudent)
+        return student_schema.dump(new_student)
 
 
 class StudentResource(Resource):
-
-    def get(self, studentId):
-
-        student = Student.query.get_or_404(studentId)
+    def get(self, student_id):
+        student = Student.query.get_or_404(student_id)
         return student_schema.dump(student)
 
-    def patch(self, studentId):
+    def patch(self, student_id):
+        student = Student.query.get_or_404(student_id)
 
-        student = Student.query.get_or_404(studentId)
-
-        if 'studentId' in request.json:
-            student.studentId = request.json['studentId']
-
+        if 'studetnId' in request.json:
+            student.variable = request.json['variable']
         if 'name' in request.json:
             student.name = request.json['name']
-
         if 'email' in request.json:
             student.email = request.json['email']
-
-        if 'connected' in request.json and (request.json['connected'] == 'True' or request.json['connected'] == 'true'):
-            student.connected = True
+        if 'connected' in request.json:
+            student.connected = request.json['connected']
 
         db.session.commit()
         return student_schema.dump(student)
 
-    
-    def delete(self, studentId):
-
-        student = studentId.query.get_or_404(studentId)
+    def delete(self, student_id):
+        student = Student.query.get_or_404(student_id)
         db.session.delete(student)
         db.session.commit()
         return '', 204
-    
-# Registering the Endpoints 
+
+
 api.add_resource(StudentListResource, '/students')
-api.add_resource(StudentResource, '/students/<int:studentId>')
+api.add_resource(StudentResource, '/students/<int:student_id>')
 
-
-# example to insert a student
-'''
-curl http://localhost:5000/students \
-    -X POST \
-    -H "Content-Type: application/json" \
-    -d '{"name":"dean", "email":"test@dean.com", "connected":"True"}'
-'''
 
 # Course
 class Course(db.Model):
@@ -248,7 +220,7 @@ api.add_resource(CourseResource, '/courses/<int:course_id>')
 curl http://localhost:5000/courses \
     -X POST \
     -H "Content-Type: application/json" \
-    -d '{"courseId":"1", "name":"cs OOP", "description":"GOD I LOVE OOP"}'
+    -d '{"name":"cs OOP", "email":"test@gmail.com", "conneted":"true"}'
 '''
 
 
@@ -320,7 +292,6 @@ curl http://localhost:5000/studentcourses \
 # TEACHER
 class Teacher(db.Model):
     __tablename__ = 'teacher'
-
     teacherId = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(50))
     email = db.Column(db.String(50))
@@ -329,14 +300,12 @@ class Teacher(db.Model):
 
 
     def __repr__(self):
-
         return "Teacher Id : {}, Name: {}, Email: {}, Courses: {}, Connected: {}".format(self.teacherId, self.name, self.email, self.courses, self.connected)
 
 
 # Marshmellow Schema
 class TeacherSchema(ma.Schema):
     class Meta:
-
         fields = ("teacherId", "name", "email", "courses", "connected")
 
 # Schema for Multiple Teachers
@@ -741,7 +710,6 @@ class ChatListResource(Resource):
         new_chat = Chat(
             chatName = request.json['chatName'],
             createrId = request.json['createrId'],
-            chatId = request.json['chatId']
         )
 
         db.session.add(new_chat)
@@ -1094,16 +1062,16 @@ class StudentAssignmentSchema(ma.Schema):
         fields = ("assignmentId", "name", "description", "dueDate", "grade", "turnedIn")
 
 # Schema for Multiple Student Assignments
-students_schema = StudentAssignmentSchema(many = True)
+students_assignment_schema = StudentAssignmentSchema(many = True)
 
 # Schema for Single Student Assignments
-student_schema = StudentAssignmentSchema()
+student_assignment_schema = StudentAssignmentSchema()
 
 # Endpoint for the List of Student Assignments
 class StudentAssignmentListResource(Resource):
     def get(self):
         student_assignment = StudentAssignment.query.all()
-        return student_schema.dump(student_assignment)
+        return students_assignment_schema.dump(student_assignment)
 
     def post(self):
         newStudentAssignment = StudentAssignment(
@@ -1116,14 +1084,14 @@ class StudentAssignmentListResource(Resource):
 
         db.session.add(newStudentAssignment)
         db.session.commit()
-        return student_schema.dump(newStudentAssignment)
+        return students_assignment_schema.dump(newStudentAssignment)
 
 # Endpoint for a Single Student Assignment
 class StudentAssignmentResource(Resource):
 
     def get(self, assignmentId):
         student_ass = StudentAssignment.query.get_or_404(assignmentId)
-        return student_schema.dump(student_ass)
+        return student_assignment_schema.dump(student_ass)
 
     def patch(self, assignmentId):
         student_ass = StudentAssignment.query.get_or_404(assignmentId)
@@ -1147,7 +1115,7 @@ class StudentAssignmentResource(Resource):
             student_ass.turnedIn = request.json['turnedIn']
 
         db.session.commit()
-        return student_schema.dump(student_ass)
+        return student_assignment_schema.dump(student_ass)
 
     def delete(self, assignmentId):
         student_ass = StudentAssignment.query_or_404(assignmentId)
@@ -1159,9 +1127,12 @@ class StudentAssignmentResource(Resource):
 # Register Endpoints
 api.add_resource(StudentAssignmentListResource, '/studentAssignments')
 api.add_resource(StudentAssignmentResource, '/studentAssignments/<int:assignmentId>')
-    
+
 
 # main function that gets flask runnning
 if __name__ == '__main__':
     db.create_all()
     app.run(debug=True)
+
+
+
