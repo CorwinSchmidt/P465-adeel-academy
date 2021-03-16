@@ -1,10 +1,10 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\Flutter\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\dustt\OneDrive\Documents\P565\Dart Testing\P465-adeel-academy-main"
-export "FLUTTER_TARGET=lib\main.dart"
+export "FLUTTER_ROOT=/Users/deanallen/Documents/codingProjects/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/deanallen/Documents/codingProjects/web_dev/marketing-dashboard/P465-adeel-academy"
+export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
-export "SYMROOT=${SOURCE_ROOT}/../build\ios"
+export "SYMROOT=${SOURCE_ROOT}/../build/ios"
 export "FLUTTER_BUILD_NAME=1.0.0"
 export "FLUTTER_BUILD_NUMBER=1"
 export "DART_OBFUSCATION=false"

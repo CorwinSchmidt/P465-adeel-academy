@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_restful import Api, Resource
+from marshmallow import fields
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -154,73 +155,11 @@ class StudentResource(Resource):
 api.add_resource(StudentListResource, '/students')
 api.add_resource(StudentResource, '/students/<int:student_id>')
 
-
-# Course
-class Course(db.Model):
-    __tablename__ = 'course'
-    courseId = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50))
-    description = db.Column(db.String(500)) 
-    students = db.relationship("StudentCourses")
-    teachers = db.relationship("TeacherCourses")
-    modules = db.relationship("Module")
-
-    def __repr__(self):
-        return "courseId: {}, Name: {}, description: {}, students: {}, teachers: {}, modules: {}".format(self.courseId, self.name, self.description, self.students, self.teachers, self.modules)
-
-class CourseSchema(ma.Schema):
-    class Meta:
-        fields = ("id", "name", "description", "students", "teachers", "modules")
-
-courses_schema = CourseSchema(many=True)
-
-course_schema = CourseSchema()
-
-class CourseListResource(Resource):
-    def get(self):
-        courses = Course.query.all()
-        return courses_schema.dump(courses)
-
-    def post(self):
-        new_course = Course(
-            name=request.json['name'],
-            description=request.json['description'],
-        )
-        db.session.add(new_course)
-        db.session.commit()
-        return course_schema.dump(new_course)
-
-class CourseResource(Resource):
-    def get(self, course_id):
-        course = Course.query.get_or_404(course_id)
-        return course_schema.dump(course)
-
-    def patch(self, course_id):
-        course = Course.query.get_or_404(course_id)
-        if 'courseId' in request.json:
-            course.courseId = request.json['courseId']
-        if 'name' in request.json:
-            course.name = request.json['name']
-        if 'description' in request.json:
-            course.description = request.json['description']
-        db.session.commit()
-        return course_schema.dump(course)
-
-    def delete(self, course_id):
-        course = Course.query.get_or_404(course_id)
-        db.session.delete(course)
-        db.session.commit()
-        return '', 204
-
-
-
-api.add_resource(CourseListResource, '/courses') 
-api.add_resource(CourseResource, '/courses/<int:course_id>') 
 '''
-curl http://localhost:5000/courses \
+curl http://localhost:5000/students \
     -X POST \
     -H "Content-Type: application/json" \
-    -d '{"name":"cs OOP", "email":"test@gmail.com", "conneted":"true"}'
+    -d '{"name":"cs OOP", "email":"deanallen@gmail.com", "connected": "1"}'
 '''
 
 
@@ -286,7 +225,7 @@ api.add_resource(StudentCourseResource, '/studentcourses/<int:studentCourseId>')
 curl http://localhost:5000/studentcourses \
     -X POST \
     -H "Content-Type: application/json" \
-    -d '{"studentCourseId":"1", "studentId":"1", "courseId":"2"}'
+    -d '{"studentId":"1", "courseId":"1"}'
 '''
 
 # TEACHER
@@ -1127,6 +1066,81 @@ class StudentAssignmentResource(Resource):
 # Register Endpoints
 api.add_resource(StudentAssignmentListResource, '/studentAssignments')
 api.add_resource(StudentAssignmentResource, '/studentAssignments/<int:assignmentId>')
+
+# Course
+class Course(db.Model):
+    __tablename__ = 'course'
+    courseId = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    description = db.Column(db.String(500)) 
+    students = db.relationship("StudentCourses")
+    teachers = db.relationship("TeacherCourses")
+    modules = db.relationship("Module")
+
+    def __repr__(self):
+        return "courseId: {}, Name: {}, description: {}, students: {}, teachers: {}, modules: {}".format(self.courseId, self.name, self.description, self.students, self.teachers, self.modules)
+
+class CourseSchema(ma.Schema):
+    courseId = fields.Int()
+    name = fields.Str()
+    description = fields.Str()
+    students = ma.Nested(students_schema)
+    teachers = ma.Nested(teachers_schema)
+    modules = ma.Nested(modules_schema)
+
+    class Meta:
+        fields = ("courseId", "name", "description", "students", "teachers", "modules")
+
+courses_schema = CourseSchema(many=True)
+
+course_schema = CourseSchema()
+
+class CourseListResource(Resource):
+    def get(self):
+        courses = Course.query.all()
+        return courses_schema.dump(courses)
+
+    def post(self):
+        new_course = Course(
+            name=request.json['name'],
+            description=request.json['description'],
+        )
+        db.session.add(new_course)
+        db.session.commit()
+        return course_schema.dump(new_course)
+
+class CourseResource(Resource):
+    def get(self, course_id):
+        course = Course.query.get_or_404(course_id)
+        return course_schema.dump(course)
+
+    def patch(self, course_id):
+        course = Course.query.get_or_404(course_id)
+        if 'courseId' in request.json:
+            course.courseId = request.json['courseId']
+        if 'name' in request.json:
+            course.name = request.json['name']
+        if 'description' in request.json:
+            course.description = request.json['description']
+        db.session.commit()
+        return course_schema.dump(course)
+
+    def delete(self, course_id):
+        course = Course.query.get_or_404(course_id)
+        db.session.delete(course)
+        db.session.commit()
+        return '', 204
+
+
+
+api.add_resource(CourseListResource, '/courses') 
+api.add_resource(CourseResource, '/courses/<int:course_id>') 
+'''
+curl http://localhost:5000/courses \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"name":"cs OOP", "description":"i am describing this course"}'
+'''
 
 
 # main function that gets flask runnning
