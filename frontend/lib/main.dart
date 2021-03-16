@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:learning_management_system/Objects/Course.dart';
 import 'package:learning_management_system/pages/screens.dart';
 import 'package:learning_management_system/assets.dart';
 import 'package:learning_management_system/pages/nav_screen.dart';
+import 'package:learning_management_system/views/dashboard/starting_dash_view.dart';
 import 'package:learning_management_system/views/home/home_view.dart';
 import 'package:learning_management_system/server/server.dart' as server;
 
 void main() {
   print("started");
+
+  // Course testing:
+  Course course1 = Course("1", "course 1", "this is test course 1", ["st1"], ["te1"], null);
+  Course course2 = Course("2", "course 2", "this is test course 2", ["st2"], ["te2"], null);
+
+  List<Course> courses = [course1, course2];
 
   //server.start();
   runApp(new MyApp());
@@ -24,6 +32,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       home: HomeView(),
+      //home: StartingDashView(),
     );
   }
 }
