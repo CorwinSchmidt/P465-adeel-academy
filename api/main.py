@@ -1147,6 +1147,3 @@ curl http://localhost:5000/courses \
 if __name__ == '__main__':
     db.create_all()
     app.run(debug=True)
-
-
-

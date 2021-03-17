@@ -125,7 +125,7 @@ class _SignupViewState extends State<SignupView> {
                             }).catchError((error) {
                               setState(() {
                                 signupErrorMessage =
-                                    "Error creating you account.";
+                                    "Error creating your account.";
                               });
                               print('Registration Error: $error');
                             });
