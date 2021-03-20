@@ -1,36 +1,32 @@
-define(['dart_sdk', 'packages/sevr/src/mime/mime_src/mime_shared.dart'], (function load__packages__sevr__src__mime__mime_src__bound_multipart_stream_dart(dart_sdk, packages__sevr__src__mime__mime_src__mime_shared$46dart) {
+define(['dart_sdk', 'packages/file/src/forwarding/forwarding_link.dart', 'packages/file/src/interface/link.dart', 'packages/file/src/common.dart'], (function load__packages__file__src__backends__local__local_link_dart(dart_sdk, packages__file__src__forwarding__forwarding_link$46dart, packages__file__src__interface__link$46dart, packages__file__src__common$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const async = dart_sdk.async;
-  const _interceptors = dart_sdk._interceptors;
   const _js_helper = dart_sdk._js_helper;
-  const convert = dart_sdk.convert;
+  const _internal = dart_sdk._internal;
+  const io = dart_sdk.io;
+  const async = dart_sdk.async;
+  const typed_data = dart_sdk.typed_data;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const mime_shared = packages__sevr__src__mime__mime_src__mime_shared$46dart.src__mime__mime_src__mime_shared;
-  var bound_multipart_stream = Object.create(dart.library);
-  var $sublist = dartx.sublist;
-  var $length = dartx.length;
-  var $_get = dartx._get;
-  var $add = dartx.add;
-  var $toLowerCase = dartx.toLowerCase;
-  var $_set = dartx._set;
-  var $clear = dartx.clear;
-  var $contains = dartx.contains;
+  const forwarding_file_system_entity = packages__file__src__forwarding__forwarding_link$46dart.src__forwarding__forwarding_file_system_entity;
+  const forwarding_link = packages__file__src__forwarding__forwarding_link$46dart.src__forwarding__forwarding_link;
+  const forwarding_file = packages__file__src__forwarding__forwarding_link$46dart.src__forwarding__forwarding_file;
+  const forwarding_directory = packages__file__src__forwarding__forwarding_link$46dart.src__forwarding__forwarding_directory;
+  const directory = packages__file__src__interface__link$46dart.src__interface__directory;
+  const file = packages__file__src__interface__link$46dart.src__interface__file;
+  const link = packages__file__src__interface__link$46dart.src__interface__link;
+  const file_system = packages__file__src__interface__link$46dart.src__interface__file_system;
+  const common = packages__file__src__common$46dart.src__common;
+  var local_link = Object.create(dart.library);
+  var local_file = Object.create(dart.library);
+  var local_file_system_entity = Object.create(dart.library);
+  var local_directory = Object.create(dart.library);
+  var $noSuchMethod = dartx.noSuchMethod;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
-    JSArrayOfintL: () => (T.JSArrayOfintL = dart.constFn(_interceptors.JSArray$(T.intL())))(),
-    MimeMultipartL: () => (T.MimeMultipartL = dart.constFn(dart.legacy(mime_shared.MimeMultipart)))(),
-    StreamControllerOfMimeMultipartL: () => (T.StreamControllerOfMimeMultipartL = dart.constFn(async.StreamController$(T.MimeMultipartL())))(),
-    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
-    ListOfintL: () => (T.ListOfintL = dart.constFn(core.List$(T.intL())))(),
-    ListLOfintL: () => (T.ListLOfintL = dart.constFn(dart.legacy(T.ListOfintL())))(),
-    ListLOfintLToNull: () => (T.ListLOfintLToNull = dart.constFn(dart.fnType(core.Null, [T.ListLOfintL()])))(),
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
-    IdentityMapOfStringL$StringL: () => (T.IdentityMapOfStringL$StringL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.StringL())))(),
-    StreamControllerOfListLOfintL: () => (T.StreamControllerOfListLOfintL = dart.constFn(async.StreamController$(T.ListLOfintL())))()
+    SymbolL: () => (T.SymbolL = dart.constFn(dart.legacy(core.Symbol)))(),
+    LinkedMapOfSymbolL$dynamic: () => (T.LinkedMapOfSymbolL$dynamic = dart.constFn(_js_helper.LinkedMap$(T.SymbolL(), dart.dynamic)))(),
+    FutureOfFileSystemEntity: () => (T.FutureOfFileSystemEntity = dart.constFn(async.Future$(io.FileSystemEntity)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -46,471 +42,317 @@ define(['dart_sdk', 'packages/sevr/src/mime/mime_src/mime_shared.dart'], (functi
   });
   dart.defineLazy(CT, {
     get C0() {
-      return C[0] = dart.constList([40, 41, 60, 62, 64, 44, 59, 58, 92, 34, 47, 91, 93, 63, 61, 123, 125, 32, 9], T.intL());
+      return C[0] = dart.const(new _js_helper.PrivateSymbol.new('_deleteSync', _deleteSync));
+    },
+    get C1() {
+      return C[1] = dart.const(new _internal.Symbol.new('recursive'));
+    },
+    get C2() {
+      return C[2] = dart.const(new _js_helper.PrivateSymbol.new('_delete', _delete));
+    },
+    get C3() {
+      return C[3] = dart.const(new _js_helper.PrivateSymbol.new('_rawPath', _rawPath));
+    },
+    get C4() {
+      return C[4] = dart.const(new _js_helper.PrivateSymbol.new('_path', _path));
+    },
+    get C5() {
+      return C[5] = dart.const(new _js_helper.PrivateSymbol.new('_absolutePath', _absolutePath));
+    },
+    get C6() {
+      return C[6] = dart.const(new _js_helper.PrivateSymbol.new('_deleteSync', _deleteSync$0));
+    },
+    get C7() {
+      return C[7] = dart.const(new _js_helper.PrivateSymbol.new('_delete', _delete$0));
+    },
+    get C8() {
+      return C[8] = dart.const(new _js_helper.PrivateSymbol.new('_rawPath', _rawPath$0));
+    },
+    get C9() {
+      return C[9] = dart.const(new _js_helper.PrivateSymbol.new('_path', _path$0));
+    },
+    get C10() {
+      return C[10] = dart.const(new _js_helper.PrivateSymbol.new('_absolutePath', _absolutePath$0));
+    },
+    get C11() {
+      return C[11] = dart.const(new _js_helper.PrivateSymbol.new('_deleteSync', _deleteSync$1));
+    },
+    get C12() {
+      return C[12] = dart.const(new _js_helper.PrivateSymbol.new('_delete', _delete$1));
+    },
+    get C13() {
+      return C[13] = dart.const(new _js_helper.PrivateSymbol.new('_rawPath', _rawPath$1));
+    },
+    get C14() {
+      return C[14] = dart.const(new _js_helper.PrivateSymbol.new('_path', _path$1));
+    },
+    get C15() {
+      return C[15] = dart.const(new _js_helper.PrivateSymbol.new('_absolutePath', _absolutePath$1));
     }
   }, false);
-  var C = [void 0];
+  var C = Array(16).fill(void 0);
   var I = [
-    "package:sevr/src/mime/mime_src/bound_multipart_stream.dart",
-    "file:///C:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/sevr-1.0.4/lib/src/mime/mime_src/bound_multipart_stream.dart"
+    "file:///D:/Flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.0/lib/src/backends/local/local_link.dart",
+    "file:///D:/Flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.0/lib/src/backends/local/local_file_system_entity.dart",
+    "package:file/src/backends/local/local_file_system_entity.dart",
+    "package:file/src/backends/local/local_link.dart",
+    "file:///D:/Flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.0/lib/src/backends/local/local_file.dart",
+    "package:file/src/backends/local/local_file.dart",
+    "file:///D:/Flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.0/lib/src/backends/local/local_directory.dart",
+    "package:file/src/backends/local/local_directory.dart"
   ];
-  var headers$ = dart.privateName(bound_multipart_stream, "_MimeMultipart.headers");
-  var _stream$ = dart.privateName(bound_multipart_stream, "_stream");
-  bound_multipart_stream._MimeMultipart = class _MimeMultipart extends mime_shared.MimeMultipart {
-    get headers() {
-      return this[headers$];
+  var _deleteSync = dart.privateName(local_link, "_deleteSync");
+  var _deleteSync$ = dart.privateName(io, "_deleteSync");
+  var _delete = dart.privateName(local_link, "_delete");
+  var _delete$ = dart.privateName(io, "_delete");
+  var _rawPath = dart.privateName(local_link, "_rawPath");
+  var _rawPath$ = dart.privateName(io, "_rawPath");
+  var _path = dart.privateName(local_link, "_path");
+  var _path$ = dart.privateName(io, "_path");
+  var _absolutePath = dart.privateName(local_link, "_absolutePath");
+  var _absolutePath$ = dart.privateName(io, "_absolutePath");
+  var fileSystem$ = dart.privateName(local_file_system_entity, "LocalFileSystemEntity.fileSystem");
+  var delegate$ = dart.privateName(local_file_system_entity, "LocalFileSystemEntity.delegate");
+  const _is_LocalFileSystemEntity_default = Symbol('_is_LocalFileSystemEntity_default');
+  local_file_system_entity.LocalFileSystemEntity$ = dart.generic((T, D) => {
+    class LocalFileSystemEntity extends forwarding_file_system_entity.ForwardingFileSystemEntity$(T, D) {
+      get fileSystem() {
+        return this[fileSystem$];
+      }
+      set fileSystem(value) {
+        super.fileSystem = value;
+      }
+      get delegate() {
+        return this[delegate$];
+      }
+      set delegate(value) {
+        super.delegate = value;
+      }
+      get dirname() {
+        return this.fileSystem.path.dirname(this.path);
+      }
+      get basename() {
+        return this.fileSystem.path.basename(this.path);
+      }
+      wrapDirectory(delegate) {
+        if (delegate == null) dart.nullFailed(I[1], 33, 40, "delegate");
+        return new local_directory.LocalDirectory.new(this.fileSystem, delegate);
+      }
+      wrapFile(delegate) {
+        if (delegate == null) dart.nullFailed(I[1], 37, 25, "delegate");
+        return new local_file.LocalFile.new(this.fileSystem, delegate);
+      }
+      wrapLink(delegate) {
+        if (delegate == null) dart.nullFailed(I[1], 40, 25, "delegate");
+        return new local_link.LocalLink.new(this.fileSystem, delegate);
+      }
     }
-    set headers(value) {
-      super.headers = value;
+    (LocalFileSystemEntity.new = function(fileSystem, delegate) {
+      if (fileSystem == null) dart.nullFailed(I[1], 18, 30, "fileSystem");
+      if (delegate == null) dart.nullFailed(I[1], 18, 47, "delegate");
+      this[fileSystem$] = fileSystem;
+      this[delegate$] = delegate;
+      ;
+    }).prototype = LocalFileSystemEntity.prototype;
+    dart.addTypeTests(LocalFileSystemEntity);
+    LocalFileSystemEntity.prototype[_is_LocalFileSystemEntity_default] = true;
+    dart.addTypeCaches(LocalFileSystemEntity);
+    dart.setMethodSignature(LocalFileSystemEntity, () => ({
+      __proto__: dart.getMethods(LocalFileSystemEntity.__proto__),
+      wrapDirectory: dart.fnType(directory.Directory, [io.Directory]),
+      wrapFile: dart.fnType(file.File, [io.File]),
+      wrapLink: dart.fnType(link.Link, [io.Link])
+    }));
+    dart.setLibraryUri(LocalFileSystemEntity, I[2]);
+    dart.setFieldSignature(LocalFileSystemEntity, () => ({
+      __proto__: dart.getFields(LocalFileSystemEntity.__proto__),
+      fileSystem: dart.finalFieldType(file_system.FileSystem),
+      delegate: dart.finalFieldType(D)
+    }));
+    return LocalFileSystemEntity;
+  });
+  local_file_system_entity.LocalFileSystemEntity = local_file_system_entity.LocalFileSystemEntity$();
+  dart.addTypeTests(local_file_system_entity.LocalFileSystemEntity, _is_LocalFileSystemEntity_default);
+  const LocalFileSystemEntity_ForwardingLink$36 = class LocalFileSystemEntity_ForwardingLink extends local_file_system_entity.LocalFileSystemEntity$(link.Link, io.Link) {};
+  (LocalFileSystemEntity_ForwardingLink$36.new = function(fileSystem, delegate) {
+    LocalFileSystemEntity_ForwardingLink$36.__proto__.new.call(this, fileSystem, delegate);
+  }).prototype = LocalFileSystemEntity_ForwardingLink$36.prototype;
+  dart.applyMixin(LocalFileSystemEntity_ForwardingLink$36, forwarding_link.ForwardingLink);
+  local_link.LocalLink = class LocalLink extends LocalFileSystemEntity_ForwardingLink$36 {
+    toString() {
+      return "LocalLink: '" + dart.str(this.path) + "'";
     }
-    listen(onData, opts) {
-      let onDone = opts && 'onDone' in opts ? opts.onDone : null;
-      let onError = opts && 'onError' in opts ? opts.onError : null;
-      let cancelOnError = opts && 'cancelOnError' in opts ? opts.cancelOnError : null;
-      return this[_stream$].listen(onData, {onDone: onDone, onError: onError, cancelOnError: cancelOnError});
+    [_deleteSync$](opts) {
+      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
+      if (recursive == null) dart.nullFailed(I[0], 12, 7, "recursive");
+      return this[$noSuchMethod](new core._Invocation.method(C[0] || CT.C0, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive])));
+    }
+    [_delete$](opts) {
+      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
+      if (recursive == null) dart.nullFailed(I[0], 12, 7, "recursive");
+      return T.FutureOfFileSystemEntity().as(this[$noSuchMethod](new core._Invocation.method(C[2] || CT.C2, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive]))));
+    }
+    get [_rawPath$]() {
+      return typed_data.Uint8List.as(this[$noSuchMethod](new core._Invocation.getter(C[3] || CT.C3)));
+    }
+    get [_path$]() {
+      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[4] || CT.C4)));
+    }
+    get [_absolutePath$]() {
+      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[5] || CT.C5)));
     }
   };
-  (bound_multipart_stream._MimeMultipart.new = function(headers, _stream) {
-    this[headers$] = headers;
-    this[_stream$] = _stream;
-    bound_multipart_stream._MimeMultipart.__proto__.new.call(this);
+  (local_link.LocalLink.new = function(fs, delegate) {
+    if (fs == null) dart.nullFailed(I[0], 16, 24, "fs");
+    if (delegate == null) dart.nullFailed(I[0], 16, 36, "delegate");
+    local_link.LocalLink.__proto__.new.call(this, fs, delegate);
     ;
-  }).prototype = bound_multipart_stream._MimeMultipart.prototype;
-  dart.addTypeTests(bound_multipart_stream._MimeMultipart);
-  dart.addTypeCaches(bound_multipart_stream._MimeMultipart);
-  dart.setMethodSignature(bound_multipart_stream._MimeMultipart, () => ({
-    __proto__: dart.getMethods(bound_multipart_stream._MimeMultipart.__proto__),
-    listen: dart.fnType(dart.legacy(async.StreamSubscription$(dart.legacy(core.List$(dart.legacy(core.int))))), [dart.legacy(dart.fnType(dart.void, [dart.legacy(core.List$(dart.legacy(core.int)))]))], {cancelOnError: dart.legacy(core.bool), onDone: dart.legacy(dart.fnType(dart.void, [])), onError: dart.legacy(core.Function)}, {})
+  }).prototype = local_link.LocalLink.prototype;
+  dart.addTypeTests(local_link.LocalLink);
+  dart.addTypeCaches(local_link.LocalLink);
+  dart.setMethodSignature(local_link.LocalLink, () => ({
+    __proto__: dart.getMethods(local_link.LocalLink.__proto__),
+    [_deleteSync$]: dart.fnType(dart.void, [], {recursive: core.bool}, {}),
+    [_delete$]: dart.fnType(async.Future$(io.FileSystemEntity), [], {recursive: core.bool}, {})
   }));
-  dart.setLibraryUri(bound_multipart_stream._MimeMultipart, I[0]);
-  dart.setFieldSignature(bound_multipart_stream._MimeMultipart, () => ({
-    __proto__: dart.getFields(bound_multipart_stream._MimeMultipart.__proto__),
-    headers: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.String)))),
-    [_stream$]: dart.finalFieldType(dart.legacy(async.Stream$(dart.legacy(core.List$(dart.legacy(core.int))))))
+  dart.setGetterSignature(local_link.LocalLink, () => ({
+    __proto__: dart.getGetters(local_link.LocalLink.__proto__),
+    [_rawPath$]: typed_data.Uint8List,
+    [_path$]: core.String,
+    [_absolutePath$]: core.String
   }));
-  var _headerField = dart.privateName(bound_multipart_stream, "_headerField");
-  var _headerValue = dart.privateName(bound_multipart_stream, "_headerValue");
-  var _controllerState = dart.privateName(bound_multipart_stream, "_controllerState");
-  var _controller = dart.privateName(bound_multipart_stream, "_controller");
-  var _subscription = dart.privateName(bound_multipart_stream, "_subscription");
-  var _multipartController = dart.privateName(bound_multipart_stream, "_multipartController");
-  var _headers = dart.privateName(bound_multipart_stream, "_headers");
-  var _state = dart.privateName(bound_multipart_stream, "_state");
-  var _boundaryIndex = dart.privateName(bound_multipart_stream, "_boundaryIndex");
-  var _index = dart.privateName(bound_multipart_stream, "_index");
-  var _buffer = dart.privateName(bound_multipart_stream, "_buffer");
-  var _boundary$ = dart.privateName(bound_multipart_stream, "_boundary");
-  var _pauseStream = dart.privateName(bound_multipart_stream, "_pauseStream");
-  var _resumeStream = dart.privateName(bound_multipart_stream, "_resumeStream");
-  var _tryPropagateControllerState = dart.privateName(bound_multipart_stream, "_tryPropagateControllerState");
-  var _parse = dart.privateName(bound_multipart_stream, "_parse");
-  bound_multipart_stream.BoundMultipartStream = class BoundMultipartStream extends core.Object {
-    get stream() {
-      return this[_controller].stream;
+  dart.setLibraryUri(local_link.LocalLink, I[3]);
+  dart.defineExtensionMethods(local_link.LocalLink, ['toString']);
+  var _deleteSync$0 = dart.privateName(local_file, "_deleteSync");
+  var _delete$0 = dart.privateName(local_file, "_delete");
+  var _rawPath$0 = dart.privateName(local_file, "_rawPath");
+  var _path$0 = dart.privateName(local_file, "_path");
+  var _absolutePath$0 = dart.privateName(local_file, "_absolutePath");
+  const LocalFileSystemEntity_ForwardingFile$36 = class LocalFileSystemEntity_ForwardingFile extends local_file_system_entity.LocalFileSystemEntity$(file.File, io.File) {};
+  (LocalFileSystemEntity_ForwardingFile$36.new = function(fileSystem, delegate) {
+    LocalFileSystemEntity_ForwardingFile$36.__proto__.new.call(this, fileSystem, delegate);
+  }).prototype = LocalFileSystemEntity_ForwardingFile$36.prototype;
+  dart.applyMixin(LocalFileSystemEntity_ForwardingFile$36, forwarding_file.ForwardingFile);
+  local_file.LocalFile = class LocalFile extends LocalFileSystemEntity_ForwardingFile$36 {
+    toString() {
+      return "LocalFile: '" + dart.str(this.path) + "'";
     }
-    [_resumeStream]() {
-      if (!(this[_controllerState] === 2)) dart.assertFailed(null, I[1], 148, 12, "_controllerState == _CONTROLLER_STATE_PAUSED");
-      this[_controllerState] = 1;
-      this[_tryPropagateControllerState]();
+    [_deleteSync$](opts) {
+      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
+      if (recursive == null) dart.nullFailed(I[4], 12, 7, "recursive");
+      return this[$noSuchMethod](new core._Invocation.method(C[6] || CT.C6, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive])));
     }
-    [_pauseStream]() {
-      this[_controllerState] = 2;
-      this[_tryPropagateControllerState]();
+    [_delete$](opts) {
+      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
+      if (recursive == null) dart.nullFailed(I[4], 12, 7, "recursive");
+      return T.FutureOfFileSystemEntity().as(this[$noSuchMethod](new core._Invocation.method(C[7] || CT.C7, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive]))));
     }
-    [_tryPropagateControllerState]() {
-      if (this[_multipartController] == null) {
-        switch (this[_controllerState]) {
-          case 1:
-          {
-            if (dart.test(this[_subscription].isPaused)) this[_subscription].resume();
-            break;
-          }
-          case 2:
-          {
-            if (!dart.test(this[_subscription].isPaused)) this[_subscription].pause();
-            break;
-          }
-          case 3:
-          {
-            this[_subscription].cancel();
-            break;
-          }
-          default:
-          {
-            dart.throw(new core.StateError.new("This code should never be reached."));
-          }
-        }
-      }
+    get [_rawPath$]() {
+      return typed_data.Uint8List.as(this[$noSuchMethod](new core._Invocation.getter(C[8] || CT.C8)));
     }
-    [_parse]() {
-      let boundaryPrefix = null;
-      boundaryPrefix = 0;
-      let contentStartIndex = null;
-      const reportData = () => {
-        if (dart.notNull(contentStartIndex) < 0) {
-          let contentLength = dart.notNull(boundaryPrefix) + dart.notNull(this[_index]) - dart.notNull(this[_boundaryIndex]);
-          if (contentLength <= dart.notNull(boundaryPrefix)) {
-            this[_multipartController].add(this[_boundary$][$sublist](0, contentLength));
-          } else {
-            this[_multipartController].add(this[_boundary$][$sublist](0, boundaryPrefix));
-            this[_multipartController].add(this[_buffer][$sublist](0, contentLength - dart.notNull(boundaryPrefix)));
-          }
-        } else {
-          let contentEndIndex = dart.notNull(this[_index]) - dart.notNull(this[_boundaryIndex]);
-          this[_multipartController].add(this[_buffer][$sublist](contentStartIndex, contentEndIndex));
-        }
-      };
-      dart.fn(reportData, T.VoidTovoid());
-      if (this[_state] === 10 && this[_boundaryIndex] === 0) {
-        contentStartIndex = 0;
-      } else {
-        contentStartIndex = null;
-      }
-      boundaryPrefix = this[_boundaryIndex];
-      while (dart.notNull(this[_index]) < dart.notNull(this[_buffer][$length]) && this[_state] !== 15 && this[_state] !== 14) {
-        let byte = null;
-        if (dart.notNull(this[_index]) < 0) {
-          byte = this[_boundary$][$_get](dart.notNull(boundaryPrefix) + dart.notNull(this[_index]));
-        } else {
-          byte = this[_buffer][$_get](this[_index]);
-        }
-        switch (this[_state]) {
-          case 0:
-          {
-            if (byte == this[_boundary$][$_get](this[_boundaryIndex])) {
-              this[_boundaryIndex] = dart.notNull(this[_boundaryIndex]) + 1;
-              if (this[_boundaryIndex] == this[_boundary$][$length]) {
-                this[_state] = 1;
-                this[_boundaryIndex] = 0;
-              }
-            } else {
-              this[_index] = dart.notNull(this[_index]) - dart.notNull(this[_boundaryIndex]);
-              this[_boundaryIndex] = 0;
-            }
-            break;
-          }
-          case 1:
-          {
-            if (byte === 13) {
-              this[_state] = 2;
-            } else if (byte === 45) {
-              this[_state] = 11;
-            } else {
-              bound_multipart_stream._expectWhitespace(byte);
-            }
-            break;
-          }
-          case 2:
-          {
-            bound_multipart_stream._expectByteValue(byte, 10);
-            if (this[_multipartController] != null) {
-              this[_multipartController].close();
-              this[_multipartController] = null;
-              this[_tryPropagateControllerState]();
-            }
-            this[_state] = 3;
-            break;
-          }
-          case 3:
-          {
-            this[_headers] = new (T.IdentityMapOfStringL$StringL()).new();
-            if (byte === 13) {
-              this[_state] = 9;
-            } else {
-              this[_headerField][$add](bound_multipart_stream._toLowerCase(byte));
-              this[_state] = 4;
-            }
-            break;
-          }
-          case 4:
-          {
-            if (byte === 58) {
-              this[_state] = 5;
-            } else {
-              if (!dart.test(bound_multipart_stream._isTokenChar(byte))) {
-                dart.throw(new mime_shared.MimeMultipartException.new("Invalid header field name"));
-              }
-              this[_headerField][$add](bound_multipart_stream._toLowerCase(byte));
-            }
-            break;
-          }
-          case 5:
-          {
-            if (byte === 13) {
-              this[_state] = 7;
-            } else if (byte !== 32 && byte !== 9) {
-              this[_headerValue][$add](byte);
-              this[_state] = 6;
-            }
-            break;
-          }
-          case 6:
-          {
-            if (byte === 13) {
-              this[_state] = 7;
-            } else {
-              this[_headerValue][$add](byte);
-            }
-            break;
-          }
-          case 7:
-          {
-            bound_multipart_stream._expectByteValue(byte, 10);
-            this[_state] = 8;
-            break;
-          }
-          case 8:
-          {
-            if (byte === 32 || byte === 9) {
-              this[_state] = 5;
-            } else {
-              let headerField = null;
-              headerField = convert.utf8.decode(this[_headerField]);
-              let headerValue = null;
-              headerValue = convert.utf8.decode(this[_headerValue]);
-              this[_headers][$_set](headerField[$toLowerCase](), headerValue);
-              this[_headerField][$clear]();
-              this[_headerValue][$clear]();
-              if (byte === 13) {
-                this[_state] = 9;
-              } else {
-                this[_headerField][$add](bound_multipart_stream._toLowerCase(byte));
-                this[_state] = 4;
-              }
-            }
-            break;
-          }
-          case 9:
-          {
-            bound_multipart_stream._expectByteValue(byte, 10);
-            this[_multipartController] = T.StreamControllerOfListLOfintL().new({sync: true, onListen: dart.fn(() => {
-                if (dart.test(this[_subscription].isPaused)) this[_subscription].resume();
-              }, T.VoidToNull()), onPause: dart.bind(this[_subscription], 'pause'), onResume: dart.bind(this[_subscription], 'resume')});
-            this[_controller].add(new bound_multipart_stream._MimeMultipart.new(this[_headers], this[_multipartController].stream));
-            this[_headers] = null;
-            this[_state] = 10;
-            contentStartIndex = dart.notNull(this[_index]) + 1;
-            break;
-          }
-          case 10:
-          {
-            if (byte == this[_boundary$][$_get](this[_boundaryIndex])) {
-              this[_boundaryIndex] = dart.notNull(this[_boundaryIndex]) + 1;
-              if (this[_boundaryIndex] == this[_boundary$][$length]) {
-                if (contentStartIndex != null) {
-                  this[_index] = dart.notNull(this[_index]) + 1;
-                  reportData();
-                  this[_index] = dart.notNull(this[_index]) - 1;
-                }
-                this[_multipartController].close();
-                this[_multipartController] = null;
-                this[_tryPropagateControllerState]();
-                this[_boundaryIndex] = 0;
-                this[_state] = 1;
-              }
-            } else {
-              this[_index] = dart.notNull(this[_index]) - dart.notNull(this[_boundaryIndex]);
-              contentStartIndex == null ? contentStartIndex = this[_index] : null;
-              this[_boundaryIndex] = 0;
-            }
-            break;
-          }
-          case 11:
-          {
-            bound_multipart_stream._expectByteValue(byte, 45);
-            this[_state] = 12;
-            break;
-          }
-          case 12:
-          {
-            if (byte === 13) {
-              this[_state] = 13;
-            } else {
-              bound_multipart_stream._expectWhitespace(byte);
-            }
-            break;
-          }
-          case 13:
-          {
-            bound_multipart_stream._expectByteValue(byte, 10);
-            if (this[_multipartController] != null) {
-              this[_multipartController].close();
-              this[_multipartController] = null;
-              this[_tryPropagateControllerState]();
-            }
-            this[_state] = 14;
-            break;
-          }
-          default:
-          {
-            if (!false) dart.assertFailed(null, I[1], 389, 18, "false");
-            break;
-          }
-        }
-        this[_index] = dart.notNull(this[_index]) + 1;
-      }
-      if (this[_state] === 10 && contentStartIndex != null) {
-        reportData();
-      }
-      if (this[_index] == this[_buffer][$length]) {
-        this[_buffer] = null;
-        this[_index] = null;
-        this[_subscription].resume();
-      }
+    get [_path$]() {
+      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[9] || CT.C9)));
+    }
+    get [_absolutePath$]() {
+      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[10] || CT.C10)));
     }
   };
-  (bound_multipart_stream.BoundMultipartStream.new = function(_boundary, stream) {
-    this[_headerField] = T.JSArrayOfintL().of([]);
-    this[_headerValue] = T.JSArrayOfintL().of([]);
-    this[_controllerState] = 0;
-    this[_controller] = null;
-    this[_subscription] = null;
-    this[_multipartController] = null;
-    this[_headers] = null;
-    this[_state] = 0;
-    this[_boundaryIndex] = 2;
-    this[_index] = null;
-    this[_buffer] = null;
-    this[_boundary$] = _boundary;
-    this[_controller] = T.StreamControllerOfMimeMultipartL().new({sync: true, onPause: dart.bind(this, _pauseStream), onResume: dart.bind(this, _resumeStream), onCancel: dart.fn(() => {
-        this[_controllerState] = 3;
-        this[_tryPropagateControllerState]();
-      }, T.VoidToNull()), onListen: dart.fn(() => {
-        this[_controllerState] = 1;
-        this[_subscription] = stream.listen(dart.fn(data => {
-          if (!(this[_buffer] == null)) dart.assertFailed(null, I[1], 132, 20, "_buffer == null");
-          this[_subscription].pause();
-          this[_buffer] = data;
-          this[_index] = 0;
-          this[_parse]();
-        }, T.ListLOfintLToNull()), {onDone: dart.fn(() => {
-            if (this[_state] !== 14) {
-              this[_controller].addError(new mime_shared.MimeMultipartException.new("Bad multipart ending"));
-            }
-            this[_controller].close();
-          }, T.VoidToNull()), onError: dart.bind(this[_controller], 'addError')});
-      }, T.VoidToNull())});
-  }).prototype = bound_multipart_stream.BoundMultipartStream.prototype;
-  dart.addTypeTests(bound_multipart_stream.BoundMultipartStream);
-  dart.addTypeCaches(bound_multipart_stream.BoundMultipartStream);
-  dart.setMethodSignature(bound_multipart_stream.BoundMultipartStream, () => ({
-    __proto__: dart.getMethods(bound_multipart_stream.BoundMultipartStream.__proto__),
-    [_resumeStream]: dart.fnType(dart.void, []),
-    [_pauseStream]: dart.fnType(dart.void, []),
-    [_tryPropagateControllerState]: dart.fnType(dart.void, []),
-    [_parse]: dart.fnType(dart.void, [])
+  (local_file.LocalFile.new = function(fs, delegate) {
+    if (fs == null) dart.nullFailed(I[4], 16, 24, "fs");
+    if (delegate == null) dart.nullFailed(I[4], 16, 36, "delegate");
+    local_file.LocalFile.__proto__.new.call(this, fs, delegate);
+    ;
+  }).prototype = local_file.LocalFile.prototype;
+  dart.addTypeTests(local_file.LocalFile);
+  dart.addTypeCaches(local_file.LocalFile);
+  dart.setMethodSignature(local_file.LocalFile, () => ({
+    __proto__: dart.getMethods(local_file.LocalFile.__proto__),
+    [_deleteSync$]: dart.fnType(dart.void, [], {recursive: core.bool}, {}),
+    [_delete$]: dart.fnType(async.Future$(io.FileSystemEntity), [], {recursive: core.bool}, {})
   }));
-  dart.setGetterSignature(bound_multipart_stream.BoundMultipartStream, () => ({
-    __proto__: dart.getGetters(bound_multipart_stream.BoundMultipartStream.__proto__),
-    stream: dart.legacy(async.Stream$(dart.legacy(mime_shared.MimeMultipart)))
+  dart.setGetterSignature(local_file.LocalFile, () => ({
+    __proto__: dart.getGetters(local_file.LocalFile.__proto__),
+    [_rawPath$]: typed_data.Uint8List,
+    [_path$]: core.String,
+    [_absolutePath$]: core.String
   }));
-  dart.setLibraryUri(bound_multipart_stream.BoundMultipartStream, I[0]);
-  dart.setFieldSignature(bound_multipart_stream.BoundMultipartStream, () => ({
-    __proto__: dart.getFields(bound_multipart_stream.BoundMultipartStream.__proto__),
-    [_boundary$]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.int)))),
-    [_headerField]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.int)))),
-    [_headerValue]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.int)))),
-    [_controllerState]: dart.fieldType(dart.legacy(core.int)),
-    [_controller]: dart.fieldType(dart.legacy(async.StreamController$(dart.legacy(mime_shared.MimeMultipart)))),
-    [_subscription]: dart.fieldType(dart.legacy(async.StreamSubscription)),
-    [_multipartController]: dart.fieldType(dart.legacy(async.StreamController$(dart.legacy(core.List$(dart.legacy(core.int)))))),
-    [_headers]: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.String)))),
-    [_state]: dart.fieldType(dart.legacy(core.int)),
-    [_boundaryIndex]: dart.fieldType(dart.legacy(core.int)),
-    [_index]: dart.fieldType(dart.legacy(core.int)),
-    [_buffer]: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.int))))
+  dart.setLibraryUri(local_file.LocalFile, I[5]);
+  dart.defineExtensionMethods(local_file.LocalFile, ['toString']);
+  var _deleteSync$1 = dart.privateName(local_directory, "_deleteSync");
+  var _delete$1 = dart.privateName(local_directory, "_delete");
+  var _rawPath$1 = dart.privateName(local_directory, "_rawPath");
+  var _path$1 = dart.privateName(local_directory, "_path");
+  var _absolutePath$1 = dart.privateName(local_directory, "_absolutePath");
+  const LocalFileSystemEntity_ForwardingDirectory$36 = class LocalFileSystemEntity_ForwardingDirectory extends local_file_system_entity.LocalFileSystemEntity {};
+  (LocalFileSystemEntity_ForwardingDirectory$36.new = function(fileSystem, delegate) {
+    LocalFileSystemEntity_ForwardingDirectory$36.__proto__.new.call(this, fileSystem, delegate);
+  }).prototype = LocalFileSystemEntity_ForwardingDirectory$36.prototype;
+  const LocalFileSystemEntity_DirectoryAddOnsMixin$36 = class LocalFileSystemEntity_DirectoryAddOnsMixin extends LocalFileSystemEntity_ForwardingDirectory$36 {};
+  (LocalFileSystemEntity_DirectoryAddOnsMixin$36.new = function(fileSystem, delegate) {
+    LocalFileSystemEntity_DirectoryAddOnsMixin$36.__proto__.new.call(this, fileSystem, delegate);
+  }).prototype = LocalFileSystemEntity_DirectoryAddOnsMixin$36.prototype;
+  dart.applyMixin(LocalFileSystemEntity_DirectoryAddOnsMixin$36, common.DirectoryAddOnsMixin);
+  local_directory.LocalDirectory = class LocalDirectory extends LocalFileSystemEntity_DirectoryAddOnsMixin$36 {
+    toString() {
+      return "LocalDirectory: '" + dart.str(this.path) + "'";
+    }
+    [_deleteSync$](opts) {
+      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
+      if (recursive == null) dart.nullFailed(I[6], 13, 7, "recursive");
+      return this[$noSuchMethod](new core._Invocation.method(C[11] || CT.C11, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive])));
+    }
+    [_delete$](opts) {
+      let recursive = opts && 'recursive' in opts ? opts.recursive : false;
+      if (recursive == null) dart.nullFailed(I[6], 13, 7, "recursive");
+      return T.FutureOfFileSystemEntity().as(this[$noSuchMethod](new core._Invocation.method(C[12] || CT.C12, null, [], new (T.LinkedMapOfSymbolL$dynamic()).from([C[1] || CT.C1, recursive]))));
+    }
+    get [_rawPath$]() {
+      return typed_data.Uint8List.as(this[$noSuchMethod](new core._Invocation.getter(C[13] || CT.C13)));
+    }
+    get [_path$]() {
+      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[14] || CT.C14)));
+    }
+    get [_absolutePath$]() {
+      return core.String.as(this[$noSuchMethod](new core._Invocation.getter(C[15] || CT.C15)));
+    }
+  };
+  (local_directory.LocalDirectory.new = function(fs, delegate) {
+    if (fs == null) dart.nullFailed(I[6], 17, 29, "fs");
+    if (delegate == null) dart.nullFailed(I[6], 17, 46, "delegate");
+    local_directory.LocalDirectory.__proto__.new.call(this, fs, delegate);
+    ;
+  }).prototype = local_directory.LocalDirectory.prototype;
+  dart.addTypeTests(local_directory.LocalDirectory);
+  dart.addTypeCaches(local_directory.LocalDirectory);
+  dart.setMethodSignature(local_directory.LocalDirectory, () => ({
+    __proto__: dart.getMethods(local_directory.LocalDirectory.__proto__),
+    [_deleteSync$]: dart.fnType(dart.void, [], {recursive: core.bool}, {}),
+    [_delete$]: dart.fnType(async.Future$(io.FileSystemEntity), [], {recursive: core.bool}, {})
   }));
-  dart.defineLazy(bound_multipart_stream.BoundMultipartStream, {
-    /*bound_multipart_stream.BoundMultipartStream._START*/get _START() {
-      return 0;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._BOUNDARY_ENDING*/get _BOUNDARY_ENDING() {
-      return 1;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._BOUNDARY_END*/get _BOUNDARY_END() {
-      return 2;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._HEADER_START*/get _HEADER_START() {
-      return 3;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._HEADER_FIELD*/get _HEADER_FIELD() {
-      return 4;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._HEADER_VALUE_START*/get _HEADER_VALUE_START() {
-      return 5;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._HEADER_VALUE*/get _HEADER_VALUE() {
-      return 6;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._HEADER_VALUE_FOLDING_OR_ENDING*/get _HEADER_VALUE_FOLDING_OR_ENDING() {
-      return 7;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._HEADER_VALUE_FOLD_OR_END*/get _HEADER_VALUE_FOLD_OR_END() {
-      return 8;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._HEADER_ENDING*/get _HEADER_ENDING() {
-      return 9;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._CONTENT*/get _CONTENT() {
-      return 10;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._LAST_BOUNDARY_DASH2*/get _LAST_BOUNDARY_DASH2() {
-      return 11;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._LAST_BOUNDARY_ENDING*/get _LAST_BOUNDARY_ENDING() {
-      return 12;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._LAST_BOUNDARY_END*/get _LAST_BOUNDARY_END() {
-      return 13;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._DONE*/get _DONE() {
-      return 14;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._FAIL*/get _FAIL() {
-      return 15;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._CONTROLLER_STATE_IDLE*/get _CONTROLLER_STATE_IDLE() {
-      return 0;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._CONTROLLER_STATE_ACTIVE*/get _CONTROLLER_STATE_ACTIVE() {
-      return 1;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._CONTROLLER_STATE_PAUSED*/get _CONTROLLER_STATE_PAUSED() {
-      return 2;
-    },
-    /*bound_multipart_stream.BoundMultipartStream._CONTROLLER_STATE_CANCELED*/get _CONTROLLER_STATE_CANCELED() {
-      return 3;
-    }
-  }, true);
-  bound_multipart_stream._isTokenChar = function _isTokenChar(byte) {
-    return dart.notNull(byte) > 31 && dart.notNull(byte) < 128 && !dart.test(bound_multipart_stream._SEPARATORS[$contains](byte));
-  };
-  bound_multipart_stream._toLowerCase = function _toLowerCase(byte) {
-    return 65 <= dart.notNull(byte) && dart.notNull(byte) <= 90 ? dart.notNull(byte) + 32 : byte;
-  };
-  bound_multipart_stream._expectByteValue = function _expectByteValue(val1, val2) {
-    if (val1 != val2) {
-      dart.throw(new mime_shared.MimeMultipartException.new("Failed to parse multipart mime 1"));
-    }
-  };
-  bound_multipart_stream._expectWhitespace = function _expectWhitespace(byte) {
-    if (byte !== 32 && byte !== 9) {
-      dart.throw(new mime_shared.MimeMultipartException.new("Failed to parse multipart mime 2"));
-    }
-  };
-  dart.defineLazy(bound_multipart_stream, {
-    /*bound_multipart_stream._SEPARATORS*/get _SEPARATORS() {
-      return C[0] || CT.C0;
-    }
-  }, true);
-  dart.trackLibraries("packages/sevr/src/mime/mime_src/bound_multipart_stream.dart", {
-    "package:sevr/src/mime/mime_src/bound_multipart_stream.dart": bound_multipart_stream
+  dart.setGetterSignature(local_directory.LocalDirectory, () => ({
+    __proto__: dart.getGetters(local_directory.LocalDirectory.__proto__),
+    [_rawPath$]: typed_data.Uint8List,
+    [_path$]: core.String,
+    [_absolutePath$]: core.String
+  }));
+  dart.setLibraryUri(local_directory.LocalDirectory, I[7]);
+  dart.defineExtensionMethods(local_directory.LocalDirectory, ['toString']);
+  dart.setBaseClass(local_directory.LocalDirectory.__proto__.__proto__, local_file_system_entity.LocalFileSystemEntity$(local_directory.LocalDirectory, io.Directory));
+  dart.applyMixin(local_directory.LocalDirectory.__proto__.__proto__, forwarding_directory.ForwardingDirectory$(local_directory.LocalDirectory));
+  dart.trackLibraries("packages/file/src/backends/local/local_link.dart", {
+    "package:file/src/backends/local/local_link.dart": local_link,
+    "package:file/src/backends/local/local_file.dart": local_file,
+    "package:file/src/backends/local/local_file_system_entity.dart": local_file_system_entity,
+    "package:file/src/backends/local/local_directory.dart": local_directory
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["bound_multipart_stream.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../packages/sevr/src/mime/mime_src/bound_multipart_stream.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["local_file_system_entity.dart","local_link.dart","local_file.dart","local_directory.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAoBmB;;;;;;MAGT;;;;;;;AAGc,cAAA,AAAW,AAAK,8BAAQ;MAAK;;AAG5B,cAAA,AAAW,AAAK,+BAAS;MAAK;;YAGhB;AACjC,sDAAe,iBAAY,QAAQ;MAAC;;YAGlB;AAAa,4CAAU,iBAAY,QAAQ;MAAC;;YAG5C;AAAa,4CAAU,iBAAY,QAAQ;MAAC;;0CAtBvC,YAAiB;UAAjB;UAAiB;MAAjB;MAAiB;;IAAS;;;;;;;;;;;;;;;;;;;;;0DAA1B,YAAiB;qEAAjB,YAAiB;;;;;ACCvB,YAAA,AAAoB,2BAAN,aAAI;IAAE;;;;;;;;;;;;;;;;;;;;;uCAHpB,IAAY;QAAZ;QAAY;AAAY,kDAAM,EAAE,EAAE,QAAQ;;EAAC;;;;;;;;;;;;;;;;;;;;;;0DDErC,YAAiB;qEAAjB,YAAiB;;;;;AECvB,YAAA,AAAoB,2BAAN,aAAI;IAAE;;;;;;;;;;;;;;;;;;;;;uCAHpB,IAAY;QAAZ;QAAY;AAAY,kDAAM,EAAE,EAAE,QAAQ;;EAAC;;;;;;;;;;;;;;;;;;;;;;+DFErC,YAAiB;0EAAjB,YAAiB;;;gEAAjB,YAAiB;2EAAjB,YAAiB;;;;;AGEvB,YAAA,AAAyB,gCAAN,aAAI;IAAE;;;;;;;;;;;;;;;;;;;;;iDAHpB,IAAiB;QAAjB;QAAiB;AAAY,4DAAM,EAAE,EAAE,QAAQ;;EAAC","file":"../../../../../../../../../../C:/packages/file/src/backends/local/local_link.dart.lib.js"}');
   // Exports:
   return {
-    src__mime__mime_src__bound_multipart_stream: bound_multipart_stream
+    src__backends__local__local_link: local_link,
+    src__backends__local__local_file: local_file,
+    src__backends__local__local_file_system_entity: local_file_system_entity,
+    src__backends__local__local_directory: local_directory
   };
 }));
 
-//# sourceMappingURL=bound_multipart_stream.dart.lib.js.map
+//# sourceMappingURL=local_link.dart.lib.js.map

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:learning_management_system/assets.dart';
 import 'package:learning_management_system/widgets/dashboard/widgets.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -67,7 +65,7 @@ class _CustomAppBarDesktop extends StatelessWidget {
     return SafeArea(
       child: Row(
         children: [
-          Image.asset(Assets.nostra_logo),
+          Image.asset(null),
           const SizedBox(width: 12.0),
           Expanded(
             child: Row(

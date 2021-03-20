@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learning_management_system/views/dashboard/starting_dash_view.dart';
 import 'package:learning_management_system/views/home/home_view.dart';
-import 'package:learning_management_system/assets.dart';
 import 'package:learning_management_system/widgets/centered_view/centered_view.dart';
 import 'package:learning_management_system/utils/authentication.dart';
 

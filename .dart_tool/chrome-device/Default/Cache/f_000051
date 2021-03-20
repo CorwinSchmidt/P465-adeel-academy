@@ -1,24 +1,17 @@
-define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/widgets/implicit_animations.dart', 'packages/flutter/src/painting/decoration.dart'], (function load__packages__flutter__src__material__drawer_header_dart(dart_sdk, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__widgets__implicit_animations$46dart, packages__flutter__src__painting__decoration$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__widgets__safe_area_dart(dart_sdk, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
+  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
   const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
-  const debug = packages__flutter__src__material__icon_button$46dart.src__material__debug;
-  const theme$ = packages__flutter__src__material__icon_button$46dart.src__material__theme;
-  const divider = packages__flutter__src__material__icon_button$46dart.src__material__divider;
-  const debug$ = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
+  const debug = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
   const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
-  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
-  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
   const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
   const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
-  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
-  const implicit_animations = packages__flutter__src__widgets__implicit_animations$46dart.src__widgets__implicit_animations;
-  const decoration = packages__flutter__src__painting__decoration$46dart.src__painting__decoration;
-  var drawer_header = Object.create(dart.library);
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  var safe_area = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
   var T = {
     _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))()
@@ -39,43 +32,49 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
     get C0() {
       return C[0] = dart.const({
         __proto__: edge_insets.EdgeInsets.prototype,
-        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_bottom]: 0,
         [EdgeInsets_right]: 0,
         [EdgeInsets_top]: 0,
         [EdgeInsets_left]: 0
       });
     },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: edge_insets.EdgeInsets.prototype,
-        [EdgeInsets_bottom]: 8,
-        [EdgeInsets_right]: 16,
-        [EdgeInsets_top]: 16,
-        [EdgeInsets_left]: 16
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 250000
-      });
-    },
     get C3() {
       return C[3] = dart.const({
-        __proto__: curves.Cubic.prototype,
-        [Cubic_d]: 1,
-        [Cubic_c]: 0.2,
-        [Cubic_b]: 0,
-        [Cubic_a]: 0.4
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "context",
+        [_Location_column]: 9,
+        [_Location_line]: 112,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeLeft",
+        [_Location_column]: 9,
+        [_Location_line]: 113,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeTop",
+        [_Location_column]: 9,
+        [_Location_line]: 114,
+        [_Location_file]: null
       });
     },
     get C6() {
       return C[6] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "context",
-        [_Location_column]: 13,
-        [_Location_line]: 96,
+        [_Location_name]: "removeRight",
+        [_Location_column]: 9,
+        [_Location_line]: 115,
         [_Location_file]: null
       });
     },
@@ -83,9 +82,9 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
       return C[7] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "removeTop",
-        [_Location_column]: 13,
-        [_Location_line]: 97,
+        [_Location_name]: "removeBottom",
+        [_Location_column]: 9,
+        [_Location_line]: 116,
         [_Location_file]: null
       });
     },
@@ -94,31 +93,31 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
-        [_Location_column]: 13,
-        [_Location_line]: 98,
+        [_Location_column]: 9,
+        [_Location_line]: 117,
         [_Location_file]: null
       });
     },
-    get C5() {
-      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
     },
-    get C4() {
-      return C[4] = dart.const({
+    get C1() {
+      return C[1] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_parameterLocations]: C[2] || CT.C2,
         [_Location_name]: null,
-        [_Location_column]: 29,
-        [_Location_line]: 95,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/drawer_header.dart"
+        [_Location_column]: 25,
+        [_Location_line]: 111,
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     },
     get C11() {
       return C[11] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "style",
-        [_Location_column]: 11,
-        [_Location_line]: 94,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 105,
         [_Location_file]: null
       });
     },
@@ -127,8 +126,8 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
-        [_Location_column]: 11,
-        [_Location_line]: 95,
+        [_Location_column]: 7,
+        [_Location_line]: 111,
         [_Location_file]: null
       });
     },
@@ -140,18 +139,18 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[10] || CT.C10,
         [_Location_name]: null,
-        [_Location_column]: 39,
-        [_Location_line]: 93,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/drawer_header.dart"
+        [_Location_column]: 12,
+        [_Location_line]: 104,
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     },
     get C15() {
       return C[15] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "padding",
+        [_Location_name]: "context",
         [_Location_column]: 9,
-        [_Location_line]: 89,
+        [_Location_line]: 206,
         [_Location_file]: null
       });
     },
@@ -159,9 +158,9 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
       return C[16] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "decoration",
+        [_Location_name]: "removeLeft",
         [_Location_column]: 9,
-        [_Location_line]: 90,
+        [_Location_line]: 207,
         [_Location_file]: null
       });
     },
@@ -169,9 +168,9 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
       return C[17] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "duration",
+        [_Location_name]: "removeTop",
         [_Location_column]: 9,
-        [_Location_line]: 91,
+        [_Location_line]: 208,
         [_Location_file]: null
       });
     },
@@ -179,9 +178,9 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
       return C[18] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "curve",
+        [_Location_name]: "removeRight",
         [_Location_column]: 9,
-        [_Location_line]: 92,
+        [_Location_line]: 209,
         [_Location_file]: null
       });
     },
@@ -189,42 +188,42 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
       return C[19] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
+        [_Location_name]: "removeBottom",
+        [_Location_column]: 9,
+        [_Location_line]: 210,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
         [_Location_name]: "child",
         [_Location_column]: 9,
-        [_Location_line]: 93,
+        [_Location_line]: 211,
         [_Location_file]: null
       });
     },
     get C14() {
-      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19], T._LocationL());
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], T._LocationL());
     },
     get C13() {
       return C[13] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[14] || CT.C14,
         [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 88,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/drawer_header.dart"
-      });
-    },
-    get C22() {
-      return C[22] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "height",
-        [_Location_column]: 7,
-        [_Location_line]: 81,
-        [_Location_file]: null
+        [_Location_column]: 26,
+        [_Location_line]: 205,
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     },
     get C23() {
       return C[23] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "margin",
+        [_Location_name]: "padding",
         [_Location_column]: 7,
-        [_Location_line]: 82,
+        [_Location_line]: 199,
         [_Location_file]: null
       });
     },
@@ -232,91 +231,83 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
       return C[24] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "decoration",
+        [_Location_name]: "sliver",
         [_Location_column]: 7,
-        [_Location_line]: 83,
+        [_Location_line]: 205,
         [_Location_file]: null
       });
     },
-    get C25() {
-      return C[25] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 88,
-        [_Location_file]: null
-      });
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], T._LocationL());
     },
     get C21() {
-      return C[21] = dart.constList([C[22] || CT.C22, C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25], T._LocationL());
-    },
-    get C20() {
-      return C[20] = dart.const({
+      return C[21] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_parameterLocations]: C[22] || CT.C22,
         [_Location_name]: null,
         [_Location_column]: 12,
-        [_Location_line]: 80,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/drawer_header.dart"
+        [_Location_line]: 198,
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     }
   }, false);
-  var C = Array(26).fill(void 0);
+  var C = Array(25).fill(void 0);
   var I = [
-    "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/drawer_header.dart",
-    "package:flutter/src/material/drawer_header.dart"
+    "file:///D:/Flutter/packages/flutter/lib/src/widgets/safe_area.dart",
+    "package:flutter/src/widgets/safe_area.dart"
   ];
-  var decoration$ = dart.privateName(drawer_header, "DrawerHeader.decoration");
-  var padding$ = dart.privateName(drawer_header, "DrawerHeader.padding");
-  var margin$ = dart.privateName(drawer_header, "DrawerHeader.margin");
-  var duration$ = dart.privateName(drawer_header, "DrawerHeader.duration");
-  var curve$ = dart.privateName(drawer_header, "DrawerHeader.curve");
-  var child$ = dart.privateName(drawer_header, "DrawerHeader.child");
+  var left$ = dart.privateName(safe_area, "SafeArea.left");
+  var top$ = dart.privateName(safe_area, "SafeArea.top");
+  var right$ = dart.privateName(safe_area, "SafeArea.right");
+  var bottom$ = dart.privateName(safe_area, "SafeArea.bottom");
+  var minimum$ = dart.privateName(safe_area, "SafeArea.minimum");
+  var maintainBottomViewPadding$ = dart.privateName(safe_area, "SafeArea.maintainBottomViewPadding");
+  var child$ = dart.privateName(safe_area, "SafeArea.child");
   var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
   var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
   var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
   var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
-  var Duration__duration = dart.privateName(core, "Duration._duration");
-  var Cubic_d = dart.privateName(curves, "Cubic.d");
-  var Cubic_c = dart.privateName(curves, "Cubic.c");
-  var Cubic_b = dart.privateName(curves, "Cubic.b");
-  var Cubic_a = dart.privateName(curves, "Cubic.a");
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
   var _Location_column = dart.privateName(widget_inspector, "_Location.column");
   var _Location_line = dart.privateName(widget_inspector, "_Location.line");
   var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  drawer_header.DrawerHeader = class DrawerHeader extends framework.StatelessWidget {
-    get decoration() {
-      return this[decoration$];
+  safe_area.SafeArea = class SafeArea extends framework.StatelessWidget {
+    get left() {
+      return this[left$];
     }
-    set decoration(value) {
-      super.decoration = value;
+    set left(value) {
+      super.left = value;
     }
-    get padding() {
-      return this[padding$];
+    get top() {
+      return this[top$];
     }
-    set padding(value) {
-      super.padding = value;
+    set top(value) {
+      super.top = value;
     }
-    get margin() {
-      return this[margin$];
+    get right() {
+      return this[right$];
     }
-    set margin(value) {
-      super.margin = value;
+    set right(value) {
+      super.right = value;
     }
-    get duration() {
-      return this[duration$];
+    get bottom() {
+      return this[bottom$];
     }
-    set duration(value) {
-      super.duration = value;
+    set bottom(value) {
+      super.bottom = value;
     }
-    get curve() {
-      return this[curve$];
+    get minimum() {
+      return this[minimum$];
     }
-    set curve(value) {
-      super.curve = value;
+    set minimum(value) {
+      super.minimum = value;
+    }
+    get maintainBottomViewPadding() {
+      return this[maintainBottomViewPadding$];
+    }
+    set maintainBottomViewPadding(value) {
+      super.maintainBottomViewPadding = value;
     }
     get child() {
       return this[child$];
@@ -325,64 +316,180 @@ define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/
       super.child = value;
     }
     build(context) {
-      if (context == null) dart.nullFailed(I[0], 75, 29, "context");
-      if (!dart.test(debug.debugCheckHasMaterial(context))) dart.assertFailed(null, I[0], 76, 12, "debugCheckHasMaterial(context)");
-      if (!dart.test(debug$.debugCheckHasMediaQuery(context))) dart.assertFailed(null, I[0], 77, 12, "debugCheckHasMediaQuery(context)");
-      let theme = theme$.Theme.of(context);
-      let statusBarHeight = media_query.MediaQuery.of(context).padding.top;
-      return new container.Container.new({height: dart.notNull(statusBarHeight) + 161, margin: this.margin, decoration: new box_decoration.BoxDecoration.new({border: new box_border.Border.new({bottom: divider.Divider.createBorderSide(context)})}), child: new implicit_animations.AnimatedContainer.new({padding: this.padding.add(new edge_insets.EdgeInsets.only({top: statusBarHeight})), decoration: this.decoration, duration: this.duration, curve: this.curve, child: this.child == null ? null : new text.DefaultTextStyle.new({style: dart.nullCheck(theme.textTheme.bodyText1), child: media_query.MediaQuery.removePadding({context: context, removeTop: true, child: dart.nullCheck(this.child), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[20] || CT.C20});
+      if (context == null) dart.nullFailed(I[0], 96, 29, "context");
+      if (!dart.test(debug.debugCheckHasMediaQuery(context))) dart.assertFailed(null, I[0], 97, 12, "debugCheckHasMediaQuery(context)");
+      let data = media_query.MediaQuery.of(context);
+      let padding = data.padding;
+      if (data.padding.bottom === 0.0 && data.viewInsets.bottom !== 0.0 && dart.test(this.maintainBottomViewPadding)) padding = padding.copyWith({bottom: data.viewPadding.bottom});
+      return new basic.Padding.new({padding: new edge_insets.EdgeInsets.only({left: math.max(core.double, dart.test(this.left) ? padding.left : 0.0, this.minimum.left), top: math.max(core.double, dart.test(this.top) ? padding.top : 0.0, this.minimum.top), right: math.max(core.double, dart.test(this.right) ? padding.right : 0.0, this.minimum.right), bottom: math.max(core.double, dart.test(this.bottom) ? padding.bottom : 0.0, this.minimum.bottom)}), child: media_query.MediaQuery.removePadding({context: context, removeLeft: this.left, removeTop: this.top, removeRight: this.right, removeBottom: this.bottom, child: this.child, $creationLocationd_0dea112b090073317d4: C[1] || CT.C1}), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9});
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 123, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.FlagProperty.new("left", {value: this.left, ifTrue: "avoid left padding"}));
+      properties.add(new diagnostics.FlagProperty.new("top", {value: this.top, ifTrue: "avoid top padding"}));
+      properties.add(new diagnostics.FlagProperty.new("right", {value: this.right, ifTrue: "avoid right padding"}));
+      properties.add(new diagnostics.FlagProperty.new("bottom", {value: this.bottom, ifTrue: "avoid bottom padding"}));
     }
   };
-  (drawer_header.DrawerHeader.new = function(opts) {
+  (safe_area.SafeArea.new = function(opts) {
     let key = opts && 'key' in opts ? opts.key : null;
-    let decoration = opts && 'decoration' in opts ? opts.decoration : null;
-    let margin = opts && 'margin' in opts ? opts.margin : C[0] || CT.C0;
-    let padding = opts && 'padding' in opts ? opts.padding : C[1] || CT.C1;
-    if (padding == null) dart.nullFailed(I[0], 35, 10, "padding");
-    let duration = opts && 'duration' in opts ? opts.duration : C[2] || CT.C2;
-    if (duration == null) dart.nullFailed(I[0], 36, 10, "duration");
-    let curve = opts && 'curve' in opts ? opts.curve : C[3] || CT.C3;
-    if (curve == null) dart.nullFailed(I[0], 37, 10, "curve");
+    let left = opts && 'left' in opts ? opts.left : true;
+    if (left == null) dart.nullFailed(I[0], 43, 10, "left");
+    let top = opts && 'top' in opts ? opts.top : true;
+    if (top == null) dart.nullFailed(I[0], 44, 10, "top");
+    let right = opts && 'right' in opts ? opts.right : true;
+    if (right == null) dart.nullFailed(I[0], 45, 10, "right");
+    let bottom = opts && 'bottom' in opts ? opts.bottom : true;
+    if (bottom == null) dart.nullFailed(I[0], 46, 10, "bottom");
+    let minimum = opts && 'minimum' in opts ? opts.minimum : C[0] || CT.C0;
+    if (minimum == null) dart.nullFailed(I[0], 47, 10, "minimum");
+    let maintainBottomViewPadding = opts && 'maintainBottomViewPadding' in opts ? opts.maintainBottomViewPadding : false;
+    if (maintainBottomViewPadding == null) dart.nullFailed(I[0], 48, 10, "maintainBottomViewPadding");
     let child = opts && 'child' in opts ? opts.child : null;
+    if (child == null) dart.nullFailed(I[0], 49, 19, "child");
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[decoration$] = decoration;
-    this[margin$] = margin;
-    this[padding$] = padding;
-    this[duration$] = duration;
-    this[curve$] = curve;
+    this[left$] = left;
+    this[top$] = top;
+    this[right$] = right;
+    this[bottom$] = bottom;
+    this[minimum$] = minimum;
+    this[maintainBottomViewPadding$] = maintainBottomViewPadding;
     this[child$] = child;
-    drawer_header.DrawerHeader.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    if (!(left != null)) dart.assertFailed(null, I[0], 50, 15, "left != null");
+    if (!(top != null)) dart.assertFailed(null, I[0], 51, 15, "top != null");
+    if (!(right != null)) dart.assertFailed(null, I[0], 52, 15, "right != null");
+    if (!(bottom != null)) dart.assertFailed(null, I[0], 53, 15, "bottom != null");
+    safe_area.SafeArea.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = drawer_header.DrawerHeader.prototype;
-  dart.addTypeTests(drawer_header.DrawerHeader);
-  dart.addTypeCaches(drawer_header.DrawerHeader);
-  dart.setMethodSignature(drawer_header.DrawerHeader, () => ({
-    __proto__: dart.getMethods(drawer_header.DrawerHeader.__proto__),
+  }).prototype = safe_area.SafeArea.prototype;
+  dart.addTypeTests(safe_area.SafeArea);
+  dart.addTypeCaches(safe_area.SafeArea);
+  dart.setMethodSignature(safe_area.SafeArea, () => ({
+    __proto__: dart.getMethods(safe_area.SafeArea.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(drawer_header.DrawerHeader, I[1]);
-  dart.setFieldSignature(drawer_header.DrawerHeader, () => ({
-    __proto__: dart.getFields(drawer_header.DrawerHeader.__proto__),
-    decoration: dart.finalFieldType(dart.nullable(decoration.Decoration)),
-    padding: dart.finalFieldType(edge_insets.EdgeInsetsGeometry),
-    margin: dart.finalFieldType(dart.nullable(edge_insets.EdgeInsetsGeometry)),
-    duration: dart.finalFieldType(core.Duration),
-    curve: dart.finalFieldType(curves.Curve),
-    child: dart.finalFieldType(dart.nullable(framework.Widget))
+  dart.setLibraryUri(safe_area.SafeArea, I[1]);
+  dart.setFieldSignature(safe_area.SafeArea, () => ({
+    __proto__: dart.getFields(safe_area.SafeArea.__proto__),
+    left: dart.finalFieldType(core.bool),
+    top: dart.finalFieldType(core.bool),
+    right: dart.finalFieldType(core.bool),
+    bottom: dart.finalFieldType(core.bool),
+    minimum: dart.finalFieldType(edge_insets.EdgeInsets),
+    maintainBottomViewPadding: dart.finalFieldType(core.bool),
+    child: dart.finalFieldType(framework.Widget)
   }));
-  dart.defineLazy(drawer_header, {
-    /*drawer_header._kDrawerHeaderHeight*/get _kDrawerHeaderHeight() {
-      return 161;
+  var left$0 = dart.privateName(safe_area, "SliverSafeArea.left");
+  var top$0 = dart.privateName(safe_area, "SliverSafeArea.top");
+  var right$0 = dart.privateName(safe_area, "SliverSafeArea.right");
+  var bottom$0 = dart.privateName(safe_area, "SliverSafeArea.bottom");
+  var minimum$0 = dart.privateName(safe_area, "SliverSafeArea.minimum");
+  var sliver$ = dart.privateName(safe_area, "SliverSafeArea.sliver");
+  safe_area.SliverSafeArea = class SliverSafeArea extends framework.StatelessWidget {
+    get left() {
+      return this[left$0];
     }
-  }, false);
-  dart.trackLibraries("packages/flutter/src/material/drawer_header.dart", {
-    "package:flutter/src/material/drawer_header.dart": drawer_header
+    set left(value) {
+      super.left = value;
+    }
+    get top() {
+      return this[top$0];
+    }
+    set top(value) {
+      super.top = value;
+    }
+    get right() {
+      return this[right$0];
+    }
+    set right(value) {
+      super.right = value;
+    }
+    get bottom() {
+      return this[bottom$0];
+    }
+    set bottom(value) {
+      super.bottom = value;
+    }
+    get minimum() {
+      return this[minimum$0];
+    }
+    set minimum(value) {
+      super.minimum = value;
+    }
+    get sliver() {
+      return this[sliver$];
+    }
+    set sliver(value) {
+      super.sliver = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 195, 29, "context");
+      if (!dart.test(debug.debugCheckHasMediaQuery(context))) dart.assertFailed(null, I[0], 196, 12, "debugCheckHasMediaQuery(context)");
+      let padding = media_query.MediaQuery.of(context).padding;
+      return new basic.SliverPadding.new({padding: new edge_insets.EdgeInsets.only({left: math.max(core.double, dart.test(this.left) ? padding.left : 0.0, this.minimum.left), top: math.max(core.double, dart.test(this.top) ? padding.top : 0.0, this.minimum.top), right: math.max(core.double, dart.test(this.right) ? padding.right : 0.0, this.minimum.right), bottom: math.max(core.double, dart.test(this.bottom) ? padding.bottom : 0.0, this.minimum.bottom)}), sliver: media_query.MediaQuery.removePadding({context: context, removeLeft: this.left, removeTop: this.top, removeRight: this.right, removeBottom: this.bottom, child: this.sliver, $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21});
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 217, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.FlagProperty.new("left", {value: this.left, ifTrue: "avoid left padding"}));
+      properties.add(new diagnostics.FlagProperty.new("top", {value: this.top, ifTrue: "avoid top padding"}));
+      properties.add(new diagnostics.FlagProperty.new("right", {value: this.right, ifTrue: "avoid right padding"}));
+      properties.add(new diagnostics.FlagProperty.new("bottom", {value: this.bottom, ifTrue: "avoid bottom padding"}));
+    }
+  };
+  (safe_area.SliverSafeArea.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let left = opts && 'left' in opts ? opts.left : true;
+    if (left == null) dart.nullFailed(I[0], 158, 10, "left");
+    let top = opts && 'top' in opts ? opts.top : true;
+    if (top == null) dart.nullFailed(I[0], 159, 10, "top");
+    let right = opts && 'right' in opts ? opts.right : true;
+    if (right == null) dart.nullFailed(I[0], 160, 10, "right");
+    let bottom = opts && 'bottom' in opts ? opts.bottom : true;
+    if (bottom == null) dart.nullFailed(I[0], 161, 10, "bottom");
+    let minimum = opts && 'minimum' in opts ? opts.minimum : C[0] || CT.C0;
+    if (minimum == null) dart.nullFailed(I[0], 162, 10, "minimum");
+    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
+    if (sliver == null) dart.nullFailed(I[0], 163, 19, "sliver");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[left$0] = left;
+    this[top$0] = top;
+    this[right$0] = right;
+    this[bottom$0] = bottom;
+    this[minimum$0] = minimum;
+    this[sliver$] = sliver;
+    if (!(left != null)) dart.assertFailed(null, I[0], 164, 15, "left != null");
+    if (!(top != null)) dart.assertFailed(null, I[0], 165, 15, "top != null");
+    if (!(right != null)) dart.assertFailed(null, I[0], 166, 15, "right != null");
+    if (!(bottom != null)) dart.assertFailed(null, I[0], 167, 15, "bottom != null");
+    safe_area.SliverSafeArea.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = safe_area.SliverSafeArea.prototype;
+  dart.addTypeTests(safe_area.SliverSafeArea);
+  dart.addTypeCaches(safe_area.SliverSafeArea);
+  dart.setMethodSignature(safe_area.SliverSafeArea, () => ({
+    __proto__: dart.getMethods(safe_area.SliverSafeArea.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(safe_area.SliverSafeArea, I[1]);
+  dart.setFieldSignature(safe_area.SliverSafeArea, () => ({
+    __proto__: dart.getFields(safe_area.SliverSafeArea.__proto__),
+    left: dart.finalFieldType(core.bool),
+    top: dart.finalFieldType(core.bool),
+    right: dart.finalFieldType(core.bool),
+    bottom: dart.finalFieldType(core.bool),
+    minimum: dart.finalFieldType(edge_insets.EdgeInsets),
+    sliver: dart.finalFieldType(framework.Widget)
+  }));
+  dart.trackLibraries("packages/flutter/src/widgets/safe_area.dart", {
+    "package:flutter/src/widgets/safe_area.dart": safe_area
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["drawer_header.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA8CoB;;;;;;IAQO;;;;;;IAGC;;;;;;IAGX;;;;;;IAGH;;;;;;IAQE;;;;;;;UAGY;AACxB,qBAAO,4BAAsB,OAAO;AACpC,qBAAO,+BAAwB,OAAO;AACtB,kBAAc,gBAAG,OAAO;AAC3B,4BAA6B,AAAY,AAAQ,0BAAjB,OAAO;AACpD,YAAO,sCACmB,aAAhB,eAAe,iBACf,yBACI,8CACF,mCACU,iCAAiB,OAAO,cAGrC,wDACI,AAAQ,iBAAe,sCAAU,eAAe,iBAC7C,2BACF,sBACH,mBACA,AAAM,qBAAU,OAAO,sCACI,eAAzB,AAAM,AAAU,KAAX,8BACM,+CACP,OAAO,aACL,aACC,eAAL;IAKjB;;;QAvEO;QACA;QACA;QACA;;QACA;;QACA;;QACS;;IALT;IACA;IACA;IACA;IACA;IACS;AACX,8DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;MA5BT,kCAAoB","file":"../../../../../../../packages/flutter/src/material/drawer_header.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["safe_area.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwDa;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAaN;;;;;;IAQE;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACjB,iBAAkB,0BAAG,OAAO;AACtC,oBAAU,AAAK,IAAD;AAEzB,UAAI,AAAK,AAAQ,AAAO,IAAhB,oBAAmB,OAAO,AAAK,AAAW,AAAO,IAAnB,uBAAsB,iBAAO,iCACjE,AAA2D,UAAjD,AAAQ,OAAD,mBAAkB,AAAK,AAAY,IAAb;AAEzC,YAAO,iCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,+BAExC,+CACP,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAvFO;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IANT;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,sDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;IAqHT;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAMJ;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACrB,oBAAqB,AAAY,0BAAT,OAAO;AAChD,YAAO,uCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,gCAEvC,+CACR,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAlEO;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IALT;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,4DAAW,GAAG;;EAAC","file":"../../../../../../../C:/packages/flutter/src/widgets/safe_area.dart.lib.js"}');
   // Exports:
   return {
-    src__material__drawer_header: drawer_header
+    src__widgets__safe_area: safe_area
   };
 }));
 
-//# sourceMappingURL=drawer_header.dart.lib.js.map
+//# sourceMappingURL=safe_area.dart.lib.js.map

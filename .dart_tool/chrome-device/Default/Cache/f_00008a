@@ -1,30 +1,27 @@
-define(['dart_sdk', 'packages/logging/src/level.dart'], (function load__packages__logging__src__logger_dart(dart_sdk, packages__logging__src__level$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/widgets/implicit_animations.dart', 'packages/flutter/src/painting/decoration.dart'], (function load__packages__flutter__src__material__drawer_header_dart(dart_sdk, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__widgets__implicit_animations$46dart, packages__flutter__src__painting__decoration$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const collection = dart_sdk.collection;
-  const _js_helper = dart_sdk._js_helper;
-  const async = dart_sdk.async;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const level = packages__logging__src__level$46dart.src__level;
-  var logger = Object.create(dart.library);
-  var log_record = Object.create(dart.library);
-  var $_set = dartx._set;
-  var $putIfAbsent = dartx.putIfAbsent;
-  var $startsWith = dartx.startsWith;
-  var $lastIndexOf = dartx.lastIndexOf;
-  var $substring = dartx.substring;
-  var $toString = dartx.toString;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const debug = packages__flutter__src__material__icon_button$46dart.src__material__debug;
+  const theme$ = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const divider = packages__flutter__src__material__icon_button$46dart.src__material__divider;
+  const debug$ = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const implicit_animations = packages__flutter__src__widgets__implicit_animations$46dart.src__widgets__implicit_animations;
+  const decoration = packages__flutter__src__painting__decoration$46dart.src__painting__decoration;
+  var drawer_header = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
-    LoggerL: () => (T.LoggerL = dart.constFn(dart.legacy(logger.Logger)))(),
-    UnmodifiableMapViewOfStringL$LoggerL: () => (T.UnmodifiableMapViewOfStringL$LoggerL = dart.constFn(collection.UnmodifiableMapView$(T.StringL(), T.LoggerL())))(),
-    VoidToLoggerL: () => (T.VoidToLoggerL = dart.constFn(dart.fnType(T.LoggerL(), [])))(),
-    IdentityMapOfStringL$LoggerL: () => (T.IdentityMapOfStringL$LoggerL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.LoggerL())))(),
-    FunctionL: () => (T.FunctionL = dart.constFn(dart.legacy(core.Function)))(),
-    LogRecordL: () => (T.LogRecordL = dart.constFn(dart.legacy(log_record.LogRecord)))(),
-    StreamControllerOfLogRecordL: () => (T.StreamControllerOfLogRecordL = dart.constFn(async.StreamController$(T.LogRecordL())))()
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -41,367 +38,351 @@ define(['dart_sdk', 'packages/logging/src/level.dart'], (function load__packages
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: level.Level.prototype,
-        [Level_value]: 800,
-        [Level_name]: "INFO"
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 16,
+        [EdgeInsets_top]: 16,
+        [EdgeInsets_left]: 16
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 250000
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: curves.Cubic.prototype,
+        [Cubic_d]: 1,
+        [Cubic_c]: 0.2,
+        [Cubic_b]: 0,
+        [Cubic_a]: 0.4
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "context",
+        [_Location_column]: 13,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeTop",
+        [_Location_column]: 13,
+        [_Location_line]: 97,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 98,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 95,
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/drawer_header.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 94,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 95,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 93,
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/drawer_header.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 9,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 9,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "duration",
+        [_Location_column]: 9,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "curve",
+        [_Location_column]: 9,
+        [_Location_line]: 92,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 93,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 88,
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/drawer_header.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 7,
+        [_Location_line]: 81,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 7,
+        [_Location_line]: 82,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 7,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22, C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25], T._LocationL());
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 80,
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/drawer_header.dart"
       });
     }
   }, false);
-  var C = [void 0];
+  var C = Array(26).fill(void 0);
   var I = [
-    "file:///C:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/logging-0.11.4/lib/src/logger.dart",
-    "package:logging/src/logger.dart",
-    "package:logging/src/log_record.dart"
+    "file:///D:/Flutter/packages/flutter/lib/src/material/drawer_header.dart",
+    "package:flutter/src/material/drawer_header.dart"
   ];
-  var name$ = dart.privateName(logger, "Logger.name");
-  var parent$ = dart.privateName(logger, "Logger.parent");
-  var children$ = dart.privateName(logger, "Logger.children");
-  var _level = dart.privateName(logger, "_level");
-  var _controller = dart.privateName(logger, "_controller");
-  var _children = dart.privateName(logger, "_children");
-  var _getStream = dart.privateName(logger, "_getStream");
-  var _publish = dart.privateName(logger, "_publish");
-  logger.Logger = class Logger extends core.Object {
-    get name() {
-      return this[name$];
+  var decoration$ = dart.privateName(drawer_header, "DrawerHeader.decoration");
+  var padding$ = dart.privateName(drawer_header, "DrawerHeader.padding");
+  var margin$ = dart.privateName(drawer_header, "DrawerHeader.margin");
+  var duration$ = dart.privateName(drawer_header, "DrawerHeader.duration");
+  var curve$ = dart.privateName(drawer_header, "DrawerHeader.curve");
+  var child$ = dart.privateName(drawer_header, "DrawerHeader.child");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var Cubic_d = dart.privateName(curves, "Cubic.d");
+  var Cubic_c = dart.privateName(curves, "Cubic.c");
+  var Cubic_b = dart.privateName(curves, "Cubic.b");
+  var Cubic_a = dart.privateName(curves, "Cubic.a");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  drawer_header.DrawerHeader = class DrawerHeader extends framework.StatelessWidget {
+    get decoration() {
+      return this[decoration$];
     }
-    set name(value) {
-      super.name = value;
+    set decoration(value) {
+      super.decoration = value;
     }
-    get parent() {
-      return this[parent$];
+    get padding() {
+      return this[padding$];
     }
-    set parent(value) {
-      super.parent = value;
+    set padding(value) {
+      super.padding = value;
     }
-    get children() {
-      return this[children$];
+    get margin() {
+      return this[margin$];
     }
-    set children(value) {
-      super.children = value;
+    set margin(value) {
+      super.margin = value;
     }
-    get fullName() {
-      return this.parent == null || this.parent.name === "" ? this.name : dart.str(this.parent.fullName) + "." + dart.str(this.name);
+    get duration() {
+      return this[duration$];
     }
-    static new(name) {
-      return logger.Logger._loggers[$putIfAbsent](name, dart.fn(() => logger.Logger._named(name), T.VoidToLoggerL()));
+    set duration(value) {
+      super.duration = value;
     }
-    static detached(name) {
-      return new logger.Logger._internal(name, null, new (T.IdentityMapOfStringL$LoggerL()).new());
+    get curve() {
+      return this[curve$];
     }
-    static _named(name) {
-      if (name[$startsWith](".")) {
-        dart.throw(new core.ArgumentError.new("name shouldn't start with a '.'"));
-      }
-      let dot = name[$lastIndexOf](".");
-      let parent = null;
-      let thisName = null;
-      if (dot === -1) {
-        if (name !== "") parent = logger.Logger.new("");
-        thisName = name;
-      } else {
-        parent = logger.Logger.new(name[$substring](0, dot));
-        thisName = name[$substring](dot + 1);
-      }
-      return new logger.Logger._internal(thisName, parent, new (T.IdentityMapOfStringL$LoggerL()).new());
+    set curve(value) {
+      super.curve = value;
     }
-    get level() {
-      let t0;
-      let effectiveLevel = null;
-      if (this.parent == null) {
-        effectiveLevel = this[_level];
-      } else if (!dart.test(logger.hierarchicalLoggingEnabled)) {
-        effectiveLevel = logger.Logger.root[_level];
-      } else {
-        effectiveLevel = (t0 = this[_level], t0 == null ? this.parent.level : t0);
-      }
-      if (!(effectiveLevel != null)) dart.assertFailed(null, I[0], 105, 12, "effectiveLevel != null");
-      return effectiveLevel;
+    get child() {
+      return this[child$];
     }
-    set level(value) {
-      if (!dart.test(logger.hierarchicalLoggingEnabled) && this.parent != null) {
-        dart.throw(new core.UnsupportedError.new("Please set \"hierarchicalLoggingEnabled\" to true if you want to " + "change the level on a non-root logger."));
-      }
-      this[_level] = value;
+    set child(value) {
+      super.child = value;
     }
-    get onRecord() {
-      return this[_getStream]();
-    }
-    clearListeners() {
-      if (dart.test(logger.hierarchicalLoggingEnabled) || this.parent == null) {
-        if (this[_controller] != null) {
-          this[_controller].close();
-          this[_controller] = null;
-        }
-      } else {
-        logger.Logger.root.clearListeners();
-      }
-    }
-    isLoggable(value) {
-      return value['>='](this.level);
-    }
-    log(logLevel, message, error = null, stackTrace = null, zone = null) {
-      let object = null;
-      if (dart.test(this.isLoggable(logLevel))) {
-        if (T.FunctionL().is(message)) {
-          message = dart.dcall(message, []);
-        }
-        let msg = null;
-        if (T.StringL().is(message)) {
-          msg = message;
-        } else {
-          msg = dart.toString(message);
-          object = message;
-        }
-        if (stackTrace == null && dart.test(logLevel['>='](logger.recordStackTraceAtLevel))) {
-          stackTrace = core.StackTrace.current;
-          error == null ? error = "autogenerated stack trace for " + dart.str(logLevel) + " " + dart.str(msg) : null;
-        }
-        zone == null ? zone = async.Zone.current : null;
-        let record = new log_record.LogRecord.new(logLevel, msg, this.fullName, error, stackTrace, zone, object);
-        if (this.parent == null) {
-          this[_publish](record);
-        } else if (!dart.test(logger.hierarchicalLoggingEnabled)) {
-          logger.Logger.root[_publish](record);
-        } else {
-          let target = this;
-          while (target != null) {
-            target[_publish](record);
-            target = target.parent;
-          }
-        }
-      }
-    }
-    finest(message, error = null, stackTrace = null) {
-      return this.log(level.Level.FINEST, message, error, stackTrace);
-    }
-    finer(message, error = null, stackTrace = null) {
-      return this.log(level.Level.FINER, message, error, stackTrace);
-    }
-    fine(message, error = null, stackTrace = null) {
-      return this.log(level.Level.FINE, message, error, stackTrace);
-    }
-    config(message, error = null, stackTrace = null) {
-      return this.log(level.Level.CONFIG, message, error, stackTrace);
-    }
-    info(message, error = null, stackTrace = null) {
-      return this.log(level.Level.INFO, message, error, stackTrace);
-    }
-    warning(message, error = null, stackTrace = null) {
-      return this.log(level.Level.WARNING, message, error, stackTrace);
-    }
-    severe(message, error = null, stackTrace = null) {
-      return this.log(level.Level.SEVERE, message, error, stackTrace);
-    }
-    shout(message, error = null, stackTrace = null) {
-      return this.log(level.Level.SHOUT, message, error, stackTrace);
-    }
-    [_getStream]() {
-      if (dart.test(logger.hierarchicalLoggingEnabled) || this.parent == null) {
-        this[_controller] == null ? this[_controller] = T.StreamControllerOfLogRecordL().broadcast({sync: true}) : null;
-        return this[_controller].stream;
-      } else {
-        return logger.Logger.root[_getStream]();
-      }
-    }
-    [_publish](record) {
-      if (this[_controller] != null) {
-        this[_controller].add(record);
-      }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 75, 29, "context");
+      if (!dart.test(debug.debugCheckHasMaterial(context))) dart.assertFailed(null, I[0], 76, 12, "debugCheckHasMaterial(context)");
+      if (!dart.test(debug$.debugCheckHasMediaQuery(context))) dart.assertFailed(null, I[0], 77, 12, "debugCheckHasMediaQuery(context)");
+      let theme = theme$.Theme.of(context);
+      let statusBarHeight = media_query.MediaQuery.of(context).padding.top;
+      return new container.Container.new({height: dart.notNull(statusBarHeight) + 161, margin: this.margin, decoration: new box_decoration.BoxDecoration.new({border: new box_border.Border.new({bottom: divider.Divider.createBorderSide(context)})}), child: new implicit_animations.AnimatedContainer.new({padding: this.padding.add(new edge_insets.EdgeInsets.only({top: statusBarHeight})), decoration: this.decoration, duration: this.duration, curve: this.curve, child: this.child == null ? null : new text.DefaultTextStyle.new({style: dart.nullCheck(theme.textTheme.bodyText1), child: media_query.MediaQuery.removePadding({context: context, removeTop: true, child: dart.nullCheck(this.child), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[20] || CT.C20});
     }
   };
-  (logger.Logger._internal = function(name, parent, children) {
-    this[_level] = null;
-    this[_controller] = null;
-    this[name$] = name;
-    this[parent$] = parent;
-    this[_children] = children;
-    this[children$] = new (T.UnmodifiableMapViewOfStringL$LoggerL()).new(children);
-    if (this.parent == null) {
-      this[_level] = logger.defaultLevel;
-    } else {
-      this.parent[_children][$_set](this.name, this);
-    }
-  }).prototype = logger.Logger.prototype;
-  dart.addTypeTests(logger.Logger);
-  dart.addTypeCaches(logger.Logger);
-  dart.setMethodSignature(logger.Logger, () => ({
-    __proto__: dart.getMethods(logger.Logger.__proto__),
-    clearListeners: dart.fnType(dart.void, []),
-    isLoggable: dart.fnType(dart.legacy(core.bool), [dart.legacy(level.Level)]),
-    log: dart.fnType(dart.void, [dart.legacy(level.Level), dart.dynamic], [dart.legacy(core.Object), dart.legacy(core.StackTrace), dart.legacy(async.Zone)]),
-    finest: dart.fnType(dart.void, [dart.dynamic], [dart.legacy(core.Object), dart.legacy(core.StackTrace)]),
-    finer: dart.fnType(dart.void, [dart.dynamic], [dart.legacy(core.Object), dart.legacy(core.StackTrace)]),
-    fine: dart.fnType(dart.void, [dart.dynamic], [dart.legacy(core.Object), dart.legacy(core.StackTrace)]),
-    config: dart.fnType(dart.void, [dart.dynamic], [dart.legacy(core.Object), dart.legacy(core.StackTrace)]),
-    info: dart.fnType(dart.void, [dart.dynamic], [dart.legacy(core.Object), dart.legacy(core.StackTrace)]),
-    warning: dart.fnType(dart.void, [dart.dynamic], [dart.legacy(core.Object), dart.legacy(core.StackTrace)]),
-    severe: dart.fnType(dart.void, [dart.dynamic], [dart.legacy(core.Object), dart.legacy(core.StackTrace)]),
-    shout: dart.fnType(dart.void, [dart.dynamic], [dart.legacy(core.Object), dart.legacy(core.StackTrace)]),
-    [_getStream]: dart.fnType(dart.legacy(async.Stream$(dart.legacy(log_record.LogRecord))), []),
-    [_publish]: dart.fnType(dart.void, [dart.legacy(log_record.LogRecord)])
-  }));
-  dart.setGetterSignature(logger.Logger, () => ({
-    __proto__: dart.getGetters(logger.Logger.__proto__),
-    fullName: dart.legacy(core.String),
-    level: dart.legacy(level.Level),
-    onRecord: dart.legacy(async.Stream$(dart.legacy(log_record.LogRecord)))
-  }));
-  dart.setSetterSignature(logger.Logger, () => ({
-    __proto__: dart.getSetters(logger.Logger.__proto__),
-    level: dart.legacy(level.Level)
-  }));
-  dart.setLibraryUri(logger.Logger, I[1]);
-  dart.setFieldSignature(logger.Logger, () => ({
-    __proto__: dart.getFields(logger.Logger.__proto__),
-    name: dart.finalFieldType(dart.legacy(core.String)),
-    parent: dart.finalFieldType(dart.legacy(logger.Logger)),
-    [_level]: dart.fieldType(dart.legacy(level.Level)),
-    [_children]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(logger.Logger)))),
-    children: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(logger.Logger)))),
-    [_controller]: dart.fieldType(dart.legacy(async.StreamController$(dart.legacy(log_record.LogRecord))))
-  }));
-  dart.defineLazy(logger.Logger, {
-    /*logger.Logger.root*/get root() {
-      return logger.Logger.new("");
-    },
-    /*logger.Logger._loggers*/get _loggers() {
-      return new (T.IdentityMapOfStringL$LoggerL()).new();
-    }
-  }, true);
-  var Level_value = dart.privateName(level, "Level.value");
-  var Level_name = dart.privateName(level, "Level.name");
-  dart.defineLazy(logger, {
-    /*logger.hierarchicalLoggingEnabled*/get hierarchicalLoggingEnabled() {
-      return false;
-    },
-    set hierarchicalLoggingEnabled(_) {},
-    /*logger.recordStackTraceAtLevel*/get recordStackTraceAtLevel() {
-      return level.Level.OFF;
-    },
-    set recordStackTraceAtLevel(_) {},
-    /*logger.defaultLevel*/get defaultLevel() {
-      return C[0] || CT.C0;
-    }
-  }, true);
-  var level$ = dart.privateName(log_record, "LogRecord.level");
-  var message$ = dart.privateName(log_record, "LogRecord.message");
-  var object$ = dart.privateName(log_record, "LogRecord.object");
-  var loggerName$ = dart.privateName(log_record, "LogRecord.loggerName");
-  var time = dart.privateName(log_record, "LogRecord.time");
-  var sequenceNumber = dart.privateName(log_record, "LogRecord.sequenceNumber");
-  var error$ = dart.privateName(log_record, "LogRecord.error");
-  var stackTrace$ = dart.privateName(log_record, "LogRecord.stackTrace");
-  var zone$ = dart.privateName(log_record, "LogRecord.zone");
-  log_record.LogRecord = class LogRecord extends core.Object {
-    get level() {
-      return this[level$];
-    }
-    set level(value) {
-      super.level = value;
-    }
-    get message() {
-      return this[message$];
-    }
-    set message(value) {
-      super.message = value;
-    }
-    get object() {
-      return this[object$];
-    }
-    set object(value) {
-      super.object = value;
-    }
-    get loggerName() {
-      return this[loggerName$];
-    }
-    set loggerName(value) {
-      super.loggerName = value;
-    }
-    get time() {
-      return this[time];
-    }
-    set time(value) {
-      super.time = value;
-    }
-    get sequenceNumber() {
-      return this[sequenceNumber];
-    }
-    set sequenceNumber(value) {
-      super.sequenceNumber = value;
-    }
-    get error() {
-      return this[error$];
-    }
-    set error(value) {
-      super.error = value;
-    }
-    get stackTrace() {
-      return this[stackTrace$];
-    }
-    set stackTrace(value) {
-      super.stackTrace = value;
-    }
-    get zone() {
-      return this[zone$];
-    }
-    set zone(value) {
-      super.zone = value;
-    }
-    toString() {
-      return "[" + dart.str(this.level.name) + "] " + dart.str(this.loggerName) + ": " + dart.str(this.message);
-    }
-  };
-  (log_record.LogRecord.new = function(level, message, loggerName, error = null, stackTrace = null, zone = null, object = null) {
-    let t0;
-    this[level$] = level;
-    this[message$] = message;
-    this[loggerName$] = loggerName;
-    this[error$] = error;
-    this[stackTrace$] = stackTrace;
-    this[zone$] = zone;
-    this[object$] = object;
-    this[time] = new core.DateTime.now();
-    this[sequenceNumber] = (t0 = log_record.LogRecord._nextNumber, log_record.LogRecord._nextNumber = dart.notNull(t0) + 1, t0);
+  (drawer_header.DrawerHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let decoration = opts && 'decoration' in opts ? opts.decoration : null;
+    let margin = opts && 'margin' in opts ? opts.margin : C[0] || CT.C0;
+    let padding = opts && 'padding' in opts ? opts.padding : C[1] || CT.C1;
+    if (padding == null) dart.nullFailed(I[0], 35, 10, "padding");
+    let duration = opts && 'duration' in opts ? opts.duration : C[2] || CT.C2;
+    if (duration == null) dart.nullFailed(I[0], 36, 10, "duration");
+    let curve = opts && 'curve' in opts ? opts.curve : C[3] || CT.C3;
+    if (curve == null) dart.nullFailed(I[0], 37, 10, "curve");
+    let child = opts && 'child' in opts ? opts.child : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[decoration$] = decoration;
+    this[margin$] = margin;
+    this[padding$] = padding;
+    this[duration$] = duration;
+    this[curve$] = curve;
+    this[child$] = child;
+    drawer_header.DrawerHeader.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = log_record.LogRecord.prototype;
-  dart.addTypeTests(log_record.LogRecord);
-  dart.addTypeCaches(log_record.LogRecord);
-  dart.setMethodSignature(log_record.LogRecord, () => ({
-    __proto__: dart.getMethods(log_record.LogRecord.__proto__),
-    toString: dart.fnType(dart.legacy(core.String), []),
-    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }).prototype = drawer_header.DrawerHeader.prototype;
+  dart.addTypeTests(drawer_header.DrawerHeader);
+  dart.addTypeCaches(drawer_header.DrawerHeader);
+  dart.setMethodSignature(drawer_header.DrawerHeader, () => ({
+    __proto__: dart.getMethods(drawer_header.DrawerHeader.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(log_record.LogRecord, I[2]);
-  dart.setFieldSignature(log_record.LogRecord, () => ({
-    __proto__: dart.getFields(log_record.LogRecord.__proto__),
-    level: dart.finalFieldType(dart.legacy(level.Level)),
-    message: dart.finalFieldType(dart.legacy(core.String)),
-    object: dart.finalFieldType(dart.legacy(core.Object)),
-    loggerName: dart.finalFieldType(dart.legacy(core.String)),
-    time: dart.finalFieldType(dart.legacy(core.DateTime)),
-    sequenceNumber: dart.finalFieldType(dart.legacy(core.int)),
-    error: dart.finalFieldType(dart.legacy(core.Object)),
-    stackTrace: dart.finalFieldType(dart.legacy(core.StackTrace)),
-    zone: dart.finalFieldType(dart.legacy(async.Zone))
+  dart.setLibraryUri(drawer_header.DrawerHeader, I[1]);
+  dart.setFieldSignature(drawer_header.DrawerHeader, () => ({
+    __proto__: dart.getFields(drawer_header.DrawerHeader.__proto__),
+    decoration: dart.finalFieldType(dart.nullable(decoration.Decoration)),
+    padding: dart.finalFieldType(edge_insets.EdgeInsetsGeometry),
+    margin: dart.finalFieldType(dart.nullable(edge_insets.EdgeInsetsGeometry)),
+    duration: dart.finalFieldType(core.Duration),
+    curve: dart.finalFieldType(curves.Curve),
+    child: dart.finalFieldType(dart.nullable(framework.Widget))
   }));
-  dart.defineExtensionMethods(log_record.LogRecord, ['toString']);
-  dart.defineLazy(log_record.LogRecord, {
-    /*log_record.LogRecord._nextNumber*/get _nextNumber() {
-      return 0;
-    },
-    set _nextNumber(_) {}
-  }, true);
-  dart.trackLibraries("packages/logging/src/logger.dart", {
-    "package:logging/src/logger.dart": logger,
-    "package:logging/src/log_record.dart": log_record
+  dart.defineLazy(drawer_header, {
+    /*drawer_header._kDrawerHeaderHeight*/get _kDrawerHeaderHeight() {
+      return 161;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/material/drawer_header.dart", {
+    "package:flutter/src/material/drawer_header.dart": drawer_header
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["logger.dart","log_record.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/logging/src/logger.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["drawer_header.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA8CoB;;;;;;IAQO;;;;;;IAGC;;;;;;IAGX;;;;;;IAGH;;;;;;IAQE;;;;;;;UAGY;AACxB,qBAAO,4BAAsB,OAAO;AACpC,qBAAO,+BAAwB,OAAO;AACtB,kBAAc,gBAAG,OAAO;AAC3B,4BAA6B,AAAY,AAAQ,0BAAjB,OAAO;AACpD,YAAO,sCACmB,aAAhB,eAAe,iBACf,yBACI,8CACF,mCACU,iCAAiB,OAAO,cAGrC,wDACI,AAAQ,iBAAe,sCAAU,eAAe,iBAC7C,2BACF,sBACH,mBACA,AAAM,qBAAU,OAAO,sCACI,eAAzB,AAAM,AAAU,KAAX,8BACM,+CACP,OAAO,aACL,aACC,eAAL;IAKjB;;;QAvEO;QACA;QACA;QACA;;QACA;;QACA;;QACS;;IALT;IACA;IACA;IACA;IACA;IACS;AACX,8DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;MA5BT,kCAAoB","file":"../../../../../../../C:/packages/flutter/src/material/drawer_header.dart.lib.js"}');
   // Exports:
   return {
-    src__logger: logger,
-    src__log_record: log_record
+    src__material__drawer_header: drawer_header
   };
 }));
 
-//# sourceMappingURL=logger.dart.lib.js.map
+//# sourceMappingURL=drawer_header.dart.lib.js.map

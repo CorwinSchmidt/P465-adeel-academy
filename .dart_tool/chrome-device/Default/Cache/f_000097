@@ -77,7 +77,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 84,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C6() {
@@ -120,7 +120,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 20,
         [_Location_line]: 112,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C11() {
@@ -153,7 +153,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 11,
         [_Location_line]: 106,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C15() {
@@ -176,7 +176,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 14,
         [_Location_line]: 104,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C18() {
@@ -209,7 +209,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 97,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C20() {
@@ -238,7 +238,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 21,
         [_Location_line]: 207,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C26() {
@@ -281,7 +281,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 13,
         [_Location_line]: 206,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C31() {
@@ -324,7 +324,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 47,
         [_Location_line]: 196,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C36() {
@@ -367,7 +367,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 14,
         [_Location_line]: 191,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C41() {
@@ -420,37 +420,30 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 187,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
     get C45() {
       return C[45] = dart.fn(text_selection_toolbar._TextSelectionToolbarItemsLayoutElement._shouldPaint, T.ElementTobool());
     },
-    get C46() {
-      return C[46] = dart.const({
-        __proto__: ui.Size.prototype,
-        [OffsetBase__dy]: 0,
-        [OffsetBase__dx]: 0
-      });
-    },
-    get C48() {
-      return C[48] = dart.const({
+    get C47() {
+      return C[47] = dart.const({
         __proto__: ui.Radius.prototype,
         [Radius_y]: 7,
         [Radius_x]: 7
       });
     },
-    get C47() {
-      return C[47] = dart.const({
+    get C46() {
+      return C[46] = dart.const({
         __proto__: border_radius.BorderRadius.prototype,
-        [BorderRadius_bottomRight]: C[48] || CT.C48,
-        [BorderRadius_bottomLeft]: C[48] || CT.C48,
-        [BorderRadius_topRight]: C[48] || CT.C48,
-        [BorderRadius_topLeft]: C[48] || CT.C48
+        [BorderRadius_bottomRight]: C[47] || CT.C47,
+        [BorderRadius_bottomLeft]: C[47] || CT.C47,
+        [BorderRadius_topRight]: C[47] || CT.C47,
+        [BorderRadius_topLeft]: C[47] || CT.C47
       });
     },
-    get C51() {
-      return C[51] = dart.const({
+    get C50() {
+      return C[50] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "borderRadius",
@@ -459,8 +452,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C52() {
-      return C[52] = dart.const({
+    get C51() {
+      return C[51] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "clipBehavior",
@@ -469,8 +462,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C53() {
-      return C[53] = dart.const({
+    get C52() {
+      return C[52] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "elevation",
@@ -479,8 +472,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C54() {
-      return C[54] = dart.const({
+    get C53() {
+      return C[53] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "type",
@@ -489,8 +482,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C55() {
-      return C[55] = dart.const({
+    get C54() {
+      return C[54] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
@@ -499,27 +492,27 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C50() {
-      return C[50] = dart.constList([C[51] || CT.C51, C[52] || CT.C52, C[53] || CT.C53, C[54] || CT.C54, C[55] || CT.C55], T._LocationL());
-    },
     get C49() {
-      return C[49] = dart.const({
+      return C[49] = dart.constList([C[50] || CT.C50, C[51] || CT.C51, C[52] || CT.C52, C[53] || CT.C53, C[54] || CT.C54], T._LocationL());
+    },
+    get C48() {
+      return C[48] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_parameterLocations]: C[49] || CT.C49,
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 654,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
-    get C56() {
-      return C[56] = dart.const({
+    get C55() {
+      return C[55] = dart.const({
         __proto__: ui.Color.prototype,
         [Color_value]: 0
       });
     },
-    get C59() {
-      return C[59] = dart.const({
+    get C58() {
+      return C[58] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
@@ -528,8 +521,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C60() {
-      return C[60] = dart.const({
+    get C59() {
+      return C[59] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "onPressed",
@@ -538,8 +531,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C61() {
-      return C[61] = dart.const({
+    get C60() {
+      return C[60] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "tooltip",
@@ -548,21 +541,21 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C58() {
-      return C[58] = dart.constList([C[59] || CT.C59, C[60] || CT.C60, C[61] || CT.C61], T._LocationL());
-    },
     get C57() {
-      return C[57] = dart.const({
+      return C[57] = dart.constList([C[58] || CT.C58, C[59] || CT.C59, C[60] || CT.C60], T._LocationL());
+    },
+    get C56() {
+      return C[56] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[58] || CT.C58,
+        [_Location_parameterLocations]: C[57] || CT.C57,
         [_Location_name]: null,
         [_Location_column]: 14,
         [_Location_line]: 685,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     },
-    get C64() {
-      return C[64] = dart.const({
+    get C63() {
+      return C[63] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "type",
@@ -571,8 +564,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C65() {
-      return C[65] = dart.const({
+    get C64() {
+      return C[64] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
@@ -581,8 +574,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C66() {
-      return C[66] = dart.const({
+    get C65() {
+      return C[65] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
@@ -591,23 +584,23 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_file]: null
       });
     },
-    get C63() {
-      return C[63] = dart.constList([C[64] || CT.C64, C[65] || CT.C65, C[66] || CT.C66], T._LocationL());
-    },
     get C62() {
-      return C[62] = dart.const({
+      return C[62] = dart.constList([C[63] || CT.C63, C[64] || CT.C64, C[65] || CT.C65], T._LocationL());
+    },
+    get C61() {
+      return C[61] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[63] || CT.C63,
+        [_Location_parameterLocations]: C[62] || CT.C62,
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 682,
-        [_Location_file]: "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
+        [_Location_file]: "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart"
       });
     }
   }, false);
-  var C = Array(67).fill(void 0);
+  var C = Array(66).fill(void 0);
   var I = [
-    "file:///C:/Flutter/flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart",
+    "file:///D:/Flutter/packages/flutter/lib/src/material/text_selection_toolbar.dart",
     "package:flutter/src/material/text_selection_toolbar.dart"
   ];
   var anchorAbove$ = dart.privateName(text_selection_toolbar, "TextSelectionToolbar.anchorAbove");
@@ -1035,8 +1028,6 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
   var _isAbove = dart.privateName(text_selection_toolbar, "_isAbove");
   var _layoutChildren = dart.privateName(text_selection_toolbar, "_layoutChildren");
   var _shouldPaintChild = dart.privateName(text_selection_toolbar, "_shouldPaintChild");
-  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
-  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
   var _placeChildren = dart.privateName(text_selection_toolbar, "_placeChildren");
   const RenderBox_ContainerRenderObjectMixin$36 = class RenderBox_ContainerRenderObjectMixin extends box.RenderBox {};
   (RenderBox_ContainerRenderObjectMixin$36.new = function() {
@@ -1102,7 +1093,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
     }
     [_placeChildren]() {
       let i = -1;
-      let nextSize = C[46] || CT.C46;
+      let nextSize = ui.Size.zero;
       let fitWidth = 0.0;
       let navButton = dart.nullCheck(this.firstChild);
       let overflowHeight = dart.test(this.overflowOpen) && !dart.test(this.isAbove) ? navButton.size.height : 0.0;
@@ -1261,7 +1252,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
     }
     build(context) {
       if (context == null) dart.nullFailed(I[0], 653, 29, "context");
-      return new material.Material.new({borderRadius: C[47] || CT.C47, clipBehavior: ui.Clip.antiAlias, elevation: 1.0, type: material.MaterialType.card, child: this.child, $creationLocationd_0dea112b090073317d4: C[49] || CT.C49});
+      return new material.Material.new({borderRadius: C[46] || CT.C46, clipBehavior: ui.Clip.antiAlias, elevation: 1.0, type: material.MaterialType.card, child: this.child, $creationLocationd_0dea112b090073317d4: C[48] || CT.C48});
     }
   };
   (text_selection_toolbar._TextSelectionToolbarContainer.new = function(opts) {
@@ -1309,7 +1300,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
     }
     build(context) {
       if (context == null) dart.nullFailed(I[0], 681, 29, "context");
-      return new material.Material.new({type: material.MaterialType.card, color: C[56] || CT.C56, child: new icon_button.IconButton.new({icon: this.icon, onPressed: this.onPressed, tooltip: this.tooltip, $creationLocationd_0dea112b090073317d4: C[57] || CT.C57}), $creationLocationd_0dea112b090073317d4: C[62] || CT.C62});
+      return new material.Material.new({type: material.MaterialType.card, color: C[55] || CT.C55, child: new icon_button.IconButton.new({icon: this.icon, onPressed: this.onPressed, tooltip: this.tooltip, $creationLocationd_0dea112b090073317d4: C[56] || CT.C56}), $creationLocationd_0dea112b090073317d4: C[61] || CT.C61});
     }
   };
   (text_selection_toolbar._TextSelectionToolbarOverflowButton.new = function(opts) {
@@ -1349,7 +1340,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
   dart.trackLibraries("packages/flutter/src/material/text_selection_toolbar.dart", {
     "package:flutter/src/material/text_selection_toolbar.dart": text_selection_toolbar
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["text_selection_toolbar.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/material/text_selection_toolbar.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["text_selection_toolbar.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAoDe;;;;;;IAMA;;;;;;IAaM;;;;;;IAQE;;;;;;kCAG6B,SAAgB;UAAhB;UAAgB;AAChE,YAAO,uEACE,KAAK;IAEhB;;UAG0B;AACX,yBACT,aADmC,AAAY,AAAQ,0BAAjB,OAAO;AAEpC,4BAAiC,aAAf,AAAY,uBAAK,YAAY;AACjD,sBAA4B,MAAG,eAAe;AAC5C,4BAAkB,qBAA+B,YAAY;AAE1E,YAAO,iCACe,uCAElB,YAAY,gBAIP,+BACa,wBAChB,iDACY,gGACK,AAAY,sBAAE,eAAe,gBAC7B,AAAY,sBAAE,eAAe,cAC/B,SAAS,WAEf,2EACI,SAAS,kBACF,+BACN;IAMtB;;;QAlFO;QACS;;QACA;;QACT;;QACS;;;IAHA;IACA;IACT;IACS;UACY,aAAhB,AAAS,QAAD,aAAU;AACzB,+EAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;IA2FD;;;;;;IAGR;;;;;;IAIU;;;;;;;AAGmC;IAAwC;;;QAjBzF;QACS;;QACA;;QACA;;;IAFA;IACA;IACA;UACY,aAAhB,AAAS,QAAD,aAAU;AACzB,4FAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;AAgCS,MAA3B,sBAAgB;AAIK,MAArB,sBAAgB;IAClB;;kEAGuD;;AACrB,MAA1B,sBAAgB,SAAS;AAE/B,qBAAK,yCAAW,AAAO,sBAAU,AAAU,SAAD;AAChC,QAAR;;IAEJ;UAG0B;;;AACxB,qBAAO,yCAAmC,OAAO;AACrB,0BAAsC,gDAAG,OAAO;AAE5E,YAAO,6EACA,mCACS,oCACgB,wBAAG,OAAO,UACjC,2CACE,8CAIA,kBAAsB,OAAO,OAAE,0EAC3B,AAAO,mCACF,+BACI;+CAOhB,0EACQ,4BAAK,uBAAsB,yBAAmB,8FACzC;AAGP,oBAFF,cAAS;AACuB,sBAA9B,sBAAgB,WAAC;;yDAGZ,uBACH,AAAc,aAAD,qBACb,AAAc,aAAD;AAEX,0BAAP;;6EArBqB;IA0BlC;;;IArEK,sBAAgB;IAGX,sBAAgB;;;EAmE5B;;;;;;;;;;;;;;;;;IAgBa;;;;;;IACS;;;;;;;UAG4D;AAC9E,YAAO,+FACS,kCACC;IAEnB;uBAGqC,SAAyD;;UAAzD;gFAAyD;;AAGzD,WAFnC,YAAY;MAAZ;AACM,0BAAe;AACf,2BAAgB;;;IACxB;;;QAxBO;QACW;;QACF;;QACA;;;IADA;IACA;UACJ,AAAM,KAAD;UACL,AAAa,YAAD;AACnB,iGAAW,GAAG,SAAS,KAAK;;EAAC;;;;;;;;;;;;;;;;;AAmCT;IAAa;;UAChB;AACpB,UAAI,AAAM,KAAD,IAAI;AACX;;AAEmB,MAArB,sBAAgB,KAAK;AACJ,MAAjB;IACF;;AAGmC;IAAc;;UACjB;AAC9B,UAAI,AAAM,KAAD,IAAI;AACX;;AAEoB,MAAtB,uBAAiB,KAAK;AACL,MAAjB;IACF;;AAI2D,MAApD,AAAE,eAAP,mBAAc,AAAY,4CAA0B;AAMpD,qBAAK,sBAAgB,AAAa;AACA,QAAhC,qBAAoB,AAAE,AAAK,eAAZ;;AAUf,MAPF,YAAO,AAAY,2BAAU,gBAK3B,AAAa,AAAQ,8BAAqB,aAAb,AAAE,AAAK,eAAZ,0BAAgC,eAAZ,sBAAqB,AAAE,AAAK,eAAZ,yBAAgC,eAAZ,qBAC3E,AAAE,AAAK,eAAZ;AAK2B,4BAAqC,yCAAF,eAAZ,AAAE,eAAP;AAI9C,MAHD,AAAgB,eAAD,UAAU,kBACvB,AAAc,sBAAiB,uBAAM,MAAiB,aAAX,AAAK,gCAAa,AAAE,AAAK,eAAZ,yBACxD;IAEJ;UAI2B,SAAgB;UAAhB;UAAgB;AACZ,4BAAqC,yCAAF,eAAZ,AAAE,eAAP;AACY,MAA3D,AAAQ,OAAD,YAAiB,eAAL,aAAQ,AAAgB,AAAO,eAAR,aAAU,MAAM;IAC5D;;UAIsC;UAA0B;;AAEjC,4BAAqC,yCAAF,eAAZ,AAAE,eAAP;AAC/C,YAAO,AAAO,OAAD,6BACH,AAAgB,eAAD,mBACb,QAAQ,WACT,SAAkB,QAAe;cAAf;cAAe;AACxC,eAAmB,YAAZ,WAAW,EAAI,AAAS,QAAD,MAAG,AAAgB,eAAD;AAChD,gBAAY,AAAE,gBAAP,oBAAe,MAAM,aAAY,WAAW;;IAGzD;;uBAG+B;;AAC7B,WAAqB,yCAAjB,AAAM,KAAD;AACoC,QAA3C,AAAM,KAAD,cAAc;;IAEvB;wBAGsC,OAAe;6BAAf;;UAAe;AACtB,4BAAoC,yCAAF,eAAhB,AAAM,KAAD;AACqB,MAAzE,AAAU,SAAD,WAAW,AAAgB,AAAO,eAAR,YAAY,AAAgB,AAAO,eAAR;AACnB,MAArC,0BAAoB,KAAK,EAAE,SAAS;IAC5C;;;QA/FgB;;QACS;;IAQjB;IAPY,uBAAE,aAAa;IAChB,sBAAE,YAAY;AAC5B;;EAAO;;;;;;;;;;;;;;;;;;;;;;UA+G2D;AACrE,YAAO,iFACI,4BACK;IAElB;uBAGqC,SAAgD;;UAAhD;uEAAgD;;AAGpD,WAF/B,YAAY;MAAZ;AACI,qBAAU;AACV,0BAAe;;;IACrB;;AAG2D,oFAAwC;IAAK;;;QA5BjG;QACS;;QACA;;QACQ;;;IAFR;IACA;UAEJ,AAAS,QAAD;UACR,AAAQ,OAAD;UACP,AAAa,YAAD;AACnB,2FAAW,GAAG,YAAY,QAAQ;;EAAC;;;;;;;;;;;;;;;;UA6BP;AAC/B,YAAwC,AAA2B,0CAA7B,eAAZ,AAAE,eAApB,AAAM,KAAD;IACf;;UAG8C;AACC,MAA7C,AAAS,AAAoB,iDAAQ,OAAO;IAC9C;;;QAV+B;AAC3B,4FAAM,MAAM;;EAAC;;;;;;;;;;;;;;;;;AA0BG;IAAQ;;UACX;AACf,UAAI,AAAM,KAAD,IAAI;AACX;;AAEc,MAAhB,iBAAW,KAAK;AACC,MAAjB;IACF;;AAGyB;IAAa;;UAChB;AACpB,UAAI,AAAM,KAAD,IAAI;AACX;;AAEmB,MAArB,sBAAgB,KAAK;AACJ,MAAjB;IACF;;AAMuB,uCAAmB,uBACpC,mBACe,6BAAM,gBACnB,AAAY;AAId,cAAI,CAAC;AACF,kBAAQ;AAmBb,MAlBF,mBAAc;YAAc;AACvB,QAAH,IAAA,AAAC,CAAA;AAMD,YAAI,AAAmB,6BAAG,CAAC,gBAAM;AAC/B;;AAGc,oBAA0B,iBAAlB,iBAAiB;AACoB,QAA7D,AAAM,KAAD,QAAQ,AAAiB,gBAAD,4BAA2B;AAC/B,QAAzB,QAAA,AAAM,KAAD,gBAAI,AAAM,AAAK,KAAN;AAEd,YAAI,AAAM,KAAD,gBAAG,AAAiB,gBAAD,cAAa,AAAmB,6BAAG,CAAC;AACpC,UAA1B,2BAAqB,AAAE,CAAD,GAAG;;;AAMb,sBAAsB,eAAV;AAC5B,UAAI,AAAmB,6BAAG,CAAC,KACpB,AAAmB,6BAAc,aAAX,mBAAa,KACnC,AAAM,AAAuB,KAAxB,gBAAG,AAAU,AAAK,SAAN,6BAAe,AAAiB,gBAAD;AAC9B,QAAvB,2BAAqB,CAAC;;IAE1B;wBAGoC,mBAAuB;UAAvB;UAAuB;AAEzD,UAAsB,YAAlB,iBAAiB,EAAI;AACvB,cAAO,AAAmB,8BAAG,CAAC;;AAIhC,UAAI,AAAmB,6BAAG,CAAC;AACzB,cAAO;;AAOT,YAAc,AAAsB,cAA5B,KAAK,iBAAG,8BAAuB;IACzC;;AAKM,cAAI,CAAC;AACJ,qBAAgB;AACd,qBAAW;AACF,sBAAsB,eAAV;AACrB,2BAA8B,UAAb,iCAAiB,gBAAU,AAAU,AAAK,SAAN,eAAe;AAkCzE,MAjCF,mBAAc;YAAc;AACvB,QAAH,IAAA,AAAC,CAAA;AAEe,oBAA0B,iBAAlB,iBAAiB;AACZ,8BAAoC,yCAAF,eAAhB,AAAM,KAAD;AAGpD,YAAsB,YAAlB,iBAAiB,EAAI,SAAS;AAChC;;AAIF,uBAAK,wBAAkB,iBAAiB,EAAE,CAAC;AACN,UAAnC,AAAgB,eAAD,eAAe;AAC9B;;AAEgC,QAAlC,AAAgB,eAAD,eAAe;AAE9B,uBAAK;AAC2C,UAA9C,AAAgB,eAAD,UAAU,kBAAO,QAAQ,EAAE;AACd,UAA5B,WAAA,AAAS,QAAD,gBAAI,AAAM,AAAK,KAAN;AAIhB,UAHD,WAAW,gBACT,QAAQ,EACR,sBAAS,AAAM,AAAK,KAAN,cAAc,AAAS,QAAD;;AAGc,UAApD,AAAgB,eAAD,UAAU,kBAAO,KAAK,cAAc;AAChB,UAAnC,iBAAe,aAAf,cAAc,iBAAI,AAAM,AAAK,KAAN;AAItB,UAHD,WAAW,gBACT,sBAAS,AAAM,AAAK,KAAN,aAAa,AAAS,QAAD,SACnC,cAAc;;;AAMS,gCAA4C,yCAAF,eAApB,AAAU,SAAD;AAC5D,oBAAI,wBAA4B,eAAV,kBAAa;AACK,QAAtC,AAAoB,mBAAD,eAAe;AAClC,sBAAI;AAGa,UAFf,AAAoB,mBAAD,oBAAU,gBACzB,kBAAO,KAAK,cAAc,IACnB;AAIV,UAHD,WAAW,gBACT,AAAS,QAAD,kBACR,gBAA0B,aAAhB,AAAS,QAAD,wBAAU,AAAU,AAAK,SAAN,gBAAe,AAAS,QAAD;;AAGZ,UAAlD,AAAoB,mBAAD,UAAU,kBAAO,QAAQ,EAAE;AACyB,UAAvE,WAAW,gBAAoB,aAAf,AAAS,QAAD,uBAAS,AAAU,AAAK,SAAN,cAAa,AAAS,QAAD;;;AAG1B,QAAvC,AAAoB,mBAAD,eAAe;;AAGrB,MAAf,YAAO,QAAQ;IACjB;;AAIyB,MAAvB,2BAAqB,CAAC;AACtB,UAAI,AAAW;AACc,QAA3B,YAAO,AAAY;AACnB;;AAGe,MAAjB;AACgB,MAAhB;IACF;UAG2B,SAAgB;UAAhB;UAAgB;AASvC,MARF,mBAAc;YAAc;AACV,oBAA0B,iBAAlB,iBAAiB;AACZ,8BAAoC,yCAAF,eAAhB,AAAM,KAAD;AACpD,uBAAK,AAAgB,eAAD;AAClB;;AAGwD,QAA1D,AAAQ,OAAD,YAAY,KAAK,EAAE,AAAgB,AAAO,eAAR,aAAU,MAAM;;IAE7D;;uBAG+B;;AAC7B,WAAqB,yCAAjB,AAAM,KAAD;AACoC,QAA3C,AAAM,KAAD,cAAc;;IAEvB;;UAGsC;UAA0B;;AAEnD,kBAAQ;AACnB,aAAO,AAAM,KAAD;AACmB,8BAAoC,yCAAF,eAAhB,AAAM,KAAD;AAGpD,uBAAK,AAAgB,eAAD;AACqB,UAAvC,QAAQ,AAAgB,eAAD;AACvB;;AAGS,oBAAQ,AAAO,MAAD,6BACf,AAAgB,eAAD,mBACb,QAAQ,WACT,SAAkB,QAAe;gBAAf;gBAAe;AACxC,iBAAmB,YAAZ,WAAW,EAAI,AAAS,QAAD,MAAG,AAAgB,eAAD;AAChD,kBAAY,AAAE,gBAAP,KAAK,UAAU,MAAM,aAAY,WAAW;;AAGvD,sBAAI,KAAK,GACP,MAAO;AAC8B,QAAvC,QAAQ,AAAgB,eAAD;;AAEzB,YAAO;IACT;;UAImD;AAO/C,MANF,mBAAc;YAAc;AACV,oBAA0B,iBAAlB,iBAAiB;AACZ,8BAAoC,yCAAF,eAAhB,AAAM,KAAD;AACpD,sBAAI,AAAgB,eAAD;AACS,UAA1B,AAAO,OAAA,CAAC,iBAAiB;;;IAG/B;;;QArOgB;;QACA;;IAQZ,2BAAqB,CAAC;UAPd,AAAa,YAAD;UACZ,AAAQ,OAAD;IACL,iBAAE,OAAO;IACJ,sBAAE,YAAY;AAC5B;;EAAO;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA0OC;;;;;;;UAGa;AACxB,YAAO,yEAIc,8BACR,WACQ,mCACZ;IAEX;;;QAjBO;QACS;;;;AACX,yFAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;IA4BT;;;;;;IACS;;;;;;IACN;;;;;;;UAGY;AACxB,YAAO,kCACc,2DAEZ,sCAIC,sBACK,yBACF;IAGf;;;QAxBO;QACS;;QACT;QACA;;IAFS;IACT;IACA;AACF,8FAAW,GAAG;;EAAC;;;;;;;;;;;;;;;MA/oBT,6CAAsB;;;MACtB,sCAAe","file":"../../../../../../../C:/packages/flutter/src/material/text_selection_toolbar.dart.lib.js"}');
   // Exports:
   return {
     src__material__text_selection_toolbar: text_selection_toolbar

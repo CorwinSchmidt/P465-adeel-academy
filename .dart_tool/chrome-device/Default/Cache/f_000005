@@ -1,59 +1,37 @@
-define(['dart_sdk', 'packages/video_player_platform_interface/method_channel_video_player.dart', 'packages/flutter/src/widgets/platform_view.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/services/system_channels.dart'], (function load__packages__video_player_web__video_player_web_dart(dart_sdk, packages__video_player_platform_interface__method_channel_video_player$46dart, packages__flutter__src__widgets__platform_view$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__services__system_channels$46dart) {
+define(['dart_sdk', 'packages/firebase_auth_web/src/interop/auth.dart', 'packages/firebase_core_web/src/interop/core.dart', 'packages/firebase_auth_platform_interface/src/types.dart', 'packages/firebase_auth_web/src/firebase_auth_web_confirmation_result.dart', 'packages/firebase_auth_web/src/firebase_auth_web_recaptcha_verifier_factory.dart', 'packages/firebase_auth_web/src/utils/web_utils.dart', 'packages/firebase_auth_platform_interface/src/action_code_info.dart', 'packages/firebase_auth_platform_interface/src/action_code_settings.dart'], (function load__packages__firebase_auth_web__firebase_auth_web_dart(dart_sdk, packages__firebase_auth_web__src__interop__auth$46dart, packages__firebase_core_web__src__interop__core$46dart, packages__firebase_auth_platform_interface__src__types$46dart, packages__firebase_auth_web__src__firebase_auth_web_confirmation_result$46dart, packages__firebase_auth_web__src__firebase_auth_web_recaptcha_verifier_factory$46dart, packages__firebase_auth_web__src__utils__web_utils$46dart, packages__firebase_auth_platform_interface__src__action_code_info$46dart, packages__firebase_auth_platform_interface__src__action_code_settings$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _js_helper = dart_sdk._js_helper;
   const async = dart_sdk.async;
-  const ui = dart_sdk.ui;
-  const html = dart_sdk.html;
-  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const video_player_platform_interface = packages__video_player_platform_interface__method_channel_video_player$46dart.video_player_platform_interface;
-  const platform_view = packages__flutter__src__widgets__platform_view$46dart.src__widgets__platform_view;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
-  var video_player_web = Object.create(dart.library);
-  var $_get = dartx._get;
-  var $remove = dartx.remove;
-  var $values = dartx.values;
-  var $forEach = dartx.forEach;
-  var $clear = dartx.clear;
-  var $isNotEmpty = dartx.isNotEmpty;
+  const auth = packages__firebase_auth_web__src__interop__auth$46dart.src__interop__auth;
+  const core$ = packages__firebase_core_web__src__interop__core$46dart.src__interop__core;
+  const platform_interface_user = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_user;
+  const platform_interface_firebase_auth = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_firebase_auth;
+  const platform_interface_recaptcha_verifier_factory = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_recaptcha_verifier_factory;
+  const platform_interface_user_credential = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_user_credential;
+  const platform_interface_confirmation_result = packages__firebase_auth_platform_interface__src__types$46dart.src__platform_interface__platform_interface_confirmation_result;
+  const firebase_auth_web_user = packages__firebase_auth_web__src__firebase_auth_web_confirmation_result$46dart.src__firebase_auth_web_user;
+  const firebase_auth_web_user_credential = packages__firebase_auth_web__src__firebase_auth_web_confirmation_result$46dart.src__firebase_auth_web_user_credential;
+  const firebase_auth_web_confirmation_result = packages__firebase_auth_web__src__firebase_auth_web_confirmation_result$46dart.src__firebase_auth_web_confirmation_result;
+  const firebase_auth_web_recaptcha_verifier_factory = packages__firebase_auth_web__src__firebase_auth_web_recaptcha_verifier_factory$46dart.src__firebase_auth_web_recaptcha_verifier_factory;
+  const web_utils = packages__firebase_auth_web__src__utils__web_utils$46dart.src__utils__web_utils;
+  const action_code_info = packages__firebase_auth_platform_interface__src__action_code_info$46dart.src__action_code_info;
+  const action_code_settings = packages__firebase_auth_platform_interface__src__action_code_settings$46dart.src__action_code_settings;
+  var firebase_auth_web = Object.create(dart.library);
   var $_set = dartx._set;
-  var $border = dartx.border;
-  var $setAttribute = dartx.setAttribute;
-  var $onCanPlay = dartx.onCanPlay;
-  var $onError = dartx.onError;
-  var $onEnded = dartx.onEnded;
-  var $play = dartx.play;
-  var $name = dartx.name;
-  var $toDouble = dartx.toDouble;
-  var $round = dartx.round;
-  var $removeAttribute = dartx.removeAttribute;
-  var $add = dartx.add;
+  var $_get = dartx._get;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
-    _VideoPlayerL: () => (T._VideoPlayerL = dart.constFn(dart.legacy(video_player_web._VideoPlayer)))(),
-    IdentityMapOfintL$_VideoPlayerL: () => (T.IdentityMapOfintL$_VideoPlayerL = dart.constFn(_js_helper.IdentityMap$(T.intL(), T._VideoPlayerL())))(),
-    _VideoPlayerLTovoid: () => (T._VideoPlayerLTovoid = dart.constFn(dart.fnType(dart.void, [T._VideoPlayerL()])))(),
-    FutureOfintL: () => (T.FutureOfintL = dart.constFn(async.Future$(T.intL())))(),
-    DurationL: () => (T.DurationL = dart.constFn(dart.legacy(core.Duration)))(),
-    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
-    VideoEventL: () => (T.VideoEventL = dart.constFn(dart.legacy(video_player_platform_interface.VideoEvent)))(),
-    StreamControllerOfVideoEventL: () => (T.StreamControllerOfVideoEventL = dart.constFn(async.StreamController$(T.VideoEventL())))(),
-    VideoElementL: () => (T.VideoElementL = dart.constFn(dart.legacy(html.VideoElement)))(),
-    intLToVideoElementL: () => (T.intLToVideoElementL = dart.constFn(dart.fnType(T.VideoElementL(), [T.intL()])))(),
-    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
-    EventL: () => (T.EventL = dart.constFn(dart.legacy(html.Event)))(),
-    EventLToNull: () => (T.EventLToNull = dart.constFn(dart.fnType(core.Null, [T.EventL()])))(),
-    DomExceptionL: () => (T.DomExceptionL = dart.constFn(dart.legacy(html.DomException)))(),
-    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
-    ObjectL: () => (T.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
-    ObjectLToboolL: () => (T.ObjectLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.ObjectL()])))(),
-    DurationRangeL: () => (T.DurationRangeL = dart.constFn(dart.legacy(video_player_platform_interface.DurationRange)))(),
-    JSArrayOfDurationRangeL: () => (T.JSArrayOfDurationRangeL = dart.constFn(_interceptors.JSArray$(T.DurationRangeL())))(),
-    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))()
+    UserPlatformN: () => (T.UserPlatformN = dart.constFn(dart.nullable(platform_interface_user.UserPlatform)))(),
+    StreamControllerOfUserPlatformN: () => (T.StreamControllerOfUserPlatformN = dart.constFn(async.StreamController$(T.UserPlatformN())))(),
+    UserWebN: () => (T.UserWebN = dart.constFn(dart.nullable(firebase_auth_web_user.UserWeb)))(),
+    UserN: () => (T.UserN = dart.constFn(dart.nullable(auth.User)))(),
+    UserNToUserWebN: () => (T.UserNToUserWebN = dart.constFn(dart.fnType(T.UserWebN(), [T.UserN()])))(),
+    UserWebNTovoid: () => (T.UserWebNTovoid = dart.constFn(dart.fnType(dart.void, [T.UserWebN()])))(),
+    ListOfString: () => (T.ListOfString = dart.constFn(core.List$(core.String)))(),
+    IdentityMapOfString$StreamControllerOfUserPlatformN: () => (T.IdentityMapOfString$StreamControllerOfUserPlatformN = dart.constFn(_js_helper.IdentityMap$(core.String, T.StreamControllerOfUserPlatformN())))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -70,313 +48,450 @@ define(['dart_sdk', 'packages/video_player_platform_interface/method_channel_vid
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: video_player_platform_interface.DataSourceType.prototype,
-        [_name]: "DataSourceType.network",
-        index: 1
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 30000000
       });
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: video_player_platform_interface.DataSourceType.prototype,
-        [_name]: "DataSourceType.asset",
-        index: 0
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: video_player_platform_interface.DataSourceType.prototype,
-        [_name]: "DataSourceType.file",
-        index: 2
-      });
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "viewType",
-        [_Location_column]: 28,
-        [_Location_line]: 145,
-        [_Location_file]: null
-      });
-    },
-    get C4() {
-      return C[4] = dart.constList([C[5] || CT.C5], T._LocationL());
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[4] || CT.C4,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 145,
-        [_Location_file]: "file:///C:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_web-0.1.4+1/lib/video_player_web.dart"
-      });
-    },
-    get C6() {
-      return C[6] = dart.constMap(T.intL(), T.StringL(), [1, "MEDIA_ERR_ABORTED", 2, "MEDIA_ERR_NETWORK", 3, "MEDIA_ERR_DECODE", 4, "MEDIA_ERR_SRC_NOT_SUPPORTED"]);
-    },
-    get C7() {
-      return C[7] = dart.constMap(T.intL(), T.StringL(), [1, "The user canceled the fetching of the video.", 2, "A network error occurred while fetching the video, despite having previously been available.", 3, "An error occurred while trying to decode the video, despite having previously been determined to be usable.", 4, "The video has been found to be unsuitable (missing or in a format not supported by your browser)."]);
     }
   }, false);
-  var C = Array(8).fill(void 0);
+  var C = [void 0];
   var I = [
-    "file:///C:/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_web-0.1.4+1/lib/video_player_web.dart",
-    "package:video_player_web/video_player_web.dart"
+    "file:///D:/Flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.0.2/lib/firebase_auth_web.dart",
+    "package:firebase_auth_web/firebase_auth_web.dart"
   ];
-  var _videoPlayers = dart.privateName(video_player_web, "_videoPlayers");
-  var _textureCounter = dart.privateName(video_player_web, "_textureCounter");
-  var _disposeAllPlayers = dart.privateName(video_player_web, "_disposeAllPlayers");
-  var _name = dart.privateName(video_player_platform_interface, "_name");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  video_player_web.VideoPlayerPlugin = class VideoPlayerPlugin extends video_player_platform_interface.VideoPlayerPlatform {
+  var _webAuth = dart.privateName(firebase_auth_web, "_webAuth");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  firebase_auth_web.FirebaseAuthWeb = class FirebaseAuthWeb extends platform_interface_firebase_auth.FirebaseAuthPlatform {
     static registerWith(registrar) {
-      video_player_platform_interface.VideoPlayerPlatform.instance = new video_player_web.VideoPlayerPlugin.new();
+      if (registrar == null) dart.nullFailed(I[0], 66, 38, "registrar");
+      platform_interface_firebase_auth.FirebaseAuthPlatform.instance = firebase_auth_web.FirebaseAuthWeb.instance;
+      platform_interface_recaptcha_verifier_factory.RecaptchaVerifierFactoryPlatform.instance = firebase_auth_web_recaptcha_verifier_factory.RecaptchaVerifierFactoryWeb.instance;
     }
-    init() {
-      return async.async(dart.void, (function* init() {
-        return this[_disposeAllPlayers]();
-      }).bind(this));
+    static get instance() {
+      return new firebase_auth_web.FirebaseAuthWeb.__();
     }
-    dispose(textureId) {
-      return async.async(dart.void, (function* dispose() {
-        this[_videoPlayers][$_get](textureId).dispose();
-        this[_videoPlayers][$remove](textureId);
+    delegateFor(opts) {
+      let app = opts && 'app' in opts ? opts.app : null;
+      if (app == null) dart.nullFailed(I[0], 90, 58, "app");
+      return new firebase_auth_web.FirebaseAuthWeb.new({app: app});
+    }
+    setInitialValues(opts) {
+      let currentUser = opts && 'currentUser' in opts ? opts.currentUser : null;
+      let languageCode = opts && 'languageCode' in opts ? opts.languageCode : null;
+      return this;
+    }
+    get currentUser() {
+      let webCurrentUser = dart.nullCheck(this[_webAuth]).currentUser;
+      if (webCurrentUser == null) {
         return null;
-      }).bind(this));
+      }
+      return new firebase_auth_web_user.UserWeb.new(this, dart.nullCheck(dart.nullCheck(this[_webAuth]).currentUser));
     }
-    [_disposeAllPlayers]() {
-      this[_videoPlayers][$values][$forEach](dart.fn(videoPlayer => videoPlayer.dispose(), T._VideoPlayerLTovoid()));
-      this[_videoPlayers][$clear]();
+    set currentUser(value) {
+      super.currentUser = value;
     }
-    create(dataSource) {
-      return async.async(T.intL(), (function* create() {
-        let textureId = this[_textureCounter];
-        this[_textureCounter] = dart.notNull(this[_textureCounter]) + 1;
-        let uri = null;
-        switch (dataSource.sourceType) {
-          case C[0] || CT.C0:
-          {
-            uri = dataSource.uri;
-            break;
-          }
-          case C[1] || CT.C1:
-          {
-            let assetUrl = dataSource.asset;
-            if (dataSource.package != null && dataSource.package[$isNotEmpty]) {
-              assetUrl = "packages/" + dart.str(dataSource.package) + "/" + dart.str(assetUrl);
-            }
-            assetUrl = ui.webOnlyAssetManager.getAssetUrl(assetUrl);
-            uri = assetUrl;
-            break;
-          }
-          case C[2] || CT.C2:
-          {
-            return T.FutureOfintL().error(new core.UnimplementedError.new("web implementation of video_player cannot play local files"));
-          }
+    sendAuthChangesEvent(appName, userPlatform) {
+      if (appName == null) dart.nullFailed(I[0], 115, 36, "appName");
+      if (!(firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_get](appName) != null)) dart.assertFailed(null, I[0], 116, 12, "_userChangesListeners[appName] != null");
+      dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_get](appName)).add(userPlatform);
+    }
+    applyActionCode(code) {
+      if (code == null) dart.nullFailed(I[0], 122, 39, "code");
+      return async.async(dart.void, (function* applyActionCode() {
+        try {
+          yield dart.nullCheck(this[_webAuth]).applyActionCode(code);
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
         }
-        let player = new video_player_web._VideoPlayer.new({uri: uri, textureId: textureId});
-        player.initialize();
-        this[_videoPlayers][$_set](textureId, player);
-        return textureId;
       }).bind(this));
     }
-    setLooping(textureId, looping) {
-      return async.async(dart.void, (function* setLooping() {
-        return this[_videoPlayers][$_get](textureId).setLooping(looping);
+    checkActionCode(code) {
+      if (code == null) dart.nullFailed(I[0], 131, 49, "code");
+      return async.async(action_code_info.ActionCodeInfo, (function* checkActionCode() {
+        try {
+          return dart.nullCheck(web_utils.convertWebActionCodeInfo(yield dart.nullCheck(this[_webAuth]).checkActionCode(code)));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
       }).bind(this));
     }
-    play(textureId) {
-      return async.async(dart.void, (function* play() {
-        return this[_videoPlayers][$_get](textureId).play();
+    confirmPasswordReset(code, newPassword) {
+      if (code == null) dart.nullFailed(I[0], 140, 44, "code");
+      if (newPassword == null) dart.nullFailed(I[0], 140, 57, "newPassword");
+      return async.async(dart.void, (function* confirmPasswordReset() {
+        try {
+          yield dart.nullCheck(this[_webAuth]).confirmPasswordReset(code, newPassword);
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
       }).bind(this));
     }
-    pause(textureId) {
-      return async.async(dart.void, (function* pause() {
-        return this[_videoPlayers][$_get](textureId).pause();
+    createUserWithEmailAndPassword(email, password) {
+      if (email == null) dart.nullFailed(I[0], 150, 14, "email");
+      if (password == null) dart.nullFailed(I[0], 150, 28, "password");
+      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* createUserWithEmailAndPassword() {
+        try {
+          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).createUserWithEmailAndPassword(email, password));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
       }).bind(this));
     }
-    setVolume(textureId, volume) {
-      return async.async(dart.void, (function* setVolume() {
-        return this[_videoPlayers][$_get](textureId).setVolume(volume);
+    fetchSignInMethodsForEmail(email) {
+      if (email == null) dart.nullFailed(I[0], 162, 58, "email");
+      return async.async(T.ListOfString(), (function* fetchSignInMethodsForEmail() {
+        try {
+          return yield dart.nullCheck(this[_webAuth]).fetchSignInMethodsForEmail(email);
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
       }).bind(this));
     }
-    setPlaybackSpeed(textureId, speed) {
-      return async.async(dart.void, (function* setPlaybackSpeed() {
-        if (!(dart.notNull(speed) > 0)) dart.assertFailed(null, I[0], 122, 12, "speed > 0");
-        return this[_videoPlayers][$_get](textureId).setPlaybackSpeed(speed);
+    getRedirectResult() {
+      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* getRedirectResult() {
+        try {
+          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).getRedirectResult());
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
       }).bind(this));
     }
-    seekTo(textureId, position) {
-      return async.async(dart.void, (function* seekTo() {
-        return this[_videoPlayers][$_get](textureId).seekTo(position);
+    authStateChanges() {
+      return dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._authStateChangesListeners[$_get](this.app.name)).stream;
+    }
+    idTokenChanges() {
+      return dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._idTokenChangesListeners[$_get](this.app.name)).stream;
+    }
+    userChanges() {
+      return dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_get](this.app.name)).stream;
+    }
+    sendPasswordResetEmail(email, actionCodeSettings = null) {
+      if (email == null) dart.nullFailed(I[0], 193, 12, "email");
+      return async.async(dart.void, (function* sendPasswordResetEmail() {
+        try {
+          yield dart.nullCheck(this[_webAuth]).sendPasswordResetEmail(email, web_utils.convertPlatformActionCodeSettings(actionCodeSettings));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
       }).bind(this));
     }
-    getPosition(textureId) {
-      return async.async(T.DurationL(), (function* getPosition() {
-        this[_videoPlayers][$_get](textureId).sendBufferingUpdate();
-        return this[_videoPlayers][$_get](textureId).getPosition();
+    sendSignInLinkToEmail(email, actionCodeSettings = null) {
+      if (email == null) dart.nullFailed(I[0], 206, 12, "email");
+      return async.async(dart.void, (function* sendSignInLinkToEmail() {
+        try {
+          yield dart.nullCheck(this[_webAuth]).sendSignInLinkToEmail(email, web_utils.convertPlatformActionCodeSettings(actionCodeSettings));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
       }).bind(this));
     }
-    videoEventsFor(textureId) {
-      return this[_videoPlayers][$_get](textureId).eventController.stream;
+    get languageCode() {
+      return dart.nullCheck(this[_webAuth]).languageCode;
     }
-    buildView(textureId) {
-      return new platform_view.HtmlElementView.new({viewType: "videoPlayer-" + dart.str(textureId), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+    setLanguageCode(languageCode) {
+      if (languageCode == null) dart.nullFailed(I[0], 223, 39, "languageCode");
+      return async.async(dart.void, (function* setLanguageCode() {
+        dart.nullCheck(this[_webAuth]).languageCode = languageCode;
+      }).bind(this));
+    }
+    setSettings(opts) {
+      let appVerificationDisabledForTesting = opts && 'appVerificationDisabledForTesting' in opts ? opts.appVerificationDisabledForTesting : null;
+      let userAccessGroup = opts && 'userAccessGroup' in opts ? opts.userAccessGroup : null;
+      return async.async(dart.void, (function* setSettings() {
+        dart.nullCheck(this[_webAuth]).settings.appVerificationDisabledForTesting = appVerificationDisabledForTesting;
+      }).bind(this));
+    }
+    setPersistence(persistence) {
+      if (persistence == null) dart.nullFailed(I[0], 236, 43, "persistence");
+      return async.async(dart.void, (function* setPersistence() {
+        try {
+          return dart.nullCheck(this[_webAuth]).setPersistence(web_utils.convertPlatformPersistence(persistence));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    signInAnonymously() {
+      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInAnonymously() {
+        try {
+          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInAnonymously());
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    signInWithCredential(credential) {
+      if (credential == null) dart.nullFailed(I[0], 255, 22, "credential");
+      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithCredential() {
+        try {
+          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithCredential(dart.nullCheck(web_utils.convertPlatformCredential(credential))));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    signInWithCustomToken(token) {
+      if (token == null) dart.nullFailed(I[0], 267, 63, "token");
+      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithCustomToken() {
+        try {
+          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithCustomToken(token));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    signInWithEmailAndPassword(email, password) {
+      if (email == null) dart.nullFailed(I[0], 278, 14, "email");
+      if (password == null) dart.nullFailed(I[0], 278, 28, "password");
+      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithEmailAndPassword() {
+        try {
+          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithEmailAndPassword(email, password));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    signInWithEmailLink(email, emailLink) {
+      if (email == null) dart.nullFailed(I[0], 289, 14, "email");
+      if (emailLink == null) dart.nullFailed(I[0], 289, 28, "emailLink");
+      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithEmailLink() {
+        try {
+          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithEmailLink(email, emailLink));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    signInWithPhoneNumber(phoneNumber, applicationVerifier) {
+      if (phoneNumber == null) dart.nullFailed(I[0], 300, 12, "phoneNumber");
+      if (applicationVerifier == null) dart.nullFailed(I[0], 301, 38, "applicationVerifier");
+      return async.async(platform_interface_confirmation_result.ConfirmationResultPlatform, (function* signInWithPhoneNumber() {
+        try {
+          let verifier = auth.RecaptchaVerifier.as(applicationVerifier.delegate);
+          return new firebase_auth_web_confirmation_result.ConfirmationResultWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithPhoneNumber(phoneNumber, verifier));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    signInWithPopup(provider) {
+      if (provider == null) dart.nullFailed(I[0], 315, 63, "provider");
+      return async.async(platform_interface_user_credential.UserCredentialPlatform, (function* signInWithPopup() {
+        try {
+          return new firebase_auth_web_user_credential.UserCredentialWeb.new(this, yield dart.nullCheck(this[_webAuth]).signInWithPopup(dart.nullCheck(web_utils.convertPlatformAuthProvider(provider))));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    signInWithRedirect(provider) {
+      if (provider == null) dart.nullFailed(I[0], 327, 48, "provider");
+      return async.async(dart.void, (function* signInWithRedirect() {
+        try {
+          return dart.nullCheck(this[_webAuth]).signInWithRedirect(dart.nullCheck(web_utils.convertPlatformAuthProvider(provider)));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    signOut() {
+      return async.async(dart.void, (function* signOut() {
+        try {
+          yield dart.nullCheck(this[_webAuth]).signOut();
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    useEmulator(host, port) {
+      if (host == null) dart.nullFailed(I[0], 346, 35, "host");
+      if (port == null) dart.nullFailed(I[0], 346, 45, "port");
+      return async.async(dart.void, (function* useEmulator() {
+        try {
+          dart.nullCheck(this[_webAuth]).useEmulator("http://" + dart.str(host) + ":" + dart.str(port));
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    verifyPasswordResetCode(code) {
+      if (code == null) dart.nullFailed(I[0], 358, 49, "code");
+      return async.async(core.String, (function* verifyPasswordResetCode() {
+        try {
+          return yield dart.nullCheck(this[_webAuth]).verifyPasswordResetCode(code);
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            dart.throw(web_utils.getFirebaseAuthException(e));
+          } else
+            throw e$;
+        }
+      }).bind(this));
+    }
+    verifyPhoneNumber(opts) {
+      let phoneNumber = opts && 'phoneNumber' in opts ? opts.phoneNumber : null;
+      if (phoneNumber == null) dart.nullFailed(I[0], 368, 21, "phoneNumber");
+      let verificationCompleted = opts && 'verificationCompleted' in opts ? opts.verificationCompleted : null;
+      if (verificationCompleted == null) dart.nullFailed(I[0], 369, 41, "verificationCompleted");
+      let verificationFailed = opts && 'verificationFailed' in opts ? opts.verificationFailed : null;
+      if (verificationFailed == null) dart.nullFailed(I[0], 370, 38, "verificationFailed");
+      let codeSent = opts && 'codeSent' in opts ? opts.codeSent : null;
+      if (codeSent == null) dart.nullFailed(I[0], 371, 28, "codeSent");
+      let codeAutoRetrievalTimeout = opts && 'codeAutoRetrievalTimeout' in opts ? opts.codeAutoRetrievalTimeout : null;
+      if (codeAutoRetrievalTimeout == null) dart.nullFailed(I[0], 372, 44, "codeAutoRetrievalTimeout");
+      let autoRetrievedSmsCodeForTesting = opts && 'autoRetrievedSmsCodeForTesting' in opts ? opts.autoRetrievedSmsCodeForTesting : null;
+      let timeout = opts && 'timeout' in opts ? opts.timeout : C[0] || CT.C0;
+      if (timeout == null) dart.nullFailed(I[0], 374, 14, "timeout");
+      let forceResendingToken = opts && 'forceResendingToken' in opts ? opts.forceResendingToken : null;
+      dart.throw(new core.UnimplementedError.new("verifyPhoneNumber() is not supported on the web. Please use `signInWithPhoneNumber` instead."));
     }
   };
-  (video_player_web.VideoPlayerPlugin.new = function() {
-    this[_videoPlayers] = new (T.IdentityMapOfintL$_VideoPlayerL()).new();
-    this[_textureCounter] = 1;
+  (firebase_auth_web.FirebaseAuthWeb.__ = function() {
+    this[_webAuth] = null;
+    firebase_auth_web.FirebaseAuthWeb.__proto__.new.call(this, {appInstance: null});
     ;
-  }).prototype = video_player_web.VideoPlayerPlugin.prototype;
-  dart.addTypeTests(video_player_web.VideoPlayerPlugin);
-  dart.addTypeCaches(video_player_web.VideoPlayerPlugin);
-  dart.setMethodSignature(video_player_web.VideoPlayerPlugin, () => ({
-    __proto__: dart.getMethods(video_player_web.VideoPlayerPlugin.__proto__),
-    [_disposeAllPlayers]: dart.fnType(dart.void, [])
-  }));
-  dart.setLibraryUri(video_player_web.VideoPlayerPlugin, I[1]);
-  dart.setFieldSignature(video_player_web.VideoPlayerPlugin, () => ({
-    __proto__: dart.getFields(video_player_web.VideoPlayerPlugin.__proto__),
-    [_videoPlayers]: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.int), dart.legacy(video_player_web._VideoPlayer)))),
-    [_textureCounter]: dart.fieldType(dart.legacy(core.int))
-  }));
-  var _toDurationRange = dart.privateName(video_player_web, "_toDurationRange");
-  video_player_web._VideoPlayer = class _VideoPlayer extends core.Object {
-    initialize() {
-      let t0;
-      this.videoElement = (t0 = html.VideoElement.new(), (() => {
-        t0.src = this.uri;
-        t0.autoplay = false;
-        t0.controls = false;
-        t0.style[$border] = "none";
-        return t0;
-      })());
-      this.videoElement[$setAttribute]("playsinline", "true");
-      ui.platformViewRegistry.registerViewFactory("videoPlayer-" + dart.str(this.textureId), dart.fn(viewId => this.videoElement, T.intLToVideoElementL()));
-      this.videoElement[$onCanPlay].listen(dart.fn(_ => {
-        if (!dart.test(this.isInitialized)) {
-          this.isInitialized = true;
-          this.sendInitialized();
-        }
-      }, T.dynamicToNull()));
-      this.videoElement[$onError].listen(dart.fn(_ => {
-        let error = this.videoElement.error;
-        this.eventController.addError(new message_codec.PlatformException.new({code: video_player_web._kErrorValueToErrorName[$_get](error.code), message: error.message !== "" ? error.message : video_player_web._kDefaultErrorMessage, details: video_player_web._kErrorValueToErrorDescription[$_get](error.code)}));
-      }, T.EventLToNull()));
-      this.videoElement[$onEnded].listen(dart.fn(_ => {
-        this.eventController.add(new video_player_platform_interface.VideoEvent.new({eventType: video_player_platform_interface.VideoEventType.completed}));
-      }, T.dynamicToNull()));
-    }
-    sendBufferingUpdate() {
-      this.eventController.add(new video_player_platform_interface.VideoEvent.new({buffered: this[_toDurationRange](this.videoElement.buffered), eventType: video_player_platform_interface.VideoEventType.bufferingUpdate}));
-    }
-    play() {
-      return this.videoElement[$play]().catchError(dart.fn(e => {
-        let exception = T.DomExceptionL().as(e);
-        this.eventController.addError(new message_codec.PlatformException.new({code: exception[$name], message: exception.message}));
-      }, T.dynamicToNull()), {test: dart.fn(e => T.DomExceptionL().is(e), T.ObjectLToboolL())});
-    }
-    pause() {
-      this.videoElement.pause();
-    }
-    setLooping(value) {
-      this.videoElement.loop = value;
-    }
-    setVolume(value) {
-      if (dart.notNull(value) > 0.0) {
-        this.videoElement.muted = false;
+  }).prototype = firebase_auth_web.FirebaseAuthWeb.prototype;
+  (firebase_auth_web.FirebaseAuthWeb.new = function(opts) {
+    let app = opts && 'app' in opts ? opts.app : null;
+    if (app == null) dart.nullFailed(I[0], 29, 41, "app");
+    this[_webAuth] = auth.getAuthInstance(core$.app(app.name));
+    firebase_auth_web.FirebaseAuthWeb.__proto__.new.call(this, {appInstance: app});
+    firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_set](app.name, T.StreamControllerOfUserPlatformN().broadcast());
+    firebase_auth_web.FirebaseAuthWeb._authStateChangesListeners[$_set](app.name, T.StreamControllerOfUserPlatformN().broadcast());
+    firebase_auth_web.FirebaseAuthWeb._idTokenChangesListeners[$_set](app.name, T.StreamControllerOfUserPlatformN().broadcast());
+    dart.nullCheck(this[_webAuth]).onAuthStateChanged.map(T.UserWebN(), dart.fn(webUser => {
+      if (webUser == null) {
+        return null;
       } else {
-        this.videoElement.muted = true;
+        return new firebase_auth_web_user.UserWeb.new(this, webUser);
       }
-      this.videoElement.volume = value;
-    }
-    setPlaybackSpeed(speed) {
-      if (!(dart.notNull(speed) > 0)) dart.assertFailed(null, I[0], 240, 12, "speed > 0");
-      this.videoElement.playbackRate = speed;
-    }
-    seekTo(position) {
-      this.videoElement.currentTime = position.inMilliseconds[$toDouble]() / 1000;
-    }
-    getPosition() {
-      return new core.Duration.new({milliseconds: (dart.notNull(this.videoElement.currentTime) * 1000)[$round]()});
-    }
-    sendInitialized() {
-      let t0, t0$;
-      this.eventController.add(new video_player_platform_interface.VideoEvent.new({eventType: video_player_platform_interface.VideoEventType.initialized, duration: new core.Duration.new({milliseconds: (dart.notNull(this.videoElement.duration) * 1000)[$round]()}), size: new ui.Size.new((t0 = this.videoElement.videoWidth[$toDouble](), t0 === null ? 0.0 : t0), (t0$ = this.videoElement.videoHeight[$toDouble](), t0$ === null ? 0.0 : t0$))}));
-    }
-    dispose() {
-      this.videoElement[$removeAttribute]("src");
-      this.videoElement.load();
-    }
-    [_toDurationRange](buffered) {
-      let durationRange = T.JSArrayOfDurationRangeL().of([]);
-      for (let i = 0; i < dart.notNull(buffered.length); i = i + 1) {
-        durationRange[$add](new video_player_platform_interface.DurationRange.new(new core.Duration.new({milliseconds: (dart.notNull(buffered.start(i)) * 1000)[$round]()}), new core.Duration.new({milliseconds: (dart.notNull(buffered.end(i)) * 1000)[$round]()})));
+    }, T.UserNToUserWebN())).listen(dart.fn(webUser => {
+      dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._authStateChangesListeners[$_get](app.name)).add(webUser);
+    }, T.UserWebNTovoid()));
+    dart.nullCheck(this[_webAuth]).onIdTokenChanged.map(T.UserWebN(), dart.fn(webUser => {
+      if (webUser == null) {
+        return null;
+      } else {
+        return new firebase_auth_web_user.UserWeb.new(this, webUser);
       }
-      return durationRange;
-    }
-  };
-  (video_player_web._VideoPlayer.new = function(opts) {
-    let uri = opts && 'uri' in opts ? opts.uri : null;
-    let textureId = opts && 'textureId' in opts ? opts.textureId : null;
-    this.eventController = T.StreamControllerOfVideoEventL().new();
-    this.videoElement = null;
-    this.isInitialized = false;
-    this.uri = uri;
-    this.textureId = textureId;
-    ;
-  }).prototype = video_player_web._VideoPlayer.prototype;
-  dart.addTypeTests(video_player_web._VideoPlayer);
-  dart.addTypeCaches(video_player_web._VideoPlayer);
-  dart.setMethodSignature(video_player_web._VideoPlayer, () => ({
-    __proto__: dart.getMethods(video_player_web._VideoPlayer.__proto__),
-    initialize: dart.fnType(dart.void, []),
-    sendBufferingUpdate: dart.fnType(dart.void, []),
-    play: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
-    pause: dart.fnType(dart.void, []),
-    setLooping: dart.fnType(dart.void, [dart.legacy(core.bool)]),
-    setVolume: dart.fnType(dart.void, [dart.legacy(core.double)]),
-    setPlaybackSpeed: dart.fnType(dart.void, [dart.legacy(core.double)]),
-    seekTo: dart.fnType(dart.void, [dart.legacy(core.Duration)]),
-    getPosition: dart.fnType(dart.legacy(core.Duration), []),
-    sendInitialized: dart.fnType(dart.void, []),
-    dispose: dart.fnType(dart.void, []),
-    [_toDurationRange]: dart.fnType(dart.legacy(core.List$(dart.legacy(video_player_platform_interface.DurationRange))), [dart.legacy(html.TimeRanges)])
+    }, T.UserNToUserWebN())).listen(dart.fn(webUser => {
+      dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._idTokenChangesListeners[$_get](app.name)).add(webUser);
+      dart.nullCheck(firebase_auth_web.FirebaseAuthWeb._userChangesListeners[$_get](app.name)).add(webUser);
+    }, T.UserWebNTovoid()));
+  }).prototype = firebase_auth_web.FirebaseAuthWeb.prototype;
+  dart.addTypeTests(firebase_auth_web.FirebaseAuthWeb);
+  dart.addTypeCaches(firebase_auth_web.FirebaseAuthWeb);
+  dart.setMethodSignature(firebase_auth_web.FirebaseAuthWeb, () => ({
+    __proto__: dart.getMethods(firebase_auth_web.FirebaseAuthWeb.__proto__),
+    setInitialValues: dart.fnType(firebase_auth_web.FirebaseAuthWeb, [], {currentUser: dart.nullable(core.Map$(core.String, dart.dynamic)), languageCode: dart.nullable(core.String)}, {}),
+    sendSignInLinkToEmail: dart.fnType(async.Future$(dart.void), [core.String], [dart.nullable(action_code_settings.ActionCodeSettings)])
   }));
-  dart.setLibraryUri(video_player_web._VideoPlayer, I[1]);
-  dart.setFieldSignature(video_player_web._VideoPlayer, () => ({
-    __proto__: dart.getFields(video_player_web._VideoPlayer.__proto__),
-    eventController: dart.finalFieldType(dart.legacy(async.StreamController$(dart.legacy(video_player_platform_interface.VideoEvent)))),
-    uri: dart.finalFieldType(dart.legacy(core.String)),
-    textureId: dart.finalFieldType(dart.legacy(core.int)),
-    videoElement: dart.fieldType(dart.legacy(html.VideoElement)),
-    isInitialized: dart.fieldType(dart.legacy(core.bool))
+  dart.setGetterSignature(firebase_auth_web.FirebaseAuthWeb, () => ({
+    __proto__: dart.getGetters(firebase_auth_web.FirebaseAuthWeb.__proto__),
+    languageCode: core.String
   }));
-  dart.defineLazy(video_player_web, {
-    /*video_player_web._kErrorValueToErrorName*/get _kErrorValueToErrorName() {
-      return C[6] || CT.C6;
+  dart.setLibraryUri(firebase_auth_web.FirebaseAuthWeb, I[1]);
+  dart.setFieldSignature(firebase_auth_web.FirebaseAuthWeb, () => ({
+    __proto__: dart.getFields(firebase_auth_web.FirebaseAuthWeb.__proto__),
+    [_webAuth]: dart.finalFieldType(dart.nullable(auth.Auth))
+  }));
+  dart.defineLazy(firebase_auth_web.FirebaseAuthWeb, {
+    /*firebase_auth_web.FirebaseAuthWeb._authStateChangesListeners*/get _authStateChangesListeners() {
+      return new (T.IdentityMapOfString$StreamControllerOfUserPlatformN()).new();
     },
-    /*video_player_web._kErrorValueToErrorDescription*/get _kErrorValueToErrorDescription() {
-      return C[7] || CT.C7;
+    set _authStateChangesListeners(_) {},
+    /*firebase_auth_web.FirebaseAuthWeb._idTokenChangesListeners*/get _idTokenChangesListeners() {
+      return new (T.IdentityMapOfString$StreamControllerOfUserPlatformN()).new();
     },
-    /*video_player_web._kDefaultErrorMessage*/get _kDefaultErrorMessage() {
-      return "No further diagnostic information can be determined or provided.";
-    }
-  }, true);
-  dart.trackLibraries("packages/video_player_web/video_player_web.dart", {
-    "package:video_player_web/video_player_web.dart": video_player_web
+    set _idTokenChangesListeners(_) {},
+    /*firebase_auth_web.FirebaseAuthWeb._userChangesListeners*/get _userChangesListeners() {
+      return new (T.IdentityMapOfString$StreamControllerOfUserPlatformN()).new();
+    },
+    set _userChangesListeners(_) {}
+  }, false);
+  dart.trackLibraries("packages/firebase_auth_web/firebase_auth_web.dart", {
+    "package:firebase_auth_web/firebase_auth_web.dart": firebase_auth_web
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["video_player_web.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/video_player_web/video_player_web.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["firebase_auth_web.dart"],"names":[],"mappings":"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","file":"../../../../../../../C:/packages/firebase_auth_web/firebase_auth_web.dart.lib.js"}');
   // Exports:
   return {
-    video_player_web: video_player_web
+    firebase_auth_web: firebase_auth_web
   };
 }));
 
-//# sourceMappingURL=video_player_web.dart.lib.js.map
+//# sourceMappingURL=firebase_auth_web.dart.lib.js.map

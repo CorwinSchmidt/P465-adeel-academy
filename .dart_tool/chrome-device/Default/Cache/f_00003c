@@ -1,89 +1,47 @@
-define(['dart_sdk', 'packages/sevr/src/serv_router/serv_router.dart', 'packages/sevr/src/serv_request_response_wrapper/serv_request_wrapper.dart', 'packages/sevr/src/serv_content_types/serv_content_types.dart', 'packages/sevr/src/mime/mime_src/mime_shared.dart', 'packages/sevr/src/mime/mime_src/mime_multipart_transformer.dart', 'packages/sevr/src/http_server/src/http_multipart_form_data_impl.dart', 'packages/pedantic/pedantic.dart', 'packages/sevr/src/build_data.dart'], (function load__packages__sevr__src__sevr_base_dart(dart_sdk, packages__sevr__src__serv_router__serv_router$46dart, packages__sevr__src__serv_request_response_wrapper__serv_request_wrapper$46dart, packages__sevr__src__serv_content_types__serv_content_types$46dart, packages__sevr__src__mime__mime_src__mime_shared$46dart, packages__sevr__src__mime__mime_src__mime_multipart_transformer$46dart, packages__sevr__src__http_server__src__http_multipart_form_data_impl$46dart, packages__pedantic__pedantic$46dart, packages__sevr__src__build_data$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/placeholder_span.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/stack.dart', 'packages/flutter/src/painting/strut_style.dart'], (function load__packages__flutter__src__rendering__debug_overflow_indicator_dart(dart_sdk, packages__flutter__src__painting__placeholder_span$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__stack$46dart, packages__flutter__src__painting__strut_style$46dart) {
   'use strict';
   const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
   const _interceptors = dart_sdk._interceptors;
-  const async = dart_sdk.async;
-  const _http = dart_sdk._http;
-  const io = dart_sdk.io;
   const _js_helper = dart_sdk._js_helper;
-  const typed_data = dart_sdk.typed_data;
-  const convert = dart_sdk.convert;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const serv_router = packages__sevr__src__serv_router__serv_router$46dart.src__serv_router__serv_router;
-  const serv_request_wrapper = packages__sevr__src__serv_request_response_wrapper__serv_request_wrapper$46dart.src__serv_request_response_wrapper__serv_request_wrapper;
-  const serv_content_types = packages__sevr__src__serv_content_types__serv_content_types$46dart.src__serv_content_types__serv_content_types;
-  const mime_shared = packages__sevr__src__mime__mime_src__mime_shared$46dart.src__mime__mime_src__mime_shared;
-  const mime_multipart_transformer = packages__sevr__src__mime__mime_src__mime_multipart_transformer$46dart.src__mime__mime_src__mime_multipart_transformer;
-  const http_multipart_form_data = packages__sevr__src__http_server__src__http_multipart_form_data_impl$46dart.src__http_server__src__http_multipart_form_data;
-  const pedantic = packages__pedantic__pedantic$46dart.pedantic;
-  const build_data = packages__sevr__src__build_data$46dart.src__build_data;
-  var sevr_base = Object.create(dart.library);
-  var $toString = dartx.toString;
-  var $join = dartx.join;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $addAll = dartx.addAll;
-  var $cast = dartx.cast;
-  var $_get = dartx._get;
-  var $containsKey = dartx.containsKey;
-  var $contains = dartx.contains;
-  var $add = dartx.add;
-  var $_set = dartx._set;
-  var $endsWith = dartx.endsWith;
-  var $replaceRange = dartx.replaceRange;
-  var $keys = dartx.keys;
-  var $split = dartx.split;
+  const text_painter = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_painter;
+  const text_span = packages__flutter__src__painting__placeholder_span$46dart.src__painting__text_span;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const stack = packages__flutter__src__rendering__stack$46dart.src__rendering__stack;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  var debug_overflow_indicator = Object.create(dart.library);
   var $length = dartx.length;
-  var $toLowerCase = dartx.toLowerCase;
-  var $startsWith = dartx.startsWith;
-  var $replaceFirst = dartx.replaceFirst;
-  var $firstWhere = dartx.firstWhere;
-  var $toList = dartx.toList;
-  var $map = dartx.map;
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  var $toStringAsPrecision = dartx.toStringAsPrecision;
+  var $add = dartx.add;
+  var $isEmpty = dartx.isEmpty;
   var $runtimeType = dartx.runtimeType;
-  var $toUpperCase = dartx.toUpperCase;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $first = dartx.first;
+  var $last = dartx.last;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $join = dartx.join;
+  var $times = dartx['*'];
+  var $truncate = dartx.truncate;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    SevrDirL: () => (T.SevrDirL = dart.constFn(dart.legacy(sevr_base.SevrDir)))(),
-    JSArrayOfSevrDirL: () => (T.JSArrayOfSevrDirL = dart.constFn(_interceptors.JSArray$(T.SevrDirL())))(),
-    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
-    FutureLOfNull: () => (T.FutureLOfNull = dart.constFn(dart.legacy(T.FutureOfNull())))(),
-    VoidToFutureLOfNull: () => (T.VoidToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [])))(),
-    ObjectL: () => (T.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
-    StackTraceL: () => (T.StackTraceL = dart.constFn(dart.legacy(core.StackTrace)))(),
-    ObjectLAndStackTraceLToNull: () => (T.ObjectLAndStackTraceLToNull = dart.constFn(dart.fnType(core.Null, [T.ObjectL(), T.StackTraceL()])))(),
-    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
-    JSArrayOfintL: () => (T.JSArrayOfintL = dart.constFn(_interceptors.JSArray$(T.intL())))(),
-    Uint8ListL: () => (T.Uint8ListL = dart.constFn(dart.legacy(typed_data.Uint8List)))(),
-    Uint8ListLToNull: () => (T.Uint8ListLToNull = dart.constFn(dart.fnType(core.Null, [T.Uint8ListL()])))(),
-    IterableOfint: () => (T.IterableOfint = dart.constFn(core.Iterable$(core.int)))(),
-    MapL: () => (T.MapL = dart.constFn(dart.legacy(core.Map)))(),
-    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
-    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
-    MimeMultipartL: () => (T.MimeMultipartL = dart.constFn(dart.legacy(mime_shared.MimeMultipart)))(),
-    FutureL: () => (T.FutureL = dart.constFn(dart.legacy(async.Future)))(),
-    dynamicToFutureL: () => (T.dynamicToFutureL = dart.constFn(dart.fnType(T.FutureL(), [dart.dynamic])))(),
-    MimeMultipartLToFutureLOfNull: () => (T.MimeMultipartLToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [T.MimeMultipartL()])))(),
-    IdentityMapOfStringL$dynamic: () => (T.IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), dart.dynamic)))(),
-    ListL: () => (T.ListL = dart.constFn(dart.legacy(core.List)))(),
-    MapOfStringL$ListL: () => (T.MapOfStringL$ListL = dart.constFn(core.Map$(T.StringL(), T.ListL())))(),
-    MapLOfStringL$ListL: () => (T.MapLOfStringL$ListL = dart.constFn(dart.legacy(T.MapOfStringL$ListL())))(),
-    IdentityMapOfStringL$StringL: () => (T.IdentityMapOfStringL$StringL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.StringL())))(),
-    ServRequestL: () => (T.ServRequestL = dart.constFn(dart.legacy(serv_request_wrapper.ServRequest)))(),
-    ServResponseL: () => (T.ServResponseL = dart.constFn(dart.legacy(serv_request_wrapper.ServResponse)))(),
-    ServRequestLAndServResponseLTodynamic: () => (T.ServRequestLAndServResponseLTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.ServRequestL(), T.ServResponseL()])))(),
-    ServRequestLAndServResponseLToLdynamic: () => (T.ServRequestLAndServResponseLToLdynamic = dart.constFn(dart.legacy(T.ServRequestLAndServResponseLTodynamic())))(),
-    ListOfServRequestLAndServResponseLToLdynamic: () => (T.ListOfServRequestLAndServResponseLToLdynamic = dart.constFn(core.List$(T.ServRequestLAndServResponseLToLdynamic())))(),
-    ListLOfServRequestLAndServResponseLToLdynamic: () => (T.ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(dart.legacy(T.ListOfServRequestLAndServResponseLToLdynamic())))(),
-    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
-    StringLToboolL: () => (T.StringLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.StringL()])))(),
-    RouterL: () => (T.RouterL = dart.constFn(dart.legacy(serv_router.Router)))(),
-    CORSL: () => (T.CORSL = dart.constFn(dart.legacy(sevr_base.CORS)))(),
-    MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic: () => (T.MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(core.MapEntry$(T.StringL(), T.ListLOfServRequestLAndServResponseLToLdynamic())))(),
-    ServRequestLAndServResponseLToServResponseL: () => (T.ServRequestLAndServResponseLToServResponseL = dart.constFn(dart.fnType(T.ServResponseL(), [T.ServRequestL(), T.ServResponseL()])))(),
-    JSArrayOfServRequestLAndServResponseLToLdynamic: () => (T.JSArrayOfServRequestLAndServResponseLToLdynamic = dart.constFn(_interceptors.JSArray$(T.ServRequestLAndServResponseLToLdynamic())))(),
-    MapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic: () => (T.MapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(dart.legacy(T.MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic())))(),
-    StringLAndListLOfServRequestLAndServResponseLToLdynamicToMapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic: () => (T.StringLAndListLOfServRequestLAndServResponseLToLdynamicToMapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic = dart.constFn(dart.fnType(T.MapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic(), [T.StringL(), T.ListLOfServRequestLAndServResponseLToLdynamic()])))()
+    _OverflowSideL: () => (T._OverflowSideL = dart.constFn(dart.legacy(debug_overflow_indicator._OverflowSide)))(),
+    ListOfTextPainter: () => (T.ListOfTextPainter = dart.constFn(core.List$(text_painter.TextPainter)))(),
+    JSArrayOf_OverflowRegionData: () => (T.JSArrayOf_OverflowRegionData = dart.constFn(_interceptors.JSArray$(debug_overflow_indicator._OverflowRegionData)))(),
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    SyncIterableOfDiagnosticsNode: () => (T.SyncIterableOfDiagnosticsNode = dart.constFn(_js_helper.SyncIterable$(diagnostics.DiagnosticsNode)))(),
+    IterableOfDiagnosticsNode: () => (T.IterableOfDiagnosticsNode = dart.constFn(core.Iterable$(diagnostics.DiagnosticsNode)))(),
+    VoidToIterableOfDiagnosticsNode: () => (T.VoidToIterableOfDiagnosticsNode = dart.constFn(dart.fnType(T.IterableOfDiagnosticsNode(), [])))(),
+    TextSpanN: () => (T.TextSpanN = dart.constFn(dart.nullable(text_span.TextSpan)))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    JSArrayOfColor: () => (T.JSArrayOfColor = dart.constFn(_interceptors.JSArray$(ui.Color)))(),
+    JSArrayOfdouble: () => (T.JSArrayOfdouble = dart.constFn(_interceptors.JSArray$(core.double)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -100,537 +58,441 @@ define(['dart_sdk', 'packages/sevr/src/serv_router/serv_router.dart', 'packages/
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: serv_content_types.ServContentTypeEnum.prototype,
-        [_name]: "ServContentTypeEnum.ApplicationJson",
-        index: 5
+        __proto__: debug_overflow_indicator._OverflowSide.prototype,
+        [_name$]: "_OverflowSide.left",
+        index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: serv_content_types.ServContentTypeEnum.prototype,
-        [_name]: "ServContentTypeEnum.MultipartFormData",
-        index: 0
+        __proto__: debug_overflow_indicator._OverflowSide.prototype,
+        [_name$]: "_OverflowSide.top",
+        index: 1
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: serv_content_types.ServContentTypeEnum.prototype,
-        [_name]: "ServContentTypeEnum.ApplicationFormUrlEncoded",
-        index: 1
+        __proto__: debug_overflow_indicator._OverflowSide.prototype,
+        [_name$]: "_OverflowSide.bottom",
+        index: 2
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: serv_content_types.ServContentTypeEnum.prototype,
-        [_name]: "ServContentTypeEnum.TextHtml",
+        __proto__: debug_overflow_indicator._OverflowSide.prototype,
+        [_name$]: "_OverflowSide.right",
         index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], T._OverflowSideL());
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: 0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: 8.5
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 1,
+        [OffsetBase__dx]: 0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 8.5,
+        [OffsetBase__dx]: 0
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 3204448256.0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 3221225216.0
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: ui.FontWeight.prototype,
+        [FontWeight_index]: 7
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4287627264.0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: C[12] || CT.C12,
+        [TextStyle_fontSize]: 7.5,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[13] || CT.C13,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 10,
+        [OffsetBase__dx]: 10
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967295.0
       });
     }
   }, false);
-  var C = Array(4).fill(void 0);
-  var I = ["package:sevr/src/sevr_base.dart"];
-  var messageReturn = dart.privateName(sevr_base, "Sevr.messageReturn");
-  var router = dart.privateName(sevr_base, "Sevr.router");
-  var port = dart.privateName(sevr_base, "Sevr.port");
-  var host = dart.privateName(sevr_base, "Sevr.host");
-  var servDirs = dart.privateName(sevr_base, "Sevr.servDirs");
-  var server = dart.privateName(sevr_base, "Sevr.server");
-  var cors = dart.privateName(sevr_base, "Sevr.cors");
-  var _handleRequests = dart.privateName(sevr_base, "_handleRequests");
-  var _name = dart.privateName(serv_content_types, "_name");
-  var _consumeOpenFileStreams = dart.privateName(sevr_base, "_consumeOpenFileStreams");
-  sevr_base.Sevr = class Sevr extends core.Object {
-    get messageReturn() {
-      return this[messageReturn];
+  var C = Array(16).fill(void 0);
+  var I = [
+    "file:///D:/Flutter/packages/flutter/lib/src/rendering/debug_overflow_indicator.dart",
+    "package:flutter/src/rendering/debug_overflow_indicator.dart"
+  ];
+  var _name$ = dart.privateName(debug_overflow_indicator, "_name");
+  debug_overflow_indicator._OverflowSide = class _OverflowSide extends core.Object {
+    toString() {
+      return this[_name$];
     }
-    set messageReturn(value) {
-      this[messageReturn] = value;
+  };
+  (debug_overflow_indicator._OverflowSide.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 14, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 14, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = debug_overflow_indicator._OverflowSide.prototype;
+  dart.addTypeTests(debug_overflow_indicator._OverflowSide);
+  dart.addTypeCaches(debug_overflow_indicator._OverflowSide);
+  dart.setLibraryUri(debug_overflow_indicator._OverflowSide, I[1]);
+  dart.setFieldSignature(debug_overflow_indicator._OverflowSide, () => ({
+    __proto__: dart.getFields(debug_overflow_indicator._OverflowSide.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(debug_overflow_indicator._OverflowSide, ['toString']);
+  debug_overflow_indicator._OverflowSide.left = C[0] || CT.C0;
+  debug_overflow_indicator._OverflowSide.top = C[1] || CT.C1;
+  debug_overflow_indicator._OverflowSide.bottom = C[2] || CT.C2;
+  debug_overflow_indicator._OverflowSide.right = C[3] || CT.C3;
+  debug_overflow_indicator._OverflowSide.values = C[4] || CT.C4;
+  var rect$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.rect");
+  var label$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.label");
+  var labelOffset$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.labelOffset");
+  var rotation$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.rotation");
+  var side$ = dart.privateName(debug_overflow_indicator, "_OverflowRegionData.side");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  debug_overflow_indicator._OverflowRegionData = class _OverflowRegionData extends core.Object {
+    get rect() {
+      return this[rect$];
     }
-    get router() {
-      return this[router];
+    set rect(value) {
+      super.rect = value;
     }
-    set router(value) {
-      super.router = value;
+    get label() {
+      return this[label$];
     }
-    get port() {
-      return this[port];
+    set label(value) {
+      super.label = value;
     }
-    set port(value) {
-      this[port] = value;
+    get labelOffset() {
+      return this[labelOffset$];
     }
-    get host() {
-      return this[host];
+    set labelOffset(value) {
+      super.labelOffset = value;
     }
-    set host(value) {
-      this[host] = value;
+    get rotation() {
+      return this[rotation$];
     }
-    get servDirs() {
-      return this[servDirs];
+    set rotation(value) {
+      super.rotation = value;
     }
-    set servDirs(value) {
-      this[servDirs] = value;
+    get side() {
+      return this[side$];
     }
-    get server() {
-      return this[server];
+    set side(value) {
+      super.side = value;
     }
-    set server(value) {
-      this[server] = value;
+  };
+  (debug_overflow_indicator._OverflowRegionData.new = function(opts) {
+    let rect = opts && 'rect' in opts ? opts.rect : null;
+    if (rect == null) dart.nullFailed(I[0], 25, 19, "rect");
+    let label = opts && 'label' in opts ? opts.label : "";
+    if (label == null) dart.nullFailed(I[0], 26, 10, "label");
+    let labelOffset = opts && 'labelOffset' in opts ? opts.labelOffset : C[5] || CT.C5;
+    if (labelOffset == null) dart.nullFailed(I[0], 27, 10, "labelOffset");
+    let rotation = opts && 'rotation' in opts ? opts.rotation : 0;
+    if (rotation == null) dart.nullFailed(I[0], 28, 10, "rotation");
+    let side = opts && 'side' in opts ? opts.side : null;
+    if (side == null) dart.nullFailed(I[0], 29, 19, "side");
+    this[rect$] = rect;
+    this[label$] = label;
+    this[labelOffset$] = labelOffset;
+    this[rotation$] = rotation;
+    this[side$] = side;
+    ;
+  }).prototype = debug_overflow_indicator._OverflowRegionData.prototype;
+  dart.addTypeTests(debug_overflow_indicator._OverflowRegionData);
+  dart.addTypeCaches(debug_overflow_indicator._OverflowRegionData);
+  dart.setLibraryUri(debug_overflow_indicator._OverflowRegionData, I[1]);
+  dart.setFieldSignature(debug_overflow_indicator._OverflowRegionData, () => ({
+    __proto__: dart.getFields(debug_overflow_indicator._OverflowRegionData.__proto__),
+    rect: dart.finalFieldType(ui.Rect),
+    label: dart.finalFieldType(core.String),
+    labelOffset: dart.finalFieldType(ui.Offset),
+    rotation: dart.finalFieldType(core.double),
+    side: dart.finalFieldType(debug_overflow_indicator._OverflowSide)
+  }));
+  var _indicatorLabel = dart.privateName(debug_overflow_indicator, "_indicatorLabel");
+  var _overflowReportNeeded = dart.privateName(debug_overflow_indicator, "_overflowReportNeeded");
+  var _formatPixels = dart.privateName(debug_overflow_indicator, "_formatPixels");
+  var _calculateOverflowRegions = dart.privateName(debug_overflow_indicator, "_calculateOverflowRegions");
+  var _reportOverflow = dart.privateName(debug_overflow_indicator, "_reportOverflow");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  debug_overflow_indicator.DebugOverflowIndicatorMixin = class DebugOverflowIndicatorMixin extends object.RenderObject {};
+  debug_overflow_indicator.DebugOverflowIndicatorMixin[dart.mixinOn] = RenderObject => class DebugOverflowIndicatorMixin extends RenderObject {
+    [_formatPixels](value) {
+      if (value == null) dart.nullFailed(I[0], 120, 31, "value");
+      if (!(dart.notNull(value) > 0.0)) dart.assertFailed(null, I[0], 121, 12, "value > 0.0");
+      let pixels = null;
+      if (dart.notNull(value) > 10.0) {
+        pixels = value[$toStringAsFixed](0);
+      } else if (dart.notNull(value) > 1.0) {
+        pixels = value[$toStringAsFixed](1);
+      } else {
+        pixels = value[$toStringAsPrecision](3);
+      }
+      return pixels;
     }
-    get cors() {
-      return this[cors];
+    [_calculateOverflowRegions](overflow, containerRect) {
+      if (overflow == null) dart.nullFailed(I[0], 133, 68, "overflow");
+      if (containerRect == null) dart.nullFailed(I[0], 133, 83, "containerRect");
+      let regions = T.JSArrayOf_OverflowRegionData().of([]);
+      if (dart.notNull(overflow.left) > 0.0) {
+        let markerRect = new ui.Rect.fromLTWH(0.0, 0.0, dart.notNull(containerRect.width) * 0.1, containerRect.height);
+        regions[$add](new debug_overflow_indicator._OverflowRegionData.new({rect: markerRect, label: "LEFT OVERFLOWED BY " + dart.str(this[_formatPixels](overflow.left)) + " PIXELS", labelOffset: markerRect.centerLeft['+'](C[6] || CT.C6), rotation: 3.141592653589793 / 2.0, side: debug_overflow_indicator._OverflowSide.left}));
+      }
+      if (dart.notNull(overflow.right) > 0.0) {
+        let markerRect = new ui.Rect.fromLTWH(dart.notNull(containerRect.width) * (1.0 - 0.1), 0.0, dart.notNull(containerRect.width) * 0.1, containerRect.height);
+        regions[$add](new debug_overflow_indicator._OverflowRegionData.new({rect: markerRect, label: "RIGHT OVERFLOWED BY " + dart.str(this[_formatPixels](overflow.right)) + " PIXELS", labelOffset: markerRect.centerRight['-'](C[6] || CT.C6), rotation: -3.141592653589793 / 2.0, side: debug_overflow_indicator._OverflowSide.right}));
+      }
+      if (dart.notNull(overflow.top) > 0.0) {
+        let markerRect = new ui.Rect.fromLTWH(0.0, 0.0, containerRect.width, dart.notNull(containerRect.height) * 0.1);
+        regions[$add](new debug_overflow_indicator._OverflowRegionData.new({rect: markerRect, label: "TOP OVERFLOWED BY " + dart.str(this[_formatPixels](overflow.top)) + " PIXELS", labelOffset: markerRect.topCenter['+'](C[7] || CT.C7), rotation: 0.0, side: debug_overflow_indicator._OverflowSide.top}));
+      }
+      if (dart.notNull(overflow.bottom) > 0.0) {
+        let markerRect = new ui.Rect.fromLTWH(0.0, dart.notNull(containerRect.height) * (1.0 - 0.1), containerRect.width, dart.notNull(containerRect.height) * 0.1);
+        regions[$add](new debug_overflow_indicator._OverflowRegionData.new({rect: markerRect, label: "BOTTOM OVERFLOWED BY " + dart.str(this[_formatPixels](overflow.bottom)) + " PIXELS", labelOffset: markerRect.bottomCenter['-'](C[8] || CT.C8), rotation: 0.0, side: debug_overflow_indicator._OverflowSide.bottom}));
+      }
+      return regions;
     }
-    set cors(value) {
-      this[cors] = value;
-    }
-    static static(dir) {
-      return new sevr_base.SevrDir.new(dir);
-    }
-    static new() {
-      return sevr_base.Sevr._serv;
-    }
-    close() {
-      return async.async(dart.void, (function* close() {
-        if (this.server != null) {
-          yield this.server.close({force: true});
-        }
-      }).bind(this));
-    }
-    restart() {
-      return async.async(dart.void, (function* restart() {
-        core.print("Restarting server");
-        yield this.close();
-        this.listen(this.port);
-        core.print("Succesfully restarted Sevr");
-      }).bind(this));
-    }
-    listen(port, opts) {
-      let callback = opts && 'callback' in opts ? opts.callback : null;
-      let context = opts && 'context' in opts ? opts.context : null;
-      let messageReturn = opts && 'messageReturn' in opts ? opts.messageReturn : null;
-      let address = opts && 'address' in opts ? opts.address : null;
-      let errorHandler = opts && 'errorHandler' in opts ? opts.errorHandler : null;
-      return async.async(dart.dynamic, (function* listen() {
-        let t0;
-        yield async.runZoned(T.FutureLOfNull(), dart.fn(() => async.async(core.Null, (function*() {
-          let t0;
-          this.messageReturn = messageReturn;
-          if (callback != null) {
-            dart.dcall(callback, []);
-          }
-          if (context == null) {
-            this.server = (yield _http.HttpServer.bind((t0 = address, t0 == null ? io.InternetAddress.loopbackIPv4 : t0), port));
-          } else {
-            this.server = (yield _http.HttpServer.bindSecure(io.InternetAddress.loopbackIPv4, port, context));
-          }
-          this.port = port;
-          this.host = io.InternetAddress.loopbackIPv4;
-          let iter = async.StreamIterator.new(this.server);
-          try {
-            while (yield iter.moveNext()) {
-              let request = iter.current;
-              {
-                sevr_base.Sevr._serv.call(request);
-              }
-            }
-          } finally {
-            yield iter.cancel();
-          }
-        }).bind(this)), T.VoidToFutureLOfNull()), {onError: (t0 = errorHandler, t0 == null ? dart.fn((e, s) => {
-            core.print(e);
-            core.print(s);
-            dart.throw(e);
-          }, T.ObjectLAndStackTraceLToNull()) : t0)});
-      }).bind(this));
-    }
-    call(request) {
-      return async.async(dart.dynamic, (function* call() {
-        let req = new serv_request_wrapper.ServRequest.new(request);
-        let res = new serv_request_wrapper.ServResponse.new(request);
-        let contentType = dart.toString(req.headers.contentType);
-        let jsonData = new _js_helper.LinkedMap.new();
-        let downloadData = T.JSArrayOfintL().of([]);
-        if (this.cors != null) {
-          res.set("Access-Control-Allow-Origin", this.cors.allowed_origins[$join](" | "));
-          res.set("Access-Control-Allow-Headers", "Content-Type");
-        }
-        switch (serv_content_types.ServContentType(contentType)) {
-          case C[0] || CT.C0:
-          {
-            let _sub = null;
-            _sub = request.listen(dart.fn(onData => {
-              dart.dsend(downloadData, 'addAll', [onData]);
-            }, T.Uint8ListLToNull()), {onDone: dart.fn(() => {
-                try {
-                  let s = core.String.fromCharCodes(T.IterableOfint().as(downloadData));
-                  if (s[$isNotEmpty]) {
-                    jsonData[$addAll](T.MapL().as(convert.json.decode(s)));
-                    req.tempBody = jsonData[$cast](T.StringL(), dart.dynamic);
-                  }
-                  _sub.cancel();
-                } catch (e$) {
-                  let e = dart.getThrown(e$);
-                  let stacktrace = dart.stackTrace(e$);
-                  req.currentExceptionList = [e, stacktrace];
-                  dart.rethrow(e$);
-                }
-                this[_handleRequests](req, res, request.method);
-              }, T.VoidToNull())});
-            break;
-          }
-          case C[1] || CT.C1:
-          {
-            let boundary = request.headers.contentType.parameters[$_get]("boundary");
-            let fileKeys = [];
-            request.transform(T.MimeMultipartL(), new mime_multipart_transformer.MimeMultipartTransformer.new(boundary)).listen(dart.fn(onData => async.async(core.Null, function*() {
-              let formDataObject = http_multipart_form_data.HttpMultipartFormData.parse(onData);
-              if (dart.test(formDataObject.isBinary) || dart.test(formDataObject.contentDisposition.parameters[$containsKey]("filename"))) {
-                core.print("isBinary");
-                core.print(dart.str(formDataObject.contentDisposition.parameters));
-                if (!dart.test(fileKeys[$contains](formDataObject.contentDisposition.parameters[$_get]("name")))) {
-                  fileKeys[$add](formDataObject.contentDisposition.parameters[$_get]("name"));
-                  let _fileStreamController = async.StreamController.new();
-                  let requestFileObject = new serv_request_wrapper.SevrFile.new(formDataObject.contentDisposition.parameters[$_get]("name"), formDataObject.contentDisposition.parameters[$_get]("filename"), _fileStreamController);
-                  req.files[$_set](formDataObject.contentDisposition.parameters[$_get]("name"), requestFileObject);
-                }
-                let _fcont = null;
-                _fcont = req.files[$_get](formDataObject.contentDisposition.parameters[$_get]("name")).streamController;
-                pedantic.unawaited(_fcont.sink.addStream(formDataObject).then(dart.void, dart.fn(c => async.async(dart.dynamic, function*() {
-                  return _fcont.close();
-                }), T.dynamicToFutureL())));
-              } else {
-                jsonData[$addAll](new _js_helper.LinkedMap.from([formDataObject.contentDisposition.parameters[$_get]("name"), (yield formDataObject.join())]));
-                req.tempBody = jsonData;
-              }
-            }), T.MimeMultipartLToFutureLOfNull()), {onDone: dart.fn(() => {
-              }, T.VoidToNull())});
-            T.FutureOfNull().delayed(core.Duration.zero, dart.fn(() => {
-              this[_handleRequests](req, res, request.method);
-            }, T.VoidToNull()));
-            break;
-          }
-          case C[2] || CT.C2:
-          {
-            let body = (yield request.transform(dart.dynamic, convert.utf8.decoder.cast(T.Uint8ListL(), dart.dynamic)).join());
-            let result = null;
-            result = new (T.IdentityMapOfStringL$dynamic()).new();
-            build_data.buildMapFromUri(result, body);
-            req.tempBody = result;
-            T.FutureOfNull().delayed(core.Duration.zero, dart.fn(() => {
-              this[_handleRequests](req, res, request.method);
-            }, T.VoidToNull()));
-            break;
-          }
-          case C[3] || CT.C3:
-          {
-            request.listen(dart.fn(onData => {
-              core.print(core.String.fromCharCodes(onData));
-            }, T.Uint8ListLToNull()));
-            T.FutureOfNull().delayed(core.Duration.zero, dart.fn(() => {
-              this[_handleRequests](req, res, request.method);
-            }, T.VoidToNull()));
-            break;
-          }
-          default:
-          {
-            T.FutureOfNull().delayed(core.Duration.zero, dart.fn(() => {
-              this[_handleRequests](req, res, request.method);
-            }, T.VoidToNull()));
-            break;
-          }
-        }
-      }).bind(this));
-    }
-    get getAllRoutes() {
-      return new _js_helper.LinkedMap.from(["GET", this.router.gets, "POST", this.router.posts, "PATCH", this.router.patchs, "PUT", this.router.puts, "DELETE", this.router.deletes, "COPY", this.router.copys, "HEAD", this.router.heads, "OPTIONS", this.router.optionss, "LINK", this.router.links, "UNLINK", this.router.unlinks, "PURGE", this.router.purges, "LOCK", this.router.locks, "UNLOCK", this.router.unlocks, "PROPFIND", this.router.propfinds, "VIEW", this.router.views]);
-    }
-    get(route, callbacks) {
-      this.router.gets[$_set](route, callbacks);
-    }
-    post(route, callbacks) {
-      this.router.posts[$_set](route, callbacks);
-    }
-    patch(route, callbacks) {
-      this.router.patchs[$_set](route, callbacks);
-    }
-    put(route, callbacks) {
-      this.router.puts[$_set](route, callbacks);
-    }
-    delete(route, callbacks) {
-      this.router.deletes[$_set](route, callbacks);
-    }
-    copy(route, callbacks) {
-      this.router.copys[$_set](route, callbacks);
-    }
-    head(route, callbacks) {
-      this.router.heads[$_set](route, callbacks);
-    }
-    options(route, callbacks) {
-      this.router.optionss[$_set](route, callbacks);
-    }
-    link(route, callbacks) {
-      this.router.links[$_set](route, callbacks);
-    }
-    unlink(route, callbacks) {
-      this.router.unlinks[$_set](route, callbacks);
-    }
-    purge(route, callbacks) {
-      this.router.purges[$_set](route, callbacks);
-    }
-    lock(route, callbacks) {
-      this.router.locks[$_set](route, callbacks);
-    }
-    unlock(route, callbacks) {
-      this.router.unlocks[$_set](route, callbacks);
-    }
-    propfind(route, callbacks) {
-      this.router.propfinds[$_set](route, callbacks);
-    }
-    view(route, callbacks) {
-      this.router.views[$_set](route, callbacks);
-    }
-    [_handleRequests](req, res, reqType) {
-      return async.async(dart.void, (function* _handleRequests() {
-        let t1;
-        let reqTypeMap = T.MapL().as(this.getAllRoutes[$_get](reqType));
-        let path = req.path[$endsWith]("/") ? req.path[$replaceRange](req.path.length - 1, req.path.length, "") : req.path;
-        let mapRes = this.getRouteParams(path, T.MapLOfStringL$ListL().as(reqTypeMap));
-        let params = T.MapL().as(dart.test(mapRes[$containsKey]("params")) ? mapRes[$_get]("params") : null);
-        req.params = (t1 = params[$cast](T.StringL(), T.StringL()), t1 == null ? new (T.IdentityMapOfStringL$StringL()).new() : t1);
-        let matched = T.StringL().as(mapRes[$_get]("route"));
-        let selectedCallbacks = null;
-        if (dart.test(reqTypeMap[$containsKey](path))) {
-          selectedCallbacks = T.ListLOfServRequestLAndServResponseLToLdynamic().as(reqTypeMap[$_get](path));
-        } else if (dart.test(reqTypeMap[$containsKey](dart.notNull(path) + "/"))) {
-          selectedCallbacks = T.ListLOfServRequestLAndServResponseLToLdynamic().as(reqTypeMap[$_get](dart.notNull(path) + "/"));
-        } else if (matched != null) {
-          selectedCallbacks = T.ListLOfServRequestLAndServResponseLToLdynamic().as(reqTypeMap[$_get](matched));
-        } else {
-          selectedCallbacks = null;
-        }
-        if (selectedCallbacks != null && dart.test(selectedCallbacks[$isNotEmpty])) {
-          for (let func of selectedCallbacks) {
-            let result = (yield func(req, res));
-            if (T.ServResponseL().is(result)) {
-              yield this[_consumeOpenFileStreams](req);
-              yield res.close();
-              break;
-            }
-          }
-        } else {
-          yield this[_consumeOpenFileStreams](req);
-          for (let directory of this.servDirs) {
-            let filePath = dart.str(directory.dir.path) + dart.str(req.path);
-            if (dart.test(yield io.File.new(filePath).exists())) {
-              (yield res.status(200).sendFile(filePath)).close();
-              return;
-            }
-          }
-          res.status(404).json(new _js_helper.LinkedMap.from(["error", "method not found"])).close();
-        }
-      }).bind(this));
-    }
-    getQuery(route) {
-      let uri = core.Uri.tryParse(route);
-      uri.queryParameters;
-    }
-    getRouteParams(route, query) {
-      let compareMap = null;
-      compareMap = new (T.IdentityMapOfStringL$dynamic()).from(["params", new _js_helper.LinkedMap.new(), "route", null]);
-      let matched = null;
-      matched = query[$keys][$firstWhere](dart.fn(key => {
-        let routeArr = null;
-        routeArr = route[$split]("/");
-        let keyArr = null;
-        keyArr = key[$split]("/");
-        if (routeArr[$length] != keyArr[$length]) return false;
-        for (let i = 0; i < dart.notNull(routeArr[$length]); i = i + 1) {
-          if (routeArr[$_get](i)[$toLowerCase]() === keyArr[$_get](i)[$toLowerCase]() || keyArr[$_get](i)[$toLowerCase]()[$startsWith](":")) {
-            if (keyArr[$_get](i)[$toLowerCase]()[$startsWith](":")) {
-              dart.dsend(compareMap[$_get]("params"), '_set', [keyArr[$_get](i)[$replaceFirst](":", ""), routeArr[$_get](i)]);
-            }
-          } else {
-            return false;
-          }
-        }
-        return true;
-      }, T.StringLToboolL()), {orElse: dart.fn(() => null, T.VoidToNull())});
-      compareMap[$_set]("route", matched);
-      return compareMap;
-    }
-    [_consumeOpenFileStreams](req) {
-      return async.async(dart.void, function* _consumeOpenFileStreams() {
-        if (dart.test(req.files[$isNotEmpty])) {
-          for (let i = 0; i < dart.notNull(req.files[$keys][$length]); i = i + 1) {
-            let fileC = null;
-            fileC = req.files[$_get](req.files[$keys][$toList]()[$_get](i));
-            if (!dart.test(fileC.streamController.isClosed)) {
-              let iter = async.StreamIterator.new(fileC.streamController.stream);
-              try {
-                while (yield iter.moveNext()) {
-                  let data = iter.current;
-                  {
-                  }
-                }
-              } finally {
-                yield iter.cancel();
-              }
-            }
-          }
-        }
-        return;
-      });
-    }
-    use(obj) {
-      switch (dart.runtimeType(obj)) {
-        case dart.wrapType(sevr_base.SevrDir):
+    [_reportOverflow](overflow, overflowHints) {
+      if (overflow == null) dart.nullFailed(I[0], 201, 37, "overflow");
+      overflowHints == null ? overflowHints = T.JSArrayOfDiagnosticsNode().of([]) : null;
+      if (dart.test(overflowHints[$isEmpty])) {
+        overflowHints[$add](new assertions.ErrorDescription.new("The edge of the " + dart.str(this[$runtimeType]) + " that is " + "overflowing has been marked in the rendering with a yellow and black " + "striped pattern. This is usually caused by the contents being too big " + "for the " + dart.str(this[$runtimeType]) + "."));
+        overflowHints[$add](new assertions.ErrorHint.new("This is considered an error condition because it indicates that there " + "is content that cannot be seen. If the content is legitimately bigger " + "than the available space, consider clipping it with a ClipRect widget " + "before putting it in the " + dart.str(this[$runtimeType]) + ", or using a scrollable " + "container, like a ListView."));
+      }
+      let overflows = (() => {
+        let t0 = T.JSArrayOfString().of([]);
+        if (dart.notNull(overflow.left) > 0.0) t0[$add](dart.str(this[_formatPixels](overflow.left)) + " pixels on the left");
+        if (dart.notNull(overflow.top) > 0.0) t0[$add](dart.str(this[_formatPixels](overflow.top)) + " pixels on the top");
+        if (dart.notNull(overflow.bottom) > 0.0) t0[$add](dart.str(this[_formatPixels](overflow.bottom)) + " pixels on the bottom");
+        if (dart.notNull(overflow.right) > 0.0) t0[$add](dart.str(this[_formatPixels](overflow.right)) + " pixels on the right");
+        return t0;
+      })();
+      let overflowText = "";
+      if (!dart.test(overflows[$isNotEmpty])) dart.assertFailed("Somehow " + dart.str(this[$runtimeType]) + " didn't actually overflow like it thought it did.", I[0], 226, 12, "overflows.isNotEmpty");
+      switch (overflows[$length]) {
+        case 1:
         {
-          this.servDirs[$add](T.SevrDirL().as(obj));
+          overflowText = overflows[$first];
           break;
         }
-        case dart.wrapType(serv_router.Router):
+        case 2:
         {
-          this.router.join(T.RouterL().as(obj));
-          break;
-        }
-        case dart.wrapType(sevr_base.CORS):
-        {
-          this.cors = T.CORSL().as(obj);
-          this.router.optionss[$addAll](this.router.gets[$map](T.StringL(), T.ListLOfServRequestLAndServResponseLToLdynamic(), dart.fn((key, value) => new (T.MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).__(key, T.JSArrayOfServRequestLAndServResponseLToLdynamic().of([dart.fn((req, res) => res.status(200), T.ServRequestLAndServResponseLToServResponseL())])), T.StringLAndListLOfServRequestLAndServResponseLToLdynamicToMapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic())));
-          this.router.optionss[$addAll](this.router.posts[$map](T.StringL(), T.ListLOfServRequestLAndServResponseLToLdynamic(), dart.fn((key, value) => new (T.MapEntryOfStringL$ListLOfServRequestLAndServResponseLToLdynamic()).__(key, T.JSArrayOfServRequestLAndServResponseLToLdynamic().of([dart.fn((req, res) => {
-              res.response.headers.removeAll("Content-Type");
-              res.response.headers.removeAll("x-content-type-options");
-              return res.status(200);
-            }, T.ServRequestLAndServResponseLToServResponseL())])), T.StringLAndListLOfServRequestLAndServResponseLToLdynamicToMapEntryLOfStringL$ListLOfServRequestLAndServResponseLToLdynamic())));
+          overflowText = dart.str(overflows[$first]) + " and " + dart.str(overflows[$last]);
           break;
         }
         default:
+        {
+          overflows[$_set](dart.notNull(overflows[$length]) - 1, "and " + dart.str(overflows[$_get](dart.notNull(overflows[$length]) - 1)));
+          overflowText = overflows[$join](", ");
+        }
+      }
+      assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: assertions.FlutterError.new("A " + dart.str(this[$runtimeType]) + " overflowed by " + dart.str(overflowText) + "."), library: "rendering library", context: new assertions.ErrorDescription.new("during layout"), informationCollector: dart.fn(() => new (T.SyncIterableOfDiagnosticsNode()).new((function*() {
+          if (this.debugCreator != null) yield new object.DiagnosticsDebugCreator.new(dart.nullCheck(this.debugCreator));
+          yield* dart.nullCheck(overflowHints);
+          yield this.describeForError("The specific " + dart.str(this[$runtimeType]) + " in question is");
+          yield diagnostics.DiagnosticsNode.message("◢◤"[$times]((100 / 2)[$truncate]()), {allowWrap: false});
+        }).bind(this)), T.VoidToIterableOfDiagnosticsNode())}));
+    }
+    paintOverflowIndicator(context, offset, containerRect, childRect, opts) {
+      let t1;
+      if (context == null) dart.nullFailed(I[0], 267, 21, "context");
+      if (offset == null) dart.nullFailed(I[0], 268, 12, "offset");
+      if (containerRect == null) dart.nullFailed(I[0], 269, 10, "containerRect");
+      if (childRect == null) dart.nullFailed(I[0], 270, 10, "childRect");
+      let overflowHints = opts && 'overflowHints' in opts ? opts.overflowHints : null;
+      let overflow = stack.RelativeRect.fromRect(containerRect, childRect);
+      if (dart.notNull(overflow.left) <= 0.0 && dart.notNull(overflow.right) <= 0.0 && dart.notNull(overflow.top) <= 0.0 && dart.notNull(overflow.bottom) <= 0.0) {
+        return;
+      }
+      let overflowRegions = this[_calculateOverflowRegions](overflow, containerRect);
+      for (let region of overflowRegions) {
+        context.canvas.drawRect(region.rect.shift(offset), debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorPaint);
+        let textSpan = T.TextSpanN().as(this[_indicatorLabel][$_get](region.side.index).text);
+        if ((t1 = textSpan, t1 == null ? null : t1.text) != region.label) {
+          this[_indicatorLabel][$_get](region.side.index).text = new text_span.TextSpan.new({text: region.label, style: debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorTextStyle});
+          this[_indicatorLabel][$_get](region.side.index).layout();
+        }
+        let labelOffset = region.labelOffset['+'](offset);
+        let centerOffset = new ui.Offset.new(-dart.notNull(this[_indicatorLabel][$_get](region.side.index).width) / 2.0, 0.0);
+        let textBackgroundRect = centerOffset['&'](this[_indicatorLabel][$_get](region.side.index).size);
+        context.canvas.save();
+        context.canvas.translate(labelOffset.dx, labelOffset.dy);
+        context.canvas.rotate(region.rotation);
+        context.canvas.drawRect(textBackgroundRect, debug_overflow_indicator.DebugOverflowIndicatorMixin._labelBackgroundPaint);
+        this[_indicatorLabel][$_get](region.side.index).paint(context.canvas, centerOffset);
+        context.canvas.restore();
+      }
+      if (dart.test(this[_overflowReportNeeded])) {
+        this[_overflowReportNeeded] = false;
+        this[_reportOverflow](overflow, overflowHints);
       }
     }
-  };
-  (sevr_base.Sevr._internal = function() {
-    this[messageReturn] = "";
-    this[router] = new serv_router.Router.new();
-    this[port] = null;
-    this[host] = null;
-    this[servDirs] = T.JSArrayOfSevrDirL().of([]);
-    this[server] = null;
-    this[cors] = null;
-    ;
-  }).prototype = sevr_base.Sevr.prototype;
-  dart.addTypeTests(sevr_base.Sevr);
-  dart.addTypeCaches(sevr_base.Sevr);
-  dart.setMethodSignature(sevr_base.Sevr, () => ({
-    __proto__: dart.getMethods(sevr_base.Sevr.__proto__),
-    close: dart.fnType(dart.void, []),
-    restart: dart.fnType(dart.void, []),
-    listen: dart.fnType(dart.dynamic, [dart.legacy(core.int)], {address: dart.legacy(core.String), callback: dart.legacy(core.Function), context: dart.legacy(io.SecurityContext), errorHandler: dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(core.Object), dart.legacy(core.StackTrace)])), messageReturn: dart.legacy(core.String)}, {}),
-    call: dart.fnType(dart.dynamic, [dart.legacy(_http.HttpRequest)]),
-    get: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    post: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    patch: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    put: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    delete: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    copy: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    head: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    options: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    link: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    unlink: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    purge: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    lock: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    unlock: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    propfind: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    view: dart.fnType(dart.dynamic, [dart.legacy(core.String), dart.legacy(core.List$(dart.legacy(dart.fnType(dart.dynamic, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse)]))))]),
-    [_handleRequests]: dart.fnType(dart.void, [dart.legacy(serv_request_wrapper.ServRequest), dart.legacy(serv_request_wrapper.ServResponse), dart.legacy(core.String)]),
-    getQuery: dart.fnType(dart.dynamic, [dart.legacy(core.String)]),
-    getRouteParams: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [dart.legacy(core.String), dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.List)))]),
-    [_consumeOpenFileStreams]: dart.fnType(dart.legacy(async.Future$(dart.void)), [dart.legacy(serv_request_wrapper.ServRequest)]),
-    use: dart.fnType(dart.dynamic, [dart.dynamic])
-  }));
-  dart.setGetterSignature(sevr_base.Sevr, () => ({
-    __proto__: dart.getGetters(sevr_base.Sevr.__proto__),
-    getAllRoutes: dart.legacy(core.Map)
-  }));
-  dart.setLibraryUri(sevr_base.Sevr, I[0]);
-  dart.setFieldSignature(sevr_base.Sevr, () => ({
-    __proto__: dart.getFields(sevr_base.Sevr.__proto__),
-    messageReturn: dart.fieldType(dart.legacy(core.String)),
-    router: dart.finalFieldType(dart.legacy(serv_router.Router)),
-    port: dart.fieldType(dart.legacy(core.int)),
-    host: dart.fieldType(dart.dynamic),
-    servDirs: dart.fieldType(dart.legacy(core.List$(dart.legacy(sevr_base.SevrDir)))),
-    server: dart.fieldType(dart.legacy(_http.HttpServer)),
-    cors: dart.fieldType(dart.legacy(sevr_base.CORS))
-  }));
-  dart.defineLazy(sevr_base.Sevr, {
-    /*sevr_base.Sevr._serv*/get _serv() {
-      return new sevr_base.Sevr._internal();
-    }
-  }, true);
-  var dir = dart.privateName(sevr_base, "SevrDir.dir");
-  sevr_base.SevrDir = class SevrDir extends core.Object {
-    get dir() {
-      return this[dir];
-    }
-    set dir(value) {
-      this[dir] = value;
+    reassemble() {
+      super.reassemble();
+      if (!dart.test(dart.fn(() => {
+        this[_overflowReportNeeded] = true;
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 315, 12, "() {\r\n      _overflowReportNeeded = true;\r\n      return true;\r\n    }()");
     }
   };
-  (sevr_base.SevrDir.new = function(dirString) {
-    this[dir] = null;
-    this.dir = io.Directory.new(dirString);
-  }).prototype = sevr_base.SevrDir.prototype;
-  dart.addTypeTests(sevr_base.SevrDir);
-  dart.addTypeCaches(sevr_base.SevrDir);
-  dart.setLibraryUri(sevr_base.SevrDir, I[0]);
-  dart.setFieldSignature(sevr_base.SevrDir, () => ({
-    __proto__: dart.getFields(sevr_base.SevrDir.__proto__),
-    dir: dart.fieldType(dart.legacy(io.Directory))
+  (debug_overflow_indicator.DebugOverflowIndicatorMixin[dart.mixinNew] = function() {
+    this[_indicatorLabel] = T.ListOfTextPainter().filled(debug_overflow_indicator._OverflowSide.values[$length], new text_painter.TextPainter.new({textDirection: ui.TextDirection.ltr}));
+    this[_overflowReportNeeded] = true;
+  }).prototype = debug_overflow_indicator.DebugOverflowIndicatorMixin.prototype;
+  dart.addTypeTests(debug_overflow_indicator.DebugOverflowIndicatorMixin);
+  dart.addTypeCaches(debug_overflow_indicator.DebugOverflowIndicatorMixin);
+  debug_overflow_indicator.DebugOverflowIndicatorMixin[dart.implements] = () => [object.RenderObject];
+  dart.setMethodSignature(debug_overflow_indicator.DebugOverflowIndicatorMixin, () => ({
+    __proto__: dart.getMethods(debug_overflow_indicator.DebugOverflowIndicatorMixin.__proto__),
+    [_formatPixels]: dart.fnType(core.String, [core.double]),
+    [_calculateOverflowRegions]: dart.fnType(core.List$(debug_overflow_indicator._OverflowRegionData), [stack.RelativeRect, ui.Rect]),
+    [_reportOverflow]: dart.fnType(dart.void, [stack.RelativeRect, dart.nullable(core.List$(diagnostics.DiagnosticsNode))]),
+    paintOverflowIndicator: dart.fnType(dart.void, [object.PaintingContext, ui.Offset, ui.Rect, ui.Rect], {overflowHints: dart.nullable(core.List$(diagnostics.DiagnosticsNode))}, {})
   }));
-  sevr_base.UpperCase = class UpperCase extends convert.Converter$(dart.legacy(core.String), dart.legacy(core.String)) {
-    convert(input) {
-      T.StringL().as(input);
-      return input[$toUpperCase]();
-    }
-  };
-  (sevr_base.UpperCase.new = function() {
-    sevr_base.UpperCase.__proto__.new.call(this);
-    ;
-  }).prototype = sevr_base.UpperCase.prototype;
-  dart.addTypeTests(sevr_base.UpperCase);
-  dart.addTypeCaches(sevr_base.UpperCase);
-  dart.setMethodSignature(sevr_base.UpperCase, () => ({
-    __proto__: dart.getMethods(sevr_base.UpperCase.__proto__),
-    convert: dart.fnType(dart.legacy(core.String), [dart.legacy(core.Object)])
+  dart.setLibraryUri(debug_overflow_indicator.DebugOverflowIndicatorMixin, I[1]);
+  dart.setFieldSignature(debug_overflow_indicator.DebugOverflowIndicatorMixin, () => ({
+    __proto__: dart.getFields(debug_overflow_indicator.DebugOverflowIndicatorMixin.__proto__),
+    [_indicatorLabel]: dart.finalFieldType(core.List$(text_painter.TextPainter)),
+    [_overflowReportNeeded]: dart.fieldType(core.bool)
   }));
-  dart.setLibraryUri(sevr_base.UpperCase, I[0]);
-  var allowed_origins$ = dart.privateName(sevr_base, "CORS.allowed_origins");
-  sevr_base.CORS = class CORS extends core.Object {
-    get allowed_origins() {
-      return this[allowed_origins$];
+  dart.defineLazy(debug_overflow_indicator.DebugOverflowIndicatorMixin, {
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._black*/get _black() {
+      return C[9] || CT.C9;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._yellow*/get _yellow() {
+      return C[10] || CT.C10;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorFraction*/get _indicatorFraction() {
+      return 0.1;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorFontSizePixels*/get _indicatorFontSizePixels() {
+      return 7.5;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorLabelPaddingPixels*/get _indicatorLabelPaddingPixels() {
+      return 1;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorTextStyle*/get _indicatorTextStyle() {
+      return C[11] || CT.C11;
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._indicatorPaint*/get _indicatorPaint() {
+      let t1;
+      return t1 = ui.Paint.new(), (() => {
+        t1.shader = ui.Gradient.linear(ui.Offset.zero, C[14] || CT.C14, T.JSArrayOfColor().of([debug_overflow_indicator.DebugOverflowIndicatorMixin._black, debug_overflow_indicator.DebugOverflowIndicatorMixin._yellow, debug_overflow_indicator.DebugOverflowIndicatorMixin._yellow, debug_overflow_indicator.DebugOverflowIndicatorMixin._black]), T.JSArrayOfdouble().of([0.25, 0.25, 0.75, 0.75]), ui.TileMode.repeated);
+        return t1;
+      })();
+    },
+    /*debug_overflow_indicator.DebugOverflowIndicatorMixin._labelBackgroundPaint*/get _labelBackgroundPaint() {
+      let t1;
+      return t1 = ui.Paint.new(), (() => {
+        t1.color = C[15] || CT.C15;
+        return t1;
+      })();
     }
-    set allowed_origins(value) {
-      super.allowed_origins = value;
-    }
-  };
-  (sevr_base.CORS.new = function(allowed_origins) {
-    this[allowed_origins$] = allowed_origins;
-    ;
-  }).prototype = sevr_base.CORS.prototype;
-  dart.addTypeTests(sevr_base.CORS);
-  dart.addTypeCaches(sevr_base.CORS);
-  dart.setLibraryUri(sevr_base.CORS, I[0]);
-  dart.setFieldSignature(sevr_base.CORS, () => ({
-    __proto__: dart.getFields(sevr_base.CORS.__proto__),
-    allowed_origins: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String))))
-  }));
-  dart.trackLibraries("packages/sevr/src/sevr_base.dart", {
-    "package:sevr/src/sevr_base.dart": sevr_base
+  }, false);
+  dart.trackLibraries("packages/flutter/src/rendering/debug_overflow_indicator.dart", {
+    "package:flutter/src/rendering/debug_overflow_indicator.dart": debug_overflow_indicator
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["sevr_base.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAeS;;;;;;IAEM;;;;;;IACT;;;;;;IACA;;;;;;IACU;;;;;;IACH;;;;;;IACN;;;;;;kBAEwB;AAC3B,YAAO,2BAAQ,GAAG;IACpB;;AAIE,YAAO;IACT;;AAIU;AACR,YAAI,AAAO;AACsB,UAA/B,MAAM,AAAO,0BAAa;;MAE9B;;;AAEY;AACgB,QAA1B,WAAM;AACO,QAAb,MAAM;AACM,QAAZ,YAAO;AAC4B,QAAnC,WAAM;MACR;;WAGmB;UACL;UACM;UACT;UACA;UAC0B;AALvB;;AAgCF,QA1BV,MAAM,kCAAS;;AACqB,UAA7B,qBAAgB,aAAa;AAClC,cAAI,AAAS,QAAD;AACA,YAAF,WAAR,QAAQ;;AAEV,cAAI,AAAQ,OAAD;AAEyC,YADlD,eAAS,MAAiB,uBACd,KAAR,OAAO,EAAP,aAA2B,uCAAc,IAAI;;AAGD,YADhD,eAAS,MAAiB,4BACN,iCAAc,IAAI,EAAE,OAAO;;AAGjC,UAAX,YAAO,IAAI;AACmB,UAAnC,YAAuB;AAEvB,8CAA0B;;;kBAAX;;AAEC,gBAAd,AAAK,0BAAC,OAAO;;;;YAFA;;QAIhB,qDACyB,KAAb,YAAY,EAAZ,aACL,SAAQ,GAAc;AACZ,YAAR,WAAM,CAAC;AACC,YAAR,WAAM,CAAC;AACA,YAAP,WAAM,CAAC;;MAEnB;;SAEyB;AAAb;AACN,kBAAM,yCAAY,OAAO;AACzB,kBAAM,0CAAa,OAAO;AAC1B,0BAAsC,cAAxB,AAAI,AAAQ,GAAT;AACjB,uBAAW;AACP,2BAAoB;AAY5B,YAAI,AAAK;AACiE,UAAxE,AAAI,GAAD,KAAK,+BAA+B,AAAK,AAAgB,iCAAK;AACV,UAAvD,AAAI,GAAD,KAAK,gCAAgC;;AAG1C,gBAAQ,mCAAgB,WAAW;;;AAEZ;AAgBjB,YAfF,OAAO,AAAQ,OAAD,QAAQ,QAAW;AACJ,cAAd,WAAb,YAAY,aAAQ,MAAM;+CACjB;AACT;AACM,0BAAW,+CAAc,YAAY;AACzC,sBAAI,AAAE,CAAD;AAC4B,oBAA/B,AAAS,QAAD,sBAAQ,AAAK,oBAAO,CAAC;AACkB,oBAA/C,AAAI,GAAD,YAAY,AAAS,QAAD;;AAEZ,kBAAb,AAAK,IAAD;;sBACG;sBAAG;AACgC,kBAA1C,AAAI,GAAD,wBAAwB,CAAC,CAAC,EAAE,UAAU;AAClC,kBAAP;;AAEuC,gBAAzC,sBAAgB,GAAG,EAAE,GAAG,EAAE,AAAQ,OAAD;;AAGnC;;;;AAGI,2BAAW,AAAQ,AAAQ,AAAY,AAAU,OAA/B,uCAAgC;AAClD,2BAAW;AA8CE,YA5CjB,AAAQ,AAA8C,OAA/C,+BAAW,4DAAyB,QAAQ,UAC/C,QAAe;AACb,mCAAuC,qDAAM,MAAM;AACvD,4BAAI,AAAe,cAAD,wBACd,AAAe,AAAmB,AAC7B,cADS,6CACG;AACF,gBAAjB,WAAM;AACkD,gBAAxD,WAAuD,SAA9C,AAAe,AAAmB,cAApB;AACvB,+BAAK,AAAS,QAAD,YACT,AAAe,AAAmB,AAAU,cAA9B,sCAA+B;AAEe,kBAD9D,AACK,QADG,OACC,AAAe,AAAmB,AAAU,cAA9B,sCAA+B;AAClD,8CAAwB;AACxB,0CAAoB,sCACpB,AAAe,AAAmB,AAAU,cAA9B,sCAA+B,SAC7C,AAAe,AAAmB,AAAU,cAA9B,sCAA+B,aAC7C,qBAAqB;AAEJ,kBADrB,AAAI,AAAK,GAAN,cAAO,AAAe,AAAmB,AAAU,cAA9B,sCAA+B,SACnD,iBAAiB;;AAGN;AAGI,gBAFrB,SAAS,AACJ,AAAK,AACL,GAFO,cACD,AAAe,AAAmB,AAAU,cAA9B,sCAA+B;AASvD,gBAND,mBACE,AAAO,AAAK,AAA0B,MAAhC,gBAAgB,cAAc,kBAClC,QAAS;AACP,wBAAO,AAAO,OAAD;gBACd;;AAQH,gBAHF,AAAS,QAAD,UAAQ,+BACd,AAAe,AAAmB,AAAU,cAA9B,sCAA+B,UACzC,MAAM,AAAe,cAAD;AAGH,gBAAvB,AAAI,GAAD,YAAY,QAAQ;;YAI1B,iDAAU;;AAGT,YAFK,yBAAiB,oBAAM;AACa,cAAzC,sBAAgB,GAAG,EAAE,GAAG,EAAE,AAAQ,OAAD;;AAEnC;;;;AAII,wBAAO,MAAM,AACZ,AACA,OAFmB,yBACT,AAAK,AAAQ;AAGP;AACV,YAAX,SAAS;AAEoB,YAA7B,2BAAgB,MAAM,EAAE,IAAI;AAEP,YAArB,AAAI,GAAD,YAAY,MAAM;AAInB,YAFK,yBAAiB,oBAAM;AACa,cAAzC,sBAAgB,GAAG,EAAE,GAAG,EAAE,AAAQ,OAAD;;AAEnC;;;;AAKE,YAFF,AAAQ,OAAD,QAAQ,QAAC;AACqB,cAAnC,WAAa,0BAAc,MAAM;;AASjC,YAFK,yBAAiB,oBAAM;AACa,cAAzC,sBAAgB,GAAG,EAAE,GAAG,EAAE,AAAQ,OAAD;;AAEnC;;;;AAKE,YAFK,yBAAiB,oBAAM;AACa,cAAzC,sBAAgB,GAAG,EAAE,GAAG,EAAE,AAAQ,OAAD;;AAEnC;;;MAEN;;;AAGE,YAAO,gCACL,OAAO,AAAO,kBACd,QAAQ,AAAO,mBACf,SAAS,AAAO,oBAChB,OAAO,AAAO,kBACd,UAAU,AAAO,qBACjB,QAAQ,AAAO,mBACf,QAAQ,AAAO,mBACf,WAAW,AAAO,sBAClB,QAAQ,AAAO,mBACf,UAAU,AAAO,qBACjB,SAAS,AAAO,oBAChB,QAAQ,AAAO,mBACf,UAAU,AAAO,qBACjB,YAAY,AAAO,uBACnB,QAAQ,AAAO;IAEnB;QAGmB,OACmC;AACtB,MAA9B,AAAO,AAAI,wBAAC,KAAK,EAAI,SAAS;IAChC;SAGoB,OACkC;AACrB,MAA/B,AAAO,AAAK,yBAAC,KAAK,EAAI,SAAS;IACjC;UAGqB,OACiC;AACpB,MAAhC,AAAO,AAAM,0BAAC,KAAK,EAAI,SAAS;IAClC;QAGmB,OACmC;AACtB,MAA9B,AAAO,AAAI,wBAAC,KAAK,EAAI,SAAS;IAChC;WAGsB,OACgC;AACnB,MAAjC,AAAO,AAAO,2BAAC,KAAK,EAAI,SAAS;IACnC;SAGoB,OACkC;AACrB,MAA/B,AAAO,AAAK,yBAAC,KAAK,EAAI,SAAS;IACjC;SAGoB,OACkC;AACrB,MAA/B,AAAO,AAAK,yBAAC,KAAK,EAAI,SAAS;IACjC;YAGuB,OAC+B;AAClB,MAAlC,AAAO,AAAQ,4BAAC,KAAK,EAAI,SAAS;IACpC;SAGoB,OACkC;AACrB,MAA/B,AAAO,AAAK,yBAAC,KAAK,EAAI,SAAS;IACjC;WAGsB,OACgC;AACnB,MAAjC,AAAO,AAAO,2BAAC,KAAK,EAAI,SAAS;IACnC;UAGqB,OACiC;AACpB,MAAhC,AAAO,AAAM,0BAAC,KAAK,EAAI,SAAS;IAClC;SAGoB,OACkC;AACrB,MAA/B,AAAO,AAAK,yBAAC,KAAK,EAAI,SAAS;IACjC;WAGsB,OACgC;AACnB,MAAjC,AAAO,AAAO,2BAAC,KAAK,EAAI,SAAS;IACnC;aAGwB,OAC8B;AACjB,MAAnC,AAAO,AAAS,6BAAC,KAAK,EAAI,SAAS;IACrC;SAGoB,OACkC;AACrB,MAA/B,AAAO,AAAK,yBAAC,KAAK,EAAI,SAAS;IACjC;sBAGgB,KAAkB,KAAY;AAD1B;;AAEd,qCAAa,AAAY,yBAAC,OAAO;AAEjC,mBAAO,AAAI,AAAK,GAAN,iBAAe,OACvB,AAAI,AAAK,GAAN,qBAAmB,AAAI,AAAK,AAAO,GAAb,eAAe,GAAG,AAAI,AAAK,GAAN,cAAc,MAC5D,AAAI,GAAD;AAGL,qBAAS,oBAAe,IAAI,6BAAE,UAAU;AACxC,2CAAS,AAAO,MAAD,eAAa,aAAY,AAAM,MAAA,QAAC,YAAY;AACf,QAAhD,AAAI,GAAD,WAAwC,KAA9B,AAAO,MAAD,mCAAC,aAA0B;AACvC,qCAAU,AAAM,MAAA,QAAC;AAEkB;AAE1C,sBAAI,AAAW,UAAD,eAAa,IAAI;AACO,8BAApC,qDAAoB,AAAU,UAAA,QAAC,IAAI;cAC9B,eAAI,AAAW,UAAD,eAAkB,aAAL,IAAI,IAAG;AACG,8BAA1C,qDAAoB,AAAU,UAAA,QAAM,aAAL,IAAI,IAAG;cACjC,KAAI,AAAQ,OAAD;AACuB,8BAAvC,qDAAoB,AAAU,UAAA,QAAC,OAAO;;AAEd,UAAxB,oBAAoB;;AAOtB,YAAI,AAAkB,iBAAD,sBAAY,AAAkB,iBAAD;AAChD,mBAAS,OAAQ,kBAAiB;AAC5B,0BAAS,MAAM,AAAI,IAAA,CAAC,GAAG,EAAE,GAAG;AAEhC,gBAAW,qBAAP,MAAM;AAC0B,cAAlC,MAAM,8BAAwB,GAAG;AAChB,cAAjB,MAAM,AAAI,GAAD;AACT;;;;AAI8B,UAAlC,MAAM,8BAAwB,GAAG;AACjC,mBAAS,YAAa;AAChB,2BAA6C,SAA/B,AAAU,AAAI,SAAL,sBAAY,AAAI,GAAD;AAE1C,0BAAI,MAAM,AAAe,YAAV,QAAQ;AACuC,cAAP,CAApD,MAAM,AAAI,AAAsB,GAAvB,sBAAgC,QAAQ;AAClD;;;AAM4C,UAFhD,AACK,AACA,AAAoC,GAFtC,kBAEO,+BAAC,SAAS;;MAGxB;;aAGwB;AAClB,gBAAU,kBAAS,KAAK;AAET,MAAnB,AAAI,GAAD;IACL;mBAG2C,OAAyB;AAC7C;AACqB,MAA1C,aAAa,6CAAC,UAAU,gCAAI,SAAS;AAC9B;AAoBL,MAnBF,UAAU,AAAM,AAAK,KAAN,qBAAiB,QAAQ;AACzB;AACc,QAA3B,WAAW,AAAM,KAAD,SAAO;AACV;AACU,QAAvB,SAAS,AAAI,GAAD,SAAO;AACnB,YAAI,AAAS,AAAO,QAAR,aAAW,AAAO,MAAD,WAAS,MAAO;AAC7C,iBAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,AAAS,QAAD,YAAS,IAAA,AAAC,CAAA;AACpC,cAAI,AAAQ,AAAI,AAAc,QAAlB,QAAC,CAAC,sBAAmB,AAAM,AAAI,MAAJ,QAAC,CAAC,qBACrC,AAAM,AAAI,AAAc,MAAlB,QAAC,CAAC,+BAA2B;AACrC,gBAAI,AAAM,AAAI,AAAc,MAAlB,QAAC,CAAC,+BAA2B;AAC8B,cAA/C,WAApB,AAAU,UAAA,QAAC,oBAAU,AAAM,AAAI,MAAJ,QAAC,CAAC,iBAAe,KAAK,KAAO,AAAQ,QAAA,QAAC,CAAC;;;AAGpE,kBAAO;;;AAGX,cAAO;uCACE,cACF;AAEoB,MAA7B,AAAU,UAAA,QAAC,SAAW,OAAO;AAC7B,YAAO,WAAU;IACnB;8BAEiD;AAAb;AAClC,sBAAI,AAAI,AAAM,GAAP;AACL,mBAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,AAAI,AAAM,AAAK,GAAZ,yBAAoB,IAAA,AAAC,CAAA;AAEjC;AACoC,YAA7C,QAAQ,AAAI,AAAK,GAAN,cAAO,AAAI,AAAM,AAAK,AAAQ,GAApB,gCAAqB,CAAC;AAC3C,2BAAK,AAAM,AAAiB,KAAlB;AACR,kDAAuB,AAAM,AAAiB,KAAlB;;;sBAAb;;;;;;;;;;AAMrB;MACF;;QAGoB;AAClB,cAAY,iBAAJ,GAAG;;;AAEU,UAAjB,AAAS,oCAAI,GAAG;AAChB;;;;AAGgB,UAAhB,AAAO,gCAAK,GAAG;AACf;;;;AAGU,sBAAV,aAAO,GAAG;AAQP,UANH,AAAO,AAAS,8BAAO,AAAO,AAAK,uFAAI,SAAC,KAAK,UACpC,6EAAS,GAAG,EAAE,wDACnB,SAAa,KAAkB,QACtB,AAAI,GAAD,QAAQ;AAYrB,UARH,AAAO,AAAS,8BAAO,AAAO,AAAM,wFAAI,SAAC,KAAK,UACrC,6EAAS,GAAG,EAAE,wDACnB,SAAa,KAAkB;AACiB,cAA9C,AAAI,AAAS,AAAQ,GAAlB,4BAA4B;AACyB,cAAxD,AAAI,AAAS,AAAQ,GAAlB,4BAA4B;AAC/B,oBAAO,AAAI,IAAD,QAAQ;;AAUxB;;;;IAGN;;;IAldO,sBAAgB;IAEV,eAAS;IAClB;IACA;IACU,iBAAW;IACd;IACN;;EAWW;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAjBE,oBAAK;YAAQ;;;;;IAqdrB;;;;;;;oCACK;IADL;AAEkB,IAA1B,WAAM,iBAAU,SAAS;EAC3B;;;;;;;;;;qBAKsB;AAAU,YAAA,AAAM,MAAD;IAAc;;;;;EACrD;;;;;;;;;;IAGqB;;;;;;;;IAET;;EAAgB","file":"../../../../../../../../packages/sevr/src/sevr_base.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["debug_overflow_indicator.dart"],"names":[],"mappings":"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","file":"../../../../../../../C:/packages/flutter/src/rendering/debug_overflow_indicator.dart.lib.js"}');
   // Exports:
   return {
-    src__sevr_base: sevr_base
+    src__rendering__debug_overflow_indicator: debug_overflow_indicator
   };
 }));
 
-//# sourceMappingURL=sevr_base.dart.lib.js.map
+//# sourceMappingURL=debug_overflow_indicator.dart.lib.js.map
