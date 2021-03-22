@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:learning_management_system/Objects/Course.dart';
-import 'package:learning_management_system/views/dashboard/starting_dash_view.dart';
 import 'package:learning_management_system/views/home/home_view.dart';
 
 void main() {
